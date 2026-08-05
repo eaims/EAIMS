@@ -1,0 +1,10 @@
+# EAIMS License Map
+
+Unless a file states otherwise:
+
+- Documentation, maturity anchors, questionnaires, templates, examples, industry profiles, CSV data, and JSON questionnaire content: **CC BY 4.0**.
+- Source code, automation scripts, GitHub workflows, and JSON Schemas: **Apache-2.0**.
+- Project names, logos, and visual identity are excluded from source-identifying use; see [TRADEMARK.md](TRADEMARK.md).
+- Third-party materials retain their original rights; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+Full license texts are in `LICENSES/`. CC BY 4.0 grants no patent or trademark rights. Apache-2.0 patent rights apply only as stated in that license.

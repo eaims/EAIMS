@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eaims.org/schemas/v0.2/assessment-input.schema.json",
+  "title": "EAIMS v0.2 Assessment Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["standard", "version", "organization", "assessment_date", "assessment_type", "scope", "capability_scores"],
+  "properties": {
+    "standard": {"const": "EAIMS"},
+    "version": {"const": "0.2.0"},
+    "organization": {"type": "string", "minLength": 1},
+    "assessment_date": {"type": "string", "format": "date"},
+    "assessment_type": {"enum": ["self", "facilitated", "independent-review"]},
+    "scope": {"type": "string", "minLength": 1},
+    "capability_scores": {
+      "type": "array", "minItems": 27, "maxItems": 27,
+      "items": {"$ref": "#/$defs/capabilityScore"}
+    }
+  },
+  "$defs": {
+    "capabilityScore": {
+      "type": "object",
+      "required": ["capability_id"],
+      "properties": {
+        "capability_id": {"pattern": "^[1-9]\\.[1-3]$"},
+        "score": {"type": "integer", "minimum": 0, "maximum": 5},
+        "confidence": {"enum": ["low", "medium", "high"]},
+        "evidence_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "notes": {"type": "string"},
+        "not_applicable": {"type": "boolean"},
+        "exclusion_rationale": {"type": "string"}
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {"required": ["score", "confidence", "evidence_ids"], "not": {"required": ["not_applicable"]}},
+        {"required": ["not_applicable", "exclusion_rationale"], "properties": {"not_applicable": {"const": true}}}
+      ]
+    }
+  }
+}

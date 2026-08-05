@@ -1,0 +1,241 @@
+{
+  "standard": "EAIMS",
+  "version": "0.2.0",
+  "organization": "Fictional Bank",
+  "assessment_date": "2026-08-03",
+  "assessment_type": "facilitated",
+  "scope": "Fictional enterprise-wide example",
+  "capability_scores": [
+    {
+      "capability_id": "1.1",
+      "score": 5,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-11-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "1.2",
+      "score": 4,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-12-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "1.3",
+      "score": 3,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-13-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "2.1",
+      "score": 4,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-21-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "2.2",
+      "score": 3,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-22-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "2.3",
+      "score": 2,
+      "confidence": "high",
+      "evidence_ids": [],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "3.1",
+      "score": 5,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-31-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "3.2",
+      "score": 4,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-32-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "3.3",
+      "score": 3,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-33-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "4.1",
+      "score": 4,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-41-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "4.2",
+      "score": 3,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-42-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "4.3",
+      "score": 2,
+      "confidence": "high",
+      "evidence_ids": [],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "5.1",
+      "score": 4,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-51-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "5.2",
+      "score": 3,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-52-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "5.3",
+      "score": 2,
+      "confidence": "high",
+      "evidence_ids": [],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "6.1",
+      "score": 4,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-61-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "6.2",
+      "score": 3,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-62-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "6.3",
+      "score": 2,
+      "confidence": "medium",
+      "evidence_ids": [],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "7.1",
+      "score": 5,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-71-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "7.2",
+      "score": 4,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-72-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "7.3",
+      "score": 3,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-73-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "8.1",
+      "score": 4,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-81-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "8.2",
+      "score": 3,
+      "confidence": "high",
+      "evidence_ids": [
+        "EV-82-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "8.3",
+      "score": 2,
+      "confidence": "high",
+      "evidence_ids": [],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "9.1",
+      "score": 4,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-91-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "9.2",
+      "score": 3,
+      "confidence": "medium",
+      "evidence_ids": [
+        "EV-92-01"
+      ],
+      "notes": "Fictional training example."
+    },
+    {
+      "capability_id": "9.3",
+      "score": 2,
+      "confidence": "medium",
+      "evidence_ids": [],
+      "notes": "Fictional training example."
+    }
+  ]
+}

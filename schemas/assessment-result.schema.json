@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eaims.org/schemas/assessment-result.schema.json",
+  "title": "EAIMS Assessment Result",
+  "type": "object",
+  "required": [
+    "standard",
+    "version",
+    "organization",
+    "assessment_date",
+    "capability_scores"
+  ],
+  "properties": {
+    "standard": {
+      "const": "EAIMS"
+    },
+    "version": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "assessment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "assessment_type": {
+      "enum": [
+        "self",
+        "facilitated",
+        "independent-review"
+      ]
+    },
+    "capability_scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id",
+          "score",
+          "confidence"
+        ],
+        "properties": {
+          "capability_id": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EAIMS v0.2 Reference Assessment</title>
+<link rel="stylesheet" href="style.css">
+<header><div><span class="mark">E</span><strong>EAIMS</strong></div><span>v0.2 Community Draft</span></header>
+<main>
+  <section class="hero"><p class="eyebrow">EXECUTABLE REFERENCE IMPLEMENTATION</p><h1>Evidence before optimism.</h1><p>Run a local, vendor-neutral enterprise AI maturity assessment. Your responses remain in this browser unless you export them.</p></section>
+  <section class="panel meta">
+    <label>Organization<input id="organization" placeholder="Example Organization"></label>
+    <label>Scope<input id="scope" placeholder="Business units and systems included"></label>
+  </section>
+  <section id="questions" aria-live="polite"></section>
+  <section class="actions"><button id="calculate">Calculate profile</button><button class="secondary" id="export">Export assessment JSON</button></section>
+  <section id="result" class="panel result" hidden></section>
+  <p class="legal">Community draft. Not certification, compliance, safety, security, or legal assurance.</p>
+</main>
+<script src="app.js"></script>
+</html>

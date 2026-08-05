@@ -1,0 +1,25 @@
+name: Validate EAIMS
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild generated assets
+        run: |
+          python tools/build_questionnaire.py
+          python tools/build_v020_assets.py
+          git diff --exit-code
+      - name: Test executable reference implementation
+        run: PYTHONPATH=src python -m unittest discover -s tests -v
+      - name: Validate repository and examples
+        run: PYTHONPATH=src python tools/validate_v020.py
+      - name: Check browser JavaScript syntax
+        run: node --check site/app.js

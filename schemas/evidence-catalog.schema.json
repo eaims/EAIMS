@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eaims.org/schemas/v0.2/evidence-catalog.schema.json",
+  "title": "EAIMS Evidence Catalog",
+  "type": "object",
+  "required": ["standard", "version", "capabilities"],
+  "properties": {
+    "standard": {"const": "EAIMS"}, "version": {"const": "0.2.0"},
+    "capabilities": {"type": "array", "minItems": 27, "maxItems": 27, "items": {"type": "object", "required": ["capability_id", "evidence_examples", "counter_evidence"]}}
+  }
+}

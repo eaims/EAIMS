@@ -1,0 +1,601 @@
+{
+  "standard": "EAIMS",
+  "version": "0.2.0",
+  "status": "community-draft",
+  "capabilities": [
+    {
+      "capability_id": "1.1",
+      "capability": "AI vision and strategic alignment",
+      "dimension": "Strategy and Leadership",
+      "evidence_examples": [
+        "approved AI strategy",
+        "strategy-to-outcome map",
+        "funded transformation roadmap"
+      ],
+      "level_3_minimum": [
+        "approved AI strategy",
+        "strategy-to-outcome map"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "1.2",
+      "capability": "Executive ownership and governance",
+      "dimension": "Strategy and Leadership",
+      "evidence_examples": [
+        "executive accountability charter",
+        "governance meeting decisions",
+        "portfolio escalation records"
+      ],
+      "level_3_minimum": [
+        "executive accountability charter",
+        "governance meeting decisions"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "1.3",
+      "capability": "Policy and decision rights",
+      "dimension": "Strategy and Leadership",
+      "evidence_examples": [
+        "AI policy set",
+        "decision-right matrix",
+        "policy exception register"
+      ],
+      "level_3_minimum": [
+        "AI policy set",
+        "decision-right matrix"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "2.1",
+      "capability": "Use-case discovery and prioritization",
+      "dimension": "Value and Portfolio Management",
+      "evidence_examples": [
+        "use-case inventory",
+        "prioritization criteria",
+        "portfolio decision records"
+      ],
+      "level_3_minimum": [
+        "use-case inventory",
+        "prioritization criteria"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "2.2",
+      "capability": "Business case and benefits realization",
+      "dimension": "Value and Portfolio Management",
+      "evidence_examples": [
+        "approved business cases",
+        "benefit baselines",
+        "benefits-realization reviews"
+      ],
+      "level_3_minimum": [
+        "approved business cases",
+        "benefit baselines"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "2.3",
+      "capability": "Financial and capacity management",
+      "dimension": "Value and Portfolio Management",
+      "evidence_examples": [
+        "AI budget model",
+        "capacity plan",
+        "unit-cost or FinOps dashboard"
+      ],
+      "level_3_minimum": [
+        "AI budget model",
+        "capacity plan"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "3.1",
+      "capability": "Data governance and ownership",
+      "dimension": "Data and Knowledge Readiness",
+      "evidence_examples": [
+        "data-owner register",
+        "catalog and lineage records",
+        "stewardship performance reports"
+      ],
+      "level_3_minimum": [
+        "data-owner register",
+        "catalog and lineage records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "3.2",
+      "capability": "Data quality and fitness",
+      "dimension": "Data and Knowledge Readiness",
+      "evidence_examples": [
+        "data-quality rules",
+        "quality service levels",
+        "remediation and outcome records"
+      ],
+      "level_3_minimum": [
+        "data-quality rules",
+        "quality service levels"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "3.3",
+      "capability": "Knowledge and unstructured content readiness",
+      "dimension": "Data and Knowledge Readiness",
+      "evidence_examples": [
+        "content inventory",
+        "permission and retention controls",
+        "retrieval-quality evaluation"
+      ],
+      "level_3_minimum": [
+        "content inventory",
+        "permission and retention controls"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "4.1",
+      "capability": "Architecture standards",
+      "dimension": "AI Engineering and Architecture",
+      "evidence_examples": [
+        "AI reference architecture",
+        "approved engineering patterns",
+        "architecture review decisions"
+      ],
+      "level_3_minimum": [
+        "AI reference architecture",
+        "approved engineering patterns"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "4.2",
+      "capability": "Model and solution engineering",
+      "dimension": "AI Engineering and Architecture",
+      "evidence_examples": [
+        "engineering lifecycle standard",
+        "test and review records",
+        "reusable component catalog"
+      ],
+      "level_3_minimum": [
+        "engineering lifecycle standard",
+        "test and review records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "4.3",
+      "capability": "Generative AI, RAG, and agents",
+      "dimension": "AI Engineering and Architecture",
+      "evidence_examples": [
+        "RAG or agent design pattern",
+        "prompt and tool evaluation records",
+        "agent permission controls"
+      ],
+      "level_3_minimum": [
+        "RAG or agent design pattern",
+        "prompt and tool evaluation records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "5.1",
+      "capability": "Compute and deployment infrastructure",
+      "dimension": "Infrastructure and Platforms",
+      "evidence_examples": [
+        "capacity and deployment architecture",
+        "performance and cost records",
+        "resilience test results"
+      ],
+      "level_3_minimum": [
+        "capacity and deployment architecture",
+        "performance and cost records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "5.2",
+      "capability": "Platform engineering and self-service",
+      "dimension": "Infrastructure and Platforms",
+      "evidence_examples": [
+        "platform service catalog",
+        "self-service guardrails",
+        "golden-path adoption metrics"
+      ],
+      "level_3_minimum": [
+        "platform service catalog",
+        "self-service guardrails"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "5.3",
+      "capability": "Resilience and continuity",
+      "dimension": "Infrastructure and Platforms",
+      "evidence_examples": [
+        "service objectives",
+        "dependency and recovery plan",
+        "tested failover evidence"
+      ],
+      "level_3_minimum": [
+        "service objectives",
+        "dependency and recovery plan"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "6.1",
+      "capability": "Lifecycle automation",
+      "dimension": "MLOps, LLMOps, and Lifecycle Operations",
+      "evidence_examples": [
+        "version-controlled pipelines",
+        "approval and rollback records",
+        "deployment policy tests"
+      ],
+      "level_3_minimum": [
+        "version-controlled pipelines",
+        "approval and rollback records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "6.2",
+      "capability": "Evaluation and monitoring",
+      "dimension": "MLOps, LLMOps, and Lifecycle Operations",
+      "evidence_examples": [
+        "evaluation standard",
+        "pre-production results",
+        "production quality and risk monitoring"
+      ],
+      "level_3_minimum": [
+        "evaluation standard",
+        "pre-production results"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "6.3",
+      "capability": "Incident, change, and retirement management",
+      "dimension": "MLOps, LLMOps, and Lifecycle Operations",
+      "evidence_examples": [
+        "AI incident procedure",
+        "change and retirement records",
+        "post-incident learning actions"
+      ],
+      "level_3_minimum": [
+        "AI incident procedure",
+        "change and retirement records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "7.1",
+      "capability": "AI risk management",
+      "dimension": "Governance, Risk, Security, and Responsible AI",
+      "evidence_examples": [
+        "AI system inventory",
+        "risk-tier methodology",
+        "risk register and control reviews"
+      ],
+      "level_3_minimum": [
+        "AI system inventory",
+        "risk-tier methodology"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "7.2",
+      "capability": "Privacy, security, and supply-chain assurance",
+      "dimension": "Governance, Risk, Security, and Responsible AI",
+      "evidence_examples": [
+        "AI threat models",
+        "access and logging evidence",
+        "supplier and dependency assurance"
+      ],
+      "level_3_minimum": [
+        "AI threat models",
+        "access and logging evidence"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "7.3",
+      "capability": "Responsible AI and human oversight",
+      "dimension": "Governance, Risk, Security, and Responsible AI",
+      "evidence_examples": [
+        "impact assessment",
+        "human-oversight design",
+        "fairness, transparency, and safety reviews"
+      ],
+      "level_3_minimum": [
+        "impact assessment",
+        "human-oversight design"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "8.1",
+      "capability": "Skills and workforce planning",
+      "dimension": "Organization, Talent, and Culture",
+      "evidence_examples": [
+        "AI skills taxonomy",
+        "role-based learning records",
+        "workforce capability plan"
+      ],
+      "level_3_minimum": [
+        "AI skills taxonomy",
+        "role-based learning records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "8.2",
+      "capability": "Operating model and collaboration",
+      "dimension": "Organization, Talent, and Culture",
+      "evidence_examples": [
+        "AI operating model",
+        "cross-functional responsibility matrix",
+        "delivery performance reviews"
+      ],
+      "level_3_minimum": [
+        "AI operating model",
+        "cross-functional responsibility matrix"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "8.3",
+      "capability": "Culture and incentives",
+      "dimension": "Organization, Talent, and Culture",
+      "evidence_examples": [
+        "safe-experimentation policy",
+        "incentive design",
+        "culture and trust measurements"
+      ],
+      "level_3_minimum": [
+        "safe-experimentation policy",
+        "incentive design"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "9.1",
+      "capability": "Process redesign",
+      "dimension": "Adoption, Process Transformation, and Change",
+      "evidence_examples": [
+        "current and target process maps",
+        "human-AI control design",
+        "process outcome measures"
+      ],
+      "level_3_minimum": [
+        "current and target process maps",
+        "human-AI control design"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "9.2",
+      "capability": "Adoption and change management",
+      "dimension": "Adoption, Process Transformation, and Change",
+      "evidence_examples": [
+        "stakeholder and adoption plan",
+        "training and support records",
+        "usage and behavior metrics"
+      ],
+      "level_3_minimum": [
+        "stakeholder and adoption plan",
+        "training and support records"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    },
+    {
+      "capability_id": "9.3",
+      "capability": "Measurement and operational outcomes",
+      "dimension": "Adoption, Process Transformation, and Change",
+      "evidence_examples": [
+        "balanced KPI definition",
+        "baseline and outcome dashboard",
+        "portfolio optimization decisions"
+      ],
+      "level_3_minimum": [
+        "balanced KPI definition",
+        "baseline and outcome dashboard"
+      ],
+      "level_4_expectation": "Evidence is measured over time and informs documented improvement.",
+      "level_5_expectation": "Evidence demonstrates continuous adaptation within governed boundaries.",
+      "counter_evidence": [
+        "policy exists but is not used",
+        "claims rely only on interviews",
+        "evidence is stale or outside assessment scope"
+      ],
+      "freshness_guidance_months": 12
+    }
+  ]
+}
