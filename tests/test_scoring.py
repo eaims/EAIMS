@@ -6,7 +6,7 @@ from eaims.scoring import AssessmentError, score_assessment, validate_assessment
 
 def assessment(score=3, confidence="high"):
     return {
-        "standard": "EAIMS", "version": "0.2.0", "organization": "Test Org",
+        "standard": "EAIMS", "version": "0.2.1", "organization": "Test Org",
         "assessment_date": "2026-08-03", "assessment_type": "self", "scope": "Enterprise",
         "capability_scores": [
             {"capability_id": f"{d}.{c}", "score": score, "confidence": confidence,

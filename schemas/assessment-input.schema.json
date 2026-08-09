@@ -7,7 +7,7 @@
   "required": ["standard", "version", "organization", "assessment_date", "assessment_type", "scope", "capability_scores"],
   "properties": {
     "standard": {"const": "EAIMS"},
-    "version": {"const": "0.2.0"},
+    "version": {"const": "0.2.1"},
     "organization": {"type": "string", "minLength": 1},
     "assessment_date": {"type": "string", "format": "date"},
     "assessment_type": {"enum": ["self", "facilitated", "independent-review"]},

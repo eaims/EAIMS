@@ -10,15 +10,23 @@ Each scored capability receives Low, Medium, or High confidence. Confidence neve
 
 ## 3. Dimension score
 
-`sum(in-scope capability scores × capability weights) / sum(in-scope capability weights)`
+EAIMS v0.2 uses equal weighting across all in-scope capabilities within each dimension:
 
-Default capability weights are equal. Exclusions require a documented not-applicable rationale and change the denominator. Missing responses are not zero and cannot be silently excluded.
+`sum(in-scope capability scores) / count(in-scope capabilities)`
+
+Exclusions require a documented not-applicable rationale and change the denominator. Missing responses are not zero and cannot be silently excluded.
+
+Alternative capability-weighting schemes are experimental and are not part of executable conformance in EAIMS v0.2.
 
 ## 4. Aggregate score
 
-`sum(dimension scores × dimension weights) / sum(dimension weights)`
+EAIMS v0.2 uses equal weighting across all scored dimensions:
 
-Default dimension weights are equal. Calculations retain full precision; display rounding occurs only after aggregation.
+`sum(dimension scores) / count(scored dimensions)`
+
+Calculations retain full precision; display rounding occurs only after aggregation.
+
+Alternative dimension-weighting schemes are experimental and are not part of executable conformance in EAIMS v0.2.
 
 ## 5. Indicative level
 
