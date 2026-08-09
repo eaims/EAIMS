@@ -1,4 +1,4 @@
-# EAIMS Capability Matrix v0.1
+# EAIMS Capability Matrix v0.2
 Each capability is assessed from Level 0 through Level 5. Evidence must support the assigned level.
 
 ## 1. Strategy and Leadership

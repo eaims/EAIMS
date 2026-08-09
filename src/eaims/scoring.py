@@ -4,7 +4,7 @@ from __future__ import annotations
 from collections import Counter
 from typing import Any
 
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 DIMENSIONS = {
     "1": "Strategy and Leadership",
     "2": "Value and Portfolio Management",

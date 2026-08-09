@@ -55,7 +55,7 @@ for index, item in enumerate(capabilities, 1):
         "critical": item["dimension_id"] in critical_dimensions,
     })
 
-payload = {"standard": "EAIMS", "version": "0.2.0", "status": "community-draft", "questions": questions}
+payload = {"standard": "EAIMS", "version": "0.2.1", "status": "community-draft", "questions": questions}
 (OUT / "questionnaire.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 fields = ["question_id", "dimension_id", "dimension", "capability_id", "capability", "question",

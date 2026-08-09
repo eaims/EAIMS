@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["standard", "version", "capabilities"],
   "properties": {
-    "standard": {"const": "EAIMS"}, "version": {"const": "0.2.0"},
+    "standard": {"const": "EAIMS"}, "version": {"const": "0.2.1"},
     "capabilities": {"type": "array", "minItems": 27, "maxItems": 27, "items": {"type": "object", "required": ["capability_id", "evidence_examples", "counter_evidence"]}}
   }
 }

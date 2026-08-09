@@ -2,7 +2,7 @@
 
 > An open, vendor-neutral, evidence-based, and executable specification for enterprise AI maturity.
 
-**Version:** 0.2.0 Executable Community Draft  
+**Version:** 0.2.1 Executable Community Draft  
 **Status:** Public Review and Pilot Preparation  
 **Documentation and assessment content:** CC BY 4.0  
 **Code, workflows, and schemas:** Apache-2.0
