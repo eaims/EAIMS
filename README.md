@@ -2,7 +2,7 @@
 
 > An open, vendor-neutral, evidence-based, and executable specification for enterprise AI maturity.
 
-**Version:** 0.2.1 Executable Community Draft  
+**Version:** 0.2.1 Research Baseline  
 **Status:** Public Review and Pilot Preparation  
 **Documentation and assessment content:** CC BY 4.0  
 **Code, workflows, and schemas:** Apache-2.0
@@ -82,6 +82,10 @@ v0.2 is executable and internally tested. It has **not yet** completed independe
 ## Contributing and support
 
 Contributions require DCO sign-off and rights disclosure. See [Contributing](CONTRIBUTING.md), [Reviewer Program](REVIEWERS.md), [Sponsorship Policy](SPONSORSHIP.md), and [Financial Transparency](FINANCIAL_TRANSPARENCY.md). Funding cannot buy changes, favorable scores, certification, endorsement, or governance control.
+
+## Publications
+
+Books and research outputs: [EAIMS Publications](publications/README.md)
 
 ## Project website
 
