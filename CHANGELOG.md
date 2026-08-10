@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.1 - Research Baseline
+
+- Established the immutable baseline for the first peer-reviewed EAIMS paper
+- Corrected v0.2 document-version headings and citation metadata
+- Clarified normative evidence requirements versus executable validation
+- Aligned scoring documentation with the equal-weight v0.2 reference implementation
+- Added reproducible computational sensitivity-analysis materials for Paper 01
+- Added a central publications index for the English and Persian EAIMS books and research outputs
+
 ## 0.2.0 — Executable Community Draft
 
 - Added deterministic Python scoring, validation, CLI, Markdown/HTML reports, and nine automated tests
