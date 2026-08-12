@@ -26,7 +26,7 @@ EAIMS supports predictive ML, generative AI, RAG, agents, third-party services, 
 
 EAIMS was founded and initially authored by **Elias Naserkhaki**, registrant and founding steward of **eaims.org**. Founder attribution records project origin and stewardship; it does not create accredited standards authority or override published governance.
 
-EAIMS is not an ISO, IEC, ANSI, governmental, or accredited standard. It does not provide certification, legal compliance, safety assurance, or endorsement. See [Disclaimer](DISCLAIMER.md), [IP Policy](IP_POLICY.md), [Origin](ORIGIN.md), and [Trademark Policy](TRADEMARK.md).
+EAIMS is not an ISO, IEC, ANSI, governmental, or accredited standard. It does not provide certification, legal compliance, or safety assurance. A narrowly scoped implementation listing, when present in the [public registry](docs/approved-implementations.md), is not certification or approval of customer results. See [Disclaimer](DISCLAIMER.md), [IP Policy](IP_POLICY.md), [Origin](ORIGIN.md), and [Trademark Policy](TRADEMARK.md).
 
 ## Quick start
 
@@ -70,6 +70,7 @@ docker run --rm -p 8080:80 eaims
 | Evidence | [Evidence Catalog](assessment/evidence-catalog.json) |
 | Facilitation | [Assessor Handbook](docs/Assessor-Handbook.md) |
 | Implementation claims | [Conformance](docs/Conformance.md) |
+| Approved implementations | [Implementation Registry](docs/approved-implementations.md) |
 | Research pilots | [Pilot Protocol](docs/Pilot-Protocol.md) |
 | Future benchmarking | [Benchmark Protocol](docs/Benchmark-Protocol.md) |
 | External frameworks | [Independent Conceptual Crosswalk](docs/Standards-Crosswalk.md) |
