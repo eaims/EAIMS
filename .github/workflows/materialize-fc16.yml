@@ -1,5 +1,4 @@
 name: Materialize EAIMS 1.0 FC16 controlled integration
-
 on:
   push:
     branches: [release/eaims-1.0-rc1]
@@ -13,71 +12,64 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: release/eaims-1.0-rc1
-      - name: Configure commit identity
-        run: |
+        with: {fetch-depth: 0, ref: release/eaims-1.0-rc1}
+      - run: |
           git config user.name eaims
           git config user.email elias@eaims.org
-      - name: Preserve existing public Python APIs
+      - name: Preserve public APIs
         run: |
           test -f src/eaims/scoring.py && test -f src/eaims/reporting.py
-          cp src/eaims/scoring.py /tmp/scoring.py
-          cp src/eaims/reporting.py /tmp/reporting.py
-          sha256sum src/eaims/scoring.py > /tmp/scoring.before
-          sha256sum src/eaims/reporting.py > /tmp/reporting.before
-      - name: Reconstruct reviewed clean FC16 candidate
+          cp src/eaims/scoring.py /tmp/scoring.py; cp src/eaims/reporting.py /tmp/reporting.py
+          sha256sum src/eaims/scoring.py >/tmp/scoring.before; sha256sum src/eaims/reporting.py >/tmp/reporting.before
+      - name: Reconstruct FC16 source and reviewed overlay
         shell: bash
         run: |
           set -euo pipefail
-          cat _integration/fc16-clean.b64.* | tr -d '\r\n\t ' > /tmp/fc16-clean.b64
-          base64 --decode /tmp/fc16-clean.b64 > /tmp/fc16-clean.tar.xz
-          xz -t /tmp/fc16-clean.tar.xz
-          mkdir /tmp/fc16-clean
-          tar -xJf /tmp/fc16-clean.tar.xz -C /tmp/fc16-clean
-          CANDIDATE=$(find /tmp/fc16-clean -type f -path '*/spec/core.yaml' -printf '%h\n' | head -1 | sed 's#/spec$##')
-          test -n "$CANDIDATE"
-          test -f "$CANDIDATE/src/eaims/cli.py"
-          echo "CANDIDATE=$CANDIDATE" >> "$GITHUB_ENV"
-      - name: Reconcile preserved APIs into candidate
+          git fetch origin release/v1.0.0-rc.1:refs/remotes/origin/fc16-source
+          mkdir /tmp/candidate
+          ok=0
+          for seq in '00 01 02 03 04 05 06 07 08 09 10 11 05a' '00 01 02 03 04 05 06 07 08 09 10 11' '00 01 02 03 04 05 05a 06 07 08 09 10 11'; do
+            : >/tmp/base.raw
+            for p in $seq; do git show "origin/fc16-source:_fc16_bootstrap/fc16.tar.xz.b64.$p" >>/tmp/base.raw; done
+            tr -d '\r\n\t ' </tmp/base.raw >/tmp/base.b64
+            if base64 -d /tmp/base.b64 >/tmp/base.tar.xz 2>/dev/null && xz -t /tmp/base.tar.xz 2>/dev/null; then ok=1; break; fi
+          done
+          test "$ok" = 1
+          tar -xJf /tmp/base.tar.xz -C /tmp/candidate
+          cat _integration/fc16-overlay.b64.* | tr -d '\r\n\t ' >/tmp/overlay.b64
+          base64 -d /tmp/overlay.b64 >/tmp/overlay.tar.xz
+          xz -t /tmp/overlay.tar.xz
+          tar -xJf /tmp/overlay.tar.xz -C /tmp/candidate
+          test -f /tmp/candidate/spec/core.yaml
+          test -f /tmp/candidate/tests/test_legal_ip_governance.py
+      - name: Reconcile preserved APIs and integrate paths
         run: |
-          cp /tmp/scoring.py "$CANDIDATE/src/eaims/scoring.py"
-          cp /tmp/reporting.py "$CANDIDATE/src/eaims/reporting.py"
-      - name: Controlled path-based integration
-        shell: bash
-        run: |
-          set -euo pipefail
-          rsync -a --exclude='.git/' --exclude='_integration/' --exclude='.github/workflows/materialize-fc16.yml' "$CANDIDATE/" ./
+          cp /tmp/scoring.py /tmp/candidate/src/eaims/scoring.py
+          cp /tmp/reporting.py /tmp/candidate/src/eaims/reporting.py
+          rsync -a --exclude='.git/' --exclude='_integration/' --exclude='.github/workflows/materialize-fc16.yml' /tmp/candidate/ ./
           rm -rf _integration
           rm -f .github/workflows/materialize-fc16.yml
-          sha256sum -c /tmp/scoring.before
-          sha256sum -c /tmp/reporting.before
-      - name: Install and audit
+          sha256sum -c /tmp/scoring.before; sha256sum -c /tmp/reporting.before
+      - name: Install, audits and tests
         run: |
           python -m pip install -e '.[test]'
           python tools/prepush_audit.py
           python tools/legal_ip_governance_audit.py
           eaims-validate
-      - name: Full tests
-        run: pytest -q
-      - name: Legacy public API compatibility
+          pytest -q
+      - name: Legacy compatibility
         shell: bash
         run: |
           PYTHONPATH=src python - <<'PY'
           import eaims.scoring as s, eaims.reporting as r
-          assert callable(s.validate_assessment)
-          assert callable(s.score_assessment)
-          assert callable(r.markdown_report)
-          assert callable(r.html_report)
-          print('legacy public Python APIs: PASS')
+          assert callable(s.validate_assessment) and callable(s.score_assessment)
+          assert callable(r.markdown_report) and callable(r.html_report)
           PY
-          test -f examples/fictional-manufacturer.assessment.json
           eaims validate examples/fictional-manufacturer.assessment.json
-          eaims score examples/fictional-manufacturer.assessment.json >/tmp/legacy-score.json
-          eaims report examples/fictional-manufacturer.assessment.json --format markdown --output /tmp/legacy-report.md
-          test -s /tmp/legacy-score.json && test -s /tmp/legacy-report.md
-      - name: Repository hygiene gate
+          eaims score examples/fictional-manufacturer.assessment.json >/tmp/score.json
+          eaims report examples/fictional-manufacturer.assessment.json --format markdown --output /tmp/report.md
+          test -s /tmp/score.json && test -s /tmp/report.md
+      - name: Hygiene and commit
         shell: bash
         run: |
           set -euo pipefail
@@ -85,14 +77,8 @@ jobs:
           find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
           find . -type d -name '*.egg-info' -prune -exec rm -rf {} +
           test ! -e _integration
-          git status --short
-      - name: Commit controlled integration
-        shell: bash
-        run: |
-          set -euo pipefail
           git add -A
           git diff --cached --check
-          test -f src/eaims/scoring.py && test -f src/eaims/reporting.py
           ! git diff --cached --name-status | grep -E '^D[[:space:]]+src/eaims/(scoring|reporting)\.py$'
           git commit -m 'spec: integrate EAIMS 1.0 FC16 release candidate [materialized-fc16]' -m 'Controlled path-based integration preserving legacy public Python APIs.' -m 'Signed-off-by: Elias Naserkhaki <elias@eaims.org>'
           git push origin HEAD:release/eaims-1.0-rc1
