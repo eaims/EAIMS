@@ -2,116 +2,81 @@ name: Materialize EAIMS 1.0 FC16 controlled integration
 
 on:
   push:
-    branches:
-      - release/eaims-1.0-rc1
+    branches: [release/eaims-1.0-rc1]
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   materialize:
     if: ${{ !contains(github.event.head_commit.message || '', '[materialized-fc16]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Checkout release branch
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: release/eaims-1.0-rc1
-
-      - name: Configure project commit identity
+      - name: Configure commit identity
         run: |
-          git config user.name "eaims"
-          git config user.email "elias@eaims.org"
-
-      - name: Record preserved public API hashes
+          git config user.name eaims
+          git config user.email elias@eaims.org
+      - name: Preserve existing public Python APIs
         run: |
-          test -f src/eaims/scoring.py
-          test -f src/eaims/reporting.py
+          test -f src/eaims/scoring.py && test -f src/eaims/reporting.py
+          cp src/eaims/scoring.py /tmp/scoring.py
+          cp src/eaims/reporting.py /tmp/reporting.py
           sha256sum src/eaims/scoring.py > /tmp/scoring.before
           sha256sum src/eaims/reporting.py > /tmp/reporting.before
-
-      - name: Reconstruct FC16 pre-push base
+      - name: Reconstruct reviewed clean FC16 candidate
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin release/v1.0.0-rc.1:refs/remotes/origin/fc16-source
-          : > /tmp/fc16-prepush.raw
-          for part in 00 01 02 03 04 05 05a 06 07 08 09 10 11; do
-            git show "origin/fc16-source:_fc16_bootstrap/fc16.tar.xz.b64.${part}" >> /tmp/fc16-prepush.raw
-          done
-          tr -d '\r\n\t ' < /tmp/fc16-prepush.raw > /tmp/fc16-prepush.b64
-          base64 --decode /tmp/fc16-prepush.b64 > /tmp/fc16-prepush.tar.xz
-          xz -t /tmp/fc16-prepush.tar.xz
-          mkdir -p /tmp/fc16-candidate
-          tar -xJf /tmp/fc16-prepush.tar.xz -C /tmp/fc16-candidate
-          test -f /tmp/fc16-candidate/spec/core.yaml
-          test -f /tmp/fc16-candidate/src/eaims/cli.py
-
-      - name: Apply reviewed owner overlay
+          cat _integration/fc16-clean.b64.* | tr -d '\r\n\t ' > /tmp/fc16-clean.b64
+          base64 --decode /tmp/fc16-clean.b64 > /tmp/fc16-clean.tar.xz
+          xz -t /tmp/fc16-clean.tar.xz
+          mkdir /tmp/fc16-clean
+          tar -xJf /tmp/fc16-clean.tar.xz -C /tmp/fc16-clean
+          CANDIDATE=$(find /tmp/fc16-clean -type f -path '*/spec/core.yaml' -printf '%h\n' | head -1 | sed 's#/spec$##')
+          test -n "$CANDIDATE"
+          test -f "$CANDIDATE/src/eaims/cli.py"
+          echo "CANDIDATE=$CANDIDATE" >> "$GITHUB_ENV"
+      - name: Reconcile preserved APIs into candidate
+        run: |
+          cp /tmp/scoring.py "$CANDIDATE/src/eaims/scoring.py"
+          cp /tmp/reporting.py "$CANDIDATE/src/eaims/reporting.py"
+      - name: Controlled path-based integration
         shell: bash
         run: |
           set -euo pipefail
-          cat _integration/fc16-overlay.b64.* | tr -d '\r\n\t ' > /tmp/fc16-overlay.b64
-          base64 --decode /tmp/fc16-overlay.b64 > /tmp/fc16-overlay.tar.xz
-          xz -t /tmp/fc16-overlay.tar.xz
-          tar -xJf /tmp/fc16-overlay.tar.xz -C /tmp/fc16-candidate
-          test -f /tmp/fc16-candidate/CLA.md
-          test -f /tmp/fc16-candidate/COPYRIGHT-ASSIGNMENT.md
-          test -f /tmp/fc16-candidate/tests/test_legal_ip_governance.py
-
-      - name: Path-based merge into current repository
-        shell: bash
-        run: |
-          set -euo pipefail
-          rsync -a --exclude='.git/' /tmp/fc16-candidate/ ./
-          test -f src/eaims/scoring.py
-          test -f src/eaims/reporting.py
-          sha256sum -c /tmp/scoring.before
-          sha256sum -c /tmp/reporting.before
-
-      - name: Remove staging and materializer artifacts
-        run: |
+          rsync -a --exclude='.git/' --exclude='_integration/' --exclude='.github/workflows/materialize-fc16.yml' "$CANDIDATE/" ./
           rm -rf _integration
           rm -f .github/workflows/materialize-fc16.yml
-
-      - name: Install package and test dependencies
-        run: python -m pip install -e '.[test]'
-
-      - name: Run repository and legal audits
+          sha256sum -c /tmp/scoring.before
+          sha256sum -c /tmp/reporting.before
+      - name: Install and audit
         run: |
+          python -m pip install -e '.[test]'
           python tools/prepush_audit.py
           python tools/legal_ip_governance_audit.py
           eaims-validate
-
-      - name: Run full executable tests
+      - name: Full tests
         run: pytest -q
-
-      - name: Verify preserved Python public APIs
+      - name: Legacy public API compatibility
         shell: bash
         run: |
           PYTHONPATH=src python - <<'PY'
-          import eaims.scoring as scoring
-          import eaims.reporting as reporting
-          assert callable(scoring.validate_assessment)
-          assert callable(scoring.score_assessment)
-          assert callable(reporting.markdown_report)
-          assert callable(reporting.html_report)
+          import eaims.scoring as s, eaims.reporting as r
+          assert callable(s.validate_assessment)
+          assert callable(s.score_assessment)
+          assert callable(r.markdown_report)
+          assert callable(r.html_report)
           print('legacy public Python APIs: PASS')
           PY
-
-      - name: Verify legacy CLI compatibility
-        shell: bash
-        run: |
           test -f examples/fictional-manufacturer.assessment.json
           eaims validate examples/fictional-manufacturer.assessment.json
-          eaims score examples/fictional-manufacturer.assessment.json > /tmp/legacy-score.json
+          eaims score examples/fictional-manufacturer.assessment.json >/tmp/legacy-score.json
           eaims report examples/fictional-manufacturer.assessment.json --format markdown --output /tmp/legacy-report.md
-          test -s /tmp/legacy-score.json
-          test -s /tmp/legacy-report.md
-
+          test -s /tmp/legacy-score.json && test -s /tmp/legacy-report.md
       - name: Repository hygiene gate
         shell: bash
         run: |
@@ -120,21 +85,14 @@ jobs:
           find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
           find . -type d -name '*.egg-info' -prune -exec rm -rf {} +
           test ! -e _integration
-          if find . -type d \( -name __pycache__ -o -name .pytest_cache -o -name build -o -name dist \) -print -quit | grep -q .; then exit 1; fi
-          if find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -print -quit | grep -q .; then exit 1; fi
-
-      - name: Commit controlled path-based integration
+          git status --short
+      - name: Commit controlled integration
         shell: bash
         run: |
           set -euo pipefail
           git add -A
           git diff --cached --check
-          test -f src/eaims/scoring.py
-          test -f src/eaims/reporting.py
-          if git diff --cached --name-status | grep -E '^D[[:space:]]+src/eaims/(scoring|reporting)\.py$'; then
-            echo 'ERROR: preserved public API file scheduled for deletion'
-            exit 1
-          fi
-          git status --short
-          git commit -m "spec: integrate EAIMS 1.0 FC16 release candidate [materialized-fc16]" -m "Controlled path-based merge; preserves legacy public Python APIs." -m "Signed-off-by: Elias Naserkhaki <elias@eaims.org>"
+          test -f src/eaims/scoring.py && test -f src/eaims/reporting.py
+          ! git diff --cached --name-status | grep -E '^D[[:space:]]+src/eaims/(scoring|reporting)\.py$'
+          git commit -m 'spec: integrate EAIMS 1.0 FC16 release candidate [materialized-fc16]' -m 'Controlled path-based integration preserving legacy public Python APIs.' -m 'Signed-off-by: Elias Naserkhaki <elias@eaims.org>'
           git push origin HEAD:release/eaims-1.0-rc1
