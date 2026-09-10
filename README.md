@@ -2,7 +2,7 @@
 
 > An open, vendor-neutral, evidence-grounded and executable framework for assessing and improving enterprise AI maturity while governing value, autonomy, accountability and operational risk.
 
-**Version:** 1.0.0
+**Version:** 1.0.1
 **Status:** Final release
 **Documentation and specification content:** CC BY 4.0
 **Code, tests, workflows and JSON Schemas:** Apache-2.0
@@ -58,11 +58,15 @@ These cases are synthetic and are not presented as customer deployments or empir
 The v1 validator uses `Dockerfile.validator` and runs with a least-privilege container profile:
 
 ```bash
-docker build -f Dockerfile.validator -t eaims/validator:1.0.0 .
+docker build -f Dockerfile.validator -t eaims/validator:1.0.1 .
 docker compose run --rm validator
 ```
 
 Hosted CI validates the Docker image and both Compose configurations at runtime. See `docs/PACKAGING-AND-RUNTIME-VALIDATION.md` and `VALIDATION.md` for the validation boundary.
+
+## Patch release 1.0.1
+
+This patch hardens input validation and review integrity, fixes installed-package review execution, and adds dedicated v1 schemas and a complete assessment guide. The normative model and three synthetic reference results remain unchanged. See [release notes](RELEASE-NOTES-v1.0.1.md).
 
 ## Validation status
 
@@ -70,11 +74,11 @@ EAIMS 1.0 is **field-informed rather than field-validated**. Its design incorpor
 
 The `review/` directory provides structured adversarial questions, reviewer guidance, feedback/resolution schemas and executable BLOCKER/MAJOR exit semantics. No claim is made that independent external review has already been completed.
 
-The final release was promoted from `v1.0.0-rc.1` only after hosted validation passed on `main`, including 186 executable tests, wheel build/install validation, dependency vulnerability auditing, CycloneDX SBOM generation, Docker runtime validation, Docker Compose runtime validation and all three synthetic reference implementations.
+The original 1.0.0 release was promoted from `v1.0.0-rc.1` only after hosted validation passed on `main`, including 186 executable tests, wheel build/install validation, dependency vulnerability auditing, CycloneDX SBOM generation, Docker runtime validation, Docker Compose runtime validation and all three synthetic reference implementations.
 
 ## Specification provenance
 
-The final public release version is **1.0.0**. The internal normative specification provenance identifier **`1.0.0-fc16`** is intentionally retained in the frozen normative source and generated reference evidence. This preserves traceability to the exact freeze-candidate content that passed RC1 validation; it does not mean the public release remains a release candidate.
+The current public release version is **1.0.1**. The internal normative specification provenance identifier **`1.0.0-fc16`** is intentionally retained in the frozen normative source and generated reference evidence. This preserves traceability to the exact freeze-candidate content that passed RC1 validation; it does not mean the public release remains a release candidate.
 
 ## Project status and stewardship
 

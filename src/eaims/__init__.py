@@ -1,6 +1,6 @@
 """EAIMS executable reference package."""
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 SPEC_VERSION = "1.0.0-fc16"
 
 # Backward-compatible public API retained from v0.2.1.

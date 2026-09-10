@@ -37,6 +37,7 @@ jobs:
           python -m venv /tmp/eaims-wheel-venv
           /tmp/eaims-wheel-venv/bin/pip install dist/*.whl
           cd /tmp
+          /tmp/eaims-wheel-venv/bin/python -c "import eaims; from importlib.metadata import version; assert eaims.__version__ == version('eaims')"
           /tmp/eaims-wheel-venv/bin/eaims-validate
           /tmp/eaims-wheel-venv/bin/eaims validate-fixture "$GITHUB_WORKSPACE/reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml"
           /tmp/eaims-wheel-venv/bin/eaims assess "$GITHUB_WORKSPACE/reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml" --out /tmp/eaims-wheel-ri01
@@ -72,3 +73,54 @@ jobs:
         with:
           name: eaims-runtime-validation-evidence
           path: validation/runtime-ci/
+      - name: Preserve tested release wheel
+        uses: actions/upload-artifact@v4
+        with:
+          name: eaims-tested-wheel
+          path: dist/*.whl
+          if-no-files-found: error
+
+  release:
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, '[release]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    concurrency:
+      group: eaims-release-publication
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: eaims-tested-wheel
+          path: dist
+      - name: Compute wheel checksums
+        working-directory: dist
+        run: sha256sum *.whl > SHA256SUMS
+      - name: Publish validated version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          release_version="$(cat VERSION)"
+          [[ "$release_version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          release_tag="v${release_version}"
+          release_notes="RELEASE-NOTES-${release_tag}.md"
+          test -f "$release_notes"
+          test -f "dist/eaims-${release_version}-py3-none-any.whl"
+          if existing_sha="$(gh api "repos/${GH_REPO}/git/ref/tags/${release_tag}" --jq '.object.sha' 2>/dev/null)"; then
+            test "$existing_sha" = "$GITHUB_SHA"
+          fi
+          if gh release view "$release_tag" >/dev/null 2>&1; then
+            echo "Release already exists at this validated commit."
+            exit 0
+          fi
+          gh release create "$release_tag" \
+            --target "$GITHUB_SHA" \
+            --title "EAIMS ${release_version}" \
+            --notes-file "$release_notes" \
+            "dist/eaims-${release_version}-py3-none-any.whl" dist/SHA256SUMS

@@ -8,8 +8,8 @@ if str(ROOT) not in sys.path:
 errors=[]
 warnings=[]
 EXPECTED_SPEC='1.0.0-fc16'
-EXPECTED_PACKAGE='1.0.0'
-EXPECTED_RELEASE='1.0.0'
+EXPECTED_PACKAGE='1.0.1'
+EXPECTED_RELEASE='1.0.1'
 
 class DupCheckLoader(yaml.SafeLoader):
     pass
@@ -40,6 +40,16 @@ pyproject=(ROOT/'pyproject.toml').read_text()
 if f'version = "{EXPECTED_PACKAGE}"' not in pyproject: errors.append('unexpected package version')
 if 'name = "eaims"' not in pyproject: errors.append('package identity is not eaims')
 if 'name = "Elias Naserkhaki"' not in pyproject: errors.append('project author metadata is not Elias Naserkhaki')
+
+package_init=(ROOT/'src/eaims/__init__.py').read_text(encoding='utf-8')
+if f'__version__ = "{EXPECTED_PACKAGE}"' not in package_init:
+    errors.append('runtime package version mismatch')
+for rel in ('docker-compose.yml', 'docker-compose.reference.yml'):
+    compose=yaml.safe_load((ROOT/rel).read_text(encoding='utf-8'))
+    for service in compose.get('services', {}).values():
+        image=service.get('image', '')
+        if image.startswith('eaims/validator:') and image != f'eaims/validator:{EXPECTED_PACKAGE}':
+            errors.append(f'{rel}: validator image version mismatch')
 
 version_file=(ROOT/'VERSION').read_text(encoding='utf-8').strip()
 if version_file!=EXPECTED_RELEASE: errors.append(f'unexpected VERSION file: {version_file}')

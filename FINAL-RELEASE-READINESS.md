@@ -1,4 +1,12 @@
-# EAIMS 1.0 Final Release Readiness
+# EAIMS Release Readiness
+
+## Patch release 1.0.1
+
+The owner requested completion and publication of the validated hardening work. This patch updates public package/runtime/citation/container metadata while retaining the frozen `1.0.0-fc16` normative source and the original 1.0.0 release.
+
+The release job runs only after successful validation of an explicitly marked `[release]` commit on `main`. It publishes a versioned GitHub release and the tested wheel with SHA-256 checksums. Existing releases are never overwritten. See [1.0.1 release notes](RELEASE-NOTES-v1.0.1.md).
+
+## Historical 1.0.0 promotion record
 
 This record documents owner-authorized promotion from `v1.0.0-rc.1` to the final `v1.0.0` release line.
 

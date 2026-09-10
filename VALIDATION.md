@@ -1,4 +1,4 @@
-# EAIMS 1.0.0 — Validation Status
+# EAIMS 1.0.1 — Validation Status
 
 ## Demonstrated for the final release line
 
@@ -14,7 +14,13 @@
 - Machine-derived G2/G3 findings take precedence over contradictory manual PASS assertions for modeled machine-checkable controls.
 - Legacy public Python APIs `eaims.scoring` and `eaims.reporting` remain available.
 
-## Hosted release validation
+## Patch 1.0.1 validation
+
+The input/review hardening changes passed 229 tests, the repository audit and canonical validation. All three reference outputs matched the existing golden JSON objects exactly. Installed-wheel assessment and review success/unmet-gate paths passed outside the repository. Hosted validation passed on the merged hardening commit: [run 34459206026](https://github.com/eaims/EAIMS/actions/runs/34459206026).
+
+Release packaging additionally checks that VERSION, Python package metadata, runtime version, citation and container image versions agree. Publication is gated on successful CI for the exact release commit, including wheel installation, dependency audit and Docker/Compose execution.
+
+## Original 1.0.0 hosted release validation
 
 The RC1 source was validated on GitHub-hosted CI before promotion, and the merged `main` commit was validated again successfully.
 
@@ -95,4 +101,4 @@ These repository checks are not a substitute for jurisdiction-specific legal adv
 
 ## Version and provenance
 
-The public release version is **1.0.0**. The frozen normative source retains the internal provenance identifier **`1.0.0-fc16`** so that generated evidence and the exact content validated during RC1 remain traceable. No substantive normative change is implied by promotion from the validated RC1 content to the final public version.
+The public release version is **1.0.1**. The frozen normative source retains the internal provenance identifier **`1.0.0-fc16`** so that generated evidence and the exact content validated during RC1 remain traceable. No substantive normative change is implied by promotion from the validated RC1 content to the final public version.
