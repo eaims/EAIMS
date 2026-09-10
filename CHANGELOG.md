@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — v1 input and review hardening
+
+- Reject empty evidence collection times, ambiguous input types, non-finite numbers and duplicate YAML mapping keys before assessment.
+- Add v1 fixture and result schemas while preserving legacy contracts and existing valid reference results.
+- Reject duplicate review/finding identities; preserve the original ledger when applying resolutions.
+- Resolve review schemas through the shared installed-package data root.
+- Add optional `review summarize --fail-on-unmet` for automation with explicit exit semantics.
+- Add a v1 quickstart and clearly label legacy questionnaire, scoring and browser resources.
+- Extend regression coverage and installed-wheel review checks.
+
+These changes do not alter the frozen normative specification or retroactively change the published 1.0.0 release evidence.
+
 ## 0.2.1 - Research Baseline
 
 - Established the immutable baseline for the first peer-reviewed EAIMS paper

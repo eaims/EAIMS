@@ -1,5 +1,7 @@
 # EAIMS Assessment Questionnaire
 
+> **Legacy v0.2.x resource.** This file does not define the EAIMS 1.0 workflow. Start with the [EAIMS 1.0 assessment guide](../docs/ASSESSMENT-V1.md).
+
 ## Q001 — AI vision and strategic alignment
 
 Which statement best describes the organization's current capability for ai vision and strategic alignment?

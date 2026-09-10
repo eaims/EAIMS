@@ -6,6 +6,7 @@ from pathlib import Path
 from .paths import ROOT
 from typing import Any
 import json, math, yaml
+from .input_validation import validate_input_structure
 
 
 LEVEL_NUM = {f"L{i}": i for i in range(1,6)}
@@ -62,7 +63,9 @@ def validate_evidence(e: dict[str, Any], cutoff: str | None = None) -> list[str]
     if e.get("nature") not in {"SUPPORTING","COUNTER","ABSENCE","CONTEXT"}: errors.append("invalid:nature")
     if not str(e.get("source", "")).strip(): errors.append("invalid:source")
     collected = e.get("collected_at")
-    if collected:
+    if not isinstance(collected, str) or not collected.strip():
+        errors.append("invalid:collected_at")
+    else:
         try:
             collected_dt = _parse_timestamp(collected)
         except (TypeError, ValueError):
@@ -494,7 +497,9 @@ def validate_fixture(fixture: dict[str, Any]) -> list[str]:
     unknown canonical references, broken evidence references, invalid assessment scope,
     and malformed timestamps are rejected before any maturity result is produced.
     """
-    errors: list[str] = []
+    errors = validate_input_structure(fixture)
+    if errors:
+        return errors
     if not isinstance(fixture, dict):
         return ["fixture must be an object"]
     assessment = fixture.get("assessment")

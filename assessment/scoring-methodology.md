@@ -1,5 +1,7 @@
 # EAIMS v0.2 Scoring Methodology
 
+> **Legacy v0.2.x resource.** This file does not define the EAIMS 1.0 workflow. Start with the [EAIMS 1.0 assessment guide](../docs/ASSESSMENT-V1.md).
+
 ## 1. Capability scores
 
 Each of 27 capabilities receives an integer score from 0 to 5 using the highest maturity anchor fully supported by evidence. If evidence is incomplete, select the lower defensible score. In executable conformance, Level 3–5 scores require at least one evidence identifier.

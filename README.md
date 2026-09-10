@@ -24,6 +24,12 @@ EAIMS 1.0 moves the project from a research-baseline maturity model toward an ex
 
 A central design principle is that AI maturity is not maximum automation. Mature organizations determine where automation creates value, where human oversight is necessary, and where accountability must remain human.
 
+## Start with EAIMS 1.0
+
+Follow the [v1 assessment guide](docs/ASSESSMENT-V1.md) for installation, a runnable example, output interpretation and review automation. The reference example detects a synthetic agent exceeding its financial authority; the report identifies the breached gates so the assessor can define a corrective action.
+
+The browser interface in `site/`, the questionnaire in `assessment/`, and the `validate`, `score`, `report` commands are **legacy v0.2.x** resources. Use `validate-fixture` and `assess` for v1.0; do not relabel legacy scores as v1 results.
+
 ## Executable reference implementation
 
 The Python package validates structured assessments, evaluates evidence and requirements, applies anchor eligibility and gates, produces deterministic results and reports, and supports structured review operations.

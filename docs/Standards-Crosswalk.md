@@ -1,5 +1,7 @@
 # Independent Conceptual Crosswalk — EAIMS v0.2
 
+> **Legacy v0.2.x resource.** This file does not define the EAIMS 1.0 workflow. Start with the [EAIMS 1.0 assessment guide](../docs/ASSESSMENT-V1.md).
+
 This is a high-level analytical aid based on publicly identifiable themes. It does not reproduce protected standards text and does not establish alignment, equivalence, certification, endorsement, or legal compliance. Obtain and use authoritative standards through their publishers.
 
 | EAIMS area | NIST AI RMF theme | ISO/IEC 42001 public subject | Other public reference | Relationship |
