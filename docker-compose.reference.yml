@@ -25,14 +25,11 @@ services:
         eaims assess reference-implementations/ri-03-high-impact-decision-support/input/fixture.yaml --out /runs/ri-03
     volumes:
       - ./reference-implementations:/app/reference-implementations:ro
-      - eaims_runs:/runs
     read_only: true
     tmpfs:
       - /tmp:size=16m,mode=1777
+      - /runs:size=64m,mode=1777
     security_opt:
       - no-new-privileges:true
     cap_drop:
       - ALL
-
-volumes:
-  eaims_runs:
