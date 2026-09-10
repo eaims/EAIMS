@@ -1,0 +1,83 @@
+spec_version: 1.0.0-fc16
+status: synthetic_worked_cases
+disclaimer: These cases demonstrate workflow mechanics only and do not establish inter-rater
+  reliability.
+cases:
+- case_id: MA-01-AGREEMENT
+  description: Two independent assessors agree a critical ownership requirement is
+    satisfied.
+  records:
+  - requirement_id: EAIMS-OWN-001
+    assessor_id: A-01
+    decision: SATISFIED
+    rationale: Executive accountability record names the governing authority.
+    evidence_refs:
+    - EVD-GOV-001
+    assessed_at: '2026-09-09T06:00:00Z'
+    independence_class: INTERNAL_INDEPENDENT
+  - requirement_id: EAIMS-OWN-001
+    assessor_id: A-02
+    decision: SATISFIED
+    rationale: Independent review confirms the same named authority and decision rights.
+    evidence_refs:
+    - EVD-GOV-001
+    - EVD-GOV-002
+    assessed_at: '2026-09-09T06:05:00Z'
+    independence_class: EXTERNAL
+  expected_disagreement_class: NONE
+- case_id: MA-02-MATERIAL-DISAGREEMENT
+  description: Assessors disagree on intervention feasibility; no averaging is permitted.
+  records:
+  - requirement_id: EAIMS-HAB-008
+    assessor_id: A-01
+    decision: SATISFIED
+    rationale: Documented staffing model appears adequate for expected review load.
+    evidence_refs:
+    - EVD-HAB-010
+    assessed_at: '2026-09-09T06:10:00Z'
+    independence_class: INTERNAL_INDEPENDENT
+  - requirement_id: EAIMS-HAB-008
+    assessor_id: A-02
+    decision: NOT_SATISFIED
+    rationale: Observed queue volume exceeds reviewer intervention capacity.
+    evidence_refs:
+    - EVD-HAB-010
+    - EVD-HAB-011
+    assessed_at: '2026-09-09T06:12:00Z'
+    independence_class: EXTERNAL
+  expected_disagreement_class: MATERIAL
+  resolution:
+    requirement_id: EAIMS-HAB-008
+    resolver_id: R-01
+    final_decision: NOT_SATISFIED
+    rationale: Operational throughput evidence outweighs the staffing-plan assertion.
+    evidence_refs:
+    - EVD-HAB-010
+    - EVD-HAB-011
+    considered_assessor_ids:
+    - A-01
+    - A-02
+    resolved_at: '2026-09-09T06:30:00Z'
+- case_id: MA-03-APPLICABILITY-DISAGREEMENT
+  description: One assessor marks a requirement N/A while another finds it applicable.
+  records:
+  - requirement_id: EAIMS-OWN-003
+    assessor_id: A-01
+    decision: NOT_APPLICABLE
+    rationale: Assessor believes no material unresolved risk exists.
+    applicability_rationale: No material unresolved risks identified in reviewed sample.
+    evidence_refs:
+    - EVD-RSK-020
+    assessed_at: '2026-09-09T06:20:00Z'
+    independence_class: INTERNAL_INDEPENDENT
+  - requirement_id: EAIMS-OWN-003
+    assessor_id: A-02
+    decision: NOT_SATISFIED
+    rationale: Open high-impact risk register item requires escalation but no authorized
+      path is defined.
+    evidence_refs:
+    - EVD-RSK-020
+    - EVD-RSK-021
+    assessed_at: '2026-09-09T06:22:00Z'
+    independence_class: EXTERNAL
+  expected_disagreement_class: APPLICABILITY

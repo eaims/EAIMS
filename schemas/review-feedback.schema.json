@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EAIMS RC Review Feedback",
+  "type": "object",
+  "required": [
+    "review_id",
+    "reviewer_id",
+    "independence_class",
+    "reviewed_version",
+    "reviewed_commit_or_artifact_hash",
+    "reviewed_at",
+    "domains_reviewed",
+    "limitations_acknowledged",
+    "overall_decision",
+    "findings",
+    "affiliation_disclosure",
+    "conflict_of_interest",
+    "prior_material_contribution",
+    "commercial_relationship"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_id": {
+      "type": "string"
+    },
+    "independence_class": {
+      "enum": [
+        "EXTERNAL_INDEPENDENT",
+        "INTERNAL_INDEPENDENT"
+      ]
+    },
+    "reviewed_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_commit_or_artifact_hash": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "domains_reviewed": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "ARCH",
+          "MAT",
+          "EVD",
+          "GOV",
+          "RSK",
+          "EXE",
+          "ENT",
+          "RES"
+        ]
+      }
+    },
+    "limitations_acknowledged": {
+      "const": true
+    },
+    "overall_decision": {
+      "enum": [
+        "ACCEPT_AS_IS",
+        "ACCEPT_WITH_MINOR_CHANGES",
+        "REVISE_AND_REREVIEW",
+        "NOT_READY_FOR_RC"
+      ]
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "finding_id",
+          "domain",
+          "severity",
+          "title",
+          "rationale",
+          "evidence_or_reference",
+          "recommended_action"
+        ],
+        "properties": {
+          "finding_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "domain": {
+            "enum": [
+              "ARCH",
+              "MAT",
+              "EVD",
+              "GOV",
+              "RSK",
+              "EXE",
+              "ENT",
+              "RES"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "BLOCKER",
+              "MAJOR",
+              "MODERATE",
+              "MINOR",
+              "EDITORIAL"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_or_reference": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "recommended_action": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "affiliation_disclosure": {
+      "type": "string"
+    },
+    "conflict_of_interest": {
+      "type": "string"
+    },
+    "prior_material_contribution": {
+      "type": "boolean"
+    },
+    "commercial_relationship": {
+      "type": "boolean"
+    },
+    "additional_comments": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

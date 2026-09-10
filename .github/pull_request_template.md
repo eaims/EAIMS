@@ -1,20 +1,34 @@
-## Summary
+## EAIMS change summary
+
+Describe the change and the EAIMS requirement/capability/rule IDs affected.
 
 ## Change type
 
-- [ ] Documentation or assessment content
-- [ ] Capability model
-- [ ] Industry profile
-- [ ] Schema, workflow, or tooling
-- [ ] Governance or legal metadata
+- [ ] Normative specification
+- [ ] Non-normative documentation
+- [ ] Executable engine
+- [ ] Schema
+- [ ] Test / reference implementation
+- [ ] Research / validation
+- [ ] Packaging / CI
 
-## Evidence and compatibility impact
+## Traceability
 
-## Conflict-of-interest disclosure
+List requirement IDs, capability IDs, gate IDs, consistency-rule IDs, or RFC/issue references.
 
-## Rights checklist
+## Validation
 
-- [ ] I have the right to submit this contribution
-- [ ] Every commit includes a DCO `Signed-off-by` line
-- [ ] Third-party and material AI-assisted content is disclosed
-- [ ] No confidential or proprietary standards content is included
+- [ ] Canonical integrity validator passes
+- [ ] Executable tests pass
+- [ ] Golden reference regressions pass or intentional changes are explained
+- [ ] New/changed critical SHALL/SHALL_NOT requirements have verification disposition
+- [ ] Claim boundary and validation language remain accurate
+- [ ] No private enterprise data, credentials, or confidential reviewer material is included
+
+## Breaking-change review
+
+Explain any scoring, schema, anchor, requirement, or conformance-semantic change. If none, write `None`.
+
+## DCO
+
+- [ ] I certify that this contribution can be submitted under the repository's DCO and licensing policies.

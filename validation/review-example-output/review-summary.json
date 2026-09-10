@@ -1,0 +1,27 @@
+{
+  "reviews": 1,
+  "findings": 1,
+  "findings_by_severity": {
+    "BLOCKER": 0,
+    "MAJOR": 1,
+    "MODERATE": 0,
+    "MINOR": 0,
+    "EDITORIAL": 0
+  },
+  "findings_by_domain": {
+    "MAT": 1
+  },
+  "resolution_status": {
+    "RESOLVED": 1
+  },
+  "rc_gate": {
+    "independent_review_records": 1,
+    "open_blockers": 0,
+    "unresolved_majors": 0,
+    "not_ready_dispositions": 0,
+    "rereview_dispositions": 0,
+    "review_completed_for_rc": true,
+    "status": "RC_REVIEW_EXIT_CRITERIA_MET",
+    "reasons": []
+  }
+}

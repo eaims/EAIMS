@@ -1,0 +1,353 @@
+assessment:
+  assessment_id: ASM-RI03-001
+  assessment_type: TARGETED
+  evidence_cutoff_time: '2026-09-09T08:00:00Z'
+system:
+  system_id: SYS-RI03-001
+  name: Synthetic High-Impact Employment Decision Support
+  material: true
+  agentic: false
+  impact: I3
+  approved_autonomy: A2
+  observed_autonomy: A2
+risk_profile:
+  impact: I3
+  autonomy: A2
+  reversibility: R3
+  scale: S2
+  velocity: V1
+  detectability: D2
+  likelihood: L2
+  uncertainty: moderate
+decision_policy:
+  human_reserved_decisions:
+  - final_adverse_employment_decision
+  final_authority: HUMAN
+  recourse_available: true
+high_impact_controls:
+  impact_assessment: impact-assessment-v2
+  hab_defined: hab-v3
+  human_competence: oversight-competence-record
+  intervention_feasible: true
+  adverse_outcome_evaluation: adverse-outcome-suite-v4
+  residual_risk_acceptance: risk-acceptance-2026-09
+  enhanced_monitoring: adverse-outcome-monitoring-v2
+  independent_challenge: independent-review-2026-09
+  independent_challenge_applicable: true
+decision_events:
+- event_id: EVT-RI03-001
+  occurred_at: '2026-09-09T07:00:00Z'
+  decision: shortlist_recommendation
+  executed_by: AI
+- event_id: EVT-RI03-002
+  occurred_at: '2026-09-09T07:05:00Z'
+  decision: final_adverse_employment_decision
+  executed_by: AI
+  note: injected failure; HR decision improperly executed by AI
+capabilities:
+- capability_id: OPS-02
+  anchor_observed:
+    L1: true
+    L2: true
+    L3: true
+    L4: false
+    L5: false
+- capability_id: OPS-03
+  anchor_observed:
+    L1: true
+    L2: true
+    L3: true
+    L4: true
+    L5: false
+- capability_id: GOV-02
+  anchor_observed:
+    L1: true
+    L2: true
+    L3: true
+    L4: false
+    L5: false
+- capability_id: GOV-03
+  anchor_observed:
+    L1: true
+    L2: true
+    L3: true
+    L4: false
+    L5: false
+- capability_id: GOV-05
+  anchor_observed:
+    L1: true
+    L2: true
+    L3: true
+    L4: false
+    L5: false
+- capability_id: PEO-03
+  anchor_observed:
+    L1: true
+    L2: true
+    L3: true
+    L4: false
+    L5: false
+requirement_results:
+- requirement_id: EAIMS-EVL-001
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-001
+- requirement_id: EAIMS-EVL-002
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-002
+- requirement_id: EAIMS-EVL-003
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-002
+- requirement_id: EAIMS-EVL-006
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-003
+- requirement_id: EAIMS-EVL-007
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-003
+- requirement_id: EAIMS-MON-001
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-004
+- requirement_id: EAIMS-MON-005
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-004
+- requirement_id: EAIMS-MON-006
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-004
+- requirement_id: EAIMS-RSK-001
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-005
+- requirement_id: EAIMS-RSK-002
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-005
+- requirement_id: EAIMS-RSK-003
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-005
+- requirement_id: EAIMS-RSK-006
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-005
+- requirement_id: EAIMS-HAB-001
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-006
+- requirement_id: EAIMS-HAB-002
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-006
+- requirement_id: EAIMS-HAB-003
+  result: NOT_SATISFIED
+  evidence_refs:
+  - EVD-RI03-010
+- requirement_id: EAIMS-HAB-004
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-006
+- requirement_id: EAIMS-HAB-005
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-006
+- requirement_id: EAIMS-HAB-006
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-006
+- requirement_id: EAIMS-HAB-007
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-007
+- requirement_id: EAIMS-HAB-008
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-008
+- requirement_id: EAIMS-HAB-009
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-009
+- requirement_id: EAIMS-RAI-001
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-011
+- requirement_id: EAIMS-RAI-002
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-011
+- requirement_id: EAIMS-RAI-004
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-009
+- requirement_id: EAIMS-RAI-005
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-011
+- requirement_id: EAIMS-RAI-007
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-012
+- requirement_id: EAIMS-HAW-001
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-006
+- requirement_id: EAIMS-HAW-002
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-008
+- requirement_id: EAIMS-HAW-005
+  result: NOT_SATISFIED
+  evidence_refs:
+  - EVD-RI03-010
+- requirement_id: EAIMS-HAW-006
+  result: SATISFIED
+  evidence_refs:
+  - EVD-RI03-008
+evidence:
+- evidence_id: EVD-RI03-001
+  class: E2
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: evaluation-criteria.yaml
+  owner: assurance-lead
+  collected_at: '2026-09-09T07:30:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-002
+  class: E3
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: predeployment-evaluation-run.json
+  owner: assurance-lead
+  collected_at: '2026-09-09T07:35:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-003
+  class: E3
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: adverse-outcome-evaluation.json
+  owner: assurance-lead
+  collected_at: '2026-09-09T07:40:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-004
+  class: E3
+  confidence: C3
+  validity: VALID
+  nature: SUPPORTING
+  source: adverse-outcome-monitoring.json
+  owner: operations
+  collected_at: '2026-09-09T07:15:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-005
+  class: E2
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: impact-risk-assessment.yaml
+  owner: risk-owner
+  collected_at: '2026-09-09T07:20:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-006
+  class: E2
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: human-accountability-boundary.yaml
+  owner: business-owner
+  collected_at: '2026-09-09T07:22:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-007
+  class: E2
+  confidence: C3
+  validity: VALID
+  nature: SUPPORTING
+  source: reviewer-competence-record.yaml
+  owner: hr-operations
+  collected_at: '2026-09-09T07:24:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-008
+  class: E3
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: intervention-capacity-test.json
+  owner: hr-operations
+  collected_at: '2026-09-09T07:55:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-009
+  class: E2
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: recourse-procedure.yaml
+  owner: hr-operations
+  collected_at: '2026-09-09T07:26:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-010
+  class: E3
+  confidence: C4
+  validity: VALID
+  nature: COUNTER
+  source: injected-human-reserved-breach.json
+  owner: assessor
+  collected_at: '2026-09-09T07:10:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-011
+  class: E2
+  confidence: C3
+  validity: VALID
+  nature: SUPPORTING
+  source: responsible-ai-impact-review.yaml
+  owner: risk-owner
+  collected_at: '2026-09-09T07:28:00Z'
+  retained_operationally: true
+- evidence_id: EVD-RI03-012
+  class: E2
+  confidence: C4
+  validity: VALID
+  nature: SUPPORTING
+  source: residual-impact-acceptance.yaml
+  owner: risk-owner
+  collected_at: '2026-09-09T07:29:00Z'
+  retained_operationally: true
+gate_inputs:
+  G0-01: PASS
+  G0-02: PASS
+  G0-03: PASS
+  G0-04: PASS
+  G0-05: PASS
+  G0-06: PASS
+  G0-07: PASS
+  G0-08: PASS
+  G0-09: PASS
+  G0-10: PASS
+  G1-01: PASS
+  G1-02: PASS
+  G1-03: PASS
+  G1-04: PASS
+  G1-05: PASS
+  G1-06: PASS
+  G2-01: PASS
+  G2-02: PASS
+  G2-03: PASS
+  G2-04: PASS
+  G2-05: PASS
+  G2-06: PASS
+  G2-07: PASS
+  G2-08: PASS
+  G2-09: PASS
+  G2-10: PASS
+consistency_context:
+  human_reserved: true
+  ai_final_authority: false
+  approved_autonomy: A2
+  observed_autonomy: A2
+  human_oversight_required: true
+  intervention_capacity_feasible: true

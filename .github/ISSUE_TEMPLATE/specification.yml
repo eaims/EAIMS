@@ -1,0 +1,29 @@
+name: Specification issue / RFC candidate
+description: Report ambiguity, contradiction, gap, overlap, or a proposed normative improvement.
+title: "[SPEC] "
+labels: ["specification"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Identify the requirement, capability, anchor, gate, or rule when possible.
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / scenario
+      description: Provide a reproducible example, counter-example, field observation, or reference implementation.
+    validations: {required: true}
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Optional proposed wording or rule change.
+  - type: checkboxes
+    id: claims
+    attributes:
+      label: Disclosure
+      options:
+        - label: I have removed confidential or identifying enterprise information.
+          required: true

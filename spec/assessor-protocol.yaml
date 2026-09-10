@@ -1,0 +1,1374 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate_fc16
+critical_mv3_mv4_count: 47
+protocol:
+- requirement_id: EAIMS-OWN-001
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Enterprise AI accountability shall be assigned to a named executive role or governing
+    authority.'
+  minimum_evidence_types: &id001
+  - governance_record
+  - decision_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-OWN-003
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Unresolved material AI risks shall have a documented escalation path to an authorized
+    decision-maker.'
+  minimum_evidence_types: *id001
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-OWN-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Acceptance of material residual AI risk shall be traceable to a named authority
+    with appropriate decision rights.'
+  minimum_evidence_types: *id001
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-PIL-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material pilots shall classify applicable impact, risk, and autonomy before material
+    deployment or scale.'
+  minimum_evidence_types: &id002
+  - pilot_record
+  - decision_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-PIL-006
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material pilot decisions subject to human accountability requirements shall define
+    the applicable Human Accountability Boundary.'
+  minimum_evidence_types: *id002
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-PIL-009
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material scale decisions shall be supported by retained evidence.'
+  minimum_evidence_types: *id002
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-DGO-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Authority to use material data for the intended AI purpose shall be demonstrable.'
+  minimum_evidence_types:
+  - data_governance_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-DRA-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Applicable licensing, contractual, legal, or policy restrictions on material data
+    use shall be recorded.'
+  minimum_evidence_types: &id003
+  - data_rights_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-DRA-004
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material reuse of sensitive data outside its approved purpose shall require explicit
+    authorization.'
+  minimum_evidence_types: *id003
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-MSP-007
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material provider data-processing boundaries and relevant usage conditions shall
+    be recorded.'
+  minimum_evidence_types:
+  - sourcing_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-LCM-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Production deployment of material AI systems shall meet defined approval criteria.'
+  minimum_evidence_types: &id004
+  - lifecycle_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-LCM-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    High-risk material changes shall have appropriate rollback, recovery, or suspension
+    considerations before release.'
+  minimum_evidence_types: *id004
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-EVL-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material AI systems shall undergo appropriate evaluation before material deployment
+    or scale.'
+  minimum_evidence_types: &id005
+  - evaluation_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-EVL-003
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Evaluation shall be fit for the intended system context and shall not rely solely
+    on generic model benchmarks.'
+  minimum_evidence_types: *id005
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-EVL-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material agentic systems shall evaluate tool use and action behavior appropriate
+    to their authority.'
+  minimum_evidence_types: *id005
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-EVL-006
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    High-impact AI systems shall evaluate credible failure modes and adverse outcomes.'
+  minimum_evidence_types: *id005
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-EVL-008
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material acceptance thresholds shall be defined before the deployment or scale
+    decision they govern.'
+  minimum_evidence_types: *id005
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-MON-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    High-impact systems shall monitor indicators relevant to material adverse outcomes.'
+  minimum_evidence_types:
+  - monitoring_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-INC-001
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material AI systems shall have a documented incident reporting and escalation
+    route.'
+  minimum_evidence_types: &id006
+  - incident_or_recovery_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-INC-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material systems shall have a defined rollback, recovery, suspension, or containment
+    approach appropriate to their risk.'
+  minimum_evidence_types: *id006
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-GOV-001
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material AI lifecycle decisions shall have defined decision rights.'
+  minimum_evidence_types: &id007
+  - governance_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-GOV-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material AI approval shall be traceable to a named or formally delegated authority.'
+  minimum_evidence_types: *id007
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-GOV-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material governance requirements shall be reflected in operating procedures or
+    technical controls and shall not exist only as committee statements.'
+  minimum_evidence_types: *id007
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-RSK-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material risk analysis shall consider autonomy, reversibility, scale, velocity,
+    and affected populations where applicable.'
+  minimum_evidence_types: &id008
+  - risk_assessment
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-RSK-005
+  machine_verifiability: MV4
+  assessment_mode: human_judgment
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    EAIMS internal impact or risk categories shall not be represented as legal classifications
+    unless independently established.'
+  minimum_evidence_types: *id008
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-001
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Each material AI system shall have a named human role accountable for its intended
+    business outcome and accepted residual risk.'
+  minimum_evidence_types: &id009
+  - human_accountability_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material AI decision authority shall specify whether AI may inform, recommend,
+    prepare, execute with approval, or execute autonomously.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-003
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Final decision authority shall be explicitly documented for high-impact decisions.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Where human intervention is required, override authority shall be explicitly assigned.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-006
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material decision and action escalation triggers and routes shall be documented.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-007
+  machine_verifiability: MV4
+  assessment_mode: human_judgment
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Human overseers of material or high-impact AI decisions shall have competence
+    appropriate to the decision context.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-008
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Required human oversight shall be operationally feasible with respect to authority,
+    information, competence, timing, and expected workload.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAB-009
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    High-impact AI contexts shall provide a proportionate route for review, appeal,
+    or recourse where adverse effects can materially affect people.'
+  minimum_evidence_types: *id009
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-RAI-002
+  machine_verifiability: MV4
+  assessment_mode: human_judgment
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    High-impact systems shall assess impacts on materially affected stakeholders or
+    populations.'
+  minimum_evidence_types: &id010
+  - impact_or_recourse_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-RAI-004
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Where recourse is applicable to a high-impact context, the recourse mechanism
+    shall be operational rather than merely documented.'
+  minimum_evidence_types: *id010
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-RAI-007
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Known material residual impacts shall be remediated or explicitly accepted by
+    appropriate authority.'
+  minimum_evidence_types: *id010
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-ROL-002
+  machine_verifiability: MV4
+  assessment_mode: human_judgment
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    People performing material AI oversight shall demonstrate competence proportionate
+    to the decision and system context.'
+  minimum_evidence_types: &id011
+  - role_or_competence_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-ROL-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material human-agent handoff responsibilities shall be explicit.'
+  minimum_evidence_types: *id011
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAW-001
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Material human-AI workflows shall explicitly define human and AI responsibilities.'
+  minimum_evidence_types: &id012
+  - human_ai_work_design_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAW-002
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Required human oversight shall consider expected volume, timing, information,
+    and workload.'
+  minimum_evidence_types: *id012
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAW-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Human Reserved decisions shall be reflected in workflow or authority controls.'
+  minimum_evidence_types: *id012
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-HAW-006
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    The organization shall not claim meaningful human oversight when review volume,
+    timing, information, competence, or authority makes effective intervention infeasible.'
+  minimum_evidence_types: *id012
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-LRN-005
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Level 5 claims shall demonstrate evidence that measurement or learning caused
+    substantive adaptation of the capability.'
+  minimum_evidence_types: &id013
+  - learning_or_reassessment_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-LRN-006
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Documentation improvement alone shall not be treated as demonstrated capability
+    improvement where the applicable anchor requires operational change.'
+  minimum_evidence_types: *id013
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-EVD-012
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    A documented control contradicted by credible observed operation shall not be
+    treated as fully implemented until the conflict is resolved.'
+  minimum_evidence_types:
+  - evidence_manifest
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-SYS-003
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Each material AI system shall identify accountable system and business ownership
+    roles appropriate to its operating context.'
+  minimum_evidence_types: &id014
+  - system_inventory_record
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.
+- requirement_id: EAIMS-SYS-004
+  machine_verifiability: MV3
+  assessment_mode: hybrid_assessor
+  assessment_question: 'Determine whether the assessed scope demonstrates this requirement:
+    Each material production AI system shall identify who is authorized and responsible
+    to suspend or retire the system when required.'
+  minimum_evidence_types: *id014
+  required_record_fields:
+  - assessor_id
+  - decision
+  - rationale
+  - evidence_refs
+  - assessed_at
+  allowed_decisions:
+  - SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+  decision_rules:
+    SATISFIED: Relevant evidence is available and the assessor documents why it demonstrates
+      the requirement in the assessed context.
+    NOT_SATISFIED: Relevant evidence or direct observation demonstrates that the requirement
+      is not met.
+    INSUFFICIENT_EVIDENCE: The requirement is applicable but available evidence is
+      insufficient or materially conflicted.
+    NOT_APPLICABLE: Applicability is explicitly justified by assessment context; absence
+      of evidence alone is not sufficient.
+  independence_note: Assessor role and relationship to the assessed control must be
+    recorded; independence affects assessment quality, not maturity directly.

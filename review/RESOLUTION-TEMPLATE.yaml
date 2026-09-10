@@ -1,0 +1,9 @@
+resolution_id: RES-001
+finding_key: REVIEW-001:F-001
+resolution_status: OPEN
+resolved_by: maintainer-id
+rationale: Describe the technical disposition and why it is justified.
+change_refs: []
+evidence_refs: []
+requires_rereview: false
+resolved_at: "2026-09-09T00:00:00Z"

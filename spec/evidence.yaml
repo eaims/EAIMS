@@ -1,0 +1,66 @@
+spec_version: 1.0.0-fc16
+general_rules:
+- id: EAIMS-EVD-001
+  level: SHALL
+  statement: Every maturity claim shall be traceable to evidence.
+- id: EAIMS-EVD-002
+  level: SHALL
+  statement: Evidence shall identify source and owner where applicable.
+- id: EAIMS-EVD-003
+  level: SHALL
+  statement: Evidence shall include a timestamp or period covered where applicable.
+- id: EAIMS-EVD-004
+  level: SHALL
+  statement: Evidence shall have an explicit validity status.
+- id: EAIMS-EVD-005
+  level: SHALL
+  statement: Material evidence shall declare relevant invalidation triggers.
+- id: EAIMS-EVD-006
+  level: SHALL
+  statement: Assessment-generated evidence shall be distinguishable from operationally
+    retained evidence.
+- id: EAIMS-EVD-007
+  level: SHALL
+  statement: Higher-order evidence shall be preserved even when lower-level prerequisites
+    are not satisfied.
+- id: EAIMS-EVD-008
+  level: SHALL
+  statement: Conflicting evidence shall not be silently overwritten.
+- id: EAIMS-EVD-009
+  level: SHALL
+  statement: Evidence provenance shall be reproducible to the extent practical.
+- id: EAIMS-EVD-010
+  level: SHOULD
+  statement: Critical assessment outputs should include content hashes.
+minimum_by_maturity:
+  L1:
+  - Observation or interview may suffice for a limited claim.
+  L2:
+  - At least E1 foundational evidence is normally required.
+  L3:
+  - At least E2 implementation evidence plus sufficient foundational evidence is normally
+    required.
+  L4:
+  - E3 operational evidence over repeated operating cycles is required.
+  L5:
+  - E4 adaptive evidence demonstrating substantive change driven by learning or measurement
+    is required.
+validity_rule: Event-based invalidation takes precedence over nominal evidence age.
+precedence_guidance:
+- Observed operational evidence
+- Verified technical evidence
+- Retained system records
+- Approved documentation
+- Interview or assertion
+confidence_factors:
+- provenance
+- relevance
+- recency
+- integrity
+- coverage
+- independence
+- repeatability
+
+current_maturity_support_rule: >-
+  Only VALID SUPPORTING evidence contributes to current maturity eligibility in the reference engine.
+  UNVERIFIED evidence is retained for traceability but does not increase maturity or confidence until verified.

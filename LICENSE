@@ -1,10 +1,26 @@
 # EAIMS License Map
 
-Unless a file states otherwise:
+Copyright © 2026 Elias Naserkhaki. All rights reserved except as expressly licensed.
 
-- Documentation, maturity anchors, questionnaires, templates, examples, industry profiles, CSV data, and JSON questionnaire content: **CC BY 4.0**.
-- Source code, automation scripts, GitHub workflows, and JSON Schemas: **Apache-2.0**.
-- Project names, logos, and visual identity are excluded from source-identifying use; see [TRADEMARK.md](TRADEMARK.md).
-- Third-party materials retain their original rights; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+This copyright notice applies to original EAIMS material owned by Elias Naserkhaki. It does not overwrite ownership notices or rights in third-party material, and it does not falsely convert a CLA-licensed contribution into assigned ownership. Rights in every file remain subject to the actual chain of title and any applicable written rights instrument.
 
-Full license texts are in `LICENSES/`. CC BY 4.0 grants no patent or trademark rights. Apache-2.0 patent rights apply only as stated in that license.
+Unless a file expressly states otherwise:
+
+- **CC BY 4.0:** documentation, normative specification text, maturity anchors, requirements, questionnaires, templates, examples, industry profiles, CSV data, assessment content, and machine-readable specification/assessment data in YAML or JSON, **except JSON Schema files**.
+- **Apache-2.0:** Python/source code, tests, automation and build scripts, GitHub workflows, Docker/Compose configuration, JSON Schema files, and other executable/software configuration artifacts.
+- **Not granted by those copyright licenses:** EAIMS names, logos, source-identifying visual identity, official release designations, domains, project goodwill, governance authority, and official-project representation rights. See `TRADEMARK.md` and `GOVERNANCE.md`.
+- **Third-party material:** remains subject to its own rights and license terms and must be recorded in `THIRD_PARTY_NOTICES.md` or another applicable provenance/rights record.
+
+Public license grants are permissions to use covered material under the stated terms. They are not transfers of ownership, authorship, project identity, governance authority, trademark rights, official-release authority, or rights in material outside the applicable license category.
+
+## Previously released versions
+
+Public-license grants already made for material previously released under CC BY 4.0 or Apache-2.0 are not retroactively revoked by later EAIMS policy or license changes.
+
+Subject to applicable law, the actual chain of title, and third-party rights, the holder of sufficient rights in future EAIMS material may publish future versions, revisions, derivative works, or newly created content under the same, additional, dual, commercial, proprietary, or different license terms. Later licensing does not withdraw rights already granted for earlier released material.
+
+## Contribution rights
+
+A public contribution process does not alter this license map or create project co-ownership. A third-party Substantive Contribution may enter an official EAIMS release only after the mandatory rights instrument required by `IP_POLICY.md` and `CONTRIBUTOR-RIGHTS.md` is completed. A CLA may provide broad project rights while leaving underlying copyright ownership with the contributor; a copyright assignment transfers the rights stated in the executed assignment.
+
+Full public-license texts are stored in `LICENSES/`. CC BY 4.0 grants no patent or trademark rights. Apache-2.0 patent rights apply only as stated in that license.

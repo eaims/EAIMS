@@ -1,0 +1,7 @@
+{
+  "assessment_id": "ASM-RI03-001",
+  "spec_version": "1.0.0-fc16",
+  "result_hash": "12585c5116298770f307c1dad517bba92ff2f99dbe7e6c623f2c5eb8dc35d436",
+  "generated_for": "FC16 final pre-push quality audit",
+  "runtime_note": "Generated in the FC16 local build environment; report display time is not part of the deterministic result hash."
+}

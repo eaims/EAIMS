@@ -1,0 +1,2568 @@
+spec_version: 1.0.0-fc16
+tests:
+- test_id: T-SCHEMA-001
+  category: schema
+  description: Invalid capability ID is rejected
+  priority: P0
+- test_id: T-SCHEMA-002
+  category: schema
+  description: Duplicate capability IDs are rejected
+  priority: P0
+- test_id: T-EVD-001
+  category: evidence
+  description: No evidence does not force L1; may return INDETERMINATE
+  priority: P0
+- test_id: T-EVD-002
+  category: evidence
+  description: Invalidated evidence cannot raise current maturity
+  priority: P0
+- test_id: T-EVD-003
+  category: evidence
+  description: Recent evidence becomes stale or invalidated after a material model
+    change
+  priority: P0
+- test_id: T-EVD-004
+  category: evidence
+  description: Conflicting policy and operational evidence is preserved as conflict
+  priority: P0
+- test_id: T-EVD-005
+  category: evidence
+  description: Higher-order evidence is preserved when prerequisites are missing
+  priority: P0
+- test_id: T-EVD-006
+  category: evidence
+  description: Evidence after cutoff does not affect finalized historical assessment
+  priority: P0
+- test_id: T-HAB-001
+  category: hab
+  description: High-impact decision without final human authority breaches G2-03
+  priority: P0
+- test_id: T-HAB-002
+  category: hab
+  description: Human Reserved decision with AI final authority raises CRITICAL contradiction
+  priority: P0
+- test_id: T-HAB-003
+  category: hab
+  description: Nominal human review with infeasible throughput fails intervention-feasibility
+    control
+  priority: P0
+- test_id: T-AUT-001
+  category: autonomy
+  description: Observed autonomy above approved autonomy produces Autonomy Drift
+  priority: P0
+- test_id: T-AUT-002
+  category: autonomy
+  description: A4 agent without suspension capability breaches G3-07
+  priority: P0
+- test_id: T-AUT-003
+  category: autonomy
+  description: Delegated authority may not exceed parent authority without separate
+    approval
+  priority: P0
+- test_id: T-AUT-004
+  category: autonomy
+  description: Action above approved transactional limit is a breach
+  priority: P0
+- test_id: T-RSK-001
+  category: risk
+  description: I3 plus A3 activates high-risk controls
+  priority: P0
+- test_id: T-RSK-002
+  category: risk
+  description: I4 never derives below HIGH risk band
+  priority: P0
+- test_id: T-RSK-003
+  category: risk
+  description: A4+V3+S3 activates selected G2 assurance controls
+  priority: P0
+- test_id: T-RSK-004
+  category: risk
+  description: High uncertainty does not reduce control intensity
+  priority: P0
+- test_id: T-GATE-001
+  category: gates
+  description: Gate breach remains visible even if overall score is unchanged
+  priority: P0
+- test_id: T-GATE-002
+  category: gates
+  description: INCOMPLETE is distinct from BREACH
+  priority: P0
+- test_id: T-GATE-003
+  category: gates
+  description: Approved exception does not convert BREACH to PASS
+  priority: P0
+- test_id: T-GATE-004
+  category: gates
+  description: Gate families inherit; G2 does not replace G0/G1
+  priority: P0
+- test_id: T-SCOPE-001
+  category: scope
+  description: Partial assessment never establishes enterprise maturity
+  priority: P0
+- test_id: T-SCOPE-002
+  category: scope
+  description: Targeted assessment never produces enterprise-wide index
+  priority: P0
+- test_id: T-SCOPE-003
+  category: scope
+  description: NOT_APPLICABLE is distinct from NOT_ASSESSED
+  priority: P0
+- test_id: T-SCORE-001
+  category: scoring
+  description: L4 requires operational evidence over repeated cycles
+  priority: P0
+- test_id: T-SCORE-002
+  category: scoring
+  description: L5 requires evidence of substantive adaptation
+  priority: P0
+- test_id: T-SCORE-003
+  category: scoring
+  description: Critical gate breach cannot be averaged away
+  priority: P0
+- test_id: T-SCORE-004
+  category: scoring
+  description: Equal weighting is used; no hidden weighting
+  priority: P0
+- test_id: T-SCORE-005
+  category: scoring
+  description: N/A is excluded from denominator but does not increase assessment coverage
+  priority: P0
+- test_id: T-CONS-001
+  category: consistency
+  description: GOV-04 L4 with OPS-02 below L3 produces material inconsistency
+  priority: P0
+- test_id: T-CONS-002
+  category: consistency
+  description: SCALE decision with unresolved critical breach is invalid without explicit
+    active exception
+  priority: P0
+- test_id: T-MSP-001
+  category: sourcing
+  description: Floating model alias sets elevated external change exposure
+  priority: P0
+- test_id: T-MSP-002
+  category: sourcing
+  description: Provider change invalidates applicable prior evaluation evidence
+  priority: P0
+- test_id: T-TIME-001
+  category: time
+  description: Future evidence timestamp is rejected or flagged
+  priority: P0
+- test_id: T-TIME-002
+  category: time
+  description: Report generation time is distinct from assessment time
+  priority: P0
+- test_id: T-REPRO-001
+  category: reproducibility
+  description: Reproducing a finalized bundle with preserved inputs yields the same
+    result hash
+  priority: P0
+- test_id: T-REF-001
+  category: reference
+  description: RI-01 API-consumed SME golden outputs match expected
+  priority: P0
+- test_id: T-REF-002
+  category: reference
+  description: RI-02 autonomous service agent golden outputs match expected
+  priority: P0
+- test_id: T-REF-003
+  category: reference
+  description: RI-03 high-impact decision support golden outputs match expected
+  priority: P0
+- test_id: T-REQ-STR-001-P
+  category: requirement
+  requirement_id: EAIMS-STR-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-STR-001: Documented AI Objectives'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-001-N
+  category: requirement
+  requirement_id: EAIMS-STR-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-STR-001: Documented AI Objectives'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-002-P
+  category: requirement
+  requirement_id: EAIMS-STR-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-STR-002: Business Outcome Alignment'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-002-N
+  category: requirement
+  requirement_id: EAIMS-STR-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-STR-002: Business Outcome Alignment'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-004-P
+  category: requirement
+  requirement_id: EAIMS-STR-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-STR-004: Strategy Review Triggers'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-004-N
+  category: requirement
+  requirement_id: EAIMS-STR-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-STR-004: Strategy Review Triggers'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-005-P
+  category: requirement
+  requirement_id: EAIMS-STR-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-STR-005: Strategic Conflict Resolution'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-STR-005-N
+  category: requirement
+  requirement_id: EAIMS-STR-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-STR-005: Strategic Conflict Resolution'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OWN-001-P
+  category: requirement
+  requirement_id: EAIMS-OWN-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OWN-001: Executive AI Ownership'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-OWN-001-N
+  category: requirement
+  requirement_id: EAIMS-OWN-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OWN-001: Executive AI Ownership'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-OWN-002-P
+  category: requirement
+  requirement_id: EAIMS-OWN-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OWN-002: Decision Rights'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OWN-002-N
+  category: requirement
+  requirement_id: EAIMS-OWN-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OWN-002: Decision Rights'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OWN-003-P
+  category: requirement
+  requirement_id: EAIMS-OWN-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OWN-003: Risk Escalation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-OWN-003-N
+  category: requirement
+  requirement_id: EAIMS-OWN-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OWN-003: Risk Escalation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-OWN-004-P
+  category: requirement
+  requirement_id: EAIMS-OWN-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OWN-004: Executive Portfolio Review'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OWN-004-N
+  category: requirement
+  requirement_id: EAIMS-OWN-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OWN-004: Executive Portfolio Review'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OWN-005-P
+  category: requirement
+  requirement_id: EAIMS-OWN-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OWN-005: Residual Risk Acceptance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-OWN-005-N
+  category: requirement
+  requirement_id: EAIMS-OWN-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OWN-005: Residual Risk Acceptance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-TGT-001-P
+  category: requirement
+  requirement_id: EAIMS-TGT-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-TGT-001: Current State'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-001-N
+  category: requirement
+  requirement_id: EAIMS-TGT-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-TGT-001: Current State'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-002-P
+  category: requirement
+  requirement_id: EAIMS-TGT-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-TGT-002: Context Appropriate Target'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-003-P
+  category: requirement
+  requirement_id: EAIMS-TGT-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-TGT-003: Roadmap Ownership'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-003-N
+  category: requirement
+  requirement_id: EAIMS-TGT-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-TGT-003: Roadmap Ownership'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-004-P
+  category: requirement
+  requirement_id: EAIMS-TGT-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-TGT-004: Roadmap Monitoring'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-004-N
+  category: requirement
+  requirement_id: EAIMS-TGT-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-TGT-004: Roadmap Monitoring'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-005-P
+  category: requirement
+  requirement_id: EAIMS-TGT-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-TGT-005: Target Recalibration'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-TGT-005-N
+  category: requirement
+  requirement_id: EAIMS-TGT-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-TGT-005: Target Recalibration'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INV-001-P
+  category: requirement
+  requirement_id: EAIMS-INV-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INV-001: Investment Rationale'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INV-001-N
+  category: requirement
+  requirement_id: EAIMS-INV-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INV-001: Investment Rationale'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INV-002-P
+  category: requirement
+  requirement_id: EAIMS-INV-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INV-002: Investment Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INV-002-N
+  category: requirement
+  requirement_id: EAIMS-INV-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INV-002: Investment Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPP-001-P
+  category: requirement
+  requirement_id: EAIMS-OPP-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OPP-001: Opportunity Process'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPP-001-N
+  category: requirement
+  requirement_id: EAIMS-OPP-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OPP-001: Opportunity Process'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPP-004-P
+  category: requirement
+  requirement_id: EAIMS-OPP-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OPP-004: No-AI Option'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-001-P
+  category: requirement
+  requirement_id: EAIMS-PRI-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PRI-001: Defined Prioritization
+    Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-001-N
+  category: requirement
+  requirement_id: EAIMS-PRI-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PRI-001: Defined Prioritization
+    Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-002-P
+  category: requirement
+  requirement_id: EAIMS-PRI-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PRI-002: Value and Feasibility'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-002-N
+  category: requirement
+  requirement_id: EAIMS-PRI-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PRI-002: Value and Feasibility'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-003-P
+  category: requirement
+  requirement_id: EAIMS-PRI-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PRI-003: Risk and Readiness'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-003-N
+  category: requirement
+  requirement_id: EAIMS-PRI-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PRI-003: Risk and Readiness'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PRI-004-P
+  category: requirement
+  requirement_id: EAIMS-PRI-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PRI-004: No Single-Factor Prioritization'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-001-P
+  category: requirement
+  requirement_id: EAIMS-PIL-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-001: Pilot Hypothesis'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-001-N
+  category: requirement
+  requirement_id: EAIMS-PIL-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-001: Pilot Hypothesis'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-002-P
+  category: requirement
+  requirement_id: EAIMS-PIL-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-002: Success Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-002-N
+  category: requirement
+  requirement_id: EAIMS-PIL-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-002: Success Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-003-P
+  category: requirement
+  requirement_id: EAIMS-PIL-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-003: Baseline'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-003-N
+  category: requirement
+  requirement_id: EAIMS-PIL-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-003: Baseline'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-004-P
+  category: requirement
+  requirement_id: EAIMS-PIL-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-004: Pilot Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-004-N
+  category: requirement
+  requirement_id: EAIMS-PIL-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-004: Pilot Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-005-P
+  category: requirement
+  requirement_id: EAIMS-PIL-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-005: Pilot Risk and Autonomy'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-PIL-005-N
+  category: requirement
+  requirement_id: EAIMS-PIL-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-005: Pilot Risk and Autonomy'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-PIL-006-P
+  category: requirement
+  requirement_id: EAIMS-PIL-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-006: Pilot HAB'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-PIL-006-N
+  category: requirement
+  requirement_id: EAIMS-PIL-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-006: Pilot HAB'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-PIL-007-P
+  category: requirement
+  requirement_id: EAIMS-PIL-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-007: Scale Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-007-N
+  category: requirement
+  requirement_id: EAIMS-PIL-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-007: Scale Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-008-P
+  category: requirement
+  requirement_id: EAIMS-PIL-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-008: Explicit Pilot Outcome'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-008-N
+  category: requirement
+  requirement_id: EAIMS-PIL-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-008: Explicit Pilot Outcome'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-PIL-009-P
+  category: requirement
+  requirement_id: EAIMS-PIL-009
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-PIL-009: Evidence-backed Scale'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-PIL-009-N
+  category: requirement
+  requirement_id: EAIMS-PIL-009
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-PIL-009: Evidence-backed Scale'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-VAL-001-P
+  category: requirement
+  requirement_id: EAIMS-VAL-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-VAL-001: Expected Value'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-001-N
+  category: requirement
+  requirement_id: EAIMS-VAL-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-VAL-001: Expected Value'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-002-P
+  category: requirement
+  requirement_id: EAIMS-VAL-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-VAL-002: Baseline and KPI'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-002-N
+  category: requirement
+  requirement_id: EAIMS-VAL-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-VAL-002: Baseline and KPI'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-003-P
+  category: requirement
+  requirement_id: EAIMS-VAL-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-VAL-003: Value Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-003-N
+  category: requirement
+  requirement_id: EAIMS-VAL-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-VAL-003: Value Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-005-P
+  category: requirement
+  requirement_id: EAIMS-VAL-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-VAL-005: Realized Value'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-VAL-005-N
+  category: requirement
+  requirement_id: EAIMS-VAL-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-VAL-005: Realized Value'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DGO-001-P
+  category: requirement
+  requirement_id: EAIMS-DGO-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DGO-001: Data Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DGO-001-N
+  category: requirement
+  requirement_id: EAIMS-DGO-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DGO-001: Data Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DGO-002-P
+  category: requirement
+  requirement_id: EAIMS-DGO-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DGO-002: Usage Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DGO-002-N
+  category: requirement
+  requirement_id: EAIMS-DGO-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DGO-002: Usage Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DGO-003-P
+  category: requirement
+  requirement_id: EAIMS-DGO-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DGO-003: Data Dependencies'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DGO-003-N
+  category: requirement
+  requirement_id: EAIMS-DGO-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DGO-003: Data Dependencies'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DGO-004-P
+  category: requirement
+  requirement_id: EAIMS-DGO-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DGO-004: Access Control'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DGO-004-N
+  category: requirement
+  requirement_id: EAIMS-DGO-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DGO-004: Access Control'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DGO-005-P
+  category: requirement
+  requirement_id: EAIMS-DGO-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DGO-005: Ownership Gaps'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DGO-005-N
+  category: requirement
+  requirement_id: EAIMS-DGO-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DGO-005: Ownership Gaps'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-001-P
+  category: requirement
+  requirement_id: EAIMS-DQF-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DQF-001: Fitness Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-001-N
+  category: requirement
+  requirement_id: EAIMS-DQF-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DQF-001: Fitness Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-002-P
+  category: requirement
+  requirement_id: EAIMS-DQF-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DQF-002: Known Defects'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-002-N
+  category: requirement
+  requirement_id: EAIMS-DQF-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DQF-002: Known Defects'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-004-P
+  category: requirement
+  requirement_id: EAIMS-DQF-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DQF-004: Upstream Change Trigger'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-004-N
+  category: requirement
+  requirement_id: EAIMS-DQF-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DQF-004: Upstream Change Trigger'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-005-P
+  category: requirement
+  requirement_id: EAIMS-DQF-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DQF-005: Operational Feedback'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DQF-005-N
+  category: requirement
+  requirement_id: EAIMS-DQF-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DQF-005: Operational Feedback'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-CTX-001-P
+  category: requirement
+  requirement_id: EAIMS-CTX-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-CTX-001: Context Source Inventory'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-CTX-001-N
+  category: requirement
+  requirement_id: EAIMS-CTX-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-CTX-001: Context Source Inventory'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-CTX-003-P
+  category: requirement
+  requirement_id: EAIMS-CTX-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-CTX-003: Permission Preservation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-CTX-003-N
+  category: requirement
+  requirement_id: EAIMS-CTX-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-CTX-003: Permission Preservation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-CTX-005-P
+  category: requirement
+  requirement_id: EAIMS-CTX-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-CTX-005: Knowledge Freshness and
+    Conflict'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-CTX-005-N
+  category: requirement
+  requirement_id: EAIMS-CTX-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-CTX-005: Knowledge Freshness and
+    Conflict'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DRA-001-P
+  category: requirement
+  requirement_id: EAIMS-DRA-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DRA-001: Data Provenance'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DRA-001-N
+  category: requirement
+  requirement_id: EAIMS-DRA-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DRA-001: Data Provenance'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DRA-002-P
+  category: requirement
+  requirement_id: EAIMS-DRA-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DRA-002: Usage Restrictions'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DRA-002-N
+  category: requirement
+  requirement_id: EAIMS-DRA-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DRA-002: Usage Restrictions'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DRA-003-P
+  category: requirement
+  requirement_id: EAIMS-DRA-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DRA-003: Downstream Exposure'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DRA-003-N
+  category: requirement
+  requirement_id: EAIMS-DRA-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DRA-003: Downstream Exposure'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-DRA-004-P
+  category: requirement
+  requirement_id: EAIMS-DRA-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DRA-004: Sensitive Reuse Approval'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DRA-004-N
+  category: requirement
+  requirement_id: EAIMS-DRA-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DRA-004: Sensitive Reuse Approval'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DRA-005-P
+  category: requirement
+  requirement_id: EAIMS-DRA-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-DRA-005: Retention and Deletion'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-DRA-005-N
+  category: requirement
+  requirement_id: EAIMS-DRA-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-DRA-005: Retention and Deletion'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ARC-001-P
+  category: requirement
+  requirement_id: EAIMS-ARC-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ARC-001: Architecture Record'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ARC-001-N
+  category: requirement
+  requirement_id: EAIMS-ARC-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ARC-001: Architecture Record'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ARC-002-P
+  category: requirement
+  requirement_id: EAIMS-ARC-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ARC-002: System Boundaries'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ARC-002-N
+  category: requirement
+  requirement_id: EAIMS-ARC-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ARC-002: System Boundaries'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ARC-003-P
+  category: requirement
+  requirement_id: EAIMS-ARC-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ARC-003: Critical Dependencies'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ARC-003-N
+  category: requirement
+  requirement_id: EAIMS-ARC-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ARC-003: Critical Dependencies'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ARC-005-P
+  category: requirement
+  requirement_id: EAIMS-ARC-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ARC-005: Failure Boundaries'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ARC-005-N
+  category: requirement
+  requirement_id: EAIMS-ARC-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ARC-005: Failure Boundaries'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ARC-006-P
+  category: requirement
+  requirement_id: EAIMS-ARC-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ARC-006: Architecture Conformance'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ARC-006-N
+  category: requirement
+  requirement_id: EAIMS-ARC-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ARC-006: Architecture Conformance'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-001-P
+  category: requirement
+  requirement_id: EAIMS-MSP-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-001: Sourcing Profile'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-001-N
+  category: requirement
+  requirement_id: EAIMS-MSP-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-001: Sourcing Profile'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-002-P
+  category: requirement
+  requirement_id: EAIMS-MSP-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-002: Provider Dependency'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-002-N
+  category: requirement
+  requirement_id: EAIMS-MSP-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-002: Provider Dependency'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-003-P
+  category: requirement
+  requirement_id: EAIMS-MSP-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-003: Floating Dependency Flag'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-003-N
+  category: requirement
+  requirement_id: EAIMS-MSP-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-003: Floating Dependency Flag'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-004-P
+  category: requirement
+  requirement_id: EAIMS-MSP-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-004: Provider Change Re-evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MSP-004-N
+  category: requirement
+  requirement_id: EAIMS-MSP-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-004: Provider Change Re-evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MSP-006-P
+  category: requirement
+  requirement_id: EAIMS-MSP-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-006: Provider-Controlled Change
+    Risk'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-006-N
+  category: requirement
+  requirement_id: EAIMS-MSP-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-006: Provider-Controlled Change
+    Risk'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-007-P
+  category: requirement
+  requirement_id: EAIMS-MSP-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-007: Data Boundary'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MSP-007-N
+  category: requirement
+  requirement_id: EAIMS-MSP-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-007: Data Boundary'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MSP-008-P
+  category: requirement
+  requirement_id: EAIMS-MSP-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MSP-008: Composite Dependency
+    Trace'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MSP-008-N
+  category: requirement
+  requirement_id: EAIMS-MSP-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MSP-008: Composite Dependency Trace'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ENG-001-P
+  category: requirement
+  requirement_id: EAIMS-ENG-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ENG-001: Version Control'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ENG-001-N
+  category: requirement
+  requirement_id: EAIMS-ENG-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ENG-001: Version Control'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ENG-004-P
+  category: requirement
+  requirement_id: EAIMS-ENG-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ENG-004: Secrets Protection'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ENG-004-N
+  category: requirement
+  requirement_id: EAIMS-ENG-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ENG-004: Secrets Protection'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ENG-006-P
+  category: requirement
+  requirement_id: EAIMS-ENG-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ENG-006: Control Bypass Governance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ENG-006-N
+  category: requirement
+  requirement_id: EAIMS-ENG-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ENG-006: Control Bypass Governance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-001-P
+  category: requirement
+  requirement_id: EAIMS-AGT-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AGT-001: Tool Inventory'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-001-N
+  category: requirement
+  requirement_id: EAIMS-AGT-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AGT-001: Tool Inventory'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-002-P
+  category: requirement
+  requirement_id: EAIMS-AGT-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AGT-002: Memory Policy'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AGT-002-N
+  category: requirement
+  requirement_id: EAIMS-AGT-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AGT-002: Memory Policy'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AGT-003-P
+  category: requirement
+  requirement_id: EAIMS-AGT-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AGT-003: Delegation Traceability'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-003-N
+  category: requirement
+  requirement_id: EAIMS-AGT-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AGT-003: Delegation Traceability'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-005-P
+  category: requirement
+  requirement_id: EAIMS-AGT-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AGT-005: RAG Evaluation'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AGT-005-N
+  category: requirement
+  requirement_id: EAIMS-AGT-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AGT-005: RAG Evaluation'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AGT-006-P
+  category: requirement
+  requirement_id: EAIMS-AGT-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AGT-006: Agent Identity'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-006-N
+  category: requirement
+  requirement_id: EAIMS-AGT-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AGT-006: Agent Identity'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-007-P
+  category: requirement
+  requirement_id: EAIMS-AGT-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AGT-007: No Silent Authority Expansion'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AGT-007-N
+  category: requirement
+  requirement_id: EAIMS-AGT-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AGT-007: No Silent Authority Expansion'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-001-P
+  category: requirement
+  requirement_id: EAIMS-LCM-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LCM-001: Lifecycle State'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LCM-001-N
+  category: requirement
+  requirement_id: EAIMS-LCM-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LCM-001: Lifecycle State'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LCM-002-P
+  category: requirement
+  requirement_id: EAIMS-LCM-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LCM-002: Deployment Approval'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-002-N
+  category: requirement
+  requirement_id: EAIMS-LCM-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LCM-002: Deployment Approval'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-003-P
+  category: requirement
+  requirement_id: EAIMS-LCM-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LCM-003: Change Classification'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LCM-003-N
+  category: requirement
+  requirement_id: EAIMS-LCM-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LCM-003: Change Classification'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LCM-004-P
+  category: requirement
+  requirement_id: EAIMS-LCM-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LCM-004: Re-evaluation Trigger'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-004-N
+  category: requirement
+  requirement_id: EAIMS-LCM-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LCM-004: Re-evaluation Trigger'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-005-P
+  category: requirement
+  requirement_id: EAIMS-LCM-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LCM-005: Rollback Consideration'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-005-N
+  category: requirement
+  requirement_id: EAIMS-LCM-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LCM-005: Rollback Consideration'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LCM-006-P
+  category: requirement
+  requirement_id: EAIMS-LCM-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LCM-006: Retirement Cleanup'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LCM-006-N
+  category: requirement
+  requirement_id: EAIMS-LCM-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LCM-006: Retirement Cleanup'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVL-001-P
+  category: requirement
+  requirement_id: EAIMS-EVL-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-001: Evaluation Criteria'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-001-N
+  category: requirement
+  requirement_id: EAIMS-EVL-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-001: Evaluation Criteria'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-002-P
+  category: requirement
+  requirement_id: EAIMS-EVL-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-002: Predeployment Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-002-N
+  category: requirement
+  requirement_id: EAIMS-EVL-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-002: Predeployment Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-003-P
+  category: requirement
+  requirement_id: EAIMS-EVL-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-003: Fit-for-Purpose Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-003-N
+  category: requirement
+  requirement_id: EAIMS-EVL-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-003: Fit-for-Purpose Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-004-P
+  category: requirement
+  requirement_id: EAIMS-EVL-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-004: Material Change Re-evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-004-N
+  category: requirement
+  requirement_id: EAIMS-EVL-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-004: Material Change Re-evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-005-P
+  category: requirement
+  requirement_id: EAIMS-EVL-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-005: Agent Action Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-005-N
+  category: requirement
+  requirement_id: EAIMS-EVL-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-005: Agent Action Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-006-P
+  category: requirement
+  requirement_id: EAIMS-EVL-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-006: Adverse Outcome Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-006-N
+  category: requirement
+  requirement_id: EAIMS-EVL-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-006: Adverse Outcome Evaluation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-007-P
+  category: requirement
+  requirement_id: EAIMS-EVL-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-007: Retained Evaluation Evidence'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVL-007-N
+  category: requirement
+  requirement_id: EAIMS-EVL-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-007: Retained Evaluation Evidence'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVL-008-P
+  category: requirement
+  requirement_id: EAIMS-EVL-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-008: Acceptance Thresholds'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-008-N
+  category: requirement
+  requirement_id: EAIMS-EVL-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-008: Acceptance Thresholds'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-009-P
+  category: requirement
+  requirement_id: EAIMS-EVL-009
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-009: Failed Threshold Governance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-009-N
+  category: requirement
+  requirement_id: EAIMS-EVL-009
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-009: Failed Threshold Governance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVL-010-P
+  category: requirement
+  requirement_id: EAIMS-EVL-010
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVL-010: Evaluation Learning'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVL-010-N
+  category: requirement
+  requirement_id: EAIMS-EVL-010
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVL-010: Evaluation Learning'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-001-P
+  category: requirement
+  requirement_id: EAIMS-MON-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-001: Production Monitoring'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-001-N
+  category: requirement
+  requirement_id: EAIMS-MON-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-001: Production Monitoring'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-002-P
+  category: requirement
+  requirement_id: EAIMS-MON-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-002: AI-Specific Monitoring'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-002-N
+  category: requirement
+  requirement_id: EAIMS-MON-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-002: AI-Specific Monitoring'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-003-P
+  category: requirement
+  requirement_id: EAIMS-MON-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-003: Agent Action Logs'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-003-N
+  category: requirement
+  requirement_id: EAIMS-MON-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-003: Agent Action Logs'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-004-P
+  category: requirement
+  requirement_id: EAIMS-MON-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-004: Operational Health'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-004-N
+  category: requirement
+  requirement_id: EAIMS-MON-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-004: Operational Health'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-005-P
+  category: requirement
+  requirement_id: EAIMS-MON-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-005: Adverse Outcome Indicators'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-005-N
+  category: requirement
+  requirement_id: EAIMS-MON-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-005: Adverse Outcome Indicators'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-006-P
+  category: requirement
+  requirement_id: EAIMS-MON-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-006: Threshold Escalation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-006-N
+  category: requirement
+  requirement_id: EAIMS-MON-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-006: Threshold Escalation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-MON-007-P
+  category: requirement
+  requirement_id: EAIMS-MON-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-007: Log Retention'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-007-N
+  category: requirement
+  requirement_id: EAIMS-MON-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-007: Log Retention'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-008-P
+  category: requirement
+  requirement_id: EAIMS-MON-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-008: Monitoring Blind Spots'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-008-N
+  category: requirement
+  requirement_id: EAIMS-MON-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-008: Monitoring Blind Spots'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-009-P
+  category: requirement
+  requirement_id: EAIMS-MON-009
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-MON-009: Monitoring Change Sync'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-MON-009-N
+  category: requirement
+  requirement_id: EAIMS-MON-009
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-MON-009: Monitoring Change Sync'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-001-P
+  category: requirement
+  requirement_id: EAIMS-INC-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-001: Incident Route'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-INC-001-N
+  category: requirement
+  requirement_id: EAIMS-INC-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-001: Incident Route'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-INC-002-P
+  category: requirement
+  requirement_id: EAIMS-INC-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-002: Incident Severity'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-002-N
+  category: requirement
+  requirement_id: EAIMS-INC-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-002: Incident Severity'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-003-P
+  category: requirement
+  requirement_id: EAIMS-INC-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-003: Root Cause Analysis'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-003-N
+  category: requirement
+  requirement_id: EAIMS-INC-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-003: Root Cause Analysis'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-004-P
+  category: requirement
+  requirement_id: EAIMS-INC-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-004: Corrective Action Trace'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-004-N
+  category: requirement
+  requirement_id: EAIMS-INC-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-004: Corrective Action Trace'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-005-P
+  category: requirement
+  requirement_id: EAIMS-INC-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-005: Rollback or Suspension'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-INC-005-N
+  category: requirement
+  requirement_id: EAIMS-INC-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-005: Rollback or Suspension'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-INC-006-P
+  category: requirement
+  requirement_id: EAIMS-INC-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-006: Suspension Testing'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-INC-006-N
+  category: requirement
+  requirement_id: EAIMS-INC-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-006: Suspension Testing'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-INC-007-P
+  category: requirement
+  requirement_id: EAIMS-INC-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-007: Retirement Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-007-N
+  category: requirement
+  requirement_id: EAIMS-INC-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-007: Retirement Criteria'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-008-P
+  category: requirement
+  requirement_id: EAIMS-INC-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-INC-008: Incident Learning Feed'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-INC-008-N
+  category: requirement
+  requirement_id: EAIMS-INC-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-INC-008: Incident Learning Feed'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-GOV-001-P
+  category: requirement
+  requirement_id: EAIMS-GOV-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-GOV-001: Lifecycle Decision Rights'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-GOV-001-N
+  category: requirement
+  requirement_id: EAIMS-GOV-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-GOV-001: Lifecycle Decision Rights'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-GOV-002-P
+  category: requirement
+  requirement_id: EAIMS-GOV-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-GOV-002: Approval Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-GOV-002-N
+  category: requirement
+  requirement_id: EAIMS-GOV-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-GOV-002: Approval Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-GOV-005-P
+  category: requirement
+  requirement_id: EAIMS-GOV-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-GOV-005: Operationalized Governance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-GOV-005-N
+  category: requirement
+  requirement_id: EAIMS-GOV-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-GOV-005: Operationalized Governance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-001-P
+  category: requirement
+  requirement_id: EAIMS-RSK-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RSK-001: Impact Classification'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-001-N
+  category: requirement
+  requirement_id: EAIMS-RSK-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RSK-001: Impact Classification'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-002-P
+  category: requirement
+  requirement_id: EAIMS-RSK-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RSK-002: Risk Factors'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-002-N
+  category: requirement
+  requirement_id: EAIMS-RSK-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RSK-002: Risk Factors'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-003-P
+  category: requirement
+  requirement_id: EAIMS-RSK-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RSK-003: Affected Population'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RSK-003-N
+  category: requirement
+  requirement_id: EAIMS-RSK-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RSK-003: Affected Population'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RSK-004-P
+  category: requirement
+  requirement_id: EAIMS-RSK-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RSK-004: Risk Reclassification'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-004-N
+  category: requirement
+  requirement_id: EAIMS-RSK-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RSK-004: Risk Reclassification'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-005-P
+  category: requirement
+  requirement_id: EAIMS-RSK-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RSK-005: Regulatory Distinction'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RSK-006-P
+  category: requirement
+  requirement_id: EAIMS-RSK-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RSK-006: Risk Uncertainty'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RSK-006-N
+  category: requirement
+  requirement_id: EAIMS-RSK-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RSK-006: Risk Uncertainty'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-HAB-001-P
+  category: requirement
+  requirement_id: EAIMS-HAB-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-001: Accountable Human Role'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-001-N
+  category: requirement
+  requirement_id: EAIMS-HAB-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-001: Accountable Human Role'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-002-P
+  category: requirement
+  requirement_id: EAIMS-HAB-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-002: Decision Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-002-N
+  category: requirement
+  requirement_id: EAIMS-HAB-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-002: Decision Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-003-P
+  category: requirement
+  requirement_id: EAIMS-HAB-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-003: Final Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-003-N
+  category: requirement
+  requirement_id: EAIMS-HAB-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-003: Final Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-004-P
+  category: requirement
+  requirement_id: EAIMS-HAB-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-004: Human Reserved Assessment'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-HAB-005-P
+  category: requirement
+  requirement_id: EAIMS-HAB-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-005: Override Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-005-N
+  category: requirement
+  requirement_id: EAIMS-HAB-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-005: Override Authority'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-006-P
+  category: requirement
+  requirement_id: EAIMS-HAB-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-006: Escalation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-006-N
+  category: requirement
+  requirement_id: EAIMS-HAB-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-006: Escalation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-007-P
+  category: requirement
+  requirement_id: EAIMS-HAB-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-007: Human Competence'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-008-P
+  category: requirement
+  requirement_id: EAIMS-HAB-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-008: Intervention Feasibility'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-008-N
+  category: requirement
+  requirement_id: EAIMS-HAB-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-008: Intervention Feasibility'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-009-P
+  category: requirement
+  requirement_id: EAIMS-HAB-009
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-009: Recourse'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-009-N
+  category: requirement
+  requirement_id: EAIMS-HAB-009
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-009: Recourse'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAB-010-P
+  category: requirement
+  requirement_id: EAIMS-HAB-010
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAB-010: HAB Reassessment'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-HAB-010-N
+  category: requirement
+  requirement_id: EAIMS-HAB-010
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAB-010: HAB Reassessment'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-001-P
+  category: requirement
+  requirement_id: EAIMS-AUT-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-001: Autonomy Classification'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-001-N
+  category: requirement
+  requirement_id: EAIMS-AUT-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-001: Autonomy Classification'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-002-P
+  category: requirement
+  requirement_id: EAIMS-AUT-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-002: Permission Envelope'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-002-N
+  category: requirement
+  requirement_id: EAIMS-AUT-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-002: Permission Envelope'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-003-P
+  category: requirement
+  requirement_id: EAIMS-AUT-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-003: Autonomy Reassessment'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-003-N
+  category: requirement
+  requirement_id: EAIMS-AUT-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-003: Autonomy Reassessment'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-004-P
+  category: requirement
+  requirement_id: EAIMS-AUT-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-004: Action Auditability'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-004-N
+  category: requirement
+  requirement_id: EAIMS-AUT-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-004: Action Auditability'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-005-P
+  category: requirement
+  requirement_id: EAIMS-AUT-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-005: No Authority Exceedance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-005-N
+  category: requirement
+  requirement_id: EAIMS-AUT-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-005: No Authority Exceedance'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-006-P
+  category: requirement
+  requirement_id: EAIMS-AUT-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-006: Operational Suspension'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-006-N
+  category: requirement
+  requirement_id: EAIMS-AUT-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-006: Operational Suspension'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-007-P
+  category: requirement
+  requirement_id: EAIMS-AUT-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-007: Reversibility Consideration'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-007-N
+  category: requirement
+  requirement_id: EAIMS-AUT-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-007: Reversibility Consideration'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-008-P
+  category: requirement
+  requirement_id: EAIMS-AUT-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-008: Velocity and Scale'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-008-N
+  category: requirement
+  requirement_id: EAIMS-AUT-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-008: Velocity and Scale'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-009-P
+  category: requirement
+  requirement_id: EAIMS-AUT-009
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-009: Delegation Boundaries'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-009-N
+  category: requirement
+  requirement_id: EAIMS-AUT-009
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-009: Delegation Boundaries'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-AUT-010-P
+  category: requirement
+  requirement_id: EAIMS-AUT-010
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-AUT-010: Autonomy Review'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-AUT-010-N
+  category: requirement
+  requirement_id: EAIMS-AUT-010
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-AUT-010: Autonomy Review'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RAI-001-P
+  category: requirement
+  requirement_id: EAIMS-RAI-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RAI-001: Harm Categories'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RAI-001-N
+  category: requirement
+  requirement_id: EAIMS-RAI-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RAI-001: Harm Categories'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RAI-002-P
+  category: requirement
+  requirement_id: EAIMS-RAI-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RAI-002: Stakeholder Impact Review'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RAI-004-P
+  category: requirement
+  requirement_id: EAIMS-RAI-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RAI-004: Operational Recourse'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RAI-004-N
+  category: requirement
+  requirement_id: EAIMS-RAI-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RAI-004: Operational Recourse'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RAI-005-P
+  category: requirement
+  requirement_id: EAIMS-RAI-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RAI-005: Use-Case Specific Controls'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RAI-006-P
+  category: requirement
+  requirement_id: EAIMS-RAI-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RAI-006: Impact Refresh'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RAI-006-N
+  category: requirement
+  requirement_id: EAIMS-RAI-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RAI-006: Impact Refresh'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-RAI-007-P
+  category: requirement
+  requirement_id: EAIMS-RAI-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-RAI-007: Residual Impact Decision'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-RAI-007-N
+  category: requirement
+  requirement_id: EAIMS-RAI-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-RAI-007: Residual Impact Decision'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ROL-001-P
+  category: requirement
+  requirement_id: EAIMS-ROL-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ROL-001: Role Responsibilities'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ROL-001-N
+  category: requirement
+  requirement_id: EAIMS-ROL-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ROL-001: Role Responsibilities'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ROL-002-P
+  category: requirement
+  requirement_id: EAIMS-ROL-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ROL-002: Oversight Competence'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ROL-003-P
+  category: requirement
+  requirement_id: EAIMS-ROL-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ROL-003: Competency Gap Remediation'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ROL-003-N
+  category: requirement
+  requirement_id: EAIMS-ROL-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ROL-003: Competency Gap Remediation'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ROL-005-P
+  category: requirement
+  requirement_id: EAIMS-ROL-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ROL-005: Human-Agent Handoff'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ROL-005-N
+  category: requirement
+  requirement_id: EAIMS-ROL-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ROL-005: Human-Agent Handoff'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-OPM-001-P
+  category: requirement
+  requirement_id: EAIMS-OPM-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OPM-001: Operating Model Type'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-001-N
+  category: requirement
+  requirement_id: EAIMS-OPM-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OPM-001: Operating Model Type'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-002-P
+  category: requirement
+  requirement_id: EAIMS-OPM-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OPM-002: Central and Local Rights'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-002-N
+  category: requirement
+  requirement_id: EAIMS-OPM-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OPM-002: Central and Local Rights'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-004-P
+  category: requirement
+  requirement_id: EAIMS-OPM-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OPM-004: Ownership Conflict Resolution'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-004-N
+  category: requirement
+  requirement_id: EAIMS-OPM-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OPM-004: Ownership Conflict Resolution'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-005-P
+  category: requirement
+  requirement_id: EAIMS-OPM-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-OPM-005: Federated Evidence Attribution'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-OPM-005-N
+  category: requirement
+  requirement_id: EAIMS-OPM-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-OPM-005: Federated Evidence Attribution'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-HAW-001-P
+  category: requirement
+  requirement_id: EAIMS-HAW-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAW-001: Human-AI Responsibility
+    Design'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-001-N
+  category: requirement
+  requirement_id: EAIMS-HAW-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAW-001: Human-AI Responsibility
+    Design'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-002-P
+  category: requirement
+  requirement_id: EAIMS-HAW-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAW-002: Oversight Workload'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-002-N
+  category: requirement
+  requirement_id: EAIMS-HAW-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAW-002: Oversight Workload'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-005-P
+  category: requirement
+  requirement_id: EAIMS-HAW-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAW-005: Human Reserved Enforcement'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-005-N
+  category: requirement
+  requirement_id: EAIMS-HAW-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAW-005: Human Reserved Enforcement'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-006-P
+  category: requirement
+  requirement_id: EAIMS-HAW-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-HAW-006: No Nominal Oversight'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-HAW-006-N
+  category: requirement
+  requirement_id: EAIMS-HAW-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-HAW-006: No Nominal Oversight'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-ADP-001-P
+  category: requirement
+  requirement_id: EAIMS-ADP-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ADP-001: Usage Boundaries Communication'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ADP-001-N
+  category: requirement
+  requirement_id: EAIMS-ADP-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ADP-001: Usage Boundaries Communication'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ADP-003-P
+  category: requirement
+  requirement_id: EAIMS-ADP-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ADP-003: Misuse Monitoring'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ADP-003-N
+  category: requirement
+  requirement_id: EAIMS-ADP-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-ADP-003: Misuse Monitoring'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-ADP-005-P
+  category: requirement
+  requirement_id: EAIMS-ADP-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-ADP-005: Change Implications'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-001-P
+  category: requirement
+  requirement_id: EAIMS-LRN-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LRN-001: Reassessment Triggers'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-001-N
+  category: requirement
+  requirement_id: EAIMS-LRN-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LRN-001: Reassessment Triggers'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-002-P
+  category: requirement
+  requirement_id: EAIMS-LRN-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LRN-002: Incident Learning'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-002-N
+  category: requirement
+  requirement_id: EAIMS-LRN-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LRN-002: Incident Learning'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-003-P
+  category: requirement
+  requirement_id: EAIMS-LRN-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LRN-003: Repeated Finding Review'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-003-N
+  category: requirement
+  requirement_id: EAIMS-LRN-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LRN-003: Repeated Finding Review'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-004-P
+  category: requirement
+  requirement_id: EAIMS-LRN-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LRN-004: Evidence of Improvement'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-004-N
+  category: requirement
+  requirement_id: EAIMS-LRN-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LRN-004: Evidence of Improvement'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-LRN-005-P
+  category: requirement
+  requirement_id: EAIMS-LRN-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LRN-005: Adaptive Evidence for
+    L5'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LRN-005-N
+  category: requirement
+  requirement_id: EAIMS-LRN-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LRN-005: Adaptive Evidence for
+    L5'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LRN-006-P
+  category: requirement
+  requirement_id: EAIMS-LRN-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-LRN-006: No Documentation-Only
+    Inflation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-LRN-006-N
+  category: requirement
+  requirement_id: EAIMS-LRN-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-LRN-006: No Documentation-Only
+    Inflation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-001-P
+  category: requirement
+  requirement_id: EAIMS-EVD-001
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-001: Evidence Traceability'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-001-N
+  category: requirement
+  requirement_id: EAIMS-EVD-001
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-001: Evidence Traceability'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-002-P
+  category: requirement
+  requirement_id: EAIMS-EVD-002
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-002: Evidence Source and Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-002-N
+  category: requirement
+  requirement_id: EAIMS-EVD-002
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-002: Evidence Source and Owner'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-003-P
+  category: requirement
+  requirement_id: EAIMS-EVD-003
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-003: Evidence Time Context'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-003-N
+  category: requirement
+  requirement_id: EAIMS-EVD-003
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-003: Evidence Time Context'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-004-P
+  category: requirement
+  requirement_id: EAIMS-EVD-004
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-004: Evidence Validity'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-004-N
+  category: requirement
+  requirement_id: EAIMS-EVD-004
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-004: Evidence Validity'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-005-P
+  category: requirement
+  requirement_id: EAIMS-EVD-005
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-005: Invalidation Triggers'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-005-N
+  category: requirement
+  requirement_id: EAIMS-EVD-005
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-005: Invalidation Triggers'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-006-P
+  category: requirement
+  requirement_id: EAIMS-EVD-006
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-006: Generated vs Retained
+    Evidence'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-006-N
+  category: requirement
+  requirement_id: EAIMS-EVD-006
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-006: Generated vs Retained
+    Evidence'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-007-P
+  category: requirement
+  requirement_id: EAIMS-EVD-007
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-007: Higher-Order Preservation'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-007-N
+  category: requirement
+  requirement_id: EAIMS-EVD-007
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-007: Higher-Order Preservation'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-008-P
+  category: requirement
+  requirement_id: EAIMS-EVD-008
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-008: Conflict Preservation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-008-N
+  category: requirement
+  requirement_id: EAIMS-EVD-008
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-008: Conflict Preservation'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-009-P
+  category: requirement
+  requirement_id: EAIMS-EVD-009
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-009: Evidence Provenance'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-009-N
+  category: requirement
+  requirement_id: EAIMS-EVD-009
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-009: Evidence Provenance'
+  priority: P1
+  implementation_status: planned
+- test_id: T-REQ-EVD-011-P
+  category: requirement
+  requirement_id: EAIMS-EVD-011
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-011: Cutoff Enforcement'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-011-N
+  category: requirement
+  requirement_id: EAIMS-EVD-011
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-011: Cutoff Enforcement'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-012-P
+  category: requirement
+  requirement_id: EAIMS-EVD-012
+  polarity: positive
+  description: 'Positive conformance case for EAIMS-EVD-012: Operational Contradiction'
+  priority: P0
+  implementation_status: planned
+- test_id: T-REQ-EVD-012-N
+  category: requirement
+  requirement_id: EAIMS-EVD-012
+  polarity: negative
+  description: 'Negative or failure case for EAIMS-EVD-012: Operational Contradiction'
+  priority: P0
+  implementation_status: planned
+- test_id: T-AQ-001
+  type: assessment_quality
+  status: executable
+  source: tests/test_assessment_quality_multi_assessor.py
+  description: Worked Assessment Quality cases produce expected transparent levels.
+- test_id: T-AQ-002
+  type: assessment_quality
+  status: executable
+  source: tests/test_assessment_quality_multi_assessor.py
+  description: Assessment Quality never changes maturity directly.
+- test_id: T-MA-001
+  type: multi_assessor
+  status: executable
+  source: tests/test_assessment_quality_multi_assessor.py
+  description: Material disagreement is preserved and never averaged.
+- test_id: T-MA-002
+  type: multi_assessor
+  status: executable
+  source: tests/test_assessment_quality_multi_assessor.py
+  description: Resolution requires explicit rationale, evidence and all participating
+    assessor IDs.
+- test_id: T-MA-003
+  type: multi_assessor
+  status: executable
+  source: tests/test_assessment_quality_multi_assessor.py
+  description: Long-form inter-rater-ready records preserve independent assessor judgments.
+coverage_model:
+  policy: Every SHALL/SHALL_NOT has a planned positive test; MV1-MV3 SHALL/SHALL_NOT
+    also has a planned negative test. Critical requirements are P0.
+  generated_requirement_tests: 336

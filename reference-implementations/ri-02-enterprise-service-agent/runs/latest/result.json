@@ -1,0 +1,1401 @@
+{
+  "assessment_id": "RI02-ASM-001",
+  "spec_version": "1.0.0-fc16",
+  "assessment_type": "TARGETED",
+  "evidence_cutoff_time": "2026-09-09T07:20:00Z",
+  "system": {
+    "system_id": "SYS-RI02",
+    "name": "Enterprise Autonomous Service Agent",
+    "material": true,
+    "agentic": true,
+    "persistent_memory": true,
+    "approved_autonomy": "A3",
+    "observed_autonomy": "A4",
+    "model_sourcing": "api_consumed",
+    "model_identifier": "provider-model-pinned",
+    "version_mode": "pinned"
+  },
+  "risk_profile": {
+    "impact": "I2",
+    "autonomy": "A4",
+    "reversibility": "R2",
+    "scale": "S3",
+    "velocity": "V3",
+    "detectability": "D1",
+    "likelihood": "L2",
+    "uncertainty": "moderate",
+    "affected_population": "customers",
+    "data_sensitivity": "customer_account_data",
+    "external_change_exposure": "E2",
+    "derived_band": "HIGH",
+    "escalation_effects": [
+      "activate_agentic_critical_controls",
+      "activate_selected_G2_assurance_controls"
+    ]
+  },
+  "capability_results": [
+    {
+      "capability_id": "TEC-04",
+      "result": "L2",
+      "confidence": "C3",
+      "eligible_levels": {
+        "L1": true,
+        "L2": true,
+        "L3": false,
+        "L4": false,
+        "L5": false
+      },
+      "anchor_eligibility_trace": {
+        "mode": "capability_specific",
+        "max_supporting_evidence_class": "E3",
+        "operating_cycles": 0,
+        "adaptation_cycles": 0,
+        "counter_evidence_refs": [],
+        "levels": {
+          "L1": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": null,
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L2": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E1",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L3": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-AGT-005"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E2",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L4": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": true,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-AGT-005"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E3",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 0
+          },
+          "L5": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": false,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": false,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-AGT-005"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E4",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 1
+          }
+        }
+      },
+      "higher_order_observations_preserved": [
+        "L3"
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "EVD-RI02-001",
+        "EVD-RI02-002",
+        "EVD-RI02-003",
+        "EVD-RI02-004"
+      ]
+    },
+    {
+      "capability_id": "OPS-02",
+      "result": "L2",
+      "confidence": "C3",
+      "eligible_levels": {
+        "L1": true,
+        "L2": true,
+        "L3": false,
+        "L4": false,
+        "L5": false
+      },
+      "anchor_eligibility_trace": {
+        "mode": "capability_specific",
+        "max_supporting_evidence_class": "E3",
+        "operating_cycles": 0,
+        "adaptation_cycles": 0,
+        "counter_evidence_refs": [],
+        "levels": {
+          "L1": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": null,
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L2": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E1",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L3": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-EVL-003",
+              "EAIMS-EVL-006",
+              "EAIMS-EVL-009"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E2",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L4": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": true,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-EVL-003",
+              "EAIMS-EVL-004",
+              "EAIMS-EVL-006",
+              "EAIMS-EVL-009"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E3",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 0
+          },
+          "L5": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": false,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": false,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-EVL-003",
+              "EAIMS-EVL-004",
+              "EAIMS-EVL-006",
+              "EAIMS-EVL-009",
+              "EAIMS-EVL-010"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E4",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 1
+          }
+        }
+      },
+      "higher_order_observations_preserved": [
+        "L3"
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "EVD-RI02-005",
+        "EVD-RI02-006"
+      ]
+    },
+    {
+      "capability_id": "OPS-03",
+      "result": "L2",
+      "confidence": "C4",
+      "eligible_levels": {
+        "L1": true,
+        "L2": true,
+        "L3": false,
+        "L4": false,
+        "L5": false
+      },
+      "anchor_eligibility_trace": {
+        "mode": "capability_specific",
+        "max_supporting_evidence_class": "E3",
+        "operating_cycles": 0,
+        "adaptation_cycles": 0,
+        "counter_evidence_refs": [],
+        "levels": {
+          "L1": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": null,
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L2": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E1",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L3": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-MON-002",
+              "EAIMS-MON-004",
+              "EAIMS-MON-005"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E2",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L4": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-MON-002",
+              "EAIMS-MON-004",
+              "EAIMS-MON-005",
+              "EAIMS-MON-008"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E3",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 0
+          },
+          "L5": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": false,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": false,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-MON-002",
+              "EAIMS-MON-004",
+              "EAIMS-MON-005",
+              "EAIMS-MON-008",
+              "EAIMS-MON-009"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E4",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 1
+          }
+        }
+      },
+      "higher_order_observations_preserved": [
+        "L3",
+        "L4"
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ]
+    },
+    {
+      "capability_id": "OPS-04",
+      "result": "L1",
+      "confidence": "C3",
+      "eligible_levels": {
+        "L1": true,
+        "L2": false,
+        "L3": false,
+        "L4": false,
+        "L5": false
+      },
+      "anchor_eligibility_trace": {
+        "mode": "capability_specific",
+        "max_supporting_evidence_class": "E3",
+        "operating_cycles": 0,
+        "adaptation_cycles": 0,
+        "counter_evidence_refs": [],
+        "levels": {
+          "L1": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": null,
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L2": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-INC-007"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E1",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L3": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-INC-002",
+              "EAIMS-INC-007"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E2",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L4": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": true,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-INC-002",
+              "EAIMS-INC-003",
+              "EAIMS-INC-004",
+              "EAIMS-INC-007"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E3",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 0
+          },
+          "L5": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": false,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": false,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-INC-002",
+              "EAIMS-INC-003",
+              "EAIMS-INC-004",
+              "EAIMS-INC-007",
+              "EAIMS-INC-008"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E4",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 1
+          }
+        }
+      },
+      "higher_order_observations_preserved": [
+        "L2",
+        "L3"
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "EVD-RI02-007",
+        "EVD-RI02-008"
+      ]
+    },
+    {
+      "capability_id": "GOV-03",
+      "result": "L2",
+      "confidence": "C3",
+      "eligible_levels": {
+        "L1": true,
+        "L2": true,
+        "L3": false,
+        "L4": false,
+        "L5": false
+      },
+      "anchor_eligibility_trace": {
+        "mode": "capability_specific",
+        "max_supporting_evidence_class": "E3",
+        "operating_cycles": 0,
+        "adaptation_cycles": 0,
+        "counter_evidence_refs": [],
+        "levels": {
+          "L1": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": null,
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L2": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E1",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L3": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-HAB-003",
+              "EAIMS-HAB-004",
+              "EAIMS-HAB-007",
+              "EAIMS-HAB-009"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E2",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L4": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": true,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-HAB-003",
+              "EAIMS-HAB-004",
+              "EAIMS-HAB-007",
+              "EAIMS-HAB-009"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E3",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 0
+          },
+          "L5": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": false,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": false,
+            "requirements_ok": false,
+            "counter_evidence_ok": true,
+            "missing_requirements": [
+              "EAIMS-HAB-003",
+              "EAIMS-HAB-004",
+              "EAIMS-HAB-007",
+              "EAIMS-HAB-009",
+              "EAIMS-HAB-010"
+            ],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E4",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 1
+          }
+        }
+      },
+      "higher_order_observations_preserved": [
+        "L3"
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "EVD-RI02-009",
+        "EVD-RI02-010"
+      ]
+    },
+    {
+      "capability_id": "GOV-04",
+      "result": "L2",
+      "confidence": "C3",
+      "eligible_levels": {
+        "L1": true,
+        "L2": true,
+        "L3": false,
+        "L4": false,
+        "L5": false
+      },
+      "anchor_eligibility_trace": {
+        "mode": "capability_specific",
+        "max_supporting_evidence_class": "E3",
+        "operating_cycles": 0,
+        "adaptation_cycles": 0,
+        "counter_evidence_refs": [
+          "EVD-RI02-012"
+        ],
+        "levels": {
+          "L1": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": null,
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L2": {
+            "eligible": true,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": true,
+            "counter_evidence_ok": true,
+            "missing_requirements": [],
+            "failed_requirements": [],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E1",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L3": {
+            "eligible": false,
+            "anchor_observed": true,
+            "evidence_ok": true,
+            "operating_cycles_ok": true,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": false,
+            "missing_requirements": [],
+            "failed_requirements": [
+              "EAIMS-AUT-005"
+            ],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E2",
+            "minimum_operating_cycles": 0,
+            "minimum_adaptation_cycles": 0
+          },
+          "L4": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": true,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": true,
+            "requirements_ok": false,
+            "counter_evidence_ok": false,
+            "missing_requirements": [],
+            "failed_requirements": [
+              "EAIMS-AUT-003",
+              "EAIMS-AUT-005"
+            ],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E3",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 0
+          },
+          "L5": {
+            "eligible": false,
+            "anchor_observed": false,
+            "evidence_ok": false,
+            "operating_cycles_ok": false,
+            "adaptation_cycles_ok": false,
+            "requirements_ok": false,
+            "counter_evidence_ok": false,
+            "missing_requirements": [],
+            "failed_requirements": [
+              "EAIMS-AUT-003",
+              "EAIMS-AUT-005"
+            ],
+            "insufficient_requirements": [],
+            "minimum_evidence_class": "E4",
+            "minimum_operating_cycles": 2,
+            "minimum_adaptation_cycles": 1
+          }
+        }
+      },
+      "higher_order_observations_preserved": [
+        "L3"
+      ],
+      "blocked_by": [
+        "EAIMS-AUT-003",
+        "EAIMS-AUT-005"
+      ],
+      "evidence_refs": [
+        "EVD-RI02-001",
+        "EVD-RI02-003",
+        "EVD-RI02-008",
+        "EVD-RI02-011",
+        "EVD-RI02-012"
+      ]
+    }
+  ],
+  "requirement_results": [
+    {
+      "requirement_id": "EAIMS-AGT-001",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-001"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "TEC-04"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-002",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-002"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "TEC-04"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-003",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-001"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "TEC-04"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-006",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "TEC-04"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-007",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-004"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL_NOT",
+      "capability_id": "TEC-04"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-001",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-005"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-02"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-002",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-006"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-02"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-005",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-006"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-02"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-007",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-006"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-02"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-008",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-005"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-02"
+    },
+    {
+      "requirement_id": "EAIMS-MON-001",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-03"
+    },
+    {
+      "requirement_id": "EAIMS-MON-003",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-03"
+    },
+    {
+      "requirement_id": "EAIMS-MON-006",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-03"
+    },
+    {
+      "requirement_id": "EAIMS-MON-007",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-03"
+    },
+    {
+      "requirement_id": "EAIMS-INC-001",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-007"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-04"
+    },
+    {
+      "requirement_id": "EAIMS-INC-005",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-008"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-04"
+    },
+    {
+      "requirement_id": "EAIMS-INC-006",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-008"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "OPS-04"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-001",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-009"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-03"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-002",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-009"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-03"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-005",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-009"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-03"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-006",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-009"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-03"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-008",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-010"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-03"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-001",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-011"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-002",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-001"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-003",
+      "result": "NOT_SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-012"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-004",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-003"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-005",
+      "result": "NOT_SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-012"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL_NOT",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-006",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-008"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-007",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-011"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-008",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-011"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-009",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-001"
+      ],
+      "criticality": "critical",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-010",
+      "result": "SATISFIED",
+      "evidence_refs": [
+        "EVD-RI02-011"
+      ],
+      "criticality": "material",
+      "normative_level": "SHALL",
+      "capability_id": "GOV-04"
+    }
+  ],
+  "gate_results": [
+    {
+      "gate_id": "G0-01",
+      "family": "G0",
+      "title": "System Identified",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-02",
+      "family": "G0",
+      "title": "Intended Purpose",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-03",
+      "family": "G0",
+      "title": "Named Owner",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-04",
+      "family": "G0",
+      "title": "Model/System Sourcing",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-05",
+      "family": "G0",
+      "title": "Data Authority",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-06",
+      "family": "G0",
+      "title": "Initial Risk Classification",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-07",
+      "family": "G0",
+      "title": "Evaluation Basis",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-08",
+      "family": "G0",
+      "title": "Monitoring Route",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-09",
+      "family": "G0",
+      "title": "Incident Route",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G0-10",
+      "family": "G0",
+      "title": "Retirement/Suspension Ownership",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G1-01",
+      "family": "G1",
+      "title": "Business Outcome Owner",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G1-02",
+      "family": "G1",
+      "title": "Documented Evaluation",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G1-03",
+      "family": "G1",
+      "title": "Operational Evidence",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G1-04",
+      "family": "G1",
+      "title": "Material Change Triggers",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G1-05",
+      "family": "G1",
+      "title": "Evidence Retention",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G1-06",
+      "family": "G1",
+      "title": "Value Hypothesis",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-01",
+      "family": "G2",
+      "title": "Impact Assessment",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-02",
+      "family": "G2",
+      "title": "HAB Defined",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-03",
+      "family": "G2",
+      "title": "Final Authority Defined",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-04",
+      "family": "G2",
+      "title": "Recourse",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-05",
+      "family": "G2",
+      "title": "Human Competence",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-06",
+      "family": "G2",
+      "title": "Intervention Feasibility",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-07",
+      "family": "G2",
+      "title": "Adverse Outcome Evaluation",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-08",
+      "family": "G2",
+      "title": "Residual Risk Acceptance",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-09",
+      "family": "G2",
+      "title": "Enhanced Monitoring",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G2-10",
+      "family": "G2",
+      "title": "Independent Challenge Where Appropriate",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-01",
+      "family": "G3",
+      "title": "Autonomy Classified",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-02",
+      "family": "G3",
+      "title": "Agent Permission Envelope",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-03",
+      "family": "G3",
+      "title": "Tool Inventory",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-04",
+      "family": "G3",
+      "title": "Action Limits",
+      "result": "BREACH",
+      "reason": "Applicable control demonstrably not satisfied."
+    },
+    {
+      "gate_id": "G3-05",
+      "family": "G3",
+      "title": "Delegation Limits",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-06",
+      "family": "G3",
+      "title": "Action Auditability",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-07",
+      "family": "G3",
+      "title": "Suspension Capability",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-08",
+      "family": "G3",
+      "title": "Escalation Path",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-09",
+      "family": "G3",
+      "title": "External Communication Control",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-10",
+      "family": "G3",
+      "title": "Financial/Transactional Limits",
+      "result": "BREACH",
+      "reason": "Applicable control demonstrably not satisfied."
+    },
+    {
+      "gate_id": "G3-11",
+      "family": "G3",
+      "title": "Memory Policy",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    },
+    {
+      "gate_id": "G3-12",
+      "family": "G3",
+      "title": "Agent Evaluation",
+      "result": "PASS",
+      "reason": "Applicable control demonstrated."
+    }
+  ],
+  "permission_envelope_evaluation": {
+    "applicable": true,
+    "violations": [
+      {
+        "type": "financial_limit_exceeded",
+        "severity": "CRITICAL",
+        "event_id": "EVT-RI02-002",
+        "observed": 250,
+        "approved": 100
+      }
+    ],
+    "auditability_complete": true
+  },
+  "hab_evaluation": {
+    "applicable": false,
+    "human_reserved_decisions": [],
+    "final_authority": null,
+    "recourse_available": false,
+    "intervention_feasible": null,
+    "violations": [],
+    "auditability_complete": true
+  },
+  "autonomy_debt": {
+    "level": "CRITICAL",
+    "autonomy_level": "A4",
+    "supporting_maturity_floor": 2,
+    "agent_gate_breaches": 2,
+    "permission_violations": 1,
+    "calibration": "design-diagnostic-not-empirically-calibrated"
+  },
+  "consistency_findings": [
+    {
+      "rule_id": "CONS-005",
+      "severity": "CRITICAL",
+      "message": "Observed autonomy exceeds approved autonomy."
+    },
+    {
+      "rule_id": "CONS-APE-001",
+      "severity": "CRITICAL",
+      "message": "Agent permission-envelope violation: financial_limit_exceeded",
+      "event_id": "EVT-RI02-002"
+    }
+  ],
+  "evidence_validation_errors": {},
+  "dimension_profile": {
+    "GOV": 2.0,
+    "OPS": 1.59,
+    "TEC": 2.0
+  },
+  "coverage": {
+    "capabilities_in_scope": 6,
+    "applicable_capabilities": 6,
+    "determinate_capabilities": 6,
+    "applicable_determinate_ratio": 1.0,
+    "critical_capabilities_assessed": false,
+    "dimensions_represented": 3
+  },
+  "indicative_scoped_index": null,
+  "enterprise_index": null,
+  "enterprise_maturity_established": false,
+  "enterprise_band": null,
+  "result_hash": "37d8e34acbab74104c8ca130e4b77e7d89f80ff0d7fd83f5289e4ea106833562"
+}

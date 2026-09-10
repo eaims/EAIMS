@@ -1,0 +1,350 @@
+spec_version: 1.0.0-fc16
+policy: Only pytest-executed tests and the explicit FC16 machine-verification rule
+  set count as executable coverage. MV3/MV4 assessor protocols are tracked separately
+  and are not counted as machine-executable coverage.
+tests:
+- test: test_each_critical_machine_rule_positive[EAIMS-AGT-001]
+  requirements:
+  - EAIMS-AGT-001
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AGT-001]
+  requirements:
+  - EAIMS-AGT-001
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AGT-003]
+  requirements:
+  - EAIMS-AGT-003
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AGT-003]
+  requirements:
+  - EAIMS-AGT-003
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AGT-006]
+  requirements:
+  - EAIMS-AGT-006
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AGT-006]
+  requirements:
+  - EAIMS-AGT-006
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AGT-007]
+  requirements:
+  - EAIMS-AGT-007
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AGT-007]
+  requirements:
+  - EAIMS-AGT-007
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-ARC-003]
+  requirements:
+  - EAIMS-ARC-003
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-ARC-003]
+  requirements:
+  - EAIMS-ARC-003
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-ARC-005]
+  requirements:
+  - EAIMS-ARC-005
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-ARC-005]
+  requirements:
+  - EAIMS-ARC-005
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AUT-002]
+  requirements:
+  - EAIMS-AUT-002
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AUT-002]
+  requirements:
+  - EAIMS-AUT-002
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AUT-003]
+  requirements:
+  - EAIMS-AUT-003
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AUT-003]
+  requirements:
+  - EAIMS-AUT-003
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AUT-004]
+  requirements:
+  - EAIMS-AUT-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AUT-004]
+  requirements:
+  - EAIMS-AUT-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AUT-005]
+  requirements:
+  - EAIMS-AUT-005
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AUT-005]
+  requirements:
+  - EAIMS-AUT-005
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AUT-006]
+  requirements:
+  - EAIMS-AUT-006
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AUT-006]
+  requirements:
+  - EAIMS-AUT-006
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-AUT-009]
+  requirements:
+  - EAIMS-AUT-009
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-AUT-009]
+  requirements:
+  - EAIMS-AUT-009
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-CTX-003]
+  requirements:
+  - EAIMS-CTX-003
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-CTX-003]
+  requirements:
+  - EAIMS-CTX-003
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-DGO-004]
+  requirements:
+  - EAIMS-DGO-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-DGO-004]
+  requirements:
+  - EAIMS-DGO-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-DRA-005]
+  requirements:
+  - EAIMS-DRA-005
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-DRA-005]
+  requirements:
+  - EAIMS-DRA-005
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-ENG-004]
+  requirements:
+  - EAIMS-ENG-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-ENG-004]
+  requirements:
+  - EAIMS-ENG-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-ENG-006]
+  requirements:
+  - EAIMS-ENG-006
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-ENG-006]
+  requirements:
+  - EAIMS-ENG-006
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-EVD-001]
+  requirements:
+  - EAIMS-EVD-001
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-EVD-001]
+  requirements:
+  - EAIMS-EVD-001
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-EVD-008]
+  requirements:
+  - EAIMS-EVD-008
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-EVD-008]
+  requirements:
+  - EAIMS-EVD-008
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-EVD-011]
+  requirements:
+  - EAIMS-EVD-011
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-EVD-011]
+  requirements:
+  - EAIMS-EVD-011
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-EVL-001]
+  requirements:
+  - EAIMS-EVL-001
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-EVL-001]
+  requirements:
+  - EAIMS-EVL-001
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-EVL-004]
+  requirements:
+  - EAIMS-EVL-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-EVL-004]
+  requirements:
+  - EAIMS-EVL-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-EVL-009]
+  requirements:
+  - EAIMS-EVL-009
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-EVL-009]
+  requirements:
+  - EAIMS-EVL-009
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-INC-006]
+  requirements:
+  - EAIMS-INC-006
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-INC-006]
+  requirements:
+  - EAIMS-INC-006
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-LCM-004]
+  requirements:
+  - EAIMS-LCM-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-LCM-004]
+  requirements:
+  - EAIMS-LCM-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-MON-001]
+  requirements:
+  - EAIMS-MON-001
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-MON-001]
+  requirements:
+  - EAIMS-MON-001
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-MON-003]
+  requirements:
+  - EAIMS-MON-003
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-MON-003]
+  requirements:
+  - EAIMS-MON-003
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-MON-006]
+  requirements:
+  - EAIMS-MON-006
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-MON-006]
+  requirements:
+  - EAIMS-MON-006
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-MSP-004]
+  requirements:
+  - EAIMS-MSP-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-MSP-004]
+  requirements:
+  - EAIMS-MSP-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-RSK-001]
+  requirements:
+  - EAIMS-RSK-001
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-RSK-001]
+  requirements:
+  - EAIMS-RSK-001
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-RSK-004]
+  requirements:
+  - EAIMS-RSK-004
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-RSK-004]
+  requirements:
+  - EAIMS-RSK-004
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-SYS-001]
+  requirements:
+  - EAIMS-SYS-001
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-SYS-001]
+  requirements:
+  - EAIMS-SYS-001
+  coverage: direct_machine_negative
+- test: test_each_critical_machine_rule_positive[EAIMS-SYS-002]
+  requirements:
+  - EAIMS-SYS-002
+  coverage: direct_machine_positive
+- test: test_each_critical_machine_rule_negative[EAIMS-SYS-002]
+  requirements:
+  - EAIMS-SYS-002
+  coverage: direct_machine_negative
+- test: test_external_change_exposure_requires_reevaluation
+  requirements:
+  - EAIMS-MSP-004
+  coverage: direct
+- test: test_human_reserved_ai_final_authority_contradiction
+  requirements:
+  - EAIMS-HAB-003
+  - EAIMS-HAB-004
+  coverage: direct
+- test: test_intervention_infeasibility_is_critical
+  requirements:
+  - EAIMS-HAB-008
+  - EAIMS-HAW-006
+  coverage: direct
+- test: test_high_impact_missing_recourse_breaches_g2_04
+  requirements:
+  - EAIMS-HAB-009
+  - EAIMS-RAI-004
+  coverage: direct
+- test: test_autonomy_drift_detected
+  requirements:
+  - EAIMS-AUT-001
+  - EAIMS-AUT-003
+  coverage: scenario
+- test: test_ape_detects_financial_limit_breach
+  requirements:
+  - EAIMS-AUT-002
+  - EAIMS-AUT-005
+  coverage: direct
+- test: test_ape_detects_unapproved_tool
+  requirements:
+  - EAIMS-AGT-001
+  - EAIMS-AUT-002
+  coverage: direct
+- test: test_ape_detects_unauthorized_delegation
+  requirements:
+  - EAIMS-AUT-009
+  - EAIMS-AGT-003
+  coverage: direct
+- test: test_machine_derived_g2_final_authority_breach_overrides_manual_logic
+  requirements:
+  - EAIMS-HAB-003
+  - EAIMS-EVD-012
+  coverage: scenario
+- test: test_hab_detects_human_reserved_execution_by_ai
+  requirements:
+  - EAIMS-HAB-004
+  - EAIMS-HAW-005
+  coverage: direct
+- test: test_ri02_gov04_constrained_by_critical_autonomy_failures
+  requirements:
+  - EAIMS-AUT-002
+  - EAIMS-AUT-005
+  - EAIMS-AUT-009
+  coverage: reference
+- test: test_ri03_end_to_end_detects_human_reserved_breach
+  requirements:
+  - EAIMS-HAB-003
+  - EAIMS-HAB-004
+  - EAIMS-HAB-008
+  - EAIMS-HAB-009
+  coverage: reference
+- test: test_evidence_after_cutoff_rejected
+  requirements:
+  - EAIMS-EVD-011
+  coverage: direct
+- test: test_invalidated_evidence_does_not_support_level4
+  requirements:
+  - EAIMS-EVD-004
+  - EAIMS-EVD-005
+  coverage: direct
+- test: test_conflicted_requirement_can_be_indeterminate
+  requirements:
+  - EAIMS-EVD-008
+  - EAIMS-EVD-012
+  coverage: direct
+- test: test_result_hash_is_deterministic_for_same_fixture
+  requirements:
+  - EAIMS-EVD-009
+  - EAIMS-EVD-010
+  coverage: scenario

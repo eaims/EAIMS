@@ -1,0 +1,9 @@
+requirement_id: EAIMS-HAB-007
+assessor_id: ASSESSOR-001
+decision: SATISFIED
+rationale: Role competence was reviewed against documented responsibilities and current
+  training/experience evidence.
+evidence_refs:
+- EVD-COMP-001
+assessed_at: '2026-09-09T08:00:00Z'
+assessor_relationship: INTERNAL_INDEPENDENT

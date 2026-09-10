@@ -1,0 +1,174 @@
+reference_implementation: RI-01
+name: API-Consumed Analytics Assistant
+synthetic: true
+assessment:
+  assessment_id: RI01-ASM-001
+  assessment_type: PARTIAL
+  evidence_cutoff_time: "2026-09-09T06:30:00Z"
+system:
+  system_id: SYS-RI01
+  name: API-Consumed Analytics Assistant
+  material: true
+  agentic: false
+  model_sourcing: api_consumed
+  model_identifier: provider-model-floating
+  version_mode: floating
+risk_profile:
+  impact: I2
+  autonomy: A1
+  reversibility: R1
+  scale: S2
+  velocity: V1
+  detectability: D1
+  likelihood: L2
+  uncertainty: moderate
+  affected_population: internal_analysts
+  data_sensitivity: material_business_data
+  external_change_exposure: E3
+capabilities:
+  - capability_id: TEC-02
+    anchor_observed: {L1: true, L2: true, L3: true, L4: false, L5: false}
+  - capability_id: OPS-02
+    anchor_observed: {L1: true, L2: true, L3: false, L4: false, L5: false}
+  - capability_id: DAT-03
+    anchor_observed: {L1: true, L2: true, L3: true, L4: false, L5: false}
+  - capability_id: GOV-02
+    anchor_observed: {L1: true, L2: true, L3: false, L4: false, L5: false}
+requirement_results:
+  - requirement_id: EAIMS-MSP-001
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-001]
+  - requirement_id: EAIMS-MSP-002
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-001]
+  - requirement_id: EAIMS-MSP-003
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-001]
+  - requirement_id: EAIMS-MSP-004
+    result: NOT_SATISFIED
+    evidence_refs: [EVD-RI01-002]
+  - requirement_id: EAIMS-EVL-001
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-003]
+  - requirement_id: EAIMS-EVL-002
+    result: INSUFFICIENT_EVIDENCE
+    evidence_refs: []
+  - requirement_id: EAIMS-EVL-007
+    result: NOT_SATISFIED
+    evidence_refs: [EVD-RI01-004]
+  - requirement_id: EAIMS-EVL-008
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-003]
+  - requirement_id: EAIMS-CTX-001
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-005]
+  - requirement_id: EAIMS-CTX-003
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-006]
+  - requirement_id: EAIMS-CTX-005
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-006]
+  - requirement_id: EAIMS-RSK-001
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-007]
+  - requirement_id: EAIMS-RSK-002
+    result: SATISFIED
+    evidence_refs: [EVD-RI01-007]
+evidence:
+  - evidence_id: EVD-RI01-001
+    class: E2
+    confidence: C3
+    validity: VALID
+    nature: SUPPORTING
+    source: system-inventory.yaml
+    owner: ai-engineer
+    collected_at: "2026-09-09T06:00:00Z"
+    period_covered: "2026-09-01/2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: [provider_change, model_change]
+  - evidence_id: EVD-RI01-002
+    class: E3
+    confidence: C3
+    validity: VALID
+    nature: COUNTER
+    source: provider-change-simulation.log
+    owner: ai-engineer
+    collected_at: "2026-09-09T06:05:00Z"
+    period_covered: "2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: []
+  - evidence_id: EVD-RI01-003
+    class: E1
+    confidence: C3
+    validity: VALID
+    nature: SUPPORTING
+    source: evaluation-plan.yaml
+    owner: ai-engineer
+    collected_at: "2026-09-09T06:10:00Z"
+    period_covered: "2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: [provider_change, model_change]
+  - evidence_id: EVD-RI01-004
+    class: E3
+    confidence: C4
+    validity: VALID
+    nature: ABSENCE
+    source: test-run-retention-inspection.json
+    owner: assessor
+    collected_at: "2026-09-09T06:12:00Z"
+    period_covered: "2026-08-01/2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: []
+  - evidence_id: EVD-RI01-005
+    class: E2
+    confidence: C3
+    validity: VALID
+    nature: SUPPORTING
+    source: business-glossary.yaml
+    owner: data-owner
+    collected_at: "2026-09-09T06:15:00Z"
+    period_covered: "2026-09-01/2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: [material_data_change]
+  - evidence_id: EVD-RI01-006
+    class: E2
+    confidence: C3
+    validity: VALID
+    nature: SUPPORTING
+    source: governed-schema-context.yaml
+    owner: data-owner
+    collected_at: "2026-09-09T06:16:00Z"
+    period_covered: "2026-09-01/2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: [material_data_change]
+  - evidence_id: EVD-RI01-007
+    class: E1
+    confidence: C3
+    validity: VALID
+    nature: SUPPORTING
+    source: risk-profile.yaml
+    owner: business-owner
+    collected_at: "2026-09-09T06:20:00Z"
+    period_covered: "2026-09-09"
+    retained_operationally: true
+    invalidation_triggers: [purpose_change, user_population_change, autonomy_change]
+gate_inputs:
+  G0-01: PASS
+  G0-02: PASS
+  G0-03: PASS
+  G0-04: PASS
+  G0-05: PASS
+  G0-06: PASS
+  G0-07: PASS
+  G0-08: PASS
+  G0-09: PASS
+  G0-10: PASS
+  G1-01: PASS
+  G1-02: INCOMPLETE
+  G1-03: BREACH
+  G1-04: BREACH
+  G1-05: BREACH
+  G1-06: PASS
+consistency_context:
+  external_change_exposure: E3
+  provider_change_re_evaluation: false

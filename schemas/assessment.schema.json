@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eaims.org/schemas/assessment-1.0.schema.json",
+  "title": "EAIMS 1.0 Assessment",
+  "type": "object",
+  "required": [
+    "assessment_id",
+    "spec_version",
+    "assessment_type",
+    "status",
+    "assessment_time",
+    "evidence_cutoff_time"
+  ],
+  "properties": {
+    "assessment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_version": {
+      "type": "string"
+    },
+    "assessment_type": {
+      "enum": [
+        "FULL",
+        "PARTIAL",
+        "TARGETED"
+      ]
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "FINAL"
+      ]
+    },
+    "assessment_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence_cutoff_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "capability_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id",
+          "result"
+        ],
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "pattern": "^(STR|VAL|DAT|TEC|OPS|GOV|PEO|ADO)-\\d{2}$"
+          },
+          "result": {
+            "enum": [
+              "L1",
+              "L2",
+              "L3",
+              "L4",
+              "L5",
+              "INDETERMINATE",
+              "NOT_APPLICABLE",
+              "NOT_ASSESSED"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "C0",
+              "C1",
+              "C2",
+              "C3",
+              "C4"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

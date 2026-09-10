@@ -1,0 +1,45 @@
+spec_version: 1.0.0-fc16
+status: synthetic_worked_cases
+cases:
+- case_id: AQ-HIGH
+  factors:
+    scope_completeness: 1.0
+    evidence_coverage: 0.95
+    critical_coverage: 1.0
+    confidence_profile:
+    - C3
+    - C3
+    - C4
+    - C4
+    unresolved_conflicts: 0
+    critical_unresolved_conflicts: 0
+    stale_or_invalid_evidence_ratio: 0.02
+    assessor_independence: MULTI_ASSESSOR
+  expected: HIGH
+- case_id: AQ-MODERATE
+  factors:
+    scope_completeness: 0.82
+    evidence_coverage: 0.76
+    critical_coverage: 0.95
+    confidence_profile:
+    - C2
+    - C2
+    - C3
+    unresolved_conflicts: 2
+    critical_unresolved_conflicts: 0
+    stale_or_invalid_evidence_ratio: 0.15
+    assessor_independence: INTERNAL_INDEPENDENT
+  expected: MODERATE
+- case_id: AQ-LIMITED
+  factors:
+    scope_completeness: 0.55
+    evidence_coverage: 0.5
+    critical_coverage: 0.7
+    confidence_profile:
+    - C1
+    - C2
+    unresolved_conflicts: 3
+    critical_unresolved_conflicts: 1
+    stale_or_invalid_evidence_ratio: 0.3
+    assessor_independence: SELF
+  expected: LIMITED

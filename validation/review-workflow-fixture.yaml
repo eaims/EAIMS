@@ -1,0 +1,32 @@
+reviews:
+  - review_id: REVIEW-DEMO
+    reviewer_id: reviewer-demo
+    independence_class: EXTERNAL_INDEPENDENT
+    affiliation_disclosure: ""
+    conflict_of_interest: "none declared"
+    prior_material_contribution: false
+    commercial_relationship: false
+    reviewed_version: "1.0.0-fc16"
+    reviewed_commit_or_artifact_hash: demo-hash
+    reviewed_at: "2026-09-09T08:00:00Z"
+    domains_reviewed: [ARCH, MAT, EVD, GOV, RSK, EXE, ENT, RES]
+    limitations_acknowledged: true
+    overall_decision: ACCEPT_WITH_MINOR_CHANGES
+    findings:
+      - finding_id: F-001
+        domain: MAT
+        severity: MAJOR
+        title: Example maturity ambiguity
+        rationale: Demonstration finding for workflow testing.
+        evidence_or_reference: [spec/anchor-eligibility.yaml]
+        recommended_action: Clarify the rule.
+resolutions:
+  - resolution_id: RES-DEMO-001
+    finding_key: REVIEW-DEMO:F-001
+    resolution_status: RESOLVED
+    resolved_by: maintainer-demo
+    rationale: The ambiguity was resolved and regression-tested.
+    change_refs: [spec/example.yaml, tests/test_example.py]
+    evidence_refs: [TEST-RUN-DEMO]
+    requires_rereview: false
+    resolved_at: "2026-09-09T09:00:00Z"

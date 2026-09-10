@@ -1,22 +1,36 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "eaims"
-version = "0.2.1"
-description = "Reference implementation of the Enterprise AI Maturity Standard"
+version = "1.0.0.dev16"
+description = "Executable reference implementation of the Enterprise AI Maturity Standard"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "Apache-2.0"}
+license = {text = "Mixed distribution: Apache-2.0 code; CC BY 4.0 specification/documentation content"}
 authors = [{name = "Elias Naserkhaki"}]
-dependencies = []
+dependencies = [
+  "PyYAML>=6.0,<7",
+  "jsonschema>=4.22,<5"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
 
 [project.scripts]
 eaims = "eaims.cli:main"
+eaims-validate = "eaims.validate:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["eaims*"]
+
+[tool.setuptools.data-files]
+"share/eaims" = ["PACKAGE-LICENSE-NOTICE.md", "LICENSE", "LICENSE-CODE.md", "LICENSE-DOCS.md", "THIRD_PARTY_NOTICES.md", "ATTRIBUTION-POLICY.md"]
+"share/eaims/spec" = ["spec/*.yaml", "spec/*.json"]
+"share/eaims/schemas" = ["schemas/*.json"]
+"share/eaims/tests" = ["tests/catalog.yaml"]

@@ -1,0 +1,34 @@
+spec_version: 1.0.0-fc16
+rules:
+- rule_id: CONS-001
+  if: GOV-04 >= L4
+  requires: OPS-02 >= L3
+  severity: MATERIAL
+  message: High autonomy-governance maturity requires adequate evaluation maturity.
+- rule_id: CONS-002
+  if: human_reserved == true AND ai_final_authority == true
+  severity: CRITICAL
+  message: A Human Reserved decision cannot assign final authority to AI.
+- rule_id: CONS-003
+  if: pilot_decision == SCALE AND unresolved_critical_gate_breach == true
+  severity: CRITICAL
+  message: Scale decision conflicts with unresolved critical gate breach unless an
+    active approved exception explicitly permits continuation.
+- rule_id: CONS-004
+  if: external_change_exposure in [E3,E4] AND provider_change_re_evaluation == false
+  severity: MATERIAL
+  message: High external change exposure requires provider-change re-evaluation controls.
+- rule_id: CONS-005
+  if: approved_autonomy < observed_autonomy
+  severity: CRITICAL
+  message: Observed autonomy exceeds approved autonomy.
+- rule_id: CONS-006
+  if: human_oversight_required == true AND intervention_capacity_feasible == false
+  severity: CRITICAL
+  message: Nominal human oversight is not meaningful when intervention is operationally
+    infeasible.
+severity:
+- INFO
+- WARNING
+- MATERIAL
+- CRITICAL

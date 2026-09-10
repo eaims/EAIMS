@@ -1,0 +1,66 @@
+spec_version: 1.0.0-fc16
+overall_impact_rule: Use the highest materially credible impact dimension; do not
+  average materially distinct impact domains.
+impact_dimensions:
+- financial
+- employment
+- safety
+- rights
+- privacy
+- operational
+- reputational
+- service_access
+- societal_systemic
+primary_profile_fields:
+- impact
+- autonomy
+- reversibility
+- scale
+- velocity
+- detectability
+- likelihood
+- uncertainty
+- affected_population
+- data_sensitivity
+- external_change_exposure
+derived_risk_bands:
+- LOW
+- MODERATE
+- MATERIAL
+- HIGH
+- CRITICAL
+escalation_rules:
+- rule_id: RSK-001
+  if: impact >= I3 AND autonomy >= A3
+  effect: derived_risk_band >= HIGH
+- rule_id: RSK-002
+  if: impact == I4
+  effect: derived_risk_band >= HIGH
+- rule_id: RSK-003
+  if: impact >= I3 AND reversibility >= R3
+  effect: activate_high_impact_governance
+- rule_id: RSK-004
+  if: autonomy >= A4 AND velocity >= V3
+  effect: activate_agentic_critical_controls
+- rule_id: RSK-005
+  if: autonomy >= A4 AND velocity >= V3 AND scale >= S3
+  effect: activate_selected_G2_assurance_controls
+review_triggers:
+- model_change
+- provider_change
+- purpose_change
+- user_population_change
+- autonomy_change
+- tool_change
+- new_geography
+- regulation_change
+- incident
+- material_data_change
+- scale_increase
+- velocity_increase
+diagnostics:
+- RISK_DRIFT
+- AUTONOMY_DRIFT
+- SCOPE_DRIFT
+calibration_note: Derived bands and escalation thresholds are design-calibrated and
+  scenario-tested; empirical cross-sector calibration remains future work.

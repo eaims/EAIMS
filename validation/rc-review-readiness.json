@@ -1,0 +1,12 @@
+{
+  "candidate": "FC16",
+  "review_protocol_present": true,
+  "structured_feedback_template_present": true,
+  "review_feedback_schema_present": true,
+  "known_limitations_disclosed": true,
+  "review_questions_present": true,
+  "reviewer_quick_map_present": true,
+  "independent_review_completed": false,
+  "rc_review_status": "READY_TO_REQUEST_REVIEW_NOT_COMPLETED",
+  "pre_push_prepared": true
+}

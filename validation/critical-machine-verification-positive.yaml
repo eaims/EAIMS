@@ -1,0 +1,66 @@
+data:
+  access_controls_enforced: true
+  retention_deletion_controls: true
+context:
+  permissions_preserved: true
+architecture:
+  critical_dependencies:
+  - identity
+  - model-provider
+  failure_boundaries:
+  - tool-sandbox
+provider_change:
+  re_evaluation_enabled: true
+source:
+  secret_scan_pass: true
+control_bypass:
+  governed: true
+agent:
+  tools:
+  - crm_read
+  delegation_traceable: true
+  identity: agent-service-v1
+change_control:
+  no_silent_authority_expansion: true
+lifecycle:
+  re_evaluation_triggers:
+  - model_change
+  - autonomy_change
+evaluation:
+  criteria:
+  - accuracy
+  - safety
+  material_change_re_evaluation: true
+  failed_threshold_blocks: true
+monitoring:
+  production_enabled: true
+  agent_action_logs: true
+  threshold_escalation: true
+incident:
+  suspension_test_pass: true
+risk:
+  impact: I2
+  reclassification_triggers:
+  - purpose_change
+  - scale_change
+permission_envelope:
+  allowed_tools:
+  - crm_read
+  financial_limit: 100
+autonomy:
+  reassessment_triggers:
+  - permission_change
+  action_auditability: true
+  authority_enforced: true
+  suspension_tested: true
+  delegation_boundary_enforced: true
+evidence:
+  traceability: true
+  conflicts_preserved: true
+  all_within_cutoff: true
+system_inventory:
+- system_id: SYS-001
+system_identity:
+  intended_purpose: Customer-support assistance
+  intended_users:
+  - support_agents

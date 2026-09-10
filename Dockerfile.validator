@@ -1,0 +1,25 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+RUN addgroup --system eaims && adduser --system --ingroup eaims eaims
+
+# Copy package metadata, licensing material, and canonical data before
+# installation so the built wheel contains the same legal and spec payload as
+# a repository build.
+COPY pyproject.toml README.md /app/
+COPY PACKAGE-LICENSE-NOTICE.md LICENSE LICENSE-CODE.md LICENSE-DOCS.md /app/
+COPY THIRD_PARTY_NOTICES.md ATTRIBUTION-POLICY.md AUTHORS.md /app/
+COPY src /app/src
+COPY spec /app/spec
+COPY schemas /app/schemas
+COPY tests/catalog.yaml /app/tests/catalog.yaml
+
+RUN pip install --no-cache-dir .
+
+USER eaims
+
+ENTRYPOINT ["eaims-validate"]

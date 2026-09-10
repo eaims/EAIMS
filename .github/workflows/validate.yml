@@ -1,25 +1,73 @@
-name: Validate EAIMS
+name: EAIMS Validation
 
 on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Rebuild generated assets
+      - name: Install package and test dependencies
+        run: pip install -e '.[test]'
+      - name: Pre-push/repository audit
+        run: python tools/prepush_audit.py
+      - name: Validate canonical specification
+        run: eaims-validate
+      - name: Run executable tests
+        run: PYTHONPATH=. pytest -q
+      - name: CLI smoke test
         run: |
-          python tools/build_questionnaire.py
-          python tools/build_v020_assets.py
-          git diff --exit-code
-      - name: Test executable reference implementation
-        run: PYTHONPATH=src python -m unittest discover -s tests -v
-      - name: Validate repository and examples
-        run: PYTHONPATH=src python tools/validate_v020.py
-      - name: Check browser JavaScript syntax
-        run: node --check site/app.js
+          eaims validate-fixture reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml
+          eaims assess reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml --out /tmp/eaims-ri01
+      - name: Build wheel
+        run: |
+          python -m pip install build
+          python -m build --wheel
+      - name: Standalone wheel smoke test outside repository
+        run: |
+          python -m venv /tmp/eaims-wheel-venv
+          /tmp/eaims-wheel-venv/bin/pip install dist/*.whl
+          cd /tmp
+          /tmp/eaims-wheel-venv/bin/eaims-validate
+          /tmp/eaims-wheel-venv/bin/eaims validate-fixture "$GITHUB_WORKSPACE/reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml"
+          /tmp/eaims-wheel-venv/bin/eaims assess "$GITHUB_WORKSPACE/reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml" --out /tmp/eaims-wheel-ri01
+      - name: Dependency audit
+        run: |
+          python -m pip install pip-audit
+          pip-audit
+      - name: Generate Python dependency SBOM
+        run: |
+          python -m pip install cyclonedx-bom
+          mkdir -p validation/runtime-ci
+          cyclonedx-py environment --output-format JSON --output-file validation/runtime-ci/python-sbom.cdx.json
+      - name: Docker build smoke test
+        run: docker build -f Dockerfile.validator -t eaims-fc16 .
+      - name: Docker image runtime validation
+        run: docker run --rm --read-only --tmpfs /tmp eaims-fc16
+      - name: Docker Compose config validation
+        run: |
+          docker compose -f docker-compose.yml config
+          docker compose -f docker-compose.reference.yml config
+      - name: Docker Compose minimal runtime validation
+        run: docker compose -f docker-compose.yml up --build --abort-on-container-exit --exit-code-from validator
+      - name: Docker Compose reference runtime validation
+        run: docker compose -f docker-compose.reference.yml run --build --rm reference-runner
+      - name: Capture container runtime evidence
+        run: |
+          mkdir -p validation/runtime-ci
+          docker image inspect eaims-fc16 --format '{{.Id}}' > validation/runtime-ci/container-image-id.txt
+          docker version > validation/runtime-ci/docker-version.txt
+          docker compose version > validation/runtime-ci/compose-version.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eaims-runtime-validation-evidence
+          path: validation/runtime-ci/

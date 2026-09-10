@@ -1,7 +1,11 @@
-# Documentation and Assessment Content License
+# EAIMS Documentation and Specification License
 
-EAIMS documentation, maturity anchors, questionnaires, templates, examples, industry profiles, CSV data, and JSON questionnaire content are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+Copyright © 2026 Elias Naserkhaki. All rights reserved except as expressly licensed.
 
-Users may share and adapt this material, including commercially, with appropriate attribution, a license link, and an indication of changes. Attribution must not imply endorsement. Patent and trademark rights are not granted.
+Unless a file expressly states otherwise, EAIMS documentation, normative specification text, maturity anchors, requirements, questionnaires, templates, examples, industry profiles, CSV data, assessment content, machine-readable specification data in YAML/JSON, and other non-schema specification artifacts are licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
 
-Full legal text: [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt)
+JSON Schema files are treated as code/schema assets and are licensed under Apache-2.0 under `LICENSE-CODE.md`.
+
+The CC BY 4.0 grant does not transfer EAIMS project identity, trademarks, governance authority, official-release authority, or ownership of third-party material.
+
+Full license text: `LICENSES/CC-BY-4.0.txt`.
