@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — v1 input and review hardening
+## 1.0.1 — 2026-09-10 — v1 input and review hardening
 
 - Reject empty evidence collection times, ambiguous input types, non-finite numbers and duplicate YAML mapping keys before assessment.
 - Add v1 fixture and result schemas while preserving legacy contracts and existing valid reference results.
@@ -9,6 +9,8 @@
 - Add optional `review summarize --fail-on-unmet` for automation with explicit exit semantics.
 - Add a v1 quickstart and clearly label legacy questionnaire, scoring and browser resources.
 - Extend regression coverage and installed-wheel review checks.
+
+- Synchronize package, runtime, citation and container versions; publish the tested wheel with checksums after CI succeeds.
 
 These changes do not alter the frozen normative specification or retroactively change the published 1.0.0 release evidence.
 
