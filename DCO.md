@@ -1,16 +1,13 @@
 # Developer Certificate of Origin
 
-EAIMS uses the Developer Certificate of Origin, Version 1.1.
+EAIMS uses the Developer Certificate of Origin, Version 1.1 as a provenance certification for contributions where the project requests DCO sign-off.
 
-By making a contribution and adding a `Signed-off-by` line, I certify that:
+By making a contribution and adding a `Signed-off-by` line, the contributor certifies that the contribution is submitted under a lawful rights basis and that the contributor has authority to submit it.
 
-1. The contribution was created by me, in whole or in part, and I have the right to submit it under the applicable open license; or
-2. The contribution is based on earlier work that, to the best of my knowledge, is covered by an appropriate open license and I have the right to submit modifications under the applicable license; or
-3. The contribution was provided directly to me by a person who certified one of the preceding statements, and I have not modified it; and
-4. I understand that the contribution and certification are public and may be retained indefinitely and redistributed under the project licenses.
+DCO sign-off is a provenance mechanism. **It does not replace the mandatory CLA or copyright assignment required by `IP_POLICY.md` and `CONTRIBUTOR-RIGHTS.md` for any third-party Substantive Contribution that is to be incorporated into an official EAIMS release.**
 
-Add this line to every commit:
+Where DCO sign-off is requested, use:
 
-`Signed-off-by: Full Name <email@example.com>`
+`Signed-off-by: Full Name <contributor-contact>`
 
-This text follows DCO 1.1. The canonical version is available at https://developercertificate.org/.
+The canonical DCO 1.1 text is maintained by the DCO project. EAIMS does not reproduce or modify that external text here; this file records the EAIMS process rule and links the contribution-rights requirement to the project legal framework.

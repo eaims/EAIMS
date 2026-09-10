@@ -1,0 +1,19 @@
+version: fc16
+runtime_contract:
+  python: ">=3.10"
+  canonical_cli:
+    validate: "eaims-validate"
+    assess: "eaims assess <fixture> --out <directory>"
+  container:
+    base_family: "python:3.12-slim"
+    runs_as_non_root: true
+    read_only_root_filesystem_expected: true
+    no_new_privileges_expected: true
+    drop_all_capabilities_expected: true
+  compose:
+    minimal_services:
+      - validator
+    reference_services:
+      - validator
+      - reference-runner
+  runtime_claim_status: "not_container-runtime-validated_in_fc16_build_environment"

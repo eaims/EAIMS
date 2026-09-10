@@ -1,0 +1,127 @@
+spec_version: 1.0.0-fc16
+maturity_levels:
+  L1: Initial
+  L2: Emerging
+  L3: Defined
+  L4: Managed
+  L5: Adaptive
+impact_levels:
+  I0: Minimal
+  I1: Limited
+  I2: Material
+  I3: High Impact
+  I4: Critical
+autonomy_levels:
+  A0: Informational
+  A1: Advisory
+  A2: Human-approved Execution
+  A3: Supervised Autonomy
+  A4: Bounded Autonomy
+  A5: High Autonomy
+human_boundary_levels:
+  H0: Human Awareness
+  H1: Human Review
+  H2: Human Approval
+  H3: Human Final Authority
+  HR: Human Reserved
+reversibility_levels:
+  R0: Easily reversible
+  R1: Reversible with minor cost
+  R2: Reversible with material effort
+  R3: Difficult to reverse
+  R4: Effectively irreversible
+scale_levels:
+  S0: Single / isolated
+  S1: Small group
+  S2: Department / customer segment
+  S3: Enterprise / large population
+  S4: Massive / systemic
+velocity_levels:
+  V0: Human-paced
+  V1: Low automated velocity
+  V2: Moderate automated velocity
+  V3: High automated velocity
+  V4: Machine-speed cascading
+detectability_levels:
+  D0: Immediately observable
+  D1: Easily detectable
+  D2: Detectable with monitoring
+  D3: Difficult to detect
+  D4: Latent / delayed detection
+likelihood_levels:
+  L0: Rare
+  L1: Unlikely
+  L2: Possible
+  L3: Likely
+  L4: Frequent
+evidence_classes:
+  E1: Foundational
+  E2: Implementation
+  E3: Operational
+  E4: Adaptive
+evidence_confidence:
+  C0: Unsupported
+  C1: Limited
+  C2: Substantial
+  C3: Strong
+  C4: Verified
+evidence_validity:
+- VALID
+- STALE
+- INVALIDATED
+- CONFLICTED
+- UNVERIFIED
+evidence_nature:
+- SUPPORTING
+- COUNTER
+- ABSENCE
+- CONTEXT
+applicability_states:
+- APPLICABLE
+- CONDITIONALLY_APPLICABLE
+- NOT_APPLICABLE
+- NOT_ASSESSED
+capability_result_states:
+- L1
+- L2
+- L3
+- L4
+- L5
+- INDETERMINATE
+- NOT_APPLICABLE
+- NOT_ASSESSED
+requirement_result_states:
+- SATISFIED
+- PARTIALLY_SATISFIED
+- NOT_SATISFIED
+- INSUFFICIENT_EVIDENCE
+- NOT_APPLICABLE
+gate_results:
+- PASS
+- BREACH
+- INCOMPLETE
+- NOT_APPLICABLE
+machine_verifiability:
+  MV1: Machine-testable
+  MV2: Machine-verifiable
+  MV3: Hybrid
+  MV4: Human judgment required
+assessment_types:
+- FULL
+- PARTIAL
+- TARGETED
+assessment_quality:
+- HIGH
+- MODERATE
+- LIMITED
+principles:
+- Value before scale
+- Evidence before maturity
+- Accountability cannot disappear into automation
+- Risk determines control intensity
+- Maturity is contextual
+- Human authority must be intentionally designed
+- AI systems require lifecycle governance
+- Governance should enable value, not merely restrict AI
+- Continuous evidence matters
+- Responsible autonomy is earned

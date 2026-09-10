@@ -1,0 +1,32 @@
+[
+  {
+    "finding_key": "REVIEW-DEMO:F-001",
+    "review_id": "REVIEW-DEMO",
+    "reviewer_id": "reviewer-demo",
+    "domain": "MAT",
+    "severity": "MAJOR",
+    "title": "Example maturity ambiguity",
+    "rationale": "Demonstration finding for workflow testing.",
+    "evidence_or_reference": [
+      "spec/anchor-eligibility.yaml"
+    ],
+    "recommended_action": "Clarify the rule.",
+    "resolution_status": "RESOLVED",
+    "resolution": {
+      "resolution_id": "RES-DEMO-001",
+      "finding_key": "REVIEW-DEMO:F-001",
+      "resolution_status": "RESOLVED",
+      "resolved_by": "maintainer-demo",
+      "rationale": "The ambiguity was resolved and regression-tested.",
+      "change_refs": [
+        "spec/example.yaml",
+        "tests/test_example.py"
+      ],
+      "evidence_refs": [
+        "TEST-RUN-DEMO"
+      ],
+      "requires_rereview": false,
+      "resolved_at": "2026-09-09T09:00:00Z"
+    }
+  }
+]

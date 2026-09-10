@@ -1,0 +1,75 @@
+spec_version: "1.0.0-fc16"
+protocol_id: EAIMS-RC-REVIEW-001
+title: EAIMS 1.0 Independent Release Candidate Review Protocol
+status: provisional
+purpose: >-
+  Provide a structured, traceable process for independent technical, governance,
+  assessment-method, and enterprise-practitioner review of EAIMS 1.0 before RC labeling.
+reviewer_independence:
+  allowed:
+    - EXTERNAL_INDEPENDENT
+    - INTERNAL_INDEPENDENT
+  preferred: EXTERNAL_INDEPENDENT
+  disclosure_required:
+    - prior_material_contribution
+    - commercial_relationship
+    - organizational_affiliation
+    - conflict_of_interest
+review_domains:
+  - id: ARCH
+    title: Canonical architecture and capability model
+  - id: MAT
+    title: Maturity anchors and assessment semantics
+  - id: EVD
+    title: Evidence, confidence, provenance, and invalidation
+  - id: GOV
+    title: Governance, HAB, autonomy, and high-impact controls
+  - id: RSK
+    title: Risk, impact, and gate activation
+  - id: EXE
+    title: Executability, schemas, tests, and reproducibility
+  - id: ENT
+    title: Enterprise applicability and operating-model fit
+  - id: RES
+    title: Research claims, limitations, and validation boundaries
+severity_levels:
+  - BLOCKER
+  - MAJOR
+  - MODERATE
+  - MINOR
+  - EDITORIAL
+decision_options:
+  - ACCEPT_AS_IS
+  - ACCEPT_WITH_MINOR_CHANGES
+  - REVISE_AND_REREVIEW
+  - NOT_READY_FOR_RC
+required_review_record_fields:
+  - review_id
+  - reviewer_id
+  - independence_class
+  - reviewed_version
+  - reviewed_commit_or_artifact_hash
+  - reviewed_at
+  - domains_reviewed
+  - overall_decision
+  - findings
+  - limitations_acknowledged
+finding_required_fields:
+  - finding_id
+  - domain
+  - severity
+  - title
+  - rationale
+  - evidence_or_reference
+  - recommended_action
+resolution_required_for:
+  - BLOCKER
+  - MAJOR
+rc_exit_rule: >-
+  RC review is considered completed only when at least one independent review record exists,
+  all BLOCKER findings are resolved, all MAJOR findings are resolved or explicitly accepted
+  with documented rationale, and the final review disposition is not NOT_READY_FOR_RC.
+claim_boundary: >-
+  Completion of independent RC review is a design-review milestone. It does not establish
+  empirical validity, certification, regulatory conformity, production validation, or
+  inter-rater reliability.

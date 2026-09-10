@@ -1,0 +1,12 @@
+resolution_id: RES-DEMO-001
+finding_key: REVIEW-DEMO:F-001
+resolution_status: RESOLVED
+resolved_by: maintainer-demo
+rationale: The ambiguous wording was replaced with an explicit normative condition and regression test.
+change_refs:
+  - spec/example.yaml
+  - tests/test_example.py
+evidence_refs:
+  - TEST-RUN-DEMO
+requires_rereview: false
+resolved_at: "2026-09-09T09:00:00Z"

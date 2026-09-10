@@ -1,5 +1,15 @@
 .git
+.github
 __pycache__
+.pytest_cache
 *.pyc
-tests
-LICENSES
+*.pyo
+*.pyd
+.venv
+venv
+dist
+build
+run-output
+review-output
+validation/runtime-ci
+*.zip

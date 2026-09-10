@@ -1,0 +1,9 @@
+{
+  "spec_version": "1.0.0-fc16",
+  "capabilities": 30,
+  "anchor_eligibility_rules": 150,
+  "cross_capability_dependencies": 5,
+  "l4_default_operating_cycles": 2,
+  "l5_default_adaptation_cycles": 1,
+  "status": "design-tested-not-empirically-calibrated"
+}

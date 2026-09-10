@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EAIMS RC Review Finding Resolution",
+  "type": "object",
+  "required": [
+    "resolution_id",
+    "finding_key",
+    "resolution_status",
+    "resolved_by",
+    "rationale",
+    "resolved_at"
+  ],
+  "properties": {
+    "resolution_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "finding_key": {
+      "type": "string",
+      "minLength": 3
+    },
+    "resolution_status": {
+      "enum": [
+        "RESOLVED",
+        "ACCEPTED_WITH_RATIONALE",
+        "REJECTED_AS_INVALID",
+        "OPEN"
+      ]
+    },
+    "resolved_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "change_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires_rereview": {
+      "type": "boolean"
+    },
+    "resolved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

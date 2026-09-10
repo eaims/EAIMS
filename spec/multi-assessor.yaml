@@ -1,0 +1,34 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate_fc16
+principles:
+- Independent assessor judgments SHALL be preserved before resolution.
+- Conflicting assessor maturity or requirement judgments SHALL NOT be averaged.
+- A resolution record SHALL identify the final decision, resolver, rationale, evidence
+  considered, participating assessors, and timestamp.
+- Resolution SHALL NOT delete or overwrite original assessor records.
+- Inter-rater metrics are validation outputs and do not alter maturity directly.
+disagreement_classes:
+  NONE: All valid assessor decisions agree.
+  EVIDENCE: At least one assessor reports INSUFFICIENT_EVIDENCE while another reaches
+    a substantive decision.
+  APPLICABILITY: NOT_APPLICABLE conflicts with an applicable substantive decision.
+  MATERIAL: SATISFIED conflicts with NOT_SATISFIED for the same requirement.
+resolution_required_fields:
+- requirement_id
+- resolver_id
+- final_decision
+- rationale
+- evidence_refs
+- considered_assessor_ids
+- resolved_at
+allowed_final_decisions:
+- SATISFIED
+- NOT_SATISFIED
+- INSUFFICIENT_EVIDENCE
+- NOT_APPLICABLE
+inter_rater_export_fields:
+- requirement_id
+- assessor_id
+- decision
+- assessed_at
+- independence_class

@@ -1,10 +1,39 @@
-.DS_Store
-Thumbs.db
-*.tmp
-*.log
-.env
-.venv/
 __pycache__/
+*.py[cod]
 *.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+dist/
+build/
+run-output/
+review-output/
+validation/runtime-ci/
+.DS_Store
+.env
+.env.*
+!.env.example
 
-*.egg-info/
+# Python/test/build caches and residues
+*.pyo
+.mypy_cache/
+.ruff_cache/
+coverage.xml
+.eggs/
+.tox/
+.nox/
+# Virtual environments and local config
+env/
+# IDE/OS/editor temporary files
+.idea/
+.vscode/
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
+# Local runtime/review outputs

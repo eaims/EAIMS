@@ -1,0 +1,37 @@
+services:
+  validator:
+    build:
+      context: .
+      dockerfile: Dockerfile.validator
+    image: eaims/validator:1.0.0-fc16
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  reference-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile.validator
+    image: eaims/validator:1.0.0-fc16
+    entrypoint: ["/bin/sh", "-c"]
+    command: >-
+      eaims assess reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml --out /runs/ri-01 &&
+      eaims assess reference-implementations/ri-02-enterprise-service-agent/input/fixture.yaml --out /runs/ri-02 &&
+      eaims assess reference-implementations/ri-03-high-impact-decision-support/input/fixture.yaml --out /runs/ri-03
+    volumes:
+      - ./reference-implementations:/app/reference-implementations:ro
+      - eaims_runs:/runs
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  eaims_runs:

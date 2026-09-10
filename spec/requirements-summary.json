@@ -1,0 +1,7 @@
+{
+  "spec_version": "1.0.0-fc16",
+  "requirements_total": 206,
+  "shall_or_shall_not": 177,
+  "critical_shall_or_shall_not": 80,
+  "cross_cutting": 16
+}

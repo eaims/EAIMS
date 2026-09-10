@@ -1,0 +1,70 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate_fc16
+purpose: Assessment Quality evaluates trustworthiness and completeness of the assessment
+  process; it does not change organizational maturity.
+independence_classes:
+  SELF: Assessor evaluates controls they own or directly operate.
+  INTERNAL_INDEPENDENT: Assessor is internal but independent of the assessed control
+    or delivery team.
+  EXTERNAL: Assessor is external to the assessed organization or control ownership.
+  MULTI_ASSESSOR: Two or more assessors contribute independent judgments; disagreements
+    are preserved and resolved explicitly.
+quality_levels:
+- HIGH
+- MODERATE
+- LIMITED
+factors:
+  scope_completeness:
+    range: 0..1
+    meaning: Share of intended assessment scope completed.
+  evidence_coverage:
+    range: 0..1
+    meaning: Share of applicable requirements with usable evidence.
+  critical_coverage:
+    range: 0..1
+    meaning: Share of applicable critical requirements assessed.
+  confidence_profile:
+    values:
+    - C0
+    - C1
+    - C2
+    - C3
+    - C4
+  unresolved_conflicts:
+    type: integer
+  critical_unresolved_conflicts:
+    type: integer
+  stale_or_invalid_evidence_ratio:
+    range: 0..1
+  assessor_independence:
+    values:
+    - SELF
+    - INTERNAL_INDEPENDENT
+    - EXTERNAL
+    - MULTI_ASSESSOR
+decision_rules:
+  HIGH:
+  - scope_completeness >= 0.90
+  - evidence_coverage >= 0.85
+  - critical_coverage == 1.00
+  - median_confidence >= C3
+  - critical_unresolved_conflicts == 0
+  - unresolved_conflicts <= 1
+  - stale_or_invalid_evidence_ratio <= 0.10
+  - assessor_independence != SELF
+  MODERATE:
+  - scope_completeness >= 0.70
+  - evidence_coverage >= 0.65
+  - critical_coverage >= 0.90
+  - median_confidence >= C2
+  - critical_unresolved_conflicts == 0
+  - stale_or_invalid_evidence_ratio <= 0.25
+  LIMITED:
+  - Any assessment not meeting HIGH or MODERATE criteria.
+principles:
+- Assessment Quality SHALL NOT directly increase or decrease a maturity result.
+- A high maturity result MAY coexist with LIMITED Assessment Quality and SHALL be
+  reported with that limitation.
+- Unresolved critical assessor disagreement prevents HIGH or MODERATE Assessment Quality.
+- NOT_ASSESSED and INDETERMINATE results reduce scope/evidence completeness; NOT_APPLICABLE
+  does not imply missing assessment when justified.

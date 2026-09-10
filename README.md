@@ -1,93 +1,85 @@
 # EAIMS — Enterprise AI Maturity Standard
 
-> An open, vendor-neutral, evidence-based, and executable specification for enterprise AI maturity.
+> An open, vendor-neutral, evidence-grounded and executable framework for assessing and improving enterprise AI maturity while governing value, autonomy, accountability and operational risk.
 
-**Version:** 0.2.1 Research Baseline  
-**Status:** Public Review and Pilot Preparation  
-**Documentation and assessment content:** CC BY 4.0  
-**Code, workflows, and schemas:** Apache-2.0
+**Version:** 1.0 Freeze Candidate (FC16)
+**Status:** Release-candidate preparation / independent review pending
+**Documentation and specification content:** CC BY 4.0
+**Code, tests, workflows and JSON Schemas:** Apache-2.0
 
-## What EAIMS adds
+EAIMS 1.0 moves the project from a research-baseline maturity model toward an executable enterprise AI operating and assurance framework. It does not itself confer certification, regulatory conformity, legal compliance or safety assurance.
 
-EAIMS combines an enterprise operating model with reproducible assessment infrastructure:
+## Canonical EAIMS 1.0 candidate
 
-- 9 dimensions, 27 capabilities, and 162 observable maturity anchors
-- Capability-specific evidence examples, counter-evidence, and freshness guidance
-- Confidence reporting and critical gates that prevent unsafe averaging
-- Deterministic Python scoring engine, CLI, schemas, automated tests, and reports
-- Three complete fictional assessment fixtures
-- Independent conceptual crosswalk to major public AI-governance themes
-- Conformance classes, assessor handbook, pilot protocol, and benchmark protocol
-- Dependency-free browser reference interface and local Docker deployment
+- **8 dimensions** and **30 capabilities**
+- **5 maturity levels** (L1 Initial → L5 Adaptive)
+- **150 capability-specific maturity anchors**
+- **206 normative and cross-cutting requirements**
+- **177 SHALL / SHALL_NOT requirements**, including **80 critical** requirements
+- explicit evidence confidence, applicability, assessment quality and multi-assessor semantics
+- G0–G3 gate families with rule-based escalation
+- Human Accountability Boundaries (HAB), Human Reserved decisions and bounded AI autonomy
+- model/system sourcing, external-change exposure and agent permission envelopes
+- diagnostics for maturity debt, autonomy debt, assurance gap and drift
 
-EAIMS supports predictive ML, generative AI, RAG, agents, third-party services, and cloud, hybrid, sovereign, or on-premises architectures. It does not prescribe a vendor, model, platform, or consulting provider.
+A central design principle is that AI maturity is not maximum automation. Mature organizations determine where automation creates value, where human oversight is necessary, and where accountability must remain human.
+
+## Executable reference implementation
+
+The Python package validates structured assessments, evaluates evidence and requirements, applies anchor eligibility and gates, produces deterministic results and reports, and supports structured review operations.
+
+```bash
+python -m pip install -e '.[test]'
+PYTHONPATH=. python -m src.eaims.validate
+PYTHONPATH=. pytest -q
+python tools/prepush_audit.py
+```
+
+The published v0.2.1 CLI commands `validate`, `score`, and `report` remain available through the compatibility path. EAIMS 1.0 adds `validate-fixture`, `assess`, and `review`. Existing public Python modules `eaims.scoring` and `eaims.reporting` are preserved during the v1 integration.
+
+## Synthetic reference implementations
+
+Three end-to-end cases exercise different enterprise conditions:
+
+1. **RI-01 — API-Consumed Analytics Assistant:** model sourcing, external-change exposure, evidence retention and material gates.
+2. **RI-02 — Enterprise Autonomous Service Agent:** agent permission envelope, financial/action limits, operational suspension, autonomy drift and G3 controls.
+3. **RI-03 — High-Impact Decision Support:** Human Reserved decisions, final human authority, recourse, intervention feasibility and G2 controls.
+
+These cases are synthetic and are not presented as customer deployments or empirical validation.
+
+## Docker
+
+The existing browser/reference Docker behavior is retained for backward compatibility. The v1 validator uses a separate Dockerfile:
+
+```bash
+docker build -f Dockerfile.validator -t eaims/validator:1.0-fc16 .
+docker compose run --rm validator
+```
+
+See `docs/PACKAGING-AND-RUNTIME-VALIDATION.md` and `VALIDATION.md` for the runtime-validation boundary.
+
+## Independent review and validation status
+
+EAIMS 1.0 is **field-informed rather than field-validated**. Its design incorporates observations from feasibility assessment, realistic synthetic reference implementations and enterprise pilot-readiness discussions. Formal multi-organization empirical validation, inter-rater reliability research and independent review remain part of the research agenda.
+
+The `review/` directory provides structured adversarial questions, reviewer guidance, feedback/resolution schemas and executable BLOCKER/MAJOR exit semantics. No claim is made that independent review has already been completed.
 
 ## Project status and stewardship
 
-EAIMS was founded and initially authored by **Elias Naserkhaki**, registrant and founding steward of **eaims.org**. Founder attribution records project origin and stewardship; it does not create accredited standards authority or override published governance.
+EAIMS was founded and initially authored by **Elias Naserkhaki**, founding steward of **eaims.org**. Governance, contribution rights and licensing boundaries are documented explicitly in [GOVERNANCE.md](GOVERNANCE.md), [IP_POLICY.md](IP_POLICY.md), [CONTRIBUTING.md](CONTRIBUTING.md), [CLA.md](CLA.md), and [COPYRIGHT-ASSIGNMENT.md](COPYRIGHT-ASSIGNMENT.md).
 
-EAIMS is not an ISO, IEC, ANSI, governmental, or accredited standard. It does not provide certification, legal compliance, or safety assurance. A narrowly scoped implementation listing, when present in the [public registry](docs/approved-implementations.md), is not certification or approval of customer results. See [Disclaimer](DISCLAIMER.md), [IP Policy](IP_POLICY.md), [Origin](ORIGIN.md), and [Trademark Policy](TRADEMARK.md).
+EAIMS is not ISO, IEC, ANSI, a governmental body or an accredited certification scheme. See [DISCLAIMER.md](DISCLAIMER.md) and [TRADEMARK.md](TRADEMARK.md).
 
-## Quick start
+## Licensing and provenance
 
-Run the reference engine without third-party runtime dependencies:
+The detailed boundary is defined in [LICENSE](LICENSE): documentation, normative specification/assessment content and machine-readable specification data other than JSON Schemas are licensed under **CC BY 4.0**; code, tests, automation/build assets, Docker/Compose configuration, workflows and JSON Schemas are licensed under **Apache-2.0**. Public licenses do not transfer ownership, trademarks, governance authority or official-release authority.
 
-```bash
-python -m pip install -e .
-eaims validate examples/fictional-manufacturer.assessment.json
-eaims score examples/fictional-manufacturer.assessment.json
-eaims report examples/fictional-manufacturer.assessment.json --format html --output report.html
-```
+See [PROVENANCE.md](PROVENANCE.md), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), [LICENSE-CODE.md](LICENSE-CODE.md), and [LICENSE-DOCS.md](LICENSE-DOCS.md).
 
-Run the browser interface:
+## Migration and historical resources
 
-```bash
-python -m http.server 8080
-# open http://localhost:8080/site/
-```
-
-Or use Docker:
-
-```bash
-docker build -t eaims .
-docker run --rm -p 8080:80 eaims
-```
-
-## Assessment flow
-
-1. Define scope and evidence handling with the [Assessor Handbook](docs/Assessor-Handbook.md).
-2. Complete the [questionnaire](assessment/questionnaire.md) using the [evidence catalog](assessment/evidence-catalog.json).
-3. Validate and score the assessment with the CLI.
-4. Apply the [Conformance](docs/Conformance.md) claim appropriate to the evidence and review process.
-5. Produce findings and a roadmap; never present the result as certification.
-
-## Key documentation
-
-| Need | Resource |
-|---|---|
-| Normative foundation | [EAIMS Standard](docs/EAIMS-Standard-v0.2.md) and [Capability Matrix](docs/Capability-Matrix-v0.2.md) |
-| Scoring | [Scoring Methodology](assessment/scoring-methodology.md) |
-| Evidence | [Evidence Catalog](assessment/evidence-catalog.json) |
-| Facilitation | [Assessor Handbook](docs/Assessor-Handbook.md) |
-| Implementation claims | [Conformance](docs/Conformance.md) |
-| Approved implementations | [Implementation Registry](docs/approved-implementations.md) |
-| Research pilots | [Pilot Protocol](docs/Pilot-Protocol.md) |
-| Future benchmarking | [Benchmark Protocol](docs/Benchmark-Protocol.md) |
-| External frameworks | [Independent Conceptual Crosswalk](docs/Standards-Crosswalk.md) |
-| Change process | [RFCs](rfcs/README.md) and [Decisions](decisions/0001-six-level-scale.md) |
-
-## Validation status
-
-v0.2 is executable and internally tested. It has **not yet** completed independent multi-organization validation, inter-rater reliability research, academic peer review, or representative benchmarking. The repository publishes protocols for generating that evidence honestly.
-
-## Contributing and support
-
-Contributions require DCO sign-off and rights disclosure. See [Contributing](CONTRIBUTING.md), [Reviewer Program](REVIEWERS.md), [Sponsorship Policy](SPONSORSHIP.md), and [Financial Transparency](FINANCIAL_TRANSPARENCY.md). Funding cannot buy changes, favorable scores, certification, endorsement, or governance control.
-
-## Publications
-
-Books and research outputs: [EAIMS Publications](publications/README.md)
+The v0.2.1 research baseline remains part of repository history. See [MIGRATION-v0.2.1-to-v1.0.md](MIGRATION-v0.2.1-to-v1.0.md) and [research/EVOLUTION-0.2x-to-1.0.md](research/EVOLUTION-0.2x-to-1.0.md). Existing community, security, publication, RFC, decision and approved-implementation resources are intentionally retained during the v1 integration.
 
 ## Project website
 
-https://eaims.org
+**eaims.org**

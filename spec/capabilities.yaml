@@ -1,0 +1,506 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate
+dimensions:
+- dimension_id: D1
+  code: STR
+  title: Strategy & Leadership
+- dimension_id: D2
+  code: VAL
+  title: Value & Portfolio Management
+- dimension_id: D3
+  code: DAT
+  title: Data & Knowledge Foundations
+- dimension_id: D4
+  code: TEC
+  title: Technology, Models & Architecture
+- dimension_id: D5
+  code: OPS
+  title: Lifecycle, Operations & Resilience
+- dimension_id: D6
+  code: GOV
+  title: Governance, Risk & Human Accountability
+- dimension_id: D7
+  code: PEO
+  title: People & Operating Model
+- dimension_id: D8
+  code: ADO
+  title: Adoption & Continuous Improvement
+capabilities:
+- capability_id: STR-01
+  dimension_code: STR
+  title: AI Strategy & Enterprise Alignment
+  status: stable_candidate
+  anchors:
+    L1: AI initiatives largely emerge opportunistically, with limited connection to
+      documented enterprise priorities.
+    L2: Selected AI initiatives are linked to business priorities, but strategic criteria
+      are inconsistent across the portfolio.
+    L3: The organization maintains a documented AI strategy linked to enterprise objectives,
+      business outcomes, major dependencies, and material risks.
+    L4: Strategic AI progress is reviewed against measurable business outcomes, investment
+      performance, capability constraints, and material risks.
+    L5: The AI strategy and target state are systematically revised using realized
+      value, emerging risk, organizational learning, market change, and technology
+      evolution.
+  introduced_in: 1.0.0
+- capability_id: STR-02
+  dimension_code: STR
+  title: Executive Ownership & Decision Accountability
+  status: stable_candidate
+  anchors:
+    L1: AI ownership depends primarily on individual champions and decision authority
+      is unclear.
+    L2: Executive sponsorship exists for major initiatives, but ownership, risk acceptance,
+      and escalation vary by project.
+    L3: Executive AI accountability, decision rights, funding authority, material-risk
+      escalation, and residual-risk acceptance are formally defined.
+    L4: Executives regularly review AI portfolio value, material risks, incidents,
+      and capability gaps, with decisions and follow-up actions traceable.
+    L5: Executive governance changes investment, operating model, risk posture, or
+      AI authority based on accumulated evidence and changing enterprise conditions.
+  introduced_in: 1.0.0
+- capability_id: STR-03
+  dimension_code: STR
+  title: AI Target State & Transformation Roadmap
+  status: stable_candidate
+  anchors:
+    L1: No coherent target maturity or transformation roadmap exists.
+    L2: Major improvement initiatives are identified, but target states, dependencies,
+      ownership, or sequencing are incomplete.
+    L3: Current state, context-appropriate target maturity, target capabilities, dependencies,
+      owners, and prioritized roadmap are documented.
+    L4: Roadmap delivery is tracked against capability improvement, realized outcomes,
+      dependencies, and risk reduction.
+    L5: Target maturity and roadmap are dynamically recalibrated as enterprise priorities,
+      evidence, value realization, risk, and AI autonomy evolve.
+  introduced_in: 1.0.0
+- capability_id: STR-04
+  dimension_code: STR
+  title: AI Investment & Strategic Governance
+  status: stable_candidate
+  anchors:
+    L1: AI funding is primarily technology-led or opportunistic.
+    L2: Business cases exist for selected initiatives, but investment criteria and
+      continuation decisions are inconsistent.
+    L3: Material AI investments are evaluated against defined strategic fit, expected
+      value, risk, feasibility, dependencies, and ownership.
+    L4: Continued funding and portfolio allocation are systematically informed by
+      milestones, realized outcomes, cost, risk, and delivery evidence.
+    L5: Capital and organizational capacity are continuously reallocated toward the
+      highest risk-adjusted AI value, while underperforming initiatives are stopped,
+      redesigned, or reduced.
+  introduced_in: 1.0.0
+- capability_id: VAL-01
+  dimension_code: VAL
+  title: AI Opportunity Identification
+  status: stable_candidate
+  anchors:
+    L1: AI opportunities arise mainly from individual requests, vendor offerings,
+      or technology experimentation.
+    L2: Business teams identify some opportunities systematically, but qualification
+      criteria are inconsistent.
+    L3: The organization uses a repeatable process to identify business problems and
+      determine whether AI is an appropriate solution.
+    L4: Opportunity generation and qualification are informed by business outcomes,
+      process data, strategic priorities, feasibility, risk, and prior portfolio evidence.
+    L5: The opportunity pipeline continuously evolves using realized portfolio outcomes,
+      changing business conditions, new capabilities, and lessons from unsuccessful
+      AI initiatives.
+  introduced_in: 1.0.0
+- capability_id: VAL-02
+  dimension_code: VAL
+  title: Use-Case Prioritization
+  status: stable_candidate
+  anchors:
+    L1: Use cases are selected primarily by enthusiasm, availability of technology,
+      or executive preference.
+    L2: Some value and feasibility criteria are applied but prioritization remains
+      inconsistent.
+    L3: Material use cases are prioritized using defined criteria covering value,
+      feasibility, data readiness, risk, strategic fit, dependencies, and autonomy
+      implications.
+    L4: Prioritization is regularly recalibrated using actual delivery performance,
+      risk, costs, evidence quality, and realized value.
+    L5: The portfolio is dynamically optimized across opportunity cost, risk-adjusted
+      value, enterprise capacity, dependencies, and changing strategic priorities.
+  introduced_in: 1.0.0
+- capability_id: VAL-03
+  dimension_code: VAL
+  title: Pilot-to-Scale Governance
+  status: stable_candidate
+  anchors:
+    L1: Experiments and pilots lack consistent success, stop, or scale criteria.
+    L2: Selected pilots have business objectives and owners, but evidence requirements
+      and scale decisions vary.
+    L3: Material pilots have documented hypotheses, baseline measures, success criteria,
+      owners, risk classification, autonomy/HAB requirements, and explicit scale/stop
+      criteria.
+    L4: Pilot decisions are evidence-backed and consistently result in SCALE, EXTEND,
+      REDESIGN, HOLD, or STOP outcomes with traceable rationale.
+    L5: Pilot design and scale criteria continuously improve based on portfolio learning,
+      failed experiments, realized value, operational risk, and organizational capacity.
+  introduced_in: 1.0.0
+- capability_id: VAL-04
+  dimension_code: VAL
+  title: Value Realization & Portfolio Optimization
+  status: stable_candidate
+  anchors:
+    L1: AI value is primarily anecdotal or activity-based.
+    L2: Expected benefits are documented for selected initiatives but baseline and
+      outcome measurement are incomplete.
+    L3: Material AI initiatives define baseline, KPI, expected value, cost assumptions,
+      business owner, and measurement period before scale.
+    L4: Realized value, total cost, time-to-value, value leakage, and material unintended
+      effects are systematically measured.
+    L5: Portfolio funding, architecture, operating model, and autonomy decisions are
+      continuously optimized using realized risk-adjusted value.
+  introduced_in: 1.0.0
+- capability_id: DAT-01
+  dimension_code: DAT
+  title: Data Governance & Ownership
+  status: stable_candidate
+  anchors:
+    L1: Data ownership, usage authority, and AI-relevant dependencies are largely
+      implicit.
+    L2: Owners and access rules exist for selected critical datasets, but coverage
+      and lineage are incomplete.
+    L3: Material AI data assets have defined ownership, access authority, provenance,
+      key dependencies, and governance responsibilities.
+    L4: Data governance effectiveness is measured through access exceptions, lineage
+      coverage, incidents, usage violations, and remediation performance.
+    L5: Data governance continuously adapts to changing AI use, new data sources,
+      emerging risks, regulatory requirements, and observed operational failures.
+  introduced_in: 1.0.0
+- capability_id: DAT-02
+  dimension_code: DAT
+  title: Data Quality & Fitness for AI
+  status: stable_candidate
+  anchors:
+    L1: Data quality is addressed reactively when defects disrupt AI behavior.
+    L2: Known data defects and selected quality checks exist, but fitness criteria
+      are inconsistent.
+    L3: Material AI systems define context-specific data fitness criteria, thresholds,
+      remediation ownership, and relevant upstream dependencies.
+    L4: Data fitness is continuously measured against actual AI behavior, business
+      outcomes, and operational failures.
+    L5: Data quality controls, thresholds, sourcing, and remediation mechanisms adapt
+      automatically or systematically based on observed AI performance and changing
+      use context.
+  introduced_in: 1.0.0
+- capability_id: DAT-03
+  dimension_code: DAT
+  title: Knowledge & Context Engineering
+  status: stable_candidate
+  anchors:
+    L1: Context is assembled manually or implicitly with limited governance.
+    L2: Structured or unstructured context sources are curated, but permissions, versioning,
+      evaluation, or provenance are incomplete.
+    L3: "Material context layers\u2014such as schemas, glossaries, RAG sources, semantic\
+      \ layers, or knowledge graphs\u2014are governed, versioned, access-aware, and\
+      \ evaluated for intended use."
+    L4: Retrieval/context quality, freshness, permission preservation, and downstream
+      effect on AI outputs are systematically monitored.
+    L5: Context architecture and retrieval strategies continuously adapt based on
+      failures, query patterns, quality measurements, access changes, and emerging
+      knowledge sources.
+  introduced_in: 1.0.0
+- capability_id: DAT-04
+  dimension_code: DAT
+  title: Data Rights, Provenance & Usage Authority
+  status: stable_candidate
+  anchors:
+    L1: Data usage rights and downstream AI exposure are inconsistently understood.
+    L2: Rights and restrictions are documented for selected sensitive or external
+      sources.
+    L3: Material data sources have traceable provenance, usage authority, restrictions,
+      retention obligations, and downstream AI/provider exposure.
+    L4: Compliance with usage restrictions is monitored, exceptions are traceable,
+      and changes in providers or downstream uses trigger review.
+    L5: Data rights governance proactively adapts to changing contracts, regulatory
+      expectations, AI architectures, provider relationships, and reuse patterns.
+  introduced_in: 1.0.0
+- capability_id: TEC-01
+  dimension_code: TEC
+  title: AI Architecture & Design Standards
+  status: stable_candidate
+  anchors:
+    L1: Architecture is largely implicit; dependencies, boundaries, and failure modes
+      are not consistently documented.
+    L2: Some systems have diagrams or design documents, but coverage and review consistency
+      are incomplete.
+    L3: Material AI systems maintain architecture records, system boundaries, dependency
+      maps, data flows, and design rationale.
+    L4: Architecture conformance, dependency health, change impact, and failure/isolation
+      behavior are operationally reviewed and measured.
+    L5: Architecture patterns and reference designs are continuously adapted using
+      incidents, performance, cost, security, provider changes, and lessons learned.
+  introduced_in: 1.0.0
+- capability_id: TEC-02
+  dimension_code: TEC
+  title: Model & System Sourcing
+  status: stable_candidate
+  anchors:
+    L1: Model provenance or external dependencies are not formally recorded.
+    L2: Provider/model details exist for selected systems, but versioning, change
+      exposure, and fallback are incomplete.
+    L3: Material systems have sourcing profiles covering provider, model identifier,
+      version mode, data boundary, dependency chain, and provider-change handling.
+    L4: Provider/model changes, service degradation, terms changes, and dependency
+      risks are regularly monitored and evaluated.
+    L5: Sourcing strategy is optimized using evidence on cost, reliability, sovereignty,
+      performance, external change exposure, and exit risk.
+  introduced_in: 1.0.0
+- capability_id: TEC-03
+  dimension_code: TEC
+  title: AI Engineering & Technical Controls
+  status: stable_candidate
+  anchors:
+    L1: Controls are mainly prompt-based or ad hoc, with limited repeatable testing.
+    L2: Some deterministic controls and test scripts exist, but CI, enforcement consistency,
+      and retained results are incomplete.
+    L3: Material controls are version-controlled, testable, reviewable, and deterministically
+      enforced where feasible.
+    L4: Control effectiveness is measured using automated testing, regression results,
+      runtime evidence, and control-bypass monitoring.
+    L5: Controls are continuously strengthened using new failure modes, incidents,
+      red-team results, and observed system behavior.
+  introduced_in: 1.0.0
+- capability_id: TEC-04
+  dimension_code: TEC
+  title: Generative & Agentic Architecture
+  status: stable_candidate
+  anchors:
+    L1: Prompting and tool use are ad hoc and agent boundaries are unclear.
+    L2: Prompt versioning or tool constraints exist for selected components, but memory,
+      delegation, or permission models are incomplete.
+    L3: Material GenAI/agent systems maintain tool inventories, prompt/system instruction
+      management, memory policies, permission envelopes, and observable execution
+      paths.
+    L4: Tool-use quality, retrieval quality, agent action behavior, permission violations,
+      and multi-step failures are continuously evaluated and monitored.
+    L5: Agent architecture, orchestration, and permissions adapt using observed failure
+      modes, workload, value, risk, and operational evidence.
+  introduced_in: 1.0.0
+- capability_id: OPS-01
+  dimension_code: OPS
+  title: Lifecycle & Change Management
+  status: stable_candidate
+  anchors:
+    L1: AI systems lack a consistent lifecycle and changes may occur without impact
+      review.
+    L2: Version control and deployment history exist, but approvals, classification,
+      and rollback discipline are incomplete.
+    L3: Material systems maintain lifecycle state, release/change classification,
+      approval criteria, re-evaluation triggers, and retirement processes.
+    L4: Change outcomes, regression impact, failed releases, and rollback effectiveness
+      are systematically tracked.
+    L5: Lifecycle controls continuously adapt using incidents, release quality, provider
+      changes, and operational outcomes.
+  introduced_in: 1.0.0
+- capability_id: OPS-02
+  dimension_code: OPS
+  title: Evaluation & Assurance
+  status: stable_candidate
+  anchors:
+    L1: Evaluation is anecdotal or manual and acceptance criteria are unclear.
+    L2: Repeatable tests exist for selected behaviors, but coverage, thresholds, or
+      retention are incomplete.
+    L3: Material AI systems maintain documented evaluation suites, pre-deployment
+      thresholds, regression criteria, and retained evaluation artifacts.
+    L4: Evaluation is integrated into lifecycle operations and measures system quality,
+      tool use, safety, bias, robustness, and critical failures over time.
+    L5: Evaluation suites continuously evolve using incidents, emerging failures,
+      changing context, and adversarial evidence.
+  introduced_in: 1.0.0
+- capability_id: OPS-03
+  dimension_code: OPS
+  title: Monitoring & Observability
+  status: stable_candidate
+  anchors:
+    L1: Monitoring is limited to uptime, basic error logs, or manual observation.
+    L2: Some operational metrics and audit logs exist, but coverage or actionability
+      is incomplete.
+    L3: Material systems monitor health, latency, errors, cost, quality indicators,
+      actions, and escalation-relevant events.
+    L4: Monitoring thresholds are linked to incidents, escalation, and corrective
+      actions, while blind spots are systematically tracked.
+    L5: Observability models continuously adapt to system evolution, incident patterns,
+      autonomy, and business outcomes.
+  introduced_in: 1.0.0
+- capability_id: OPS-04
+  dimension_code: OPS
+  title: Incident, Recovery & Retirement
+  status: stable_candidate
+  anchors:
+    L1: Incident handling is informal and recovery is mainly reactive.
+    L2: Some incident records or fixes exist, but process, ownership, or retirement
+      planning is incomplete.
+    L3: Material systems maintain incident severity models, ownership, root-cause
+      processes, rollback/suspension, recovery, and retirement criteria.
+    L4: MTTD/MTTR, recurring incidents, rollback success, and corrective-action closure
+      are systematically measured.
+    L5: Incident learning changes controls, architecture, evaluation, HAB, and autonomy
+      policy, and the effectiveness of those changes is re-evaluated.
+  introduced_in: 1.0.0
+- capability_id: GOV-01
+  dimension_code: GOV
+  title: AI Governance & Decision Rights
+  status: stable_candidate
+  anchors:
+    L1: Governance is largely person-dependent and decision rights are unclear.
+    L2: Committees or approval roles exist, but scope, escalation, and authority are
+      inconsistent.
+    L3: Material AI decisions, approval authorities, risk acceptance, control ownership,
+      and escalation are formally defined.
+    L4: Governance decisions, exceptions, unresolved risks, and control failures are
+      traceable and periodically reviewed.
+    L5: Governance is embedded in workflows, pipelines, contracts, and access controls
+      and adapts using evidence and changing risk.
+  introduced_in: 1.0.0
+- capability_id: GOV-02
+  dimension_code: GOV
+  title: Risk & Impact Classification
+  status: stable_candidate
+  anchors:
+    L1: Risk classification is informal or generic.
+    L2: Some systems are risk-tagged, but methodology, recalculation, or scope consistency
+      is incomplete.
+    L3: "Material systems are classified using Impact I0\u2013I4 and factors such\
+      \ as autonomy, reversibility, velocity, scale, affected population, and legal\
+      \ relevance."
+    L4: Risk ratings are revalidated using incidents, usage changes, provider changes,
+      and new operating contexts.
+    L5: Risk models and thresholds are continuously recalibrated using portfolio evidence,
+      near misses, and observed harms.
+  introduced_in: 1.0.0
+- capability_id: GOV-03
+  dimension_code: GOV
+  title: Human Accountability Boundary
+  status: stable_candidate
+  anchors:
+    L1: Human accountability is implicit and final authority is unclear.
+    L2: Named humans and approvals exist for selected scenarios, but consistency and
+      feasibility are incomplete.
+    L3: Material decisions document AI role, human role, final authority, override,
+      escalation, and recourse.
+    L4: HAB effectiveness is measured using override outcomes, escalations, intervention
+      rates, and incident evidence.
+    L5: HABs are continuously adjusted using autonomy, risk, workload, incidents,
+      and outcome evidence.
+  introduced_in: 1.0.0
+- capability_id: GOV-04
+  dimension_code: GOV
+  title: Autonomy Governance
+  status: stable_candidate
+  anchors:
+    L1: Autonomy is undeclared or ad hoc.
+    L2: Some limits or manual approvals exist, but permission models and enforcement
+      are inconsistent.
+    L3: Material systems maintain autonomy classification, permission envelopes, action
+      limits, delegation boundaries, suspension, and reassessment triggers.
+    L4: Autonomous actions, limit breaches, overrides, escalation, and suspension
+      events are monitored and analyzed.
+    L5: Autonomy is intentionally expanded or reduced using demonstrated reliability,
+      value, assurance quality, and residual risk.
+  introduced_in: 1.0.0
+- capability_id: GOV-05
+  dimension_code: GOV
+  title: Responsible AI, Recourse & Impact Assurance
+  status: stable_candidate
+  anchors:
+    L1: Responsible AI concerns are mainly reactive or principle-based.
+    L2: Some fairness, safety, or transparency controls exist, but they are not consistently
+      impact-specific or operational.
+    L3: Material/high-impact systems maintain use-case-specific harm assessments,
+      stakeholder impact review, recourse, and applicable transparency controls.
+    L4: Observed harms, appeals, recourse outcomes, and control effectiveness are
+      systematically measured.
+    L5: Impact controls, recourse mechanisms, and harm models continuously adapt using
+      real-world outcomes and changing social or legal context.
+  introduced_in: 1.0.0
+- capability_id: PEO-01
+  dimension_code: PEO
+  title: Roles, Skills & Competence
+  status: stable_candidate
+  anchors:
+    L1: AI roles are largely informal, responsibilities are concentrated in individuals,
+      and competency requirements are undefined.
+    L2: Responsibilities and training exist for selected roles, but coverage, skill
+      expectations, and competence assessment are inconsistent.
+    L3: Material AI roles have documented responsibilities, required competencies,
+      training expectations, escalation responsibilities, and handoff responsibilities.
+    L4: Competence is actively assessed; gaps, training status, role readiness, and
+      performance in oversight and AI operations are tracked.
+    L5: Role design and competency models continuously adapt using incidents, technology
+      change, new autonomy, performance evidence, and operating-model changes.
+  introduced_in: 1.0.0
+- capability_id: PEO-02
+  dimension_code: PEO
+  title: AI Operating Model
+  status: stable_candidate
+  anchors:
+    L1: Distribution of AI ownership, governance, engineering, and business responsibility
+      is unclear and coordination depends on personal relationships.
+    L2: Central or local teams exist, but service boundaries and decision rights are
+      ambiguous or overlapping.
+    L3: The operating model explicitly defines centralized, federated, hub-and-spoke,
+      local, or hybrid ownership, service boundaries, shared responsibilities, and
+      escalation.
+    L4: Operating-model effectiveness is measured using delivery speed, duplicated
+      controls, escalation load, shared-service performance, ownership gaps, and cross-unit
+      outcomes.
+    L5: Central/local structure, service model, decision rights, and shared capabilities
+      continuously adapt using scale, evidence, portfolio needs, and organizational
+      learning.
+  introduced_in: 1.0.0
+- capability_id: PEO-03
+  dimension_code: PEO
+  title: "Human\u2013AI Work Design & Workforce Transition"
+  status: stable_candidate
+  anchors:
+    L1: AI is added to existing workflows without systematic design of responsibility,
+      workload, handoff, or workforce impact.
+    L2: Human/AI roles are defined for some use cases, but workload, automation bias,
+      training, or transition planning is incomplete.
+    L3: "Material workflows define human\u2013AI responsibilities, escalation/handoff,\
+      \ required human capacity, applicable Human Reserved decisions, and workforce\
+      \ transition actions."
+    L4: Work design is evaluated using override load, review throughput, error patterns,
+      user behavior, workload, and operational outcomes.
+    L5: "Human\u2013AI work allocation continuously adapts using performance, wellbeing,\
+      \ risk, automation effectiveness, and changing autonomy."
+  introduced_in: 1.0.0
+- capability_id: ADO-01
+  dimension_code: ADO
+  title: Adoption, Responsible Use & Change
+  status: stable_candidate
+  anchors:
+    L1: AI availability and usage are fragmented, and success is measured mainly through
+      access or user counts rather than outcomes.
+    L2: Training and adoption initiatives exist, but usage quality, responsible-use
+      adherence, and process integration are weakly measured.
+    L3: Approved AI use, usage boundaries, role-specific guidance, change activities,
+      and actual adoption measures are defined for material deployments.
+    L4: Adoption is measured using actual workflow use, user behavior, misuse patterns,
+      feedback, process outcomes, and responsible-use indicators.
+    L5: Adoption strategy, interface/workflow design, training, and controls continuously
+      adapt using observed user behavior, business outcomes, misuse, and emerging
+      needs.
+  introduced_in: 1.0.0
+- capability_id: ADO-02
+  dimension_code: ADO
+  title: Learning, Reassessment & Adaptation
+  status: stable_candidate
+  anchors:
+    L1: Lessons learned are largely informal and assessments or incidents do not consistently
+      change capability.
+    L2: Retrospectives and reassessments occur occasionally, but closure and institutional
+      learning are inconsistent.
+    L3: Material AI systems and enterprise capabilities maintain reassessment triggers,
+      feedback mechanisms, improvement ownership, and traceable corrective actions.
+    L4: The organization measures whether identified issues, incidents, assurance
+      findings, and capability gaps are actually remediated and recurrence is reduced.
+    L5: Learning loops across incidents, value outcomes, assessment results, technology
+      change, and user feedback continuously change strategy, controls, operating
+      model, and maturity targets.
+  introduced_in: 1.0.0

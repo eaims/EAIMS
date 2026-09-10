@@ -1,0 +1,31 @@
+review_id: REVIEW-YYYY-NNN
+reviewer_id: "REV-001"
+independence_class: EXTERNAL_INDEPENDENT
+reviewed_version: "1.0.0-fc16"
+reviewed_commit_or_artifact_hash: ""
+reviewed_at: "2026-09-09T00:00:00Z"
+affiliation_disclosure: ""
+conflict_of_interest: "none declared"
+prior_material_contribution: false
+commercial_relationship: false
+
+domains_reviewed:
+  - ARCH
+
+limitations_acknowledged: true
+
+overall_decision: REVISE_AND_REREVIEW
+
+findings:
+  - finding_id: REV-001
+    domain: ARCH
+    severity: MAJOR
+    title: "Replace with a concise finding title"
+    rationale: >-
+      Explain the problem, why it matters, and the conditions under which it appears.
+    evidence_or_reference:
+      - "spec/capabilities.yaml: GOV-03"
+    recommended_action: >-
+      Describe the smallest defensible change that would resolve the finding.
+
+additional_comments: ""

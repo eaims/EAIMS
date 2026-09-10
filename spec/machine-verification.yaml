@@ -1,0 +1,203 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate_fc16
+scope: All critical MV1/MV2 SHALL/SHALL_NOT requirements
+rule_count: 33
+rules:
+- requirement_id: EAIMS-DGO-004
+  machine_verifiability: MV2
+  operator: truthy
+  path: data.access_controls_enforced
+  description: Access controls shall be proportionate to data sensitivity and intended
+    use.
+- requirement_id: EAIMS-CTX-003
+  machine_verifiability: MV2
+  operator: truthy
+  path: context.permissions_preserved
+  description: Context generation and retrieval shall preserve applicable access and
+    usage restrictions.
+- requirement_id: EAIMS-DRA-005
+  machine_verifiability: MV2
+  operator: truthy
+  path: data.retention_deletion_controls
+  description: Applicable retention and deletion obligations shall be implemented
+    through lifecycle controls.
+- requirement_id: EAIMS-ARC-003
+  machine_verifiability: MV2
+  operator: nonempty
+  path: architecture.critical_dependencies
+  description: Critical internal and external technical dependencies shall be traceable.
+- requirement_id: EAIMS-ARC-005
+  machine_verifiability: MV2
+  operator: nonempty
+  path: architecture.failure_boundaries
+  description: High-impact AI systems shall define failure, isolation, or containment
+    boundaries appropriate to their risk.
+- requirement_id: EAIMS-MSP-004
+  machine_verifiability: MV2
+  operator: truthy
+  path: provider_change.re_evaluation_enabled
+  description: Material provider or model changes shall trigger evaluation appropriate
+    to the affected system.
+- requirement_id: EAIMS-ENG-004
+  machine_verifiability: MV1
+  operator: truthy
+  path: source.secret_scan_pass
+  description: Secrets or production credentials shall not be embedded in public source,
+    fixtures, or published assessment evidence.
+- requirement_id: EAIMS-ENG-006
+  machine_verifiability: MV2
+  operator: truthy
+  path: control_bypass.governed
+  description: Material bypasses of approved technical controls shall be logged, authorized,
+    and time-bounded where applicable.
+- requirement_id: EAIMS-AGT-001
+  machine_verifiability: MV2
+  operator: nonempty
+  path: agent.tools
+  description: Tool-using material AI systems shall maintain an inventory of callable
+    tools and external actions.
+- requirement_id: EAIMS-AGT-003
+  machine_verifiability: MV2
+  operator: truthy
+  path: agent.delegation_traceable
+  description: Material agent delegation and agent-to-agent actions shall be traceable.
+- requirement_id: EAIMS-AGT-006
+  machine_verifiability: MV2
+  operator: nonempty
+  path: agent.identity
+  description: Material agents shall have an observable execution identity or equivalent
+    traceable execution context.
+- requirement_id: EAIMS-AGT-007
+  machine_verifiability: MV2
+  operator: truthy
+  path: change_control.no_silent_authority_expansion
+  description: Material agents shall not acquire new tools, permissions, or authority
+    outside approved change control.
+- requirement_id: EAIMS-LCM-004
+  machine_verifiability: MV2
+  operator: nonempty
+  path: lifecycle.re_evaluation_triggers
+  description: Change classification shall determine required re-evaluation or re-approval.
+- requirement_id: EAIMS-EVL-001
+  machine_verifiability: MV2
+  operator: nonempty
+  path: evaluation.criteria
+  description: Material AI systems shall have documented evaluation criteria.
+- requirement_id: EAIMS-EVL-004
+  machine_verifiability: MV2
+  operator: truthy
+  path: evaluation.material_change_re_evaluation
+  description: Material changes shall trigger regression or re-evaluation appropriate
+    to the affected system.
+- requirement_id: EAIMS-EVL-009
+  machine_verifiability: MV2
+  operator: truthy
+  path: evaluation.failed_threshold_blocks
+  description: Failed material acceptance criteria shall block deployment or scale
+    unless an approved exception is documented.
+- requirement_id: EAIMS-MON-001
+  machine_verifiability: MV2
+  operator: truthy
+  path: monitoring.production_enabled
+  description: Production material AI systems shall have operational monitoring appropriate
+    to their risk and purpose.
+- requirement_id: EAIMS-MON-003
+  machine_verifiability: MV2
+  operator: truthy
+  path: monitoring.agent_action_logs
+  description: Material autonomous actions shall be logged with sufficient context
+    for investigation.
+- requirement_id: EAIMS-MON-006
+  machine_verifiability: MV2
+  operator: truthy
+  path: monitoring.threshold_escalation
+  description: Material monitoring threshold breaches shall trigger defined escalation
+    or response.
+- requirement_id: EAIMS-INC-006
+  machine_verifiability: MV2
+  operator: truthy
+  path: incident.suspension_test_pass
+  description: High-autonomy systems shall periodically test operational suspension
+    capability.
+- requirement_id: EAIMS-RSK-001
+  machine_verifiability: MV2
+  operator: enum
+  path: risk.impact
+  description: Material AI systems shall have an explicit impact classification using
+    the applicable EAIMS impact scale or a mapped equivalent.
+  allowed_values:
+  - I0
+  - I1
+  - I2
+  - I3
+  - I4
+- requirement_id: EAIMS-RSK-004
+  machine_verifiability: MV2
+  operator: nonempty
+  path: risk.reclassification_triggers
+  description: Material changes in purpose, model, data, population, tools, autonomy,
+    or deployment context shall trigger risk review.
+- requirement_id: EAIMS-AUT-002
+  machine_verifiability: MV2
+  operator: nonempty
+  path: permission_envelope
+  description: Material autonomous or agentic systems shall operate within an approved
+    permission envelope.
+- requirement_id: EAIMS-AUT-003
+  machine_verifiability: MV2
+  operator: nonempty
+  path: autonomy.reassessment_triggers
+  description: A material increase in autonomy shall trigger risk, evaluation, and
+    accountability reassessment.
+- requirement_id: EAIMS-AUT-004
+  machine_verifiability: MV2
+  operator: truthy
+  path: autonomy.action_auditability
+  description: Material autonomous actions shall be observable and auditable.
+- requirement_id: EAIMS-AUT-005
+  machine_verifiability: MV2
+  operator: truthy
+  path: autonomy.authority_enforced
+  description: AI systems shall not perform material actions outside approved authority.
+- requirement_id: EAIMS-AUT-006
+  machine_verifiability: MV2
+  operator: truthy
+  path: autonomy.suspension_tested
+  description: High-autonomy systems shall have an operational suspension capability.
+- requirement_id: EAIMS-AUT-009
+  machine_verifiability: MV2
+  operator: truthy
+  path: autonomy.delegation_boundary_enforced
+  description: Delegated agent authority shall be equal to or narrower than the delegating
+    authority unless separately approved.
+- requirement_id: EAIMS-EVD-001
+  machine_verifiability: MV2
+  operator: truthy
+  path: evidence.traceability
+  description: Every maturity claim shall be traceable to evidence.
+- requirement_id: EAIMS-EVD-008
+  machine_verifiability: MV2
+  operator: truthy
+  path: evidence.conflicts_preserved
+  description: Conflicting evidence shall not be silently overwritten or discarded.
+- requirement_id: EAIMS-EVD-011
+  machine_verifiability: MV1
+  operator: truthy
+  path: evidence.all_within_cutoff
+  description: Evidence generated after the assessment evidence cutoff shall not alter
+    the finalized historical assessment.
+- requirement_id: EAIMS-SYS-001
+  machine_verifiability: MV2
+  operator: nonempty
+  path: system_inventory
+  description: Each material AI system shall have an authoritative inventory record
+    with a stable system identifier.
+- requirement_id: EAIMS-SYS-002
+  machine_verifiability: MV2
+  operator: all_nonempty
+  path: system_identity
+  description: Each material AI system shall document its intended purpose and intended
+    user population before material deployment or use.
+  required_keys:
+  - intended_purpose
+  - intended_users

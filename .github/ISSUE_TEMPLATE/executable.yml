@@ -1,0 +1,23 @@
+name: Executable behavior / test issue
+description: Report a validator, scoring, evidence, gate, HAB, autonomy, schema, or test defect.
+title: "[EXEC] "
+labels: ["executable"]
+body:
+  - type: textarea
+    id: observed
+    attributes: {label: Observed behavior}
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected behavior}
+    validations: {required: true}
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include command, fixture fragment, version, and deterministic inputs where possible.
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes: {label: EAIMS version / commit}
+    validations: {required: true}

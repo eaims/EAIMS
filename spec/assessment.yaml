@@ -1,0 +1,68 @@
+spec_version: 1.0.0-fc16
+award_algorithm:
+- determine_applicability
+- resolve_scope
+- collect_evidence
+- validate_evidence
+- evaluate_requirements
+- evaluate_counter_evidence
+- evaluate_anchors_cumulatively
+- apply_gates
+- determine_awarded_level
+- assign_confidence
+- produce_rationale
+aggregation:
+  primary: Capability and dimension profile
+  secondary: Equal-weight geometric mean across applicable, assessed, determinate
+    capabilities
+  weights: All capabilities and dimensions equal in v1.0; criticality is handled through
+    gates rather than hidden weights.
+  maturity_bands:
+    Initial:
+    - 1.0
+    - 1.79
+    Emerging:
+    - 1.8
+    - 2.59
+    Defined:
+    - 2.6
+    - 3.39
+    Managed:
+    - 3.4
+    - 4.19
+    Adaptive:
+    - 4.2
+    - 5.0
+  coverage_full_assessment_provisional:
+    critical_capabilities_assessed: 100%
+    applicable_capabilities_determinate: '>=80%'
+    dimensions_represented: 8/8
+partial_rule: Partial assessments may report indicative scoped maturity but shall
+  not establish enterprise maturity.
+targeted_rule: Targeted assessments report only the targeted profile and shall not
+  produce an enterprise-wide index.
+indeterminate_rule: Insufficient or materially conflicting evidence does not automatically
+  imply L1; the result may be INDETERMINATE.
+assessment_quality_factors:
+- scope_completeness
+- evidence_coverage
+- evidence_confidence
+- unresolved_conflicts
+- critical_capability_coverage
+- assessor_independence
+- evidence_freshness
+assessor_independence:
+- SELF
+- INTERNAL_INDEPENDENT
+- EXTERNAL
+- MULTI_ASSESSOR
+finalization:
+  states:
+  - DRAFT
+  - FINAL
+  rules:
+  - Finalized assessments are immutable snapshots.
+  - Evidence after the cutoff time shall not retroactively change a finalized assessment.
+  - Material changes require a revision or new assessment lineage.
+no_hidden_penalty: true
+no_hidden_weighting: true

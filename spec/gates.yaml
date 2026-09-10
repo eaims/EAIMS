@@ -1,0 +1,200 @@
+spec_version: 1.0.0-fc16
+families:
+- family: G0
+  name: Universal
+  activation: All material AI systems
+  gates:
+  - gate_id: G0-01
+    title: System Identified
+    requirement_ids:
+    - EAIMS-SYS-001
+  - gate_id: G0-02
+    title: Intended Purpose
+    requirement_ids:
+    - EAIMS-SYS-002
+  - gate_id: G0-03
+    title: Named Owner
+    requirement_ids:
+    - EAIMS-SYS-003
+  - gate_id: G0-04
+    title: Model/System Sourcing
+    requirement_ids:
+    - EAIMS-MSP-001
+  - gate_id: G0-05
+    title: Data Authority
+    requirement_ids:
+    - EAIMS-DGO-002
+  - gate_id: G0-06
+    title: Initial Risk Classification
+    requirement_ids:
+    - EAIMS-RSK-001
+  - gate_id: G0-07
+    title: Evaluation Basis
+    requirement_ids:
+    - EAIMS-EVL-001
+  - gate_id: G0-08
+    title: Monitoring Route
+    requirement_ids:
+    - EAIMS-MON-001
+  - gate_id: G0-09
+    title: Incident Route
+    requirement_ids:
+    - EAIMS-INC-001
+  - gate_id: G0-10
+    title: Retirement/Suspension Ownership
+    requirement_ids:
+    - EAIMS-SYS-004
+- family: G1
+  name: Material AI
+  activation: Impact I2+ or equivalent material context
+  gates:
+  - gate_id: G1-01
+    title: Business Outcome Owner
+    requirement_ids:
+    - EAIMS-VAL-003
+  - gate_id: G1-02
+    title: Documented Evaluation
+    requirement_ids:
+    - EAIMS-EVL-001
+    - EAIMS-EVL-002
+  - gate_id: G1-03
+    title: Operational Evidence
+    requirement_ids:
+    - EAIMS-EVD-006
+    - EAIMS-EVL-007
+  - gate_id: G1-04
+    title: Material Change Triggers
+    requirement_ids:
+    - EAIMS-LCM-004
+    - EAIMS-EVD-005
+  - gate_id: G1-05
+    title: Evidence Retention
+    requirement_ids:
+    - EAIMS-EVL-007
+    - EAIMS-MON-007
+  - gate_id: G1-06
+    title: Value Hypothesis
+    requirement_ids:
+    - EAIMS-VAL-001
+    - EAIMS-VAL-002
+- family: G2
+  name: High Impact
+  activation: Impact I3/I4 or equivalent high-impact condition
+  gates:
+  - gate_id: G2-01
+    title: Impact Assessment
+    requirement_ids:
+    - EAIMS-RSK-001
+    - EAIMS-RAI-002
+  - gate_id: G2-02
+    title: HAB Defined
+    requirement_ids:
+    - EAIMS-HAB-001
+    - EAIMS-HAB-002
+  - gate_id: G2-03
+    title: Final Authority Defined
+    requirement_ids:
+    - EAIMS-HAB-003
+    - EAIMS-HAB-004
+  - gate_id: G2-04
+    title: Recourse
+    requirement_ids:
+    - EAIMS-HAB-009
+    - EAIMS-RAI-004
+  - gate_id: G2-05
+    title: Human Competence
+    requirement_ids:
+    - EAIMS-HAB-007
+    - EAIMS-ROL-002
+  - gate_id: G2-06
+    title: Intervention Feasibility
+    requirement_ids:
+    - EAIMS-HAB-008
+    - EAIMS-HAW-006
+  - gate_id: G2-07
+    title: Adverse Outcome Evaluation
+    requirement_ids:
+    - EAIMS-EVL-006
+  - gate_id: G2-08
+    title: Residual Risk Acceptance
+    requirement_ids:
+    - EAIMS-OWN-005
+    - EAIMS-RAI-007
+  - gate_id: G2-09
+    title: Enhanced Monitoring
+    requirement_ids:
+    - EAIMS-MON-005
+  - gate_id: G2-10
+    title: Independent Challenge Where Appropriate
+    requirement_ids:
+    - EAIMS-GOV-004
+- family: G3
+  name: Autonomous / Agentic
+  activation: Action-taking agent or autonomy A3+ where applicable
+  gates:
+  - gate_id: G3-01
+    title: Autonomy Classified
+    requirement_ids:
+    - EAIMS-AUT-001
+  - gate_id: G3-02
+    title: Agent Permission Envelope
+    requirement_ids:
+    - EAIMS-AUT-002
+  - gate_id: G3-03
+    title: Tool Inventory
+    requirement_ids:
+    - EAIMS-AGT-001
+  - gate_id: G3-04
+    title: Action Limits
+    requirement_ids:
+    - EAIMS-AUT-005
+  - gate_id: G3-05
+    title: Delegation Limits
+    requirement_ids:
+    - EAIMS-AUT-009
+    - EAIMS-AGT-003
+  - gate_id: G3-06
+    title: Action Auditability
+    requirement_ids:
+    - EAIMS-AUT-004
+    - EAIMS-MON-003
+  - gate_id: G3-07
+    title: Suspension Capability
+    requirement_ids:
+    - EAIMS-AUT-006
+    - EAIMS-INC-006
+  - gate_id: G3-08
+    title: Escalation Path
+    requirement_ids:
+    - EAIMS-HAB-006
+  - gate_id: G3-09
+    title: External Communication Control
+    requirement_ids:
+    - EAIMS-AUT-002
+  - gate_id: G3-10
+    title: Financial/Transactional Limits
+    requirement_ids:
+    - EAIMS-AUT-005
+  - gate_id: G3-11
+    title: Memory Policy
+    requirement_ids:
+    - EAIMS-AGT-002
+  - gate_id: G3-12
+    title: Agent Evaluation
+    requirement_ids:
+    - EAIMS-EVL-005
+result_semantics:
+  PASS: Applicable control is adequately demonstrated.
+  BREACH: Requirement is applicable and demonstrably not satisfied.
+  INCOMPLETE: Evidence is insufficient to establish pass or breach.
+  NOT_APPLICABLE: Gate is not activated for the assessed context.
+effects:
+- critical_risk_flag
+- maturity_cap
+- scale_block
+- deployment_block
+- mandatory_remediation
+- reassessment_required
+exception_rule: An approved exception does not convert a BREACH to PASS.
+inheritance_rule: A system activates all applicable lower and higher gate families;
+  higher families do not replace lower ones.

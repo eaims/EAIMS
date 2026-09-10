@@ -1,0 +1,839 @@
+{
+  "spec_version": "1.0.0-fc16",
+  "summary": {
+    "critical_shall_total": 80,
+    "critical_mv1_mv2_total": 33,
+    "critical_mv1_mv2_with_machine_rules": 33,
+    "critical_mv1_mv2_machine_rule_coverage_pct": 100.0,
+    "critical_mv3_mv4_total": 47,
+    "critical_mv3_mv4_with_assessor_protocol": 47,
+    "critical_mv3_mv4_protocol_coverage_pct": 100.0,
+    "critical_requirements_with_any_executable_test_mapping": 40,
+    "strict_executable_critical_coverage_pct": 50.0,
+    "critical_disposition_coverage_pct": 100.0
+  },
+  "by_machine_verifiability": {
+    "MV1": {
+      "total": 2,
+      "machine_executable": 2,
+      "assessor_protocol": 0
+    },
+    "MV2": {
+      "total": 31,
+      "machine_executable": 31,
+      "assessor_protocol": 0
+    },
+    "MV3": {
+      "total": 43,
+      "machine_executable": 7,
+      "assessor_protocol": 43
+    },
+    "MV4": {
+      "total": 4,
+      "machine_executable": 0,
+      "assessor_protocol": 4
+    }
+  },
+  "requirements": [
+    {
+      "requirement_id": "EAIMS-OWN-001",
+      "title": "Executive AI Ownership",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-OWN-003",
+      "title": "Risk Escalation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-OWN-005",
+      "title": "Residual Risk Acceptance",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-PIL-005",
+      "title": "Pilot Risk and Autonomy",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-PIL-006",
+      "title": "Pilot HAB",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-PIL-009",
+      "title": "Evidence-backed Scale",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-DGO-002",
+      "title": "Usage Authority",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-DGO-004",
+      "title": "Access Control",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-CTX-003",
+      "title": "Permission Preservation",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-DRA-002",
+      "title": "Usage Restrictions",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-DRA-004",
+      "title": "Sensitive Reuse Approval",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-DRA-005",
+      "title": "Retention and Deletion",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-ARC-003",
+      "title": "Critical Dependencies",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-ARC-005",
+      "title": "Failure Boundaries",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-MSP-004",
+      "title": "Provider Change Re-evaluation",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-MSP-007",
+      "title": "Data Boundary",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-ENG-004",
+      "title": "Secrets Protection",
+      "machine_verifiability": "MV1",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-ENG-006",
+      "title": "Control Bypass Governance",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-001",
+      "title": "Tool Inventory",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-003",
+      "title": "Delegation Traceability",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-006",
+      "title": "Agent Identity",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AGT-007",
+      "title": "No Silent Authority Expansion",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-LCM-002",
+      "title": "Deployment Approval",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-LCM-004",
+      "title": "Re-evaluation Trigger",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-LCM-005",
+      "title": "Rollback Consideration",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-001",
+      "title": "Evaluation Criteria",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-002",
+      "title": "Predeployment Evaluation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-003",
+      "title": "Fit-for-Purpose Evaluation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-004",
+      "title": "Material Change Re-evaluation",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-005",
+      "title": "Agent Action Evaluation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-006",
+      "title": "Adverse Outcome Evaluation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-008",
+      "title": "Acceptance Thresholds",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVL-009",
+      "title": "Failed Threshold Governance",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-MON-001",
+      "title": "Production Monitoring",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-MON-003",
+      "title": "Agent Action Logs",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-MON-005",
+      "title": "Adverse Outcome Indicators",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-MON-006",
+      "title": "Threshold Escalation",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-INC-001",
+      "title": "Incident Route",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-INC-005",
+      "title": "Rollback or Suspension",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-INC-006",
+      "title": "Suspension Testing",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-GOV-001",
+      "title": "Lifecycle Decision Rights",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-GOV-002",
+      "title": "Approval Authority",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-GOV-005",
+      "title": "Operationalized Governance",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-RSK-001",
+      "title": "Impact Classification",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-RSK-002",
+      "title": "Risk Factors",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-RSK-004",
+      "title": "Risk Reclassification",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-RSK-005",
+      "title": "Regulatory Distinction",
+      "machine_verifiability": "MV4",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-001",
+      "title": "Accountable Human Role",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-002",
+      "title": "Decision Authority",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-003",
+      "title": "Final Authority",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-005",
+      "title": "Override Authority",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-006",
+      "title": "Escalation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-007",
+      "title": "Human Competence",
+      "machine_verifiability": "MV4",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-008",
+      "title": "Intervention Feasibility",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-HAB-009",
+      "title": "Recourse",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-002",
+      "title": "Permission Envelope",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-003",
+      "title": "Autonomy Reassessment",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-004",
+      "title": "Action Auditability",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-005",
+      "title": "No Authority Exceedance",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-006",
+      "title": "Operational Suspension",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-AUT-009",
+      "title": "Delegation Boundaries",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-RAI-002",
+      "title": "Stakeholder Impact Review",
+      "machine_verifiability": "MV4",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-RAI-004",
+      "title": "Operational Recourse",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-RAI-007",
+      "title": "Residual Impact Decision",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-ROL-002",
+      "title": "Oversight Competence",
+      "machine_verifiability": "MV4",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-ROL-005",
+      "title": "Human-Agent Handoff",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAW-001",
+      "title": "Human-AI Responsibility Design",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAW-002",
+      "title": "Oversight Workload",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-HAW-005",
+      "title": "Human Reserved Enforcement",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-HAW-006",
+      "title": "No Nominal Oversight",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-LRN-005",
+      "title": "Adaptive Evidence for L5",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-LRN-006",
+      "title": "No Documentation-Only Inflation",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-EVD-001",
+      "title": "Evidence Traceability",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-EVD-008",
+      "title": "Conflict Preservation",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-EVD-011",
+      "title": "Cutoff Enforcement",
+      "machine_verifiability": "MV1",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-EVD-012",
+      "title": "Operational Contradiction",
+      "machine_verifiability": "MV3",
+      "machine_executable": true,
+      "machine_rule": false,
+      "scenario_or_reference_executable": true,
+      "assessor_protocol": true,
+      "disposition": "HYBRID_PROTOCOL_PLUS_EXECUTABLE_SCENARIO"
+    },
+    {
+      "requirement_id": "EAIMS-SYS-001",
+      "title": "Authoritative AI System Inventory",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-SYS-002",
+      "title": "Intended Purpose and Users",
+      "machine_verifiability": "MV2",
+      "machine_executable": true,
+      "machine_rule": true,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": false,
+      "disposition": "MACHINE_EXECUTABLE"
+    },
+    {
+      "requirement_id": "EAIMS-SYS-003",
+      "title": "Named System and Business Ownership",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    },
+    {
+      "requirement_id": "EAIMS-SYS-004",
+      "title": "Suspension and Retirement Ownership",
+      "machine_verifiability": "MV3",
+      "machine_executable": false,
+      "machine_rule": false,
+      "scenario_or_reference_executable": false,
+      "assessor_protocol": true,
+      "disposition": "ASSESSOR_PROTOCOL"
+    }
+  ]
+}

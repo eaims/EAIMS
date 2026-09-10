@@ -1,0 +1,30 @@
+name: Validation / field finding
+description: Submit empirical, assessor, pilot, or field evidence relevant to EAIMS design or calibration.
+title: "[VALIDATION] "
+labels: ["validation"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Evidence type
+      options: ["Independent review", "Multi-assessor study", "Pilot / field assessment", "Reference scenario", "Calibration finding", "Other"]
+    validations: {required: true}
+  - type: textarea
+    id: finding
+    attributes: {label: Finding}
+    validations: {required: true}
+  - type: textarea
+    id: method
+    attributes: {label: Method and scope}
+    validations: {required: true}
+  - type: textarea
+    id: limitations
+    attributes: {label: Limitations / conflicts / independence}
+    validations: {required: true}
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Data handling
+      options:
+        - label: No confidential, personal, or identifying enterprise data is included without authorization.
+          required: true

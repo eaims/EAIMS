@@ -1,0 +1,2013 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate_fc16
+policy:
+  principles:
+  - capability_specific_anchor_eligibility
+  - cumulative_levels
+  - preserve_higher_order_evidence
+  - no_hidden_weighting
+  - documented_cross_capability_dependencies
+  l4_operating_cycles_default: 2
+  l5_adaptation_cycles_default: 1
+  note: Operating-cycle counts are design defaults for FC16 and remain provisional
+    pending empirical calibration.
+capabilities:
+- capability_id: STR-01
+  anchor_statement_refs:
+    L1: AI initiatives largely emerge opportunistically, with limited connection to
+      documented enterprise priorities.
+    L2: Selected AI initiatives are linked to business priorities, but strategic criteria
+      are inconsistent across the portfolio.
+    L3: The organization maintains a documented AI strategy linked to enterprise objectives,
+      business outcomes, major dependencies, and material risks.
+    L4: Strategic AI progress is reviewed against measurable business outcomes, investment
+      performance, capability constraints, and material risks.
+    L5: The AI strategy and target state are systematically revised using realized
+      value, emerging risk, organizational learning, market change, and technology
+      evolution.
+  requirement_minimum_levels:
+    EAIMS-STR-001: L2
+    EAIMS-STR-002: L3
+    EAIMS-STR-004: L4
+    EAIMS-STR-005: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-STR-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-STR-001
+      - EAIMS-STR-002
+      - EAIMS-STR-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-STR-001
+      - EAIMS-STR-002
+      - EAIMS-STR-004
+      - EAIMS-STR-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-STR-001
+      - EAIMS-STR-002
+      - EAIMS-STR-004
+      - EAIMS-STR-005
+      max_unresolved_counter_evidence: minor
+- capability_id: STR-02
+  anchor_statement_refs:
+    L1: AI ownership depends primarily on individual champions and decision authority
+      is unclear.
+    L2: Executive sponsorship exists for major initiatives, but ownership, risk acceptance,
+      and escalation vary by project.
+    L3: Executive AI accountability, decision rights, funding authority, material-risk
+      escalation, and residual-risk acceptance are formally defined.
+    L4: Executives regularly review AI portfolio value, material risks, incidents,
+      and capability gaps, with decisions and follow-up actions traceable.
+    L5: Executive governance changes investment, operating model, risk posture, or
+      AI authority based on accumulated evidence and changing enterprise conditions.
+  requirement_minimum_levels:
+    EAIMS-OWN-001: L2
+    EAIMS-OWN-002: L3
+    EAIMS-OWN-003: L3
+    EAIMS-OWN-004: L4
+    EAIMS-OWN-005: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OWN-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OWN-001
+      - EAIMS-OWN-002
+      - EAIMS-OWN-003
+      - EAIMS-OWN-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OWN-001
+      - EAIMS-OWN-002
+      - EAIMS-OWN-003
+      - EAIMS-OWN-004
+      - EAIMS-OWN-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-OWN-001
+      - EAIMS-OWN-002
+      - EAIMS-OWN-003
+      - EAIMS-OWN-004
+      - EAIMS-OWN-005
+      max_unresolved_counter_evidence: minor
+- capability_id: STR-03
+  anchor_statement_refs:
+    L1: No coherent target maturity or transformation roadmap exists.
+    L2: Major improvement initiatives are identified, but target states, dependencies,
+      ownership, or sequencing are incomplete.
+    L3: Current state, context-appropriate target maturity, target capabilities, dependencies,
+      owners, and prioritized roadmap are documented.
+    L4: Roadmap delivery is tracked against capability improvement, realized outcomes,
+      dependencies, and risk reduction.
+    L5: Target maturity and roadmap are dynamically recalibrated as enterprise priorities,
+      evidence, value realization, risk, and AI autonomy evolve.
+  requirement_minimum_levels:
+    EAIMS-TGT-001: L2
+    EAIMS-TGT-002: L3
+    EAIMS-TGT-003: L2
+    EAIMS-TGT-004: L4
+    EAIMS-TGT-005: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-TGT-001
+      - EAIMS-TGT-003
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-TGT-001
+      - EAIMS-TGT-002
+      - EAIMS-TGT-003
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-TGT-001
+      - EAIMS-TGT-002
+      - EAIMS-TGT-003
+      - EAIMS-TGT-004
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-TGT-001
+      - EAIMS-TGT-002
+      - EAIMS-TGT-003
+      - EAIMS-TGT-004
+      - EAIMS-TGT-005
+      max_unresolved_counter_evidence: minor
+- capability_id: STR-04
+  anchor_statement_refs:
+    L1: AI funding is primarily technology-led or opportunistic.
+    L2: Business cases exist for selected initiatives, but investment criteria and
+      continuation decisions are inconsistent.
+    L3: Material AI investments are evaluated against defined strategic fit, expected
+      value, risk, feasibility, dependencies, and ownership.
+    L4: Continued funding and portfolio allocation are systematically informed by
+      milestones, realized outcomes, cost, risk, and delivery evidence.
+    L5: Capital and organizational capacity are continuously reallocated toward the
+      highest risk-adjusted AI value, while underperforming initiatives are stopped,
+      redesigned, or reduced.
+  requirement_minimum_levels:
+    EAIMS-INV-001: L2
+    EAIMS-INV-002: L2
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-INV-001
+      - EAIMS-INV-002
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-INV-001
+      - EAIMS-INV-002
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-INV-001
+      - EAIMS-INV-002
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-INV-001
+      - EAIMS-INV-002
+      max_unresolved_counter_evidence: minor
+- capability_id: VAL-01
+  anchor_statement_refs:
+    L1: AI opportunities arise mainly from individual requests, vendor offerings,
+      or technology experimentation.
+    L2: Business teams identify some opportunities systematically, but qualification
+      criteria are inconsistent.
+    L3: The organization uses a repeatable process to identify business problems and
+      determine whether AI is an appropriate solution.
+    L4: Opportunity generation and qualification are informed by business outcomes,
+      process data, strategic priorities, feasibility, risk, and prior portfolio evidence.
+    L5: The opportunity pipeline continuously evolves using realized portfolio outcomes,
+      changing business conditions, new capabilities, and lessons from unsuccessful
+      AI initiatives.
+  requirement_minimum_levels:
+    EAIMS-OPP-001: L2
+    EAIMS-OPP-004: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OPP-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OPP-001
+      - EAIMS-OPP-004
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OPP-001
+      - EAIMS-OPP-004
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-OPP-001
+      - EAIMS-OPP-004
+      max_unresolved_counter_evidence: minor
+- capability_id: VAL-02
+  anchor_statement_refs:
+    L1: Use cases are selected primarily by enthusiasm, availability of technology,
+      or executive preference.
+    L2: Some value and feasibility criteria are applied but prioritization remains
+      inconsistent.
+    L3: Material use cases are prioritized using defined criteria covering value,
+      feasibility, data readiness, risk, strategic fit, dependencies, and autonomy
+      implications.
+    L4: Prioritization is regularly recalibrated using actual delivery performance,
+      risk, costs, evidence quality, and realized value.
+    L5: The portfolio is dynamically optimized across opportunity cost, risk-adjusted
+      value, enterprise capacity, dependencies, and changing strategic priorities.
+  requirement_minimum_levels:
+    EAIMS-PRI-001: L2
+    EAIMS-PRI-002: L3
+    EAIMS-PRI-003: L3
+    EAIMS-PRI-004: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-PRI-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-PRI-001
+      - EAIMS-PRI-002
+      - EAIMS-PRI-003
+      - EAIMS-PRI-004
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-PRI-001
+      - EAIMS-PRI-002
+      - EAIMS-PRI-003
+      - EAIMS-PRI-004
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-PRI-001
+      - EAIMS-PRI-002
+      - EAIMS-PRI-003
+      - EAIMS-PRI-004
+      max_unresolved_counter_evidence: minor
+- capability_id: VAL-03
+  anchor_statement_refs:
+    L1: Experiments and pilots lack consistent success, stop, or scale criteria.
+    L2: Selected pilots have business objectives and owners, but evidence requirements
+      and scale decisions vary.
+    L3: Material pilots have documented hypotheses, baseline measures, success criteria,
+      owners, risk classification, autonomy/HAB requirements, and explicit scale/stop
+      criteria.
+    L4: Pilot decisions are evidence-backed and consistently result in SCALE, EXTEND,
+      REDESIGN, HOLD, or STOP outcomes with traceable rationale.
+    L5: Pilot design and scale criteria continuously improve based on portfolio learning,
+      failed experiments, realized value, operational risk, and organizational capacity.
+  requirement_minimum_levels:
+    EAIMS-PIL-001: L2
+    EAIMS-PIL-002: L2
+    EAIMS-PIL-003: L3
+    EAIMS-PIL-004: L3
+    EAIMS-PIL-005: L3
+    EAIMS-PIL-006: L3
+    EAIMS-PIL-007: L3
+    EAIMS-PIL-008: L3
+    EAIMS-PIL-009: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-PIL-001
+      - EAIMS-PIL-002
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-PIL-001
+      - EAIMS-PIL-002
+      - EAIMS-PIL-003
+      - EAIMS-PIL-004
+      - EAIMS-PIL-005
+      - EAIMS-PIL-006
+      - EAIMS-PIL-007
+      - EAIMS-PIL-008
+      - EAIMS-PIL-009
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-PIL-001
+      - EAIMS-PIL-002
+      - EAIMS-PIL-003
+      - EAIMS-PIL-004
+      - EAIMS-PIL-005
+      - EAIMS-PIL-006
+      - EAIMS-PIL-007
+      - EAIMS-PIL-008
+      - EAIMS-PIL-009
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-PIL-001
+      - EAIMS-PIL-002
+      - EAIMS-PIL-003
+      - EAIMS-PIL-004
+      - EAIMS-PIL-005
+      - EAIMS-PIL-006
+      - EAIMS-PIL-007
+      - EAIMS-PIL-008
+      - EAIMS-PIL-009
+      max_unresolved_counter_evidence: minor
+- capability_id: VAL-04
+  anchor_statement_refs:
+    L1: AI value is primarily anecdotal or activity-based.
+    L2: Expected benefits are documented for selected initiatives but baseline and
+      outcome measurement are incomplete.
+    L3: Material AI initiatives define baseline, KPI, expected value, cost assumptions,
+      business owner, and measurement period before scale.
+    L4: Realized value, total cost, time-to-value, value leakage, and material unintended
+      effects are systematically measured.
+    L5: Portfolio funding, architecture, operating model, and autonomy decisions are
+      continuously optimized using realized risk-adjusted value.
+  requirement_minimum_levels:
+    EAIMS-VAL-001: L3
+    EAIMS-VAL-002: L2
+    EAIMS-VAL-003: L2
+    EAIMS-VAL-005: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-VAL-002
+      - EAIMS-VAL-003
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-VAL-001
+      - EAIMS-VAL-002
+      - EAIMS-VAL-003
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-VAL-001
+      - EAIMS-VAL-002
+      - EAIMS-VAL-003
+      - EAIMS-VAL-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-VAL-001
+      - EAIMS-VAL-002
+      - EAIMS-VAL-003
+      - EAIMS-VAL-005
+      max_unresolved_counter_evidence: minor
+- capability_id: DAT-01
+  anchor_statement_refs:
+    L1: Data ownership, usage authority, and AI-relevant dependencies are largely
+      implicit.
+    L2: Owners and access rules exist for selected critical datasets, but coverage
+      and lineage are incomplete.
+    L3: Material AI data assets have defined ownership, access authority, provenance,
+      key dependencies, and governance responsibilities.
+    L4: Data governance effectiveness is measured through access exceptions, lineage
+      coverage, incidents, usage violations, and remediation performance.
+    L5: Data governance continuously adapts to changing AI use, new data sources,
+      emerging risks, regulatory requirements, and observed operational failures.
+  requirement_minimum_levels:
+    EAIMS-DGO-001: L2
+    EAIMS-DGO-002: L2
+    EAIMS-DGO-003: L3
+    EAIMS-DGO-004: L3
+    EAIMS-DGO-005: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DGO-001
+      - EAIMS-DGO-002
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DGO-001
+      - EAIMS-DGO-002
+      - EAIMS-DGO-003
+      - EAIMS-DGO-004
+      - EAIMS-DGO-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DGO-001
+      - EAIMS-DGO-002
+      - EAIMS-DGO-003
+      - EAIMS-DGO-004
+      - EAIMS-DGO-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-DGO-001
+      - EAIMS-DGO-002
+      - EAIMS-DGO-003
+      - EAIMS-DGO-004
+      - EAIMS-DGO-005
+      max_unresolved_counter_evidence: minor
+- capability_id: DAT-02
+  anchor_statement_refs:
+    L1: Data quality is addressed reactively when defects disrupt AI behavior.
+    L2: Known data defects and selected quality checks exist, but fitness criteria
+      are inconsistent.
+    L3: Material AI systems define context-specific data fitness criteria, thresholds,
+      remediation ownership, and relevant upstream dependencies.
+    L4: Data fitness is continuously measured against actual AI behavior, business
+      outcomes, and operational failures.
+    L5: Data quality controls, thresholds, sourcing, and remediation mechanisms adapt
+      automatically or systematically based on observed AI performance and changing
+      use context.
+  requirement_minimum_levels:
+    EAIMS-DQF-001: L2
+    EAIMS-DQF-002: L3
+    EAIMS-DQF-004: L3
+    EAIMS-DQF-005: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DQF-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DQF-001
+      - EAIMS-DQF-002
+      - EAIMS-DQF-004
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DQF-001
+      - EAIMS-DQF-002
+      - EAIMS-DQF-004
+      - EAIMS-DQF-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-DQF-001
+      - EAIMS-DQF-002
+      - EAIMS-DQF-004
+      - EAIMS-DQF-005
+      max_unresolved_counter_evidence: minor
+- capability_id: DAT-03
+  anchor_statement_refs:
+    L1: Context is assembled manually or implicitly with limited governance.
+    L2: Structured or unstructured context sources are curated, but permissions, versioning,
+      evaluation, or provenance are incomplete.
+    L3: Material context layers—such as schemas, glossaries, RAG sources, semantic
+      layers, or knowledge graphs—are governed, versioned, access-aware, and evaluated
+      for intended use.
+    L4: Retrieval/context quality, freshness, permission preservation, and downstream
+      effect on AI outputs are systematically monitored.
+    L5: Context architecture and retrieval strategies continuously adapt based on
+      failures, query patterns, quality measurements, access changes, and emerging
+      knowledge sources.
+  requirement_minimum_levels:
+    EAIMS-CTX-001: L2
+    EAIMS-CTX-003: L3
+    EAIMS-CTX-005: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-CTX-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-CTX-001
+      - EAIMS-CTX-003
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-CTX-001
+      - EAIMS-CTX-003
+      - EAIMS-CTX-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-CTX-001
+      - EAIMS-CTX-003
+      - EAIMS-CTX-005
+      max_unresolved_counter_evidence: minor
+- capability_id: DAT-04
+  anchor_statement_refs:
+    L1: Data usage rights and downstream AI exposure are inconsistently understood.
+    L2: Rights and restrictions are documented for selected sensitive or external
+      sources.
+    L3: Material data sources have traceable provenance, usage authority, restrictions,
+      retention obligations, and downstream AI/provider exposure.
+    L4: Compliance with usage restrictions is monitored, exceptions are traceable,
+      and changes in providers or downstream uses trigger review.
+    L5: Data rights governance proactively adapts to changing contracts, regulatory
+      expectations, AI architectures, provider relationships, and reuse patterns.
+  requirement_minimum_levels:
+    EAIMS-DRA-001: L2
+    EAIMS-DRA-002: L3
+    EAIMS-DRA-003: L3
+    EAIMS-DRA-004: L3
+    EAIMS-DRA-005: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DRA-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DRA-001
+      - EAIMS-DRA-002
+      - EAIMS-DRA-003
+      - EAIMS-DRA-004
+      - EAIMS-DRA-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-DRA-001
+      - EAIMS-DRA-002
+      - EAIMS-DRA-003
+      - EAIMS-DRA-004
+      - EAIMS-DRA-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-DRA-001
+      - EAIMS-DRA-002
+      - EAIMS-DRA-003
+      - EAIMS-DRA-004
+      - EAIMS-DRA-005
+      max_unresolved_counter_evidence: minor
+- capability_id: TEC-01
+  anchor_statement_refs:
+    L1: Architecture is largely implicit; dependencies, boundaries, and failure modes
+      are not consistently documented.
+    L2: Some systems have diagrams or design documents, but coverage and review consistency
+      are incomplete.
+    L3: Material AI systems maintain architecture records, system boundaries, dependency
+      maps, data flows, and design rationale.
+    L4: Architecture conformance, dependency health, change impact, and failure/isolation
+      behavior are operationally reviewed and measured.
+    L5: Architecture patterns and reference designs are continuously adapted using
+      incidents, performance, cost, security, provider changes, and lessons learned.
+  requirement_minimum_levels:
+    EAIMS-ARC-001: L3
+    EAIMS-ARC-002: L2
+    EAIMS-ARC-003: L3
+    EAIMS-ARC-005: L2
+    EAIMS-ARC-006: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ARC-002
+      - EAIMS-ARC-005
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ARC-001
+      - EAIMS-ARC-002
+      - EAIMS-ARC-003
+      - EAIMS-ARC-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ARC-001
+      - EAIMS-ARC-002
+      - EAIMS-ARC-003
+      - EAIMS-ARC-005
+      - EAIMS-ARC-006
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-ARC-001
+      - EAIMS-ARC-002
+      - EAIMS-ARC-003
+      - EAIMS-ARC-005
+      - EAIMS-ARC-006
+      max_unresolved_counter_evidence: minor
+- capability_id: TEC-02
+  anchor_statement_refs:
+    L1: Model provenance or external dependencies are not formally recorded.
+    L2: Provider/model details exist for selected systems, but versioning, change
+      exposure, and fallback are incomplete.
+    L3: Material systems have sourcing profiles covering provider, model identifier,
+      version mode, data boundary, dependency chain, and provider-change handling.
+    L4: Provider/model changes, service degradation, terms changes, and dependency
+      risks are regularly monitored and evaluated.
+    L5: Sourcing strategy is optimized using evidence on cost, reliability, sovereignty,
+      performance, external change exposure, and exit risk.
+  requirement_minimum_levels:
+    EAIMS-MSP-001: L2
+    EAIMS-MSP-002: L3
+    EAIMS-MSP-003: L3
+    EAIMS-MSP-004: L4
+    EAIMS-MSP-006: L4
+    EAIMS-MSP-007: L3
+    EAIMS-MSP-008: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-MSP-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-MSP-001
+      - EAIMS-MSP-002
+      - EAIMS-MSP-003
+      - EAIMS-MSP-007
+      - EAIMS-MSP-008
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-MSP-001
+      - EAIMS-MSP-002
+      - EAIMS-MSP-003
+      - EAIMS-MSP-004
+      - EAIMS-MSP-006
+      - EAIMS-MSP-007
+      - EAIMS-MSP-008
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-MSP-001
+      - EAIMS-MSP-002
+      - EAIMS-MSP-003
+      - EAIMS-MSP-004
+      - EAIMS-MSP-006
+      - EAIMS-MSP-007
+      - EAIMS-MSP-008
+      max_unresolved_counter_evidence: minor
+- capability_id: TEC-03
+  anchor_statement_refs:
+    L1: Controls are mainly prompt-based or ad hoc, with limited repeatable testing.
+    L2: Some deterministic controls and test scripts exist, but CI, enforcement consistency,
+      and retained results are incomplete.
+    L3: Material controls are version-controlled, testable, reviewable, and deterministically
+      enforced where feasible.
+    L4: Control effectiveness is measured using automated testing, regression results,
+      runtime evidence, and control-bypass monitoring.
+    L5: Controls are continuously strengthened using new failure modes, incidents,
+      red-team results, and observed system behavior.
+  requirement_minimum_levels:
+    EAIMS-ENG-001: L2
+    EAIMS-ENG-004: L3
+    EAIMS-ENG-006: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ENG-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ENG-001
+      - EAIMS-ENG-004
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ENG-001
+      - EAIMS-ENG-004
+      - EAIMS-ENG-006
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-ENG-001
+      - EAIMS-ENG-004
+      - EAIMS-ENG-006
+      max_unresolved_counter_evidence: minor
+- capability_id: TEC-04
+  anchor_statement_refs:
+    L1: Prompting and tool use are ad hoc and agent boundaries are unclear.
+    L2: Prompt versioning or tool constraints exist for selected components, but memory,
+      delegation, or permission models are incomplete.
+    L3: Material GenAI/agent systems maintain tool inventories, prompt/system instruction
+      management, memory policies, permission envelopes, and observable execution
+      paths.
+    L4: Tool-use quality, retrieval quality, agent action behavior, permission violations,
+      and multi-step failures are continuously evaluated and monitored.
+    L5: Agent architecture, orchestration, and permissions adapt using observed failure
+      modes, workload, value, risk, and operational evidence.
+  requirement_minimum_levels:
+    EAIMS-AGT-001: L2
+    EAIMS-AGT-002: L2
+    EAIMS-AGT-003: L3
+    EAIMS-AGT-005: L3
+    EAIMS-AGT-006: L3
+    EAIMS-AGT-007: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-AGT-001
+      - EAIMS-AGT-002
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-AGT-001
+      - EAIMS-AGT-002
+      - EAIMS-AGT-003
+      - EAIMS-AGT-005
+      - EAIMS-AGT-006
+      - EAIMS-AGT-007
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-AGT-001
+      - EAIMS-AGT-002
+      - EAIMS-AGT-003
+      - EAIMS-AGT-005
+      - EAIMS-AGT-006
+      - EAIMS-AGT-007
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-AGT-001
+      - EAIMS-AGT-002
+      - EAIMS-AGT-003
+      - EAIMS-AGT-005
+      - EAIMS-AGT-006
+      - EAIMS-AGT-007
+      max_unresolved_counter_evidence: minor
+- capability_id: OPS-01
+  anchor_statement_refs:
+    L1: AI systems lack a consistent lifecycle and changes may occur without impact
+      review.
+    L2: Version control and deployment history exist, but approvals, classification,
+      and rollback discipline are incomplete.
+    L3: Material systems maintain lifecycle state, release/change classification,
+      approval criteria, re-evaluation triggers, and retirement processes.
+    L4: Change outcomes, regression impact, failed releases, and rollback effectiveness
+      are systematically tracked.
+    L5: Lifecycle controls continuously adapt using incidents, release quality, provider
+      changes, and operational outcomes.
+  requirement_minimum_levels:
+    EAIMS-LCM-001: L2
+    EAIMS-LCM-002: L3
+    EAIMS-LCM-003: L2
+    EAIMS-LCM-004: L4
+    EAIMS-LCM-005: L3
+    EAIMS-LCM-006: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-LCM-001
+      - EAIMS-LCM-003
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-LCM-001
+      - EAIMS-LCM-002
+      - EAIMS-LCM-003
+      - EAIMS-LCM-005
+      - EAIMS-LCM-006
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-LCM-001
+      - EAIMS-LCM-002
+      - EAIMS-LCM-003
+      - EAIMS-LCM-004
+      - EAIMS-LCM-005
+      - EAIMS-LCM-006
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-LCM-001
+      - EAIMS-LCM-002
+      - EAIMS-LCM-003
+      - EAIMS-LCM-004
+      - EAIMS-LCM-005
+      - EAIMS-LCM-006
+      max_unresolved_counter_evidence: minor
+- capability_id: OPS-02
+  anchor_statement_refs:
+    L1: Evaluation is anecdotal or manual and acceptance criteria are unclear.
+    L2: Repeatable tests exist for selected behaviors, but coverage, thresholds, or
+      retention are incomplete.
+    L3: Material AI systems maintain documented evaluation suites, pre-deployment
+      thresholds, regression criteria, and retained evaluation artifacts.
+    L4: Evaluation is integrated into lifecycle operations and measures system quality,
+      tool use, safety, bias, robustness, and critical failures over time.
+    L5: Evaluation suites continuously evolve using incidents, emerging failures,
+      changing context, and adversarial evidence.
+  requirement_minimum_levels:
+    EAIMS-EVL-001: L2
+    EAIMS-EVL-002: L3
+    EAIMS-EVL-003: L3
+    EAIMS-EVL-004: L4
+    EAIMS-EVL-005: L3
+    EAIMS-EVL-006: L3
+    EAIMS-EVL-007: L3
+    EAIMS-EVL-008: L3
+    EAIMS-EVL-009: L3
+    EAIMS-EVL-010: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-EVL-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-EVL-001
+      - EAIMS-EVL-002
+      - EAIMS-EVL-003
+      - EAIMS-EVL-005
+      - EAIMS-EVL-006
+      - EAIMS-EVL-007
+      - EAIMS-EVL-008
+      - EAIMS-EVL-009
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-EVL-001
+      - EAIMS-EVL-002
+      - EAIMS-EVL-003
+      - EAIMS-EVL-004
+      - EAIMS-EVL-005
+      - EAIMS-EVL-006
+      - EAIMS-EVL-007
+      - EAIMS-EVL-008
+      - EAIMS-EVL-009
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-EVL-001
+      - EAIMS-EVL-002
+      - EAIMS-EVL-003
+      - EAIMS-EVL-004
+      - EAIMS-EVL-005
+      - EAIMS-EVL-006
+      - EAIMS-EVL-007
+      - EAIMS-EVL-008
+      - EAIMS-EVL-009
+      - EAIMS-EVL-010
+      max_unresolved_counter_evidence: minor
+- capability_id: OPS-03
+  anchor_statement_refs:
+    L1: Monitoring is limited to uptime, basic error logs, or manual observation.
+    L2: Some operational metrics and audit logs exist, but coverage or actionability
+      is incomplete.
+    L3: Material systems monitor health, latency, errors, cost, quality indicators,
+      actions, and escalation-relevant events.
+    L4: Monitoring thresholds are linked to incidents, escalation, and corrective
+      actions, while blind spots are systematically tracked.
+    L5: Observability models continuously adapt to system evolution, incident patterns,
+      autonomy, and business outcomes.
+  requirement_minimum_levels:
+    EAIMS-MON-001: L2
+    EAIMS-MON-002: L3
+    EAIMS-MON-003: L3
+    EAIMS-MON-004: L3
+    EAIMS-MON-005: L3
+    EAIMS-MON-006: L4
+    EAIMS-MON-007: L3
+    EAIMS-MON-008: L4
+    EAIMS-MON-009: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-MON-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-MON-001
+      - EAIMS-MON-002
+      - EAIMS-MON-003
+      - EAIMS-MON-004
+      - EAIMS-MON-005
+      - EAIMS-MON-007
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-MON-001
+      - EAIMS-MON-002
+      - EAIMS-MON-003
+      - EAIMS-MON-004
+      - EAIMS-MON-005
+      - EAIMS-MON-006
+      - EAIMS-MON-007
+      - EAIMS-MON-008
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-MON-001
+      - EAIMS-MON-002
+      - EAIMS-MON-003
+      - EAIMS-MON-004
+      - EAIMS-MON-005
+      - EAIMS-MON-006
+      - EAIMS-MON-007
+      - EAIMS-MON-008
+      - EAIMS-MON-009
+      max_unresolved_counter_evidence: minor
+- capability_id: OPS-04
+  anchor_statement_refs:
+    L1: Incident handling is informal and recovery is mainly reactive.
+    L2: Some incident records or fixes exist, but process, ownership, or retirement
+      planning is incomplete.
+    L3: Material systems maintain incident severity models, ownership, root-cause
+      processes, rollback/suspension, recovery, and retirement criteria.
+    L4: MTTD/MTTR, recurring incidents, rollback success, and corrective-action closure
+      are systematically measured.
+    L5: Incident learning changes controls, architecture, evaluation, HAB, and autonomy
+      policy, and the effectiveness of those changes is re-evaluated.
+  requirement_minimum_levels:
+    EAIMS-INC-001: L3
+    EAIMS-INC-002: L3
+    EAIMS-INC-003: L4
+    EAIMS-INC-004: L4
+    EAIMS-INC-005: L3
+    EAIMS-INC-006: L4
+    EAIMS-INC-007: L2
+    EAIMS-INC-008: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-INC-007
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-INC-001
+      - EAIMS-INC-002
+      - EAIMS-INC-005
+      - EAIMS-INC-007
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-INC-001
+      - EAIMS-INC-002
+      - EAIMS-INC-003
+      - EAIMS-INC-004
+      - EAIMS-INC-005
+      - EAIMS-INC-006
+      - EAIMS-INC-007
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-INC-001
+      - EAIMS-INC-002
+      - EAIMS-INC-003
+      - EAIMS-INC-004
+      - EAIMS-INC-005
+      - EAIMS-INC-006
+      - EAIMS-INC-007
+      - EAIMS-INC-008
+      max_unresolved_counter_evidence: minor
+- capability_id: GOV-01
+  anchor_statement_refs:
+    L1: Governance is largely person-dependent and decision rights are unclear.
+    L2: Committees or approval roles exist, but scope, escalation, and authority are
+      inconsistent.
+    L3: Material AI decisions, approval authorities, risk acceptance, control ownership,
+      and escalation are formally defined.
+    L4: Governance decisions, exceptions, unresolved risks, and control failures are
+      traceable and periodically reviewed.
+    L5: Governance is embedded in workflows, pipelines, contracts, and access controls
+      and adapts using evidence and changing risk.
+  requirement_minimum_levels:
+    EAIMS-GOV-001: L3
+    EAIMS-GOV-002: L2
+    EAIMS-GOV-005: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-GOV-002
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-GOV-001
+      - EAIMS-GOV-002
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-GOV-001
+      - EAIMS-GOV-002
+      - EAIMS-GOV-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-GOV-001
+      - EAIMS-GOV-002
+      - EAIMS-GOV-005
+      max_unresolved_counter_evidence: minor
+- capability_id: GOV-02
+  anchor_statement_refs:
+    L1: Risk classification is informal or generic.
+    L2: Some systems are risk-tagged, but methodology, recalculation, or scope consistency
+      is incomplete.
+    L3: Material systems are classified using Impact I0–I4 and factors such as autonomy,
+      reversibility, velocity, scale, affected population, and legal relevance.
+    L4: Risk ratings are revalidated using incidents, usage changes, provider changes,
+      and new operating contexts.
+    L5: Risk models and thresholds are continuously recalibrated using portfolio evidence,
+      near misses, and observed harms.
+  requirement_minimum_levels:
+    EAIMS-RSK-001: L2
+    EAIMS-RSK-002: L3
+    EAIMS-RSK-003: L3
+    EAIMS-RSK-004: L4
+    EAIMS-RSK-005: L3
+    EAIMS-RSK-006: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-RSK-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-RSK-001
+      - EAIMS-RSK-002
+      - EAIMS-RSK-003
+      - EAIMS-RSK-005
+      - EAIMS-RSK-006
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-RSK-001
+      - EAIMS-RSK-002
+      - EAIMS-RSK-003
+      - EAIMS-RSK-004
+      - EAIMS-RSK-005
+      - EAIMS-RSK-006
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-RSK-001
+      - EAIMS-RSK-002
+      - EAIMS-RSK-003
+      - EAIMS-RSK-004
+      - EAIMS-RSK-005
+      - EAIMS-RSK-006
+      max_unresolved_counter_evidence: minor
+- capability_id: GOV-03
+  anchor_statement_refs:
+    L1: Human accountability is implicit and final authority is unclear.
+    L2: Named humans and approvals exist for selected scenarios, but consistency and
+      feasibility are incomplete.
+    L3: Material decisions document AI role, human role, final authority, override,
+      escalation, and recourse.
+    L4: HAB effectiveness is measured using override outcomes, escalations, intervention
+      rates, and incident evidence.
+    L5: HABs are continuously adjusted using autonomy, risk, workload, incidents,
+      and outcome evidence.
+  requirement_minimum_levels:
+    EAIMS-HAB-001: L3
+    EAIMS-HAB-002: L2
+    EAIMS-HAB-003: L3
+    EAIMS-HAB-004: L3
+    EAIMS-HAB-005: L3
+    EAIMS-HAB-006: L3
+    EAIMS-HAB-007: L3
+    EAIMS-HAB-008: L3
+    EAIMS-HAB-009: L3
+    EAIMS-HAB-010: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-HAB-002
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-HAB-001
+      - EAIMS-HAB-002
+      - EAIMS-HAB-003
+      - EAIMS-HAB-004
+      - EAIMS-HAB-005
+      - EAIMS-HAB-006
+      - EAIMS-HAB-007
+      - EAIMS-HAB-008
+      - EAIMS-HAB-009
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-HAB-001
+      - EAIMS-HAB-002
+      - EAIMS-HAB-003
+      - EAIMS-HAB-004
+      - EAIMS-HAB-005
+      - EAIMS-HAB-006
+      - EAIMS-HAB-007
+      - EAIMS-HAB-008
+      - EAIMS-HAB-009
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-HAB-001
+      - EAIMS-HAB-002
+      - EAIMS-HAB-003
+      - EAIMS-HAB-004
+      - EAIMS-HAB-005
+      - EAIMS-HAB-006
+      - EAIMS-HAB-007
+      - EAIMS-HAB-008
+      - EAIMS-HAB-009
+      - EAIMS-HAB-010
+      max_unresolved_counter_evidence: minor
+- capability_id: GOV-04
+  anchor_statement_refs:
+    L1: Autonomy is undeclared or ad hoc.
+    L2: Some limits or manual approvals exist, but permission models and enforcement
+      are inconsistent.
+    L3: Material systems maintain autonomy classification, permission envelopes, action
+      limits, delegation boundaries, suspension, and reassessment triggers.
+    L4: Autonomous actions, limit breaches, overrides, escalation, and suspension
+      events are monitored and analyzed.
+    L5: Autonomy is intentionally expanded or reduced using demonstrated reliability,
+      value, assurance quality, and residual risk.
+  requirement_minimum_levels:
+    EAIMS-AUT-001: L2
+    EAIMS-AUT-002: L3
+    EAIMS-AUT-003: L4
+    EAIMS-AUT-004: L4
+    EAIMS-AUT-005: L3
+    EAIMS-AUT-006: L3
+    EAIMS-AUT-007: L3
+    EAIMS-AUT-008: L3
+    EAIMS-AUT-009: L3
+    EAIMS-AUT-010: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-AUT-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-AUT-001
+      - EAIMS-AUT-002
+      - EAIMS-AUT-005
+      - EAIMS-AUT-006
+      - EAIMS-AUT-007
+      - EAIMS-AUT-008
+      - EAIMS-AUT-009
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-AUT-001
+      - EAIMS-AUT-002
+      - EAIMS-AUT-003
+      - EAIMS-AUT-004
+      - EAIMS-AUT-005
+      - EAIMS-AUT-006
+      - EAIMS-AUT-007
+      - EAIMS-AUT-008
+      - EAIMS-AUT-009
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-AUT-001
+      - EAIMS-AUT-002
+      - EAIMS-AUT-003
+      - EAIMS-AUT-004
+      - EAIMS-AUT-005
+      - EAIMS-AUT-006
+      - EAIMS-AUT-007
+      - EAIMS-AUT-008
+      - EAIMS-AUT-009
+      - EAIMS-AUT-010
+      max_unresolved_counter_evidence: minor
+- capability_id: GOV-05
+  anchor_statement_refs:
+    L1: Responsible AI concerns are mainly reactive or principle-based.
+    L2: Some fairness, safety, or transparency controls exist, but they are not consistently
+      impact-specific or operational.
+    L3: Material/high-impact systems maintain use-case-specific harm assessments,
+      stakeholder impact review, recourse, and applicable transparency controls.
+    L4: Observed harms, appeals, recourse outcomes, and control effectiveness are
+      systematically measured.
+    L5: Impact controls, recourse mechanisms, and harm models continuously adapt using
+      real-world outcomes and changing social or legal context.
+  requirement_minimum_levels:
+    EAIMS-RAI-001: L2
+    EAIMS-RAI-002: L3
+    EAIMS-RAI-004: L3
+    EAIMS-RAI-005: L3
+    EAIMS-RAI-006: L4
+    EAIMS-RAI-007: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-RAI-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-RAI-001
+      - EAIMS-RAI-002
+      - EAIMS-RAI-004
+      - EAIMS-RAI-005
+      - EAIMS-RAI-007
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-RAI-001
+      - EAIMS-RAI-002
+      - EAIMS-RAI-004
+      - EAIMS-RAI-005
+      - EAIMS-RAI-006
+      - EAIMS-RAI-007
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-RAI-001
+      - EAIMS-RAI-002
+      - EAIMS-RAI-004
+      - EAIMS-RAI-005
+      - EAIMS-RAI-006
+      - EAIMS-RAI-007
+      max_unresolved_counter_evidence: minor
+- capability_id: PEO-01
+  anchor_statement_refs:
+    L1: AI roles are largely informal, responsibilities are concentrated in individuals,
+      and competency requirements are undefined.
+    L2: Responsibilities and training exist for selected roles, but coverage, skill
+      expectations, and competence assessment are inconsistent.
+    L3: Material AI roles have documented responsibilities, required competencies,
+      training expectations, escalation responsibilities, and handoff responsibilities.
+    L4: Competence is actively assessed; gaps, training status, role readiness, and
+      performance in oversight and AI operations are tracked.
+    L5: Role design and competency models continuously adapt using incidents, technology
+      change, new autonomy, performance evidence, and operating-model changes.
+  requirement_minimum_levels:
+    EAIMS-ROL-001: L2
+    EAIMS-ROL-002: L3
+    EAIMS-ROL-003: L4
+    EAIMS-ROL-005: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ROL-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ROL-001
+      - EAIMS-ROL-002
+      - EAIMS-ROL-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ROL-001
+      - EAIMS-ROL-002
+      - EAIMS-ROL-003
+      - EAIMS-ROL-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-ROL-001
+      - EAIMS-ROL-002
+      - EAIMS-ROL-003
+      - EAIMS-ROL-005
+      max_unresolved_counter_evidence: minor
+- capability_id: PEO-02
+  anchor_statement_refs:
+    L1: Distribution of AI ownership, governance, engineering, and business responsibility
+      is unclear and coordination depends on personal relationships.
+    L2: Central or local teams exist, but service boundaries and decision rights are
+      ambiguous or overlapping.
+    L3: The operating model explicitly defines centralized, federated, hub-and-spoke,
+      local, or hybrid ownership, service boundaries, shared responsibilities, and
+      escalation.
+    L4: Operating-model effectiveness is measured using delivery speed, duplicated
+      controls, escalation load, shared-service performance, ownership gaps, and cross-unit
+      outcomes.
+    L5: Central/local structure, service model, decision rights, and shared capabilities
+      continuously adapt using scale, evidence, portfolio needs, and organizational
+      learning.
+  requirement_minimum_levels:
+    EAIMS-OPM-001: L3
+    EAIMS-OPM-002: L3
+    EAIMS-OPM-004: L2
+    EAIMS-OPM-005: L4
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OPM-004
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OPM-001
+      - EAIMS-OPM-002
+      - EAIMS-OPM-004
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-OPM-001
+      - EAIMS-OPM-002
+      - EAIMS-OPM-004
+      - EAIMS-OPM-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-OPM-001
+      - EAIMS-OPM-002
+      - EAIMS-OPM-004
+      - EAIMS-OPM-005
+      max_unresolved_counter_evidence: minor
+- capability_id: PEO-03
+  anchor_statement_refs:
+    L1: AI is added to existing workflows without systematic design of responsibility,
+      workload, handoff, or workforce impact.
+    L2: Human/AI roles are defined for some use cases, but workload, automation bias,
+      training, or transition planning is incomplete.
+    L3: Material workflows define human–AI responsibilities, escalation/handoff, required
+      human capacity, applicable Human Reserved decisions, and workforce transition
+      actions.
+    L4: Work design is evaluated using override load, review throughput, error patterns,
+      user behavior, workload, and operational outcomes.
+    L5: Human–AI work allocation continuously adapts using performance, wellbeing,
+      risk, automation effectiveness, and changing autonomy.
+  requirement_minimum_levels:
+    EAIMS-HAW-001: L2
+    EAIMS-HAW-002: L4
+    EAIMS-HAW-005: L3
+    EAIMS-HAW-006: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-HAW-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-HAW-001
+      - EAIMS-HAW-005
+      - EAIMS-HAW-006
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-HAW-001
+      - EAIMS-HAW-002
+      - EAIMS-HAW-005
+      - EAIMS-HAW-006
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-HAW-001
+      - EAIMS-HAW-002
+      - EAIMS-HAW-005
+      - EAIMS-HAW-006
+      max_unresolved_counter_evidence: minor
+- capability_id: ADO-01
+  anchor_statement_refs:
+    L1: AI availability and usage are fragmented, and success is measured mainly through
+      access or user counts rather than outcomes.
+    L2: Training and adoption initiatives exist, but usage quality, responsible-use
+      adherence, and process integration are weakly measured.
+    L3: Approved AI use, usage boundaries, role-specific guidance, change activities,
+      and actual adoption measures are defined for material deployments.
+    L4: Adoption is measured using actual workflow use, user behavior, misuse patterns,
+      feedback, process outcomes, and responsible-use indicators.
+    L5: Adoption strategy, interface/workflow design, training, and controls continuously
+      adapt using observed user behavior, business outcomes, misuse, and emerging
+      needs.
+  requirement_minimum_levels:
+    EAIMS-ADP-001: L2
+    EAIMS-ADP-003: L4
+    EAIMS-ADP-005: L3
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ADP-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ADP-001
+      - EAIMS-ADP-005
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-ADP-001
+      - EAIMS-ADP-003
+      - EAIMS-ADP-005
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-ADP-001
+      - EAIMS-ADP-003
+      - EAIMS-ADP-005
+      max_unresolved_counter_evidence: minor
+- capability_id: ADO-02
+  anchor_statement_refs:
+    L1: Lessons learned are largely informal and assessments or incidents do not consistently
+      change capability.
+    L2: Retrospectives and reassessments occur occasionally, but closure and institutional
+      learning are inconsistent.
+    L3: Material AI systems and enterprise capabilities maintain reassessment triggers,
+      feedback mechanisms, improvement ownership, and traceable corrective actions.
+    L4: The organization measures whether identified issues, incidents, assurance
+      findings, and capability gaps are actually remediated and recurrence is reduced.
+    L5: Learning loops across incidents, value outcomes, assessment results, technology
+      change, and user feedback continuously change strategy, controls, operating
+      model, and maturity targets.
+  requirement_minimum_levels:
+    EAIMS-LRN-001: L2
+    EAIMS-LRN-002: L4
+    EAIMS-LRN-003: L4
+    EAIMS-LRN-004: L4
+    EAIMS-LRN-005: L5
+    EAIMS-LRN-006: L5
+  levels:
+    L1:
+      minimum_evidence_class: null
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements: []
+      max_unresolved_counter_evidence: critical
+    L2:
+      minimum_evidence_class: E1
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-LRN-001
+      max_unresolved_counter_evidence: critical
+    L3:
+      minimum_evidence_class: E2
+      minimum_operating_cycles: 0
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-LRN-001
+      max_unresolved_counter_evidence: material
+    L4:
+      minimum_evidence_class: E3
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 0
+      required_requirements:
+      - EAIMS-LRN-001
+      - EAIMS-LRN-002
+      - EAIMS-LRN-003
+      - EAIMS-LRN-004
+      max_unresolved_counter_evidence: minor
+    L5:
+      minimum_evidence_class: E4
+      minimum_operating_cycles: 2
+      minimum_adaptation_cycles: 1
+      required_requirements:
+      - EAIMS-LRN-001
+      - EAIMS-LRN-002
+      - EAIMS-LRN-003
+      - EAIMS-LRN-004
+      - EAIMS-LRN-005
+      - EAIMS-LRN-006
+      max_unresolved_counter_evidence: minor
+dependencies:
+- rule_id: DEP-AUT-001
+  capability_id: GOV-04
+  target_level: L4
+  dependency_capability: OPS-02
+  minimum_level: L3
+  type: hard
+  when: applicable_scope
+  rationale: Managed autonomy requires at least defined evaluation and assurance.
+- rule_id: DEP-AGT-001
+  capability_id: TEC-04
+  target_level: L4
+  dependency_capability: GOV-04
+  minimum_level: L3
+  type: hard
+  when: agentic_system
+  rationale: Managed agentic architecture requires defined autonomy governance.
+- rule_id: DEP-PIL-001
+  capability_id: VAL-03
+  target_level: L4
+  dependency_capability: OPS-02
+  minimum_level: L3
+  type: hard
+  when: material_pilot
+  rationale: Evidence-backed scale decisions require defined evaluation and assurance.
+- rule_id: DEP-HAB-001
+  capability_id: GOV-03
+  target_level: L4
+  dependency_capability: PEO-01
+  minimum_level: L3
+  type: supporting
+  when: human_oversight_required
+  rationale: Managed human accountability depends on demonstrated oversight competence.
+- rule_id: DEP-INC-001
+  capability_id: OPS-04
+  target_level: L4
+  dependency_capability: OPS-03
+  minimum_level: L3
+  type: supporting
+  when: production_system
+  rationale: Managed incident response is strengthened by defined monitoring and observability.

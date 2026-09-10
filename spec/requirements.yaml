@@ -1,0 +1,2037 @@
+spec_version: 1.0.0-fc16
+status: freeze_candidate_fc16
+requirement_count: 206
+requirements:
+- requirement_id: EAIMS-STR-001
+  capability_id: STR-01
+  title: Documented AI Objectives
+  normative_level: SHALL
+  statement: The organization shall maintain explicit objectives for the use of AI
+    that are traceable to enterprise priorities.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-STR-002
+  capability_id: STR-01
+  title: Business Outcome Alignment
+  normative_level: SHALL
+  statement: Material AI objectives shall be linked to identifiable business or mission
+    outcomes.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-STR-003
+  capability_id: STR-01
+  title: Strategic Assumptions
+  normative_level: SHOULD
+  statement: The AI strategy should state material assumptions concerning value, risk,
+    capability, dependencies, and constraints.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-STR-004
+  capability_id: STR-01
+  title: Strategy Review Triggers
+  normative_level: SHALL
+  statement: The AI strategy shall be reviewed periodically and after material changes
+    in enterprise priorities, risk, technology, or realized value.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-STR-005
+  capability_id: STR-01
+  title: Strategic Conflict Resolution
+  normative_level: SHALL
+  statement: Material conflicts among AI initiatives shall have an explicit enterprise-level
+    resolution mechanism.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OWN-001
+  capability_id: STR-02
+  title: Executive AI Ownership
+  normative_level: SHALL
+  statement: Enterprise AI accountability shall be assigned to a named executive role
+    or governing authority.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OWN-002
+  capability_id: STR-02
+  title: Decision Rights
+  normative_level: SHALL
+  statement: Decision rights across business, technology, and control functions shall
+    be explicitly defined for material AI activities.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OWN-003
+  capability_id: STR-02
+  title: Risk Escalation
+  normative_level: SHALL
+  statement: Unresolved material AI risks shall have a documented escalation path
+    to an authorized decision-maker.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OWN-004
+  capability_id: STR-02
+  title: Executive Portfolio Review
+  normative_level: SHALL
+  statement: Executive governance shall periodically review material AI portfolio
+    value, risk, incidents, and capability gaps.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OWN-005
+  capability_id: STR-02
+  title: Residual Risk Acceptance
+  normative_level: SHALL
+  statement: Acceptance of material residual AI risk shall be traceable to a named
+    authority with appropriate decision rights.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-TGT-001
+  capability_id: STR-03
+  title: Current State
+  normative_level: SHALL
+  statement: The organization shall document the current maturity state for the scope
+    used to define an AI transformation roadmap.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-TGT-002
+  capability_id: STR-03
+  title: Context Appropriate Target
+  normative_level: SHALL
+  statement: Target maturity and autonomy shall be selected according to context and
+    shall not default to the maximum available level.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-TGT-003
+  capability_id: STR-03
+  title: Roadmap Ownership
+  normative_level: SHALL
+  statement: Material roadmap actions shall identify owners, dependencies, intended
+    outcomes, and sequencing or timing.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-TGT-004
+  capability_id: STR-03
+  title: Roadmap Monitoring
+  normative_level: SHALL
+  statement: Roadmap progress shall be reviewed against capability improvement, outcomes,
+    dependencies, and risk reduction.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-TGT-005
+  capability_id: STR-03
+  title: Target Recalibration
+  normative_level: SHALL
+  statement: Target states shall be reconsidered when material evidence, value, risk,
+    autonomy, or enterprise priorities change.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INV-001
+  capability_id: STR-04
+  title: Investment Rationale
+  normative_level: SHALL
+  statement: Material AI investments shall have a documented strategic and business
+    rationale.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INV-002
+  capability_id: STR-04
+  title: Investment Criteria
+  normative_level: SHALL
+  statement: Material AI investments shall be evaluated against defined value, risk,
+    feasibility, dependencies, and strategic-fit criteria.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INV-003
+  capability_id: STR-04
+  title: Portfolio Duplication Review
+  normative_level: SHOULD
+  statement: Duplicative or competing AI investments should be reviewed at portfolio
+    level.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INV-004
+  capability_id: STR-04
+  title: Continuation Evidence
+  normative_level: SHOULD
+  statement: Continued material funding should be linked to milestones, outcomes,
+    evidence, and unresolved risk.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INV-005
+  capability_id: STR-04
+  title: Stop or Redirect
+  normative_level: SHOULD
+  statement: The governance process should support stopping, reducing, or redirecting
+    initiatives whose evidence no longer supports continued investment.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPP-001
+  capability_id: VAL-01
+  title: Opportunity Process
+  normative_level: SHALL
+  statement: The organization shall maintain a repeatable mechanism for identifying
+    and qualifying material AI opportunities.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPP-002
+  capability_id: VAL-01
+  title: Problem First
+  normative_level: SHOULD
+  statement: AI opportunities should begin from a business or mission problem rather
+    than technology availability alone.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPP-003
+  capability_id: VAL-01
+  title: Opportunity Record
+  normative_level: SHOULD
+  statement: Material opportunity records should include an intended outcome, owner,
+    affected process, and key constraints.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPP-004
+  capability_id: VAL-01
+  title: No-AI Option
+  normative_level: SHALL_NOT
+  statement: The organization shall not assume that AI is the preferred solution without
+    considering non-AI alternatives where material.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPP-005
+  capability_id: VAL-01
+  title: Rejected Opportunity Rationale
+  normative_level: MAY
+  statement: Rejected material opportunities may retain the decision rationale for
+    future learning.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PRI-001
+  capability_id: VAL-02
+  title: Defined Prioritization Criteria
+  normative_level: SHALL
+  statement: Material AI use cases shall be prioritized using defined criteria.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PRI-002
+  capability_id: VAL-02
+  title: Value and Feasibility
+  normative_level: SHALL
+  statement: Prioritization shall consider expected value and feasibility.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PRI-003
+  capability_id: VAL-02
+  title: Risk and Readiness
+  normative_level: SHALL
+  statement: Prioritization shall consider data readiness, material risk, dependencies,
+    and autonomy implications where applicable.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PRI-004
+  capability_id: VAL-02
+  title: No Single-Factor Prioritization
+  normative_level: SHALL_NOT
+  statement: Material use cases shall not be prioritized solely by technical feasibility,
+    vendor availability, or executive preference.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PRI-005
+  capability_id: VAL-02
+  title: Portfolio Recalibration
+  normative_level: SHOULD
+  statement: Prioritization should be recalibrated using realized value, delivery
+    performance, cost, risk, and evidence quality.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-001
+  capability_id: VAL-03
+  title: Pilot Hypothesis
+  normative_level: SHALL
+  statement: Each material AI pilot shall define a business or mission hypothesis.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-002
+  capability_id: VAL-03
+  title: Success Criteria
+  normative_level: SHALL
+  statement: Material pilot success criteria shall be defined before the scale decision.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-003
+  capability_id: VAL-03
+  title: Baseline
+  normative_level: SHALL
+  statement: A relevant baseline shall be recorded for material pilots where outcome
+    improvement is claimed.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-004
+  capability_id: VAL-03
+  title: Pilot Owner
+  normative_level: SHALL
+  statement: Each material pilot shall have a named owner accountable for the pilot
+    outcome.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-005
+  capability_id: VAL-03
+  title: Pilot Risk and Autonomy
+  normative_level: SHALL
+  statement: Material pilots shall classify applicable impact, risk, and autonomy
+    before material deployment or scale.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-006
+  capability_id: VAL-03
+  title: Pilot HAB
+  normative_level: SHALL
+  statement: Material pilot decisions subject to human accountability requirements
+    shall define the applicable Human Accountability Boundary.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-007
+  capability_id: VAL-03
+  title: Scale Criteria
+  normative_level: SHALL
+  statement: Scale, stop, redesign, extend, or hold criteria shall be defined before
+    a material scale decision.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-008
+  capability_id: VAL-03
+  title: Explicit Pilot Outcome
+  normative_level: SHALL
+  statement: A completed material pilot shall record an explicit SCALE, EXTEND, REDESIGN,
+    HOLD, or STOP decision.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-PIL-009
+  capability_id: VAL-03
+  title: Evidence-backed Scale
+  normative_level: SHALL
+  statement: Material scale decisions shall be supported by retained evidence.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-VAL-001
+  capability_id: VAL-04
+  title: Expected Value
+  normative_level: SHALL
+  statement: Expected material value shall be documented before scale.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-VAL-002
+  capability_id: VAL-04
+  title: Baseline and KPI
+  normative_level: SHALL
+  statement: Material value claims shall have a baseline and defined outcome measures.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-VAL-003
+  capability_id: VAL-04
+  title: Value Owner
+  normative_level: SHALL
+  statement: A named business or mission owner shall be accountable for material value
+    realization.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-VAL-004
+  capability_id: VAL-04
+  title: Total Cost
+  normative_level: SHOULD
+  statement: Total cost should include material model, infrastructure, people, integration,
+    governance, and assurance costs.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-VAL-005
+  capability_id: VAL-04
+  title: Realized Value
+  normative_level: SHALL
+  statement: Realized value shall be measured after material deployment over an appropriate
+    period.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-VAL-006
+  capability_id: VAL-04
+  title: Portfolio Optimization
+  normative_level: SHOULD
+  statement: Portfolio decisions should be updated using realized risk-adjusted value
+    and material unintended effects.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DGO-001
+  capability_id: DAT-01
+  title: Data Owner
+  normative_level: SHALL
+  statement: Material AI data assets shall have defined ownership or stewardship.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DGO-002
+  capability_id: DAT-01
+  title: Usage Authority
+  normative_level: SHALL
+  statement: Authority to use material data for the intended AI purpose shall be demonstrable.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DGO-003
+  capability_id: DAT-01
+  title: Data Dependencies
+  normative_level: SHALL
+  statement: Material AI data dependencies shall be traceable at a level sufficient
+    for change and incident analysis.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DGO-004
+  capability_id: DAT-01
+  title: Access Control
+  normative_level: SHALL
+  statement: Access controls shall be proportionate to data sensitivity and intended
+    use.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DGO-005
+  capability_id: DAT-01
+  title: Ownership Gaps
+  normative_level: SHALL
+  statement: Unresolved material ownership or stewardship gaps shall be recorded as
+    assessment findings.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DQF-001
+  capability_id: DAT-02
+  title: Fitness Criteria
+  normative_level: SHALL
+  statement: Material AI systems shall define context-specific criteria for data fitness
+    for the intended purpose.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DQF-002
+  capability_id: DAT-02
+  title: Known Defects
+  normative_level: SHALL
+  statement: Known material data defects and limitations shall be recorded.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DQF-003
+  capability_id: DAT-02
+  title: Quality Thresholds
+  normative_level: SHOULD
+  statement: Material data quality thresholds should be defined before production
+    use where practical.
+  criticality: normal
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DQF-004
+  capability_id: DAT-02
+  title: Upstream Change Trigger
+  normative_level: SHALL
+  statement: Material upstream data or schema changes shall trigger appropriate data-fitness
+    reassessment.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DQF-005
+  capability_id: DAT-02
+  title: Operational Feedback
+  normative_level: SHALL
+  statement: Material production data failures shall feed monitoring, incident, or
+    remediation processes.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-CTX-001
+  capability_id: DAT-03
+  title: Context Source Inventory
+  normative_level: SHALL
+  statement: Material contextual sources used by an AI system shall be identifiable.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-CTX-002
+  capability_id: DAT-03
+  title: Context Versioning
+  normative_level: SHOULD
+  statement: Material context assembly logic and configuration should be version controlled.
+  criticality: normal
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-CTX-003
+  capability_id: DAT-03
+  title: Permission Preservation
+  normative_level: SHALL
+  statement: Context generation and retrieval shall preserve applicable access and
+    usage restrictions.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-CTX-004
+  capability_id: DAT-03
+  title: Context Evaluation
+  normative_level: SHOULD
+  statement: Material retrieval and context quality should be evaluated for intended
+    use.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-CTX-005
+  capability_id: DAT-03
+  title: Knowledge Freshness and Conflict
+  normative_level: SHALL
+  statement: Material stale or conflicting knowledge shall have a defined detection
+    or resolution mechanism.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DRA-001
+  capability_id: DAT-04
+  title: Data Provenance
+  normative_level: SHALL
+  statement: Material data sources shall have traceable provenance.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DRA-002
+  capability_id: DAT-04
+  title: Usage Restrictions
+  normative_level: SHALL
+  statement: Applicable licensing, contractual, legal, or policy restrictions on material
+    data use shall be recorded.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DRA-003
+  capability_id: DAT-04
+  title: Downstream Exposure
+  normative_level: SHALL
+  statement: Material downstream model or provider exposure of data shall be understood
+    and recorded.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DRA-004
+  capability_id: DAT-04
+  title: Sensitive Reuse Approval
+  normative_level: SHALL
+  statement: Material reuse of sensitive data outside its approved purpose shall require
+    explicit authorization.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-DRA-005
+  capability_id: DAT-04
+  title: Retention and Deletion
+  normative_level: SHALL
+  statement: Applicable retention and deletion obligations shall be implemented through
+    lifecycle controls.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ARC-001
+  capability_id: TEC-01
+  title: Architecture Record
+  normative_level: SHALL
+  statement: Material AI systems shall maintain an architecture record appropriate
+    to their complexity and impact.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ARC-002
+  capability_id: TEC-01
+  title: System Boundaries
+  normative_level: SHALL
+  statement: Material system boundaries and major data or control flows shall be defined.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ARC-003
+  capability_id: TEC-01
+  title: Critical Dependencies
+  normative_level: SHALL
+  statement: Critical internal and external technical dependencies shall be traceable.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ARC-004
+  capability_id: TEC-01
+  title: Architecture Rationale
+  normative_level: SHOULD
+  statement: Material architecture decisions should retain rationale for significant
+    trade-offs.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ARC-005
+  capability_id: TEC-01
+  title: Failure Boundaries
+  normative_level: SHALL
+  statement: High-impact AI systems shall define failure, isolation, or containment
+    boundaries appropriate to their risk.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ARC-006
+  capability_id: TEC-01
+  title: Architecture Conformance
+  normative_level: SHALL
+  statement: Material differences between approved architecture and production implementation
+    shall be detected and reviewed.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-001
+  capability_id: TEC-02
+  title: Sourcing Profile
+  normative_level: SHALL
+  statement: Each material AI system shall declare its model and system sourcing profile.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-002
+  capability_id: TEC-02
+  title: Provider Dependency
+  normative_level: SHALL
+  statement: Material external model and service providers shall be identified.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-003
+  capability_id: TEC-02
+  title: Floating Dependency Flag
+  normative_level: SHALL
+  statement: Floating model identifiers or unpinned dependencies shall be explicitly
+    flagged.
+  criticality: material
+  machine_verifiability: MV1
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-004
+  capability_id: TEC-02
+  title: Provider Change Re-evaluation
+  normative_level: SHALL
+  statement: Material provider or model changes shall trigger evaluation appropriate
+    to the affected system.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-005
+  capability_id: TEC-02
+  title: Fallback or Exit Strategy
+  normative_level: SHOULD
+  statement: Material externally dependent AI systems should maintain a proportionate
+    fallback or exit strategy.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-006
+  capability_id: TEC-02
+  title: Provider-Controlled Change Risk
+  normative_level: SHALL
+  statement: Provider-controlled behavior changes shall be included in lifecycle and
+    change-risk analysis.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-007
+  capability_id: TEC-02
+  title: Data Boundary
+  normative_level: SHALL
+  statement: Material provider data-processing boundaries and relevant usage conditions
+    shall be recorded.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MSP-008
+  capability_id: TEC-02
+  title: Composite Dependency Trace
+  normative_level: SHALL
+  statement: Composite or multi-provider AI systems shall maintain a traceable dependency
+    chain.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ENG-001
+  capability_id: TEC-03
+  title: Version Control
+  normative_level: SHALL
+  statement: Material AI code, configuration, prompts, policies, or control logic
+    shall be version controlled where technically feasible.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ENG-002
+  capability_id: TEC-03
+  title: Deterministic Enforcement
+  normative_level: SHOULD
+  statement: Safety- or authority-critical constraints should be enforced deterministically
+    where feasible rather than relying solely on model obedience.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ENG-003
+  capability_id: TEC-03
+  title: Automated Control Tests
+  normative_level: SHOULD
+  statement: Machine-testable material controls should be automatically tested where
+    practical.
+  criticality: normal
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ENG-004
+  capability_id: TEC-03
+  title: Secrets Protection
+  normative_level: SHALL_NOT
+  statement: Secrets or production credentials shall not be embedded in public source,
+    fixtures, or published assessment evidence.
+  criticality: critical
+  machine_verifiability: MV1
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ENG-005
+  capability_id: TEC-03
+  title: Reusable Engineering Patterns
+  normative_level: SHOULD
+  statement: Repeated material AI patterns should use reviewed reusable engineering
+    controls where practical.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ENG-006
+  capability_id: TEC-03
+  title: Control Bypass Governance
+  normative_level: SHALL
+  statement: Material bypasses of approved technical controls shall be logged, authorized,
+    and time-bounded where applicable.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-001
+  capability_id: TEC-04
+  title: Tool Inventory
+  normative_level: SHALL
+  statement: Tool-using material AI systems shall maintain an inventory of callable
+    tools and external actions.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-002
+  capability_id: TEC-04
+  title: Memory Policy
+  normative_level: SHALL
+  statement: Persistent AI memory shall have documented purpose, scope, retention,
+    access, and deletion rules.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-003
+  capability_id: TEC-04
+  title: Delegation Traceability
+  normative_level: SHALL
+  statement: Material agent delegation and agent-to-agent actions shall be traceable.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-004
+  capability_id: TEC-04
+  title: Prompt and Instruction Versioning
+  normative_level: SHOULD
+  statement: Material prompts and system instructions should be version controlled.
+  criticality: normal
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-005
+  capability_id: TEC-04
+  title: RAG Evaluation
+  normative_level: SHALL
+  statement: Material retrieval-augmented systems shall evaluate retrieval or context
+    quality appropriate to intended use.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-006
+  capability_id: TEC-04
+  title: Agent Identity
+  normative_level: SHALL
+  statement: Material agents shall have an observable execution identity or equivalent
+    traceable execution context.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AGT-007
+  capability_id: TEC-04
+  title: No Silent Authority Expansion
+  normative_level: SHALL_NOT
+  statement: Material agents shall not acquire new tools, permissions, or authority
+    outside approved change control.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LCM-001
+  capability_id: OPS-01
+  title: Lifecycle State
+  normative_level: SHALL
+  statement: Material AI systems shall have a defined lifecycle state.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LCM-002
+  capability_id: OPS-01
+  title: Deployment Approval
+  normative_level: SHALL
+  statement: Production deployment of material AI systems shall meet defined approval
+    criteria.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LCM-003
+  capability_id: OPS-01
+  title: Change Classification
+  normative_level: SHALL
+  statement: Material changes shall be classified according to their potential effect
+    on behavior, risk, evidence validity, or authority.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LCM-004
+  capability_id: OPS-01
+  title: Re-evaluation Trigger
+  normative_level: SHALL
+  statement: Change classification shall determine required re-evaluation or re-approval.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LCM-005
+  capability_id: OPS-01
+  title: Rollback Consideration
+  normative_level: SHALL
+  statement: High-risk material changes shall have appropriate rollback, recovery,
+    or suspension considerations before release.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LCM-006
+  capability_id: OPS-01
+  title: Retirement Cleanup
+  normative_level: SHALL
+  statement: Retirement shall address material data, access, credential, dependency,
+    and monitoring cleanup obligations.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-001
+  capability_id: OPS-02
+  title: Evaluation Criteria
+  normative_level: SHALL
+  statement: Material AI systems shall have documented evaluation criteria.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-002
+  capability_id: OPS-02
+  title: Predeployment Evaluation
+  normative_level: SHALL
+  statement: Material AI systems shall undergo appropriate evaluation before material
+    deployment or scale.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-003
+  capability_id: OPS-02
+  title: Fit-for-Purpose Evaluation
+  normative_level: SHALL
+  statement: Evaluation shall be fit for the intended system context and shall not
+    rely solely on generic model benchmarks.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-004
+  capability_id: OPS-02
+  title: Material Change Re-evaluation
+  normative_level: SHALL
+  statement: Material changes shall trigger regression or re-evaluation appropriate
+    to the affected system.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-005
+  capability_id: OPS-02
+  title: Agent Action Evaluation
+  normative_level: SHALL
+  statement: Material agentic systems shall evaluate tool use and action behavior
+    appropriate to their authority.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-006
+  capability_id: OPS-02
+  title: Adverse Outcome Evaluation
+  normative_level: SHALL
+  statement: High-impact AI systems shall evaluate credible failure modes and adverse
+    outcomes.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-007
+  capability_id: OPS-02
+  title: Retained Evaluation Evidence
+  normative_level: SHALL
+  statement: Evaluation results shall be retained, dated, and traceable.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-008
+  capability_id: OPS-02
+  title: Acceptance Thresholds
+  normative_level: SHALL
+  statement: Material acceptance thresholds shall be defined before the deployment
+    or scale decision they govern.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-009
+  capability_id: OPS-02
+  title: Failed Threshold Governance
+  normative_level: SHALL
+  statement: Failed material acceptance criteria shall block deployment or scale unless
+    an approved exception is documented.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVL-010
+  capability_id: OPS-02
+  title: Evaluation Learning
+  normative_level: SHALL
+  statement: Material evaluation suites shall be updated when incidents or newly observed
+    failure modes invalidate prior coverage.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-001
+  capability_id: OPS-03
+  title: Production Monitoring
+  normative_level: SHALL
+  statement: Production material AI systems shall have operational monitoring appropriate
+    to their risk and purpose.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-002
+  capability_id: OPS-03
+  title: AI-Specific Monitoring
+  normative_level: SHALL
+  statement: Monitoring shall include material AI-specific quality, behavior, or outcome
+    signals and shall not be limited to infrastructure uptime.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-003
+  capability_id: OPS-03
+  title: Agent Action Logs
+  normative_level: SHALL
+  statement: Material autonomous actions shall be logged with sufficient context for
+    investigation.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-004
+  capability_id: OPS-03
+  title: Operational Health
+  normative_level: SHALL
+  statement: Material monitoring shall cover relevant latency, error, cost, availability,
+    or resource indicators.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-005
+  capability_id: OPS-03
+  title: Adverse Outcome Indicators
+  normative_level: SHALL
+  statement: High-impact systems shall monitor indicators relevant to material adverse
+    outcomes.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-006
+  capability_id: OPS-03
+  title: Threshold Escalation
+  normative_level: SHALL
+  statement: Material monitoring threshold breaches shall trigger defined escalation
+    or response.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-007
+  capability_id: OPS-03
+  title: Log Retention
+  normative_level: SHALL
+  statement: Material monitoring and action logs shall have appropriate retention
+    and provenance.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-008
+  capability_id: OPS-03
+  title: Monitoring Blind Spots
+  normative_level: SHALL
+  statement: Known material monitoring blind spots shall be documented and risk accepted
+    or remediated.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-MON-009
+  capability_id: OPS-03
+  title: Monitoring Change Sync
+  normative_level: SHALL
+  statement: Monitoring shall be reviewed when material system, autonomy, provider,
+    or risk changes occur.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-001
+  capability_id: OPS-04
+  title: Incident Route
+  normative_level: SHALL
+  statement: Material AI systems shall have a documented incident reporting and escalation
+    route.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-002
+  capability_id: OPS-04
+  title: Incident Severity
+  normative_level: SHALL
+  statement: Material AI incidents shall have a defined severity classification method.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-003
+  capability_id: OPS-04
+  title: Root Cause Analysis
+  normative_level: SHALL
+  statement: Material incidents shall undergo proportionate root-cause analysis.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-004
+  capability_id: OPS-04
+  title: Corrective Action Trace
+  normative_level: SHALL
+  statement: Corrective actions from material incidents shall be traceable to ownership
+    and closure status.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-005
+  capability_id: OPS-04
+  title: Rollback or Suspension
+  normative_level: SHALL
+  statement: Material systems shall have a defined rollback, recovery, suspension,
+    or containment approach appropriate to their risk.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-006
+  capability_id: OPS-04
+  title: Suspension Testing
+  normative_level: SHALL
+  statement: High-autonomy systems shall periodically test operational suspension
+    capability.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-007
+  capability_id: OPS-04
+  title: Retirement Criteria
+  normative_level: SHALL
+  statement: Material AI systems shall have criteria for retirement or decommissioning.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-INC-008
+  capability_id: OPS-04
+  title: Incident Learning Feed
+  normative_level: SHALL
+  statement: Material incident evidence shall feed applicable evaluation, risk, governance,
+    or maturity reassessment.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-GOV-001
+  capability_id: GOV-01
+  title: Lifecycle Decision Rights
+  normative_level: SHALL
+  statement: Material AI lifecycle decisions shall have defined decision rights.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-GOV-002
+  capability_id: GOV-01
+  title: Approval Authority
+  normative_level: SHALL
+  statement: Material AI approval shall be traceable to a named or formally delegated
+    authority.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-GOV-003
+  capability_id: GOV-01
+  title: Risk Acceptance Separation
+  normative_level: SHOULD
+  statement: Risk acceptance should be separated from system implementation ownership
+    where independence is material to assurance.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-GOV-004
+  capability_id: GOV-01
+  title: Conflict of Interest
+  normative_level: SHOULD
+  statement: Material conflicts of interest in high-impact review should be identified
+    and managed.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-GOV-005
+  capability_id: GOV-01
+  title: Operationalized Governance
+  normative_level: SHALL
+  statement: Material governance requirements shall be reflected in operating procedures
+    or technical controls and shall not exist only as committee statements.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RSK-001
+  capability_id: GOV-02
+  title: Impact Classification
+  normative_level: SHALL
+  statement: Material AI systems shall have an explicit impact classification using
+    the applicable EAIMS impact scale or a mapped equivalent.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RSK-002
+  capability_id: GOV-02
+  title: Risk Factors
+  normative_level: SHALL
+  statement: Material risk analysis shall consider autonomy, reversibility, scale,
+    velocity, and affected populations where applicable.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RSK-003
+  capability_id: GOV-02
+  title: Affected Population
+  normative_level: SHALL
+  statement: Material or high-impact AI systems shall identify materially affected
+    populations or stakeholder groups.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RSK-004
+  capability_id: GOV-02
+  title: Risk Reclassification
+  normative_level: SHALL
+  statement: Material changes in purpose, model, data, population, tools, autonomy,
+    or deployment context shall trigger risk review.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RSK-005
+  capability_id: GOV-02
+  title: Regulatory Distinction
+  normative_level: SHALL
+  statement: EAIMS internal impact or risk categories shall not be represented as
+    legal classifications unless independently established.
+  criticality: critical
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RSK-006
+  capability_id: GOV-02
+  title: Risk Uncertainty
+  normative_level: SHALL
+  statement: Material uncertainty in risk classification shall be recorded and shall
+    not be silently treated as low risk.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-001
+  capability_id: GOV-03
+  title: Accountable Human Role
+  normative_level: SHALL
+  statement: Each material AI system shall have a named human role accountable for
+    its intended business outcome and accepted residual risk.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-002
+  capability_id: GOV-03
+  title: Decision Authority
+  normative_level: SHALL
+  statement: Material AI decision authority shall specify whether AI may inform, recommend,
+    prepare, execute with approval, or execute autonomously.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-003
+  capability_id: GOV-03
+  title: Final Authority
+  normative_level: SHALL
+  statement: Final decision authority shall be explicitly documented for high-impact
+    decisions.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-004
+  capability_id: GOV-03
+  title: Human Reserved Assessment
+  normative_level: SHALL
+  statement: The organization shall assess whether material decisions require Human
+    Reserved classification.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-005
+  capability_id: GOV-03
+  title: Override Authority
+  normative_level: SHALL
+  statement: Where human intervention is required, override authority shall be explicitly
+    assigned.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-006
+  capability_id: GOV-03
+  title: Escalation
+  normative_level: SHALL
+  statement: Material decision and action escalation triggers and routes shall be
+    documented.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-007
+  capability_id: GOV-03
+  title: Human Competence
+  normative_level: SHALL
+  statement: Human overseers of material or high-impact AI decisions shall have competence
+    appropriate to the decision context.
+  criticality: critical
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-008
+  capability_id: GOV-03
+  title: Intervention Feasibility
+  normative_level: SHALL
+  statement: Required human oversight shall be operationally feasible with respect
+    to authority, information, competence, timing, and expected workload.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-009
+  capability_id: GOV-03
+  title: Recourse
+  normative_level: SHALL
+  statement: High-impact AI contexts shall provide a proportionate route for review,
+    appeal, or recourse where adverse effects can materially affect people.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAB-010
+  capability_id: GOV-03
+  title: HAB Reassessment
+  normative_level: SHALL
+  statement: The Human Accountability Boundary shall be reviewed after material changes
+    in purpose, model, autonomy, affected population, tools, data, or deployment context.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-001
+  capability_id: GOV-04
+  title: Autonomy Classification
+  normative_level: SHALL
+  statement: Each material AI system shall have an explicit autonomy classification.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-002
+  capability_id: GOV-04
+  title: Permission Envelope
+  normative_level: SHALL
+  statement: Material autonomous or agentic systems shall operate within an approved
+    permission envelope.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-003
+  capability_id: GOV-04
+  title: Autonomy Reassessment
+  normative_level: SHALL
+  statement: A material increase in autonomy shall trigger risk, evaluation, and accountability
+    reassessment.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-004
+  capability_id: GOV-04
+  title: Action Auditability
+  normative_level: SHALL
+  statement: Material autonomous actions shall be observable and auditable.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-005
+  capability_id: GOV-04
+  title: No Authority Exceedance
+  normative_level: SHALL_NOT
+  statement: AI systems shall not perform material actions outside approved authority.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-006
+  capability_id: GOV-04
+  title: Operational Suspension
+  normative_level: SHALL
+  statement: High-autonomy systems shall have an operational suspension capability.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-007
+  capability_id: GOV-04
+  title: Reversibility Consideration
+  normative_level: SHALL
+  statement: Autonomy approval shall consider the reversibility of material actions.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-008
+  capability_id: GOV-04
+  title: Velocity and Scale
+  normative_level: SHALL
+  statement: Autonomy approval shall consider action velocity and scale where they
+    can amplify harm.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-009
+  capability_id: GOV-04
+  title: Delegation Boundaries
+  normative_level: SHALL
+  statement: Delegated agent authority shall be equal to or narrower than the delegating
+    authority unless separately approved.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-AUT-010
+  capability_id: GOV-04
+  title: Autonomy Review
+  normative_level: SHALL
+  statement: Material autonomy shall be periodically reviewed against realized value,
+    failures, assurance evidence, and residual risk.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-001
+  capability_id: GOV-05
+  title: Harm Categories
+  normative_level: SHALL
+  statement: Material AI systems shall identify applicable categories of harm or adverse
+    impact.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-002
+  capability_id: GOV-05
+  title: Stakeholder Impact Review
+  normative_level: SHALL
+  statement: High-impact systems shall assess impacts on materially affected stakeholders
+    or populations.
+  criticality: critical
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-003
+  capability_id: GOV-05
+  title: Decision Review Path
+  normative_level: SHOULD
+  statement: Material adverse decisions should have an appropriate explanation, review,
+    or appeal path.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-004
+  capability_id: GOV-05
+  title: Operational Recourse
+  normative_level: SHALL
+  statement: Where recourse is applicable to a high-impact context, the recourse mechanism
+    shall be operational rather than merely documented.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-005
+  capability_id: GOV-05
+  title: Use-Case Specific Controls
+  normative_level: SHALL
+  statement: Fairness, safety, transparency, or related responsible-AI controls shall
+    be connected to credible use-case-specific harms rather than generic principles
+    alone.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-006
+  capability_id: GOV-05
+  title: Impact Refresh
+  normative_level: SHALL
+  statement: Impact assessment shall be refreshed after material changes that can
+    alter affected populations, harms, or system authority.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-RAI-007
+  capability_id: GOV-05
+  title: Residual Impact Decision
+  normative_level: SHALL
+  statement: Known material residual impacts shall be remediated or explicitly accepted
+    by appropriate authority.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ROL-001
+  capability_id: PEO-01
+  title: Role Responsibilities
+  normative_level: SHALL
+  statement: Material AI roles shall have defined responsibilities and decision expectations.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ROL-002
+  capability_id: PEO-01
+  title: Oversight Competence
+  normative_level: SHALL
+  statement: People performing material AI oversight shall demonstrate competence
+    proportionate to the decision and system context.
+  criticality: critical
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ROL-003
+  capability_id: PEO-01
+  title: Competency Gap Remediation
+  normative_level: SHALL
+  statement: Material competency gaps shall have an owner and remediation plan.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ROL-004
+  capability_id: PEO-01
+  title: User Limitations Training
+  normative_level: SHOULD
+  statement: Users of material AI systems should understand relevant limitations,
+    prohibited uses, and escalation routes.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ROL-005
+  capability_id: PEO-01
+  title: Human-Agent Handoff
+  normative_level: SHALL
+  statement: Material human-agent handoff responsibilities shall be explicit.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPM-001
+  capability_id: PEO-02
+  title: Operating Model Type
+  normative_level: SHALL
+  statement: The organization shall define how AI responsibilities are distributed
+    across central, federated, local, or hybrid structures.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPM-002
+  capability_id: PEO-02
+  title: Central and Local Rights
+  normative_level: SHALL
+  statement: Central and local AI decision rights shall be explicit for material capabilities.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPM-003
+  capability_id: PEO-02
+  title: Shared Service Boundaries
+  normative_level: SHOULD
+  statement: Shared AI services should have defined service and responsibility boundaries.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPM-004
+  capability_id: PEO-02
+  title: Ownership Conflict Resolution
+  normative_level: SHALL
+  statement: Conflicting or duplicated material control ownership shall have a resolution
+    mechanism.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-OPM-005
+  capability_id: PEO-02
+  title: Federated Evidence Attribution
+  normative_level: SHALL
+  statement: Federated assessments shall distinguish centrally demonstrated capability
+    from locally demonstrated capability.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAW-001
+  capability_id: PEO-03
+  title: Human-AI Responsibility Design
+  normative_level: SHALL
+  statement: Material human-AI workflows shall explicitly define human and AI responsibilities.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAW-002
+  capability_id: PEO-03
+  title: Oversight Workload
+  normative_level: SHALL
+  statement: Required human oversight shall consider expected volume, timing, information,
+    and workload.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAW-003
+  capability_id: PEO-03
+  title: Automation Bias
+  normative_level: SHOULD
+  statement: Material workflows should assess automation-bias risk where human reviewers
+    may over-rely on AI outputs.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAW-004
+  capability_id: PEO-03
+  title: Workforce Transition
+  normative_level: SHOULD
+  statement: Material role changes should include appropriate training, transition,
+    or reskilling actions.
+  criticality: normal
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAW-005
+  capability_id: PEO-03
+  title: Human Reserved Enforcement
+  normative_level: SHALL
+  statement: Human Reserved decisions shall be reflected in workflow or authority
+    controls.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-HAW-006
+  capability_id: PEO-03
+  title: No Nominal Oversight
+  normative_level: SHALL_NOT
+  statement: The organization shall not claim meaningful human oversight when review
+    volume, timing, information, competence, or authority makes effective intervention
+    infeasible.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ADP-001
+  capability_id: ADO-01
+  title: Usage Boundaries Communication
+  normative_level: SHALL
+  statement: Approved material AI usage boundaries shall be communicated to relevant
+    users.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ADP-002
+  capability_id: ADO-01
+  title: Actual Adoption Evidence
+  normative_level: SHOULD
+  statement: AI adoption should be measured using actual workflow use and outcomes
+    rather than access or license counts alone.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ADP-003
+  capability_id: ADO-01
+  title: Misuse Monitoring
+  normative_level: SHALL
+  statement: Material misuse patterns shall have monitoring, reporting, or remediation
+    mechanisms.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ADP-004
+  capability_id: ADO-01
+  title: User Feedback
+  normative_level: SHOULD
+  statement: Material AI deployments should capture user feedback relevant to effectiveness,
+    harm, and workflow fit.
+  criticality: normal
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-ADP-005
+  capability_id: ADO-01
+  title: Change Implications
+  normative_level: SHALL
+  statement: Material AI-enabled process changes shall consider organizational change
+    implications.
+  criticality: material
+  machine_verifiability: MV4
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LRN-001
+  capability_id: ADO-02
+  title: Reassessment Triggers
+  normative_level: SHALL
+  statement: Material AI systems and capabilities shall have defined reassessment
+    triggers.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LRN-002
+  capability_id: ADO-02
+  title: Incident Learning
+  normative_level: SHALL
+  statement: Material incidents shall feed organizational learning and applicable
+    capability reassessment.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LRN-003
+  capability_id: ADO-02
+  title: Repeated Finding Review
+  normative_level: SHALL
+  statement: Repeated material findings shall trigger root-cause review.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LRN-004
+  capability_id: ADO-02
+  title: Evidence of Improvement
+  normative_level: SHALL
+  statement: Claims of material maturity improvement shall be supported by new or
+    strengthened evidence.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LRN-005
+  capability_id: ADO-02
+  title: Adaptive Evidence for L5
+  normative_level: SHALL
+  statement: Level 5 claims shall demonstrate evidence that measurement or learning
+    caused substantive adaptation of the capability.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-LRN-006
+  capability_id: ADO-02
+  title: No Documentation-Only Inflation
+  normative_level: SHALL_NOT
+  statement: Documentation improvement alone shall not be treated as demonstrated
+    capability improvement where the applicable anchor requires operational change.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+- requirement_id: EAIMS-EVD-001
+  capability_id: null
+  title: Evidence Traceability
+  normative_level: SHALL
+  statement: Every maturity claim shall be traceable to evidence.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-002
+  capability_id: null
+  title: Evidence Source and Owner
+  normative_level: SHALL
+  statement: Evidence shall identify its source and owner or custodian where applicable.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-003
+  capability_id: null
+  title: Evidence Time Context
+  normative_level: SHALL
+  statement: Evidence shall include a timestamp or period covered where applicable.
+  criticality: material
+  machine_verifiability: MV1
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-004
+  capability_id: null
+  title: Evidence Validity
+  normative_level: SHALL
+  statement: Evidence shall have an explicit validity status.
+  criticality: material
+  machine_verifiability: MV1
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-005
+  capability_id: null
+  title: Invalidation Triggers
+  normative_level: SHALL
+  statement: Material evidence shall declare relevant event-based invalidation triggers
+    where applicable.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-006
+  capability_id: null
+  title: Generated vs Retained Evidence
+  normative_level: SHALL
+  statement: Assessment-generated evidence shall be distinguishable from operationally
+    retained evidence.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-007
+  capability_id: null
+  title: Higher-Order Preservation
+  normative_level: SHALL
+  statement: Higher-order evidence shall be preserved even when lower-level prerequisites
+    are not satisfied.
+  criticality: material
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-008
+  capability_id: null
+  title: Conflict Preservation
+  normative_level: SHALL
+  statement: Conflicting evidence shall not be silently overwritten or discarded.
+  criticality: critical
+  machine_verifiability: MV2
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-009
+  capability_id: null
+  title: Evidence Provenance
+  normative_level: SHALL
+  statement: Evidence provenance shall be reproducible to the extent practical.
+  criticality: material
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-010
+  capability_id: null
+  title: Content Hashes
+  normative_level: SHOULD
+  statement: Critical assessment outputs should include content hashes or equivalent
+    integrity metadata.
+  criticality: normal
+  machine_verifiability: MV1
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-011
+  capability_id: null
+  title: Cutoff Enforcement
+  normative_level: SHALL
+  statement: Evidence generated after the assessment evidence cutoff shall not alter
+    the finalized historical assessment.
+  criticality: critical
+  machine_verifiability: MV1
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-EVD-012
+  capability_id: null
+  title: Operational Contradiction
+  normative_level: SHALL_NOT
+  statement: A documented control contradicted by credible observed operation shall
+    not be treated as fully implemented until the conflict is resolved.
+  criticality: critical
+  machine_verifiability: MV3
+  introduced_in: 1.0.0
+  status: stable_candidate
+  cross_cutting: true
+- requirement_id: EAIMS-SYS-001
+  capability_id: null
+  title: Authoritative AI System Inventory
+  normative_level: SHALL
+  statement: Each material AI system shall have an authoritative inventory record
+    with a stable system identifier.
+  criticality: critical
+  machine_verifiability: MV2
+  cross_cutting: true
+  introduced_in: 1.0.0
+  status: stable
+- requirement_id: EAIMS-SYS-002
+  capability_id: null
+  title: Intended Purpose and Users
+  normative_level: SHALL
+  statement: Each material AI system shall document its intended purpose and intended
+    user population before material deployment or use.
+  criticality: critical
+  machine_verifiability: MV2
+  cross_cutting: true
+  introduced_in: 1.0.0
+  status: stable
+- requirement_id: EAIMS-SYS-003
+  capability_id: null
+  title: Named System and Business Ownership
+  normative_level: SHALL
+  statement: Each material AI system shall identify accountable system and business
+    ownership roles appropriate to its operating context.
+  criticality: critical
+  machine_verifiability: MV3
+  cross_cutting: true
+  introduced_in: 1.0.0
+  status: stable
+- requirement_id: EAIMS-SYS-004
+  capability_id: null
+  title: Suspension and Retirement Ownership
+  normative_level: SHALL
+  statement: Each material production AI system shall identify who is authorized and
+    responsible to suspend or retire the system when required.
+  criticality: critical
+  machine_verifiability: MV3
+  cross_cutting: true
+  introduced_in: 1.0.0
+  status: stable
