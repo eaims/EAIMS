@@ -91,11 +91,11 @@ jobs:
           printf '%s\n' '1.0.0-rc.1-candidate' > VERSION
           rm -f manifest.json
 
-          # The legacy browser Dockerfile remains at Dockerfile. The v1 validator has a distinct image contract.
           python - <<'PY'
           from pathlib import Path
           p = Path('.github/workflows/validate.yml')
           s = p.read_text()
+          s = s.replace('run: pytest -q', 'run: PYTHONPATH=. pytest -q')
           s = s.replace('docker build -t eaims-fc16 .', 'docker build -f Dockerfile.validator -t eaims-fc16 .')
           p.write_text(s)
           PY
@@ -111,7 +111,7 @@ jobs:
           python tools/prepush_audit.py
           python tools/legal_ip_governance_audit.py
           eaims-validate
-          pytest -q
+          PYTHONPATH=. pytest -q
 
       - name: Compatibility gates
         shell: bash
