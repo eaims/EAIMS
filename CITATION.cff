@@ -2,8 +2,8 @@ cff-version: 1.2.0
 title: "EAIMS: Enterprise AI Maturity Standard"
 message: "Please cite the exact EAIMS version used and disclose modifications."
 type: software
-version: "1.0.0-rc.1-candidate"
-date-released: "2026-09-09"
+version: "1.0.0"
+date-released: "2026-09-10"
 authors:
   - family-names: Naserkhaki
     given-names: Elias
