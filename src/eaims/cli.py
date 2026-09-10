@@ -3,6 +3,7 @@ import argparse, json, sys, yaml
 
 from .engine import assess_fixture, validate_fixture
 from .report import render_markdown
+from .input_io import load_input_yaml
 from .review import validate_review_record, validate_resolution_record, aggregate_findings, apply_resolutions, review_summary, render_review_markdown
 from .legacy_compat import (
     LegacyAssessmentError, validate_legacy_assessment, score_legacy_assessment,
@@ -33,6 +34,8 @@ def main(argv: list[str] | None = None) -> int:
     rs = rsub.add_parser("summarize")
     rs.add_argument("fixture")
     rs.add_argument("--out", default="review-output")
+    rs.add_argument("--fail-on-unmet", action="store_true",
+                    help="Exit 1 when review exit criteria are not met; still write reports")
 
     # Backward-compatible v0.2.1 CLI contract already published by EAIMS.
     for name in ("validate", "score"):
@@ -46,13 +49,13 @@ def main(argv: list[str] | None = None) -> int:
     args = p.parse_args(argv)
     try:
         if args.cmd == "validate-fixture":
-            fixture = yaml.safe_load(Path(args.fixture).read_text(encoding="utf-8"))
+            fixture = load_input_yaml(args.fixture)
             errors = validate_fixture(fixture)
             print(json.dumps({"valid": not errors, "errors": errors}, ensure_ascii=False, indent=2))
             return 0 if not errors else 1
 
         if args.cmd == "assess":
-            fixture = yaml.safe_load(Path(args.fixture).read_text(encoding="utf-8"))
+            fixture = load_input_yaml(args.fixture)
             errors = validate_fixture(fixture)
             if errors:
                 print(json.dumps({"valid": False, "errors": errors}, ensure_ascii=False, indent=2), file=sys.stderr)
@@ -66,20 +69,26 @@ def main(argv: list[str] | None = None) -> int:
             return 0
 
         if args.cmd == "review" and args.review_cmd == "validate":
-            record = yaml.safe_load(Path(args.record).read_text(encoding="utf-8"))
+            record = load_input_yaml(args.record)
             errors = validate_review_record(record)
             print(json.dumps({"valid": not errors, "errors": errors}, indent=2))
             return 0 if not errors else 2
 
         if args.cmd == "review" and args.review_cmd == "summarize":
-            data = yaml.safe_load(Path(args.fixture).read_text(encoding="utf-8"))
+            data = load_input_yaml(args.fixture)
+            if not isinstance(data, dict):
+                raise ValueError("review fixture must be an object")
             records = data.get("reviews", [])
+            if not isinstance(records, list):
+                raise ValueError("reviews must be an array")
             for rec in records:
                 errors = validate_review_record(rec)
                 if errors:
                     print("Invalid review record: " + "; ".join(errors), file=sys.stderr)
                     return 2
             resolutions = data.get("resolutions", [])
+            if not isinstance(resolutions, list):
+                raise ValueError("resolutions must be an array")
             for resolution in resolutions:
                 errors = validate_resolution_record(resolution)
                 if errors:
@@ -93,7 +102,7 @@ def main(argv: list[str] | None = None) -> int:
             (out / "findings-ledger.json").write_text(json.dumps(ledger, ensure_ascii=False, indent=2), encoding="utf-8")
             (out / "review-summary.md").write_text(render_review_markdown(summary, ledger), encoding="utf-8")
             print(json.dumps({"status": summary["rc_gate"]["status"], "out": str(out)}, indent=2))
-            return 0
+            return 1 if args.fail_on_unmet and not summary["rc_gate"]["review_completed_for_rc"] else 0
 
         # Legacy v0.2.1 compatibility path.
         data = _load_json(args.assessment)

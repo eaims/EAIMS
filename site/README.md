@@ -1,5 +1,7 @@
 # Reference Web Interface
 
+> **Legacy v0.2.x resource.** This file does not define the EAIMS 1.0 workflow. Start with the [EAIMS 1.0 assessment guide](../docs/ASSESSMENT-V1.md).
+
 This static, dependency-free interface provides an indicative self-assessment and JSON export. It does not verify evidence and therefore does not independently establish Evidence-Based conformance.
 
 From the repository root, run:

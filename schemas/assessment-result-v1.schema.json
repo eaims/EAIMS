@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eaims.org/schemas/v1/assessment-result.schema.json",
+  "title": "EAIMS 1.0 executable assessment result",
+  "type": "object",
+  "properties": {
+    "assessment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spec_version": {
+      "const": "1.0.0-fc16"
+    },
+    "assessment_type": {
+      "enum": [
+        "FULL",
+        "PARTIAL",
+        "TARGETED"
+      ]
+    },
+    "evidence_cutoff_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "system": {
+      "type": "object"
+    },
+    "risk_profile": {
+      "type": "object"
+    },
+    "capability_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result": {
+            "enum": [
+              "L1",
+              "L2",
+              "L3",
+              "L4",
+              "L5",
+              "INDETERMINATE",
+              "NOT_APPLICABLE",
+              "NOT_ASSESSED"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "C0",
+              "C1",
+              "C2",
+              "C3",
+              "C4"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "capability_id",
+          "result"
+        ]
+      }
+    },
+    "requirement_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "result": {
+            "enum": [
+              "SATISFIED",
+              "PARTIALLY_SATISFIED",
+              "NOT_SATISFIED",
+              "INSUFFICIENT_EVIDENCE",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "requirement_id",
+          "result"
+        ]
+      }
+    },
+    "gate_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "gate_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "family": {
+            "enum": [
+              "G0",
+              "G1",
+              "G2",
+              "G3"
+            ]
+          },
+          "result": {
+            "enum": [
+              "PASS",
+              "BREACH",
+              "INCOMPLETE",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "gate_id",
+          "family",
+          "result",
+          "reason"
+        ]
+      }
+    },
+    "permission_envelope_evaluation": {
+      "type": "object"
+    },
+    "hab_evaluation": {
+      "type": "object"
+    },
+    "autonomy_debt": {
+      "type": "object"
+    },
+    "consistency_findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_validation_errors": {
+      "type": "object"
+    },
+    "dimension_profile": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 1,
+        "maximum": 5
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "capabilities_in_scope": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "applicable_capabilities": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "determinate_capabilities": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "applicable_determinate_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "critical_capabilities_assessed": {
+          "type": "boolean"
+        },
+        "dimensions_represented": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        }
+      },
+      "required": [
+        "capabilities_in_scope",
+        "applicable_capabilities",
+        "determinate_capabilities",
+        "applicable_determinate_ratio",
+        "critical_capabilities_assessed",
+        "dimensions_represented"
+      ]
+    },
+    "indicative_scoped_index": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 5
+    },
+    "enterprise_index": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 1,
+      "maximum": 5
+    },
+    "enterprise_maturity_established": {
+      "type": "boolean"
+    },
+    "enterprise_band": {
+      "enum": [
+        "Initial",
+        "Emerging",
+        "Defined",
+        "Managed",
+        "Adaptive",
+        null
+      ]
+    },
+    "result_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": [
+    "assessment_id",
+    "spec_version",
+    "assessment_type",
+    "evidence_cutoff_time",
+    "system",
+    "risk_profile",
+    "capability_results",
+    "requirement_results",
+    "gate_results",
+    "permission_envelope_evaluation",
+    "hab_evaluation",
+    "autonomy_debt",
+    "consistency_findings",
+    "evidence_validation_errors",
+    "dimension_profile",
+    "coverage",
+    "indicative_scoped_index",
+    "enterprise_index",
+    "enterprise_maturity_established",
+    "enterprise_band",
+    "result_hash"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "assessment_type": {
+            "const": "TARGETED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "indicative_scoped_index": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assessment_type": {
+            "enum": [
+              "PARTIAL",
+              "TARGETED"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "enterprise_index": {
+            "type": "null"
+          },
+          "enterprise_band": {
+            "type": "null"
+          },
+          "enterprise_maturity_established": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "enterprise_maturity_established": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "enterprise_index": {
+            "type": "null"
+          },
+          "enterprise_band": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "assessment_type": {
+            "const": "FULL"
+          },
+          "enterprise_index": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "enterprise_band": {
+            "type": "string"
+          },
+          "indicative_scoped_index": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eaims.org/schemas/v1/assessment-fixture.schema.json",
+  "title": "EAIMS 1.0 executable assessment fixture",
+  "description": "Structural validation; canonical IDs, evidence references and cutoff semantics are checked by the engine. Extension properties are preserved.",
+  "type": "object",
+  "properties": {
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "assessment_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "assessment_type": {
+          "type": "string",
+          "enum": [
+            "FULL",
+            "PARTIAL",
+            "TARGETED"
+          ]
+        },
+        "evidence_cutoff_time": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "assessment_id",
+        "assessment_type",
+        "evidence_cutoff_time"
+      ]
+    },
+    "system": {
+      "type": "object",
+      "properties": {
+        "material": {
+          "type": "boolean"
+        },
+        "agentic": {
+          "type": "boolean"
+        },
+        "persistent_memory": {
+          "type": "boolean"
+        },
+        "autonomy": {
+          "type": "string",
+          "enum": [
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "approved_autonomy": {
+          "type": "string",
+          "enum": [
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "observed_autonomy": {
+          "type": "string",
+          "enum": [
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "impact": {
+          "type": "string",
+          "enum": [
+            "I0",
+            "I1",
+            "I2",
+            "I3",
+            "I4"
+          ]
+        },
+        "system_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "risk_profile": {
+      "type": "object",
+      "properties": {
+        "impact": {
+          "type": "string",
+          "enum": [
+            "I0",
+            "I1",
+            "I2",
+            "I3",
+            "I4"
+          ]
+        },
+        "autonomy": {
+          "type": "string",
+          "enum": [
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "reversibility": {
+          "type": "string",
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ]
+        },
+        "scale": {
+          "type": "string",
+          "enum": [
+            "S0",
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "velocity": {
+          "type": "string",
+          "enum": [
+            "V0",
+            "V1",
+            "V2",
+            "V3",
+            "V4"
+          ]
+        }
+      },
+      "required": [
+        "impact",
+        "autonomy",
+        "reversibility",
+        "scale",
+        "velocity"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "class": {
+            "type": "string",
+            "enum": [
+              "E1",
+              "E2",
+              "E3",
+              "E4"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "C0",
+              "C1",
+              "C2",
+              "C3",
+              "C4"
+            ]
+          },
+          "validity": {
+            "type": "string",
+            "enum": [
+              "VALID",
+              "STALE",
+              "INVALIDATED",
+              "CONFLICTED",
+              "UNVERIFIED"
+            ]
+          },
+          "nature": {
+            "type": "string",
+            "enum": [
+              "SUPPORTING",
+              "COUNTER",
+              "ABSENCE",
+              "CONTEXT"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "collected_at": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "class",
+          "confidence",
+          "validity",
+          "nature",
+          "source",
+          "collected_at"
+        ]
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "applicability": {
+            "type": "string",
+            "enum": [
+              "APPLICABLE",
+              "CONDITIONALLY_APPLICABLE",
+              "NOT_APPLICABLE",
+              "NOT_ASSESSED"
+            ]
+          },
+          "applicability_rationale": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "anchor_observed": {
+            "type": "object",
+            "properties": {
+              "L1": {
+                "type": "boolean"
+              },
+              "L2": {
+                "type": "boolean"
+              },
+              "L3": {
+                "type": "boolean"
+              },
+              "L4": {
+                "type": "boolean"
+              },
+              "L5": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "operating_cycles": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "adaptation_cycles": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "capability_id"
+        ]
+      }
+    },
+    "requirement_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "SATISFIED",
+              "PARTIALLY_SATISFIED",
+              "NOT_SATISFIED",
+              "INSUFFICIENT_EVIDENCE",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "uniqueItems": true
+          },
+          "applicability_rationale": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "conflict": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "requirement_id",
+          "result"
+        ]
+      }
+    },
+    "gate_inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string",
+            "enum": [
+              "PASS",
+              "BREACH",
+              "INCOMPLETE",
+              "NOT_APPLICABLE"
+            ]
+          }
+        ]
+      }
+    },
+    "permission_envelope": {
+      "type": "object",
+      "properties": {
+        "allowed_tools": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "uniqueItems": true
+        },
+        "financial_limit": {
+          "type": "number",
+          "minimum": 0
+        },
+        "external_communication_allowed": {
+          "type": "boolean"
+        },
+        "delegation_allowed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "agent_controls": {
+      "type": "object",
+      "properties": {
+        "suspension_tested": {
+          "type": "boolean"
+        },
+        "escalation_path": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "memory_policy": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "agent_evaluation": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        }
+      }
+    },
+    "decision_policy": {
+      "type": "object",
+      "properties": {
+        "human_reserved_decisions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "uniqueItems": true
+        },
+        "final_authority": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recourse_available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "high_impact_controls": {
+      "type": "object",
+      "properties": {
+        "intervention_feasible": {
+          "type": "boolean"
+        },
+        "independent_challenge_applicable": {
+          "type": "boolean"
+        },
+        "impact_assessment": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "hab_defined": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "human_competence": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "adverse_outcome_evaluation": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "residual_risk_acceptance": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "enhanced_monitoring": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        },
+        "independent_challenge": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          ]
+        }
+      }
+    },
+    "consistency_context": {
+      "type": "object",
+      "properties": {
+        "human_reserved": {
+          "type": "boolean"
+        },
+        "ai_final_authority": {
+          "type": "boolean"
+        },
+        "human_oversight_required": {
+          "type": "boolean"
+        },
+        "intervention_capacity_feasible": {
+          "type": "boolean"
+        },
+        "provider_change_re_evaluation": {
+          "type": "boolean"
+        },
+        "approved_autonomy": {
+          "type": "string",
+          "enum": [
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "observed_autonomy": {
+          "type": "string",
+          "enum": [
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ]
+        },
+        "external_change_exposure": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "agent_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "occurred_at": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "format": "date-time"
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "tool": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "financial_amount": {
+            "type": "number",
+            "minimum": 0
+          },
+          "external_communication": {
+            "type": "boolean"
+          },
+          "delegated": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "decision_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "occurred_at": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "format": "date-time"
+          },
+          "decision": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "executed_by": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "assessment",
+    "system",
+    "risk_profile"
+  ]
+}

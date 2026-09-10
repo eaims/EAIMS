@@ -5,18 +5,17 @@ from typing import Any, Iterable
 import json
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
+from .paths import ROOT
+from .input_io import load_input_yaml
 
 
 def _root() -> Path:
-    here = Path(__file__).resolve()
-    for candidate in [here.parents[2], here.parents[1], Path.cwd()]:
-        if (candidate / "spec" / "review-protocol.yaml").exists():
-            return candidate
-    return here.parents[2]
+    """Use the same installed specification root as the assessment engine."""
+    return ROOT
 
 
 def load_yaml(path: str | Path) -> Any:
-    return yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    return load_input_yaml(path)
 
 
 def validate_review_record(record: dict[str, Any], root: Path | None = None) -> list[str]:
@@ -47,8 +46,18 @@ def _finding_key(review_id: str, finding: dict[str, Any]) -> str:
 
 def aggregate_findings(records: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     ledger = []
+    review_ids = set()
+    finding_keys = set()
     for record in records:
+        review_id = record["review_id"]
+        if review_id in review_ids:
+            raise ValueError(f"Duplicate review_id: {review_id}")
+        review_ids.add(review_id)
         for finding in record.get("findings", []):
+            key = _finding_key(review_id, finding)
+            if key in finding_keys:
+                raise ValueError(f"Duplicate finding_key: {key}")
+            finding_keys.add(key)
             ledger.append({
                 "finding_key": _finding_key(record["review_id"], finding),
                 "review_id": record["review_id"],
@@ -65,7 +74,12 @@ def aggregate_findings(records: Iterable[dict[str, Any]]) -> list[dict[str, Any]
 
 
 def apply_resolutions(ledger: list[dict[str, Any]], resolutions: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
-    by_key = {x["finding_key"]: x for x in ledger}
+    by_key = {}
+    for item in ledger:
+        key = item["finding_key"]
+        if key in by_key:
+            raise ValueError(f"Duplicate finding_key: {key}")
+        by_key[key] = dict(item)
     seen_resolution_ids=set()
     seen_findings=set()
     for r in resolutions:
