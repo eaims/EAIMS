@@ -98,6 +98,12 @@ jobs:
           s = s.replace('run: pytest -q', 'run: PYTHONPATH=. pytest -q')
           s = s.replace('docker build -t eaims-fc16 .', 'docker build -f Dockerfile.validator -t eaims-fc16 .')
           p.write_text(s)
+
+          r = Path('README.md')
+          text = r.read_text()
+          had_newline = text.endswith('\n')
+          normalized = '\n'.join(line.rstrip() for line in text.splitlines())
+          r.write_text(normalized + ('\n' if had_newline else ''))
           PY
 
           rm -rf _integration
