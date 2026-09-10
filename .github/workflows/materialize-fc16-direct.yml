@@ -99,11 +99,16 @@ jobs:
           s = s.replace('docker build -t eaims-fc16 .', 'docker build -f Dockerfile.validator -t eaims-fc16 .')
           p.write_text(s)
 
-          r = Path('README.md')
-          text = r.read_text()
-          had_newline = text.endswith('\n')
-          normalized = '\n'.join(line.rstrip() for line in text.splitlines())
-          r.write_text(normalized + ('\n' if had_newline else ''))
+          for name in (
+              'README.md',
+              'research/EVOLUTION-0.2x-to-1.0.md',
+              'review/FEEDBACK-TEMPLATE.md',
+          ):
+              r = Path(name)
+              text = r.read_text()
+              had_newline = text.endswith('\n')
+              normalized = '\n'.join(line.rstrip() for line in text.splitlines())
+              r.write_text(normalized + ('\n' if had_newline else ''))
           PY
 
           rm -rf _integration
