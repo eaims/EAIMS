@@ -1,6 +1,6 @@
-# EAIMS 1.0 Freeze Candidate — Validation Status (FC16)
+# EAIMS 1.0.0 — Validation Status
 
-## Demonstrated in this package
+## Demonstrated for the final release line
 
 - 8 dimensions, 30 canonical capabilities and 150 capability-specific maturity anchors are machine-readable.
 - The catalog contains 206 requirements, including 177 SHALL/SHALL_NOT and 80 classified critical.
@@ -12,12 +12,34 @@
 - Three synthetic reference implementations execute end-to-end.
 - Assessment Quality rules, multi-assessor disagreement classification, explicit resolution records and inter-rater-ready exports are executable through synthetic worked cases.
 - Machine-derived G2/G3 findings take precedence over contradictory manual PASS assertions for modeled machine-checkable controls.
-- RI-03 evidence timing is internally consistent with its assessment cutoff.
-- Executable Python suite: **177 tests passed** in the FC16 build environment. The canonical CLI/package smoke path also executed successfully using the locally available build toolchain.
+- Legacy public Python APIs `eaims.scoring` and `eaims.reporting` remain available.
+
+## Hosted release validation
+
+The RC1 source was validated on GitHub-hosted CI before promotion, and the merged `main` commit was validated again successfully.
+
+The `main` validation run completed with all release-gate steps successful, including:
+
+- repository/pre-push audit;
+- canonical specification validation;
+- **186 executable tests**;
+- CLI and reference-implementation smoke tests;
+- Python wheel build;
+- standalone installed-wheel validation outside the source repository;
+- dependency vulnerability audit;
+- CycloneDX Python dependency SBOM generation;
+- Docker image build;
+- read-only Docker runtime validation;
+- Docker Compose configuration validation;
+- minimal Compose runtime validation;
+- reference Compose runtime execution of all three synthetic reference implementations;
+- runtime evidence capture and artifact upload.
+
+The dependency audit reported no known vulnerabilities in auditable dependencies at the time of the hosted run. The local EAIMS package itself was not found on PyPI and therefore was not treated as a third-party dependency by that audit.
 
 ## Critical verification audit
 
-FC16 distinguishes three claims:
+EAIMS 1.0 distinguishes three coverage claims:
 
 1. **Machine-rule coverage:** 33/33 critical MV1/MV2 requirements (100%).
 2. **Assessor-protocol coverage:** 47/47 critical MV3/MV4 requirements (100%).
@@ -27,9 +49,8 @@ The third number is intentionally lower because assessor-protocol coverage is no
 
 ## Selected executable behaviors
 
-- installable Python CLI/package smoke execution;
-- static Docker/Compose packaging and least-privilege contract checks;
-
+- installed Python CLI/package execution;
+- Docker/Compose packaging and least-privilege runtime validation;
 - assessment evidence after cutoff is rejected;
 - invalidated evidence cannot support current higher maturity;
 - capability-specific anchors combine requirement satisfaction, evidence class, counter-evidence and cycle rules;
@@ -47,32 +68,31 @@ The third number is intentionally lower because assessor-protocol coverage is no
 - all critical MV1/MV2 verification rules execute both pass and fail paths;
 - assessor records reject missing rationale/evidence and unjustified N/A decisions.
 
-## Not yet demonstrated
+## Evidence and research boundary
 
-- empirical inter-rater reliability (FC16 provides workflow and inter-rater-ready exports, not reliability evidence);
+The following are **not** established by the current release evidence:
+
+- independent multi-organization empirical validation;
+- empirical inter-rater reliability;
 - automated evidence collection from real enterprise systems;
 - cross-sector threshold calibration;
 - predictive, construct or criterion validity;
-- regulatory conformity or certification;
-- production deployment validation;
-- Docker/Docker Compose runtime validation in this build environment;
-- external independent RC review.
+- regulatory conformity or accredited certification;
+- representative industry benchmarking;
+- external independent review completion.
 
-Docker and Docker Compose definitions are statically parsed and packaging/security contracts are executable-tested. They were **not container-runtime-validated here because a Docker runtime is unavailable**. Hosted CI now contains explicit image and Compose runtime-validation steps; no local Docker-runtime claim is made until those steps execute successfully.
+EAIMS 1.0 is therefore described as **field-informed rather than field-validated**. Its design incorporates feasibility observations, realistic synthetic reference implementations and enterprise pilot-readiness inputs. Formal multi-organization validation remains part of the research agenda.
 
-EAIMS 1.0 FC16 establishes deterministic design, critical-requirement verification and capability-specific anchor-eligibility behavior. It must not be described as externally or empirically validated on this basis.
+## Independent-review readiness
 
-## FC16 independent-review readiness
+The repository contains a structured independent review protocol, reviewer brief, adversarial review questions, known-limitations disclosure, feedback template/schema, explicit review exit criteria, findings ledger and resolution semantics. This demonstrates **review-process readiness**, not completion of independent external review.
 
-FC16 contains a structured independent RC review protocol, reviewer brief, adversarial review questions, known-limitations disclosure, feedback template/schema, and explicit review exit criteria. This demonstrates **review-process readiness only**. No independent reviewer has yet completed the protocol in this package, so external review remains an open P0 item.
+## Legal/IP/Governance validation
 
-## FC16 review operations
+The reviewed Legal/IP/Governance controls are integrated in the repository. Executable legal/provenance consistency checks are part of the release validation path. Licensing boundaries distinguish CC BY 4.0 specification/documentation content from Apache-2.0 software and executable assets, while governance and contribution-rights documents separately address ownership, contribution acceptance, provenance and release authority.
 
-FC16 adds executable review-record validation, a findings ledger, independent resolution records, and a deterministic RC review exit gate. The original reviewer record is preserved and maintainer resolution is stored separately. This tooling operationalizes independent design review; it does not convert review into endorsement or empirical validation.
+These repository checks are not a substitute for jurisdiction-specific legal advice or a global title/plagiarism opinion.
 
+## Version and provenance
 
-## Final Legal/IP/Governance integration audit
-
-The reviewed Legal/IP/Governance package has been integrated into the local FC16 v1.0 candidate. The executable legal/provenance audit passes with **0 errors and 0 warnings**. The full executable suite now reports **177 passed** after adding legal consistency regression tests. A wheel rebuilt from the integrated source includes the repository-level license/legal notices and passes installed-package canonical and RI-01 fixture smoke validation outside the source tree.
-
-See `LEGAL-IP-GOVERNANCE-FINAL-AUDIT.md` and `validation/legal-ip-governance-audit.json`. No final GitHub push, merge, PR, tag, or release is authorized or claimed by this local result.
+The public release version is **1.0.0**. The frozen normative source retains the internal provenance identifier **`1.0.0-fc16`** so that generated evidence and the exact content validated during RC1 remain traceable. No substantive normative change is implied by promotion from the validated RC1 content to the final public version.
