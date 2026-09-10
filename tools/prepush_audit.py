@@ -8,7 +8,8 @@ if str(ROOT) not in sys.path:
 errors=[]
 warnings=[]
 EXPECTED_SPEC='1.0.0-fc16'
-EXPECTED_PACKAGE='1.0.0.dev16'
+EXPECTED_PACKAGE='1.0.0'
+EXPECTED_RELEASE='1.0.0'
 
 class DupCheckLoader(yaml.SafeLoader):
     pass
@@ -34,17 +35,29 @@ def _json_no_dups(text):
 
 core=yaml.safe_load((ROOT/'spec/core.yaml').read_text())
 version=core['spec_version']
-if version!=EXPECTED_SPEC: errors.append(f'unexpected spec version: {version}')
+if version!=EXPECTED_SPEC: errors.append(f'unexpected spec provenance version: {version}')
 pyproject=(ROOT/'pyproject.toml').read_text()
 if f'version = "{EXPECTED_PACKAGE}"' not in pyproject: errors.append('unexpected package version')
 if 'name = "eaims"' not in pyproject: errors.append('package identity is not eaims')
 if 'name = "Elias Naserkhaki"' not in pyproject: errors.append('project author metadata is not Elias Naserkhaki')
 
-# Active-stage files must not carry stale candidate tags.
+version_file=(ROOT/'VERSION').read_text(encoding='utf-8').strip()
+if version_file!=EXPECTED_RELEASE: errors.append(f'unexpected VERSION file: {version_file}')
+citation=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
+if f'version: "{EXPECTED_RELEASE}"' not in citation: errors.append('CITATION.cff release version mismatch')
+if 'date-released: "2026-09-10"' not in citation: errors.append('CITATION.cff release date mismatch')
+
+# Active-stage files must not carry stale pre-FC16 candidate tags.
 for rel in ['README.md','VALIDATION.md','pyproject.toml','docker-compose.yml','docker-compose.reference.yml','research/EVOLUTION-0.2x-to-1.0.md']:
     text=(ROOT/rel).read_text()
     stale=sorted(set(re.findall(r'\b(?:FC|fc)(?:[0-9]|1[0-5])\b|\bdev1[0-5]\b', text)))
     if stale: errors.append(f'{rel}: stale labels {stale}')
+
+# Public release-facing metadata must no longer identify the release itself as a candidate.
+for rel in ['README.md','VALIDATION.md','VERSION','CITATION.cff','pyproject.toml','docker-compose.yml','docker-compose.reference.yml']:
+    text=(ROOT/rel).read_text(encoding='utf-8')
+    if '1.0.0-rc.1-candidate' in text or '1.0.0.dev16' in text:
+        errors.append(f'{rel}: stale RC/development release metadata')
 
 # Structured files must parse and must not contain duplicate mapping keys.
 for p in ROOT.rglob('*'):
@@ -96,5 +109,5 @@ if not (ROOT/'src/eaims/paths.py').exists(): errors.append('installed-package da
 for command in ('"assess"','"validate-fixture"','"validate"','"score"','"report"','"review"'):
     if command not in (ROOT/'src/eaims/cli.py').read_text(): warnings.append(f'CLI command token not found: {command}')
 
-print(json.dumps({'spec_version':version,'package_version':EXPECTED_PACKAGE,'errors':errors,'warnings':warnings,'status':'PASS' if not errors else 'FAIL'},indent=2))
+print(json.dumps({'spec_version':version,'package_version':EXPECTED_PACKAGE,'release_version':EXPECTED_RELEASE,'errors':errors,'warnings':warnings,'status':'PASS' if not errors else 'FAIL'},indent=2))
 raise SystemExit(1 if errors else 0)

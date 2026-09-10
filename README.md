@@ -2,14 +2,14 @@
 
 > An open, vendor-neutral, evidence-grounded and executable framework for assessing and improving enterprise AI maturity while governing value, autonomy, accountability and operational risk.
 
-**Version:** 1.0 Freeze Candidate (FC16)
-**Status:** Release-candidate preparation / independent review pending
+**Version:** 1.0.0
+**Status:** Final release
 **Documentation and specification content:** CC BY 4.0
 **Code, tests, workflows and JSON Schemas:** Apache-2.0
 
 EAIMS 1.0 moves the project from a research-baseline maturity model toward an executable enterprise AI operating and assurance framework. It does not itself confer certification, regulatory conformity, legal compliance or safety assurance.
 
-## Canonical EAIMS 1.0 candidate
+## Canonical EAIMS 1.0
 
 - **8 dimensions** and **30 capabilities**
 - **5 maturity levels** (L1 Initial → L5 Adaptive)
@@ -30,12 +30,12 @@ The Python package validates structured assessments, evaluates evidence and requ
 
 ```bash
 python -m pip install -e '.[test]'
-PYTHONPATH=. python -m src.eaims.validate
-PYTHONPATH=. pytest -q
+eaims-validate
+pytest -q
 python tools/prepush_audit.py
 ```
 
-The published v0.2.1 CLI commands `validate`, `score`, and `report` remain available through the compatibility path. EAIMS 1.0 adds `validate-fixture`, `assess`, and `review`. Existing public Python modules `eaims.scoring` and `eaims.reporting` are preserved during the v1 integration.
+The published v0.2.1 CLI commands `validate`, `score`, and `report` remain available through the compatibility path. EAIMS 1.0 adds `validate-fixture`, `assess`, and `review`. Existing public Python modules `eaims.scoring` and `eaims.reporting` are preserved for backward compatibility.
 
 ## Synthetic reference implementations
 
@@ -49,20 +49,26 @@ These cases are synthetic and are not presented as customer deployments or empir
 
 ## Docker
 
-The existing browser/reference Docker behavior is retained for backward compatibility. The v1 validator uses a separate Dockerfile:
+The v1 validator uses `Dockerfile.validator` and runs with a least-privilege container profile:
 
 ```bash
-docker build -f Dockerfile.validator -t eaims/validator:1.0-fc16 .
+docker build -f Dockerfile.validator -t eaims/validator:1.0.0 .
 docker compose run --rm validator
 ```
 
-See `docs/PACKAGING-AND-RUNTIME-VALIDATION.md` and `VALIDATION.md` for the runtime-validation boundary.
+Hosted CI validates the Docker image and both Compose configurations at runtime. See `docs/PACKAGING-AND-RUNTIME-VALIDATION.md` and `VALIDATION.md` for the validation boundary.
 
-## Independent review and validation status
+## Validation status
 
-EAIMS 1.0 is **field-informed rather than field-validated**. Its design incorporates observations from feasibility assessment, realistic synthetic reference implementations and enterprise pilot-readiness discussions. Formal multi-organization empirical validation, inter-rater reliability research and independent review remain part of the research agenda.
+EAIMS 1.0 is **field-informed rather than field-validated**. Its design incorporates observations from feasibility assessment, realistic synthetic reference implementations and enterprise pilot-readiness discussions. Formal multi-organization empirical validation, inter-rater reliability research and independent external review remain part of the research agenda.
 
-The `review/` directory provides structured adversarial questions, reviewer guidance, feedback/resolution schemas and executable BLOCKER/MAJOR exit semantics. No claim is made that independent review has already been completed.
+The `review/` directory provides structured adversarial questions, reviewer guidance, feedback/resolution schemas and executable BLOCKER/MAJOR exit semantics. No claim is made that independent external review has already been completed.
+
+The final release was promoted from `v1.0.0-rc.1` only after hosted validation passed on `main`, including 186 executable tests, wheel build/install validation, dependency vulnerability auditing, CycloneDX SBOM generation, Docker runtime validation, Docker Compose runtime validation and all three synthetic reference implementations.
+
+## Specification provenance
+
+The final public release version is **1.0.0**. The internal normative specification provenance identifier **`1.0.0-fc16`** is intentionally retained in the frozen normative source and generated reference evidence. This preserves traceability to the exact freeze-candidate content that passed RC1 validation; it does not mean the public release remains a release candidate.
 
 ## Project status and stewardship
 
@@ -78,7 +84,7 @@ See [PROVENANCE.md](PROVENANCE.md), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES
 
 ## Migration and historical resources
 
-The v0.2.1 research baseline remains part of repository history. See [MIGRATION-v0.2.1-to-v1.0.md](MIGRATION-v0.2.1-to-v1.0.md) and [research/EVOLUTION-0.2x-to-1.0.md](research/EVOLUTION-0.2x-to-1.0.md). Existing community, security, publication, RFC, decision and approved-implementation resources are intentionally retained during the v1 integration.
+The v0.2.1 research baseline remains part of repository history. See [MIGRATION-v0.2.1-to-v1.0.md](MIGRATION-v0.2.1-to-v1.0.md) and [research/EVOLUTION-0.2x-to-1.0.md](research/EVOLUTION-0.2x-to-1.0.md). Existing community, security, publication, RFC, decision and approved-implementation resources remain part of the repository history and project resources.
 
 ## Project website
 
