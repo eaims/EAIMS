@@ -18,10 +18,11 @@ services:
       dockerfile: Dockerfile.validator
     image: eaims/validator:1.0.0-fc16
     entrypoint: ["/bin/sh", "-c"]
-    command: >-
-      eaims assess reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml --out /runs/ri-01 &&
-      eaims assess reference-implementations/ri-02-enterprise-service-agent/input/fixture.yaml --out /runs/ri-02 &&
-      eaims assess reference-implementations/ri-03-high-impact-decision-support/input/fixture.yaml --out /runs/ri-03
+    command:
+      - >-
+        eaims assess reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml --out /runs/ri-01 &&
+        eaims assess reference-implementations/ri-02-enterprise-service-agent/input/fixture.yaml --out /runs/ri-02 &&
+        eaims assess reference-implementations/ri-03-high-impact-decision-support/input/fixture.yaml --out /runs/ri-03
     volumes:
       - ./reference-implementations:/app/reference-implementations:ro
       - eaims_runs:/runs
