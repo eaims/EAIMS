@@ -45,6 +45,7 @@ review:
   assessor_response_template: review/assessor-response-template-1.1-draft.yaml
   findings_log: review/review-findings-log-1.1-draft.yaml
   candidate_freeze_decision: review/CANDIDATE-FREEZE-DECISION-1.1-DRAFT.md
+  candidate_review_snapshot: review/CANDIDATE-REVIEW-SNAPSHOT-1.1-DRAFT.md
 
 tooling:
   validator: tools/validate_v11_draft.py
@@ -74,6 +75,7 @@ tests:
   - tests/test_v11_review_findings_log.py
   - tests/test_v11_candidate_freeze_record.py
   - tests/test_v11_assessor_comparison.py
+  - tests/test_v11_candidate_review_snapshot.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
