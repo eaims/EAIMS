@@ -18,7 +18,7 @@ It adds 9 ADV requirements, strengthens MSP-005 and MSP-008, and extends G3 with
 
 ## Maintainer decision on independent review
 
-Independent assessor calibration is **not a release prerequisite for 1.1.0**.
+Independent assessor calibration is not a release prerequisite for 1.1.0.
 
 Instead:
 
