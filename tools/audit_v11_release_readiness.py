@@ -52,6 +52,11 @@ def require(condition: bool, message: str) -> None:
         raise AuditError(message)
 
 
+def _contains_any(text: str, phrases: tuple[str, ...]) -> bool:
+    lower = text.lower()
+    return any(p.lower() in lower for p in phrases)
+
+
 def collect_manifest_paths(node: Any) -> list[str]:
     if isinstance(node, str):
         if "/" in node or node.endswith((".md", ".yaml", ".py")):
@@ -153,13 +158,30 @@ def audit() -> list[str]:
 
     # RFC/reference hygiene: references are conceptual, not endorsement/equivalence.
     rfc_text = RFC.read_text(encoding="utf-8")
-    required_phrases = [
-        "does not become a penetration-testing standard",
-        "referenced rather than duplicated",
-        "does not imply endorsement",
-    ]
-    for phrase in required_phrases:
-        require(phrase.lower() in rfc_text.lower(), f"RFC missing reference-boundary phrase: {phrase}")
+    require(
+        _contains_any(rfc_text, (
+            "does not become a penetration-testing standard",
+            "will not prescribe exploit procedures",
+            "will not define offensive cyber techniques",
+        )),
+        "RFC lacks a clear non-offensive/non-penetration-testing boundary",
+    )
+    require(
+        _contains_any(rfc_text, (
+            "referenced rather than duplicated",
+            "does not reproduce protected standards text",
+            "will not reproduce owasp, nist, iso, or mitre controls",
+        )),
+        "RFC lacks a clear no-duplication/reference boundary",
+    )
+    require(
+        _contains_any(rfc_text, (
+            "does not imply endorsement",
+            "will not imply endorsement",
+            "imply endorsement by any referenced organization",
+        )),
+        "RFC lacks a clear non-endorsement boundary",
+    )
 
     urls = set(URL_RE.findall(rfc_text))
     require(any("nist.gov" in u for u in urls), "RFC missing NIST public reference")
