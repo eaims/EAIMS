@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.validator
-    image: eaims/validator:1.0.1
+    image: eaims/validator:1.1.0
     read_only: true
     tmpfs:
       - /tmp:size=16m,mode=1777
@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.validator
-    image: eaims/validator:1.0.1
+    image: eaims/validator:1.1.0
     entrypoint: ["/bin/sh", "-c"]
     command:
       - >-
