@@ -13,6 +13,7 @@ governance:
 specification_overlays:
   profile: spec/adversarial-agentic-1.1-draft.yaml
   normative_candidate: spec/adversarial-agentic-normative-candidate-1.1.yaml
+  candidate_projection: spec/adversarial-agentic-candidate-projection-1.1.yaml
   anchors: spec/adversarial-agentic-anchors-1.1-draft.yaml
   activation: spec/adversarial-agentic-activation-1.1-draft.yaml
   evidence: spec/adversarial-agentic-evidence-1.1-draft.yaml
@@ -56,6 +57,7 @@ tests:
   - tests/test_v11_draft_validator.py
   - tests/test_v11_package_manifest.py
   - tests/test_v11_candidate_overlay.py
+  - tests/test_v11_candidate_projection.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
