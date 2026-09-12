@@ -42,6 +42,7 @@ review:
   release_readiness_audit: review/RELEASE-READINESS-AUDIT-1.1-DRAFT.md
   independent_assessor_calibration: review/INDEPENDENT-ASSESSOR-CALIBRATION-1.1-DRAFT.md
   inter_rater_comparison_policy: review/inter-rater-comparison-1.1-draft.yaml
+  findings_log: review/review-findings-log-1.1-draft.yaml
 
 tooling:
   validator: tools/validate_v11_draft.py
@@ -67,6 +68,7 @@ tests:
   - tests/test_v11_v1_output_regression.py
   - tests/test_v11_reference_ip_audit.py
   - tests/test_v11_inter_rater_calibration.py
+  - tests/test_v11_review_findings_log.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
