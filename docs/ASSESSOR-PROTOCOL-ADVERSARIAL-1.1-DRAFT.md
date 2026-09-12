@@ -63,10 +63,12 @@ Assess whether adversarial and agentic controls are demonstrated in the actual o
 - Which findings were mapped to the AI inventory?
 - What was changed, accepted, deferred, or declared not applicable?
 
-### ADV-009 — Dependency Concentration
-- Which critical external providers/tools/APIs/MCP servers/context stores are required?
-- Is any single dependency a material point of failure or control?
-- Is exit/fallback credible and tested proportionately?
+### Candidate MSP-005 / MSP-008 — Dependency Concentration & Trace
+- Which critical external providers, tools, APIs, MCP servers, context stores, models, or services are required?
+- Is any single dependency a material point of failure, control concentration, sovereignty exposure, or exit constraint?
+- Is fallback or exit credible and tested proportionately?
+- Is the composite dependency chain traceable where material?
+- ADV-009 is development-history only and must not be scored separately in candidate-freeze review.
 
 ### ADV-010 — Synthetic Identity & Representation
 - Does the AI represent a real person, organization, or persistent persona?
