@@ -7,14 +7,14 @@ Reviewers should focus on distinctness, evidenceability, applicability, assessor
 ## Core questions
 
 1. Does each ADV requirement add semantics that are not already fully represented in EAIMS 1.0.x?
-2. Are any of ADV-004, ADV-006, or ADV-009 better implemented as strengthened existing requirements rather than separate IDs?
+2. Do the final consolidation decisions remain sound: retain ADV-004 and ADV-006, while merging ADV-009 into strengthened MSP-005/MSP-008 semantics?
 3. Is A2 an appropriate activation threshold for blast-radius assessment, or should the threshold depend on action capability rather than autonomy label?
 4. Does ADV-003 correctly distinguish identity from authorization/credential scope?
 5. Is ADV-005 specific enough to require adversarial evaluation without turning EAIMS into a security testing standard?
 6. Does ADV-006 define sufficient runtime evidence without requiring sensitive raw logs to be exposed to assessors?
 7. Does ADV-007 correctly distinguish process shutdown from actual containment of authority, credentials, tools, memory and dependencies?
 8. Should ADV-008 be assessed at organizational scope, system scope, or both?
-9. Does ADV-009 capture concentration risk without duplicating provider/dependency requirements already in TEC-02?
+9. Do strengthened MSP-005/MSP-008 capture concentration and composite dependency risk clearly enough without a standalone ADV-009?
 10. Is ADV-010 sufficiently conditional to avoid politicizing or over-expanding ordinary content-generation assessments?
 
 ## Gate questions
