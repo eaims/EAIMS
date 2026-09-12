@@ -42,6 +42,7 @@ review:
   release_readiness_audit: review/RELEASE-READINESS-AUDIT-1.1-DRAFT.md
   independent_assessor_calibration: review/INDEPENDENT-ASSESSOR-CALIBRATION-1.1-DRAFT.md
   inter_rater_comparison_policy: review/inter-rater-comparison-1.1-draft.yaml
+  assessor_response_template: review/assessor-response-template-1.1-draft.yaml
   findings_log: review/review-findings-log-1.1-draft.yaml
   candidate_freeze_decision: review/CANDIDATE-FREEZE-DECISION-1.1-DRAFT.md
 
@@ -50,6 +51,7 @@ tooling:
   candidate_audit: tools/audit_v11_candidate.py
   release_readiness_audit: tools/audit_v11_release_readiness.py
   reference_ip_hygiene_audit: tools/audit_v11_reference_ip.py
+  assessor_comparator: tools/compare_v11_assessors.py
 
 tests:
   - tests/test_v11_adversarial_profile.py
@@ -71,6 +73,7 @@ tests:
   - tests/test_v11_inter_rater_calibration.py
   - tests/test_v11_review_findings_log.py
   - tests/test_v11_candidate_freeze_record.py
+  - tests/test_v11_assessor_comparison.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
