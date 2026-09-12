@@ -153,7 +153,7 @@ def audit() -> list[str]:
     readiness_text = READINESS.read_text(encoding="utf-8")
     require("historical 1.0.x" in migration_text.lower() or "1.0.x assessment remains" in migration_text.lower(), "migration guide lacks historical 1.0.x preservation statement")
     require("1.0.x assessments remain valid" in release_text, "release notes lack 1.0.x validity statement")
-    require("NOT READY FOR NORMATIVE FREEZE" in readiness_text, "readiness status must remain pre-freeze")
+    require("NOT NORMATIVELY FROZEN" in readiness_text, "readiness status must remain explicitly non-normative")
     messages.append("backward compatibility/release labeling: PASS")
 
     # RFC/reference hygiene: references are conceptual, not endorsement/equivalence.
