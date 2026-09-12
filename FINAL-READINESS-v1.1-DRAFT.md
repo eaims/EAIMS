@@ -27,17 +27,19 @@
 - [x] Candidate package manifest defined
 - [x] Candidate pre-freeze audit implemented
 - [x] Release-readiness audit implemented
-- [x] Latest full CI run passed on the candidate package before the final readiness-audit additions
+- [x] Reference/IP repository-hygiene audit implemented
+- [x] Independent assessor calibration worksheet and comparison policy defined
+- [x] Executable 1.0 output-regression test added for RI-01, RI-02, and RI-03
 
 ## Validation required before normative freeze
 
-- [ ] Latest full CI run passes after final readiness-audit additions
+- [ ] Latest full CI run passes with output-regression and reference/IP audit enabled
 - [ ] At least two independent assessor passes over inter-rater cases
 - [ ] Ambiguous cases resolved or explicitly retained as MV3/MV4 judgment
 - [ ] Candidate machine-verification paths implemented only after schema/runtime design is approved
-- [ ] Backward-compatibility regression executed against all 1.0 reference outputs
+- [ ] Executable backward-compatibility regression passes against all frozen 1.0 reference outputs
 - [ ] Review findings resolved with retained resolution history
-- [ ] Legal/IP review confirms references remain conceptual and non-infringing
+- [ ] Independent legal/IP review completed if required for release
 - [ ] Final normative spec/version identifiers assigned only at freeze
 
 ## Freeze blockers
@@ -52,10 +54,10 @@ Any of the following blocks normative freeze:
 - unresolved inter-rater ambiguity on critical requirements;
 - evidence requirements that cannot be realistically collected without exposing protected operational secrets;
 - external-framework language copied beyond permissible/reference use;
-- failing candidate or release-readiness audit.
+- failing candidate, release-readiness, output-regression, or reference/IP hygiene audit.
 
 ## Release decision
 
 Current status: **DEVELOPMENT DRAFT — NOT READY FOR NORMATIVE FREEZE**
 
-The package is structurally mature and has passed full CI before the final readiness-audit additions. Normative freeze remains blocked until the remaining validation/review items are completed.
+The package is structurally mature. The remaining release blockers now focus on successful final CI/regression, genuinely independent assessor calibration, review-resolution history, and any independent legal/IP review required before normative release.
