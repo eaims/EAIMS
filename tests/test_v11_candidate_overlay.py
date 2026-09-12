@@ -20,8 +20,9 @@ def test_final_consolidation_decision_is_explicit():
     assert "ADV-006 — KEEP" in text
     assert "ADV-009 — MERGE INTO MSP-005 / MSP-008" in text
 
-def test_candidate_audit_module_runs():
+def test_candidate_audit_module_runs_and_passes():
     spec = importlib.util.spec_from_file_location("audit_v11_candidate", AUDIT)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     spec.loader.exec_module(module)
+    assert module.main() == 0
