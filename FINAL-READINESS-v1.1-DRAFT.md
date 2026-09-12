@@ -31,8 +31,9 @@
 - [x] Independent assessor calibration worksheet and comparison policy defined
 - [x] Assessor response template and automated comparison utility defined
 - [x] IR-05 updated to final candidate MSP-005/MSP-008 semantics
+- [x] Assessor protocol, migration guide, crosswalk, consolidation record, and reviewer questions aligned to final ADV-009 consolidation semantics
 - [x] Executable 1.0 output-regression test added for RI-01, RI-02, and RI-03
-- [x] Full CI #231 passed on head 46224a4e3ec2016008eb07ac489328d4f3d8a9fd
+- [x] Full CI #265 passed on final semantic review head 9f7e4bc9f2658d72ba73ee3b7d05957c89af8609
 - [x] Executable backward-compatibility regression passed against frozen 1.0 reference outputs
 - [x] Candidate package is technically ready for candidate-freeze review
 
