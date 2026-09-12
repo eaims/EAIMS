@@ -1,0 +1,99 @@
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-ACTIVATION-DRAFT
+status: development_draft
+normative: false
+target_version: 1.1
+
+semantics:
+  APPLICABLE: The requirement is activated by the assessed context and must be evaluated.
+  NOT_APPLICABLE: The activation condition is demonstrably absent and rationale is retained.
+  CONDITIONALLY_APPLICABLE: Available evidence is insufficient to determine activation without assessor judgment.
+  NOT_ASSESSED: Activation may exist but the requirement was intentionally outside the assessment scope.
+
+rules:
+  EAIMS-ADV-001:
+    default: APPLICABLE
+    when:
+      all:
+        - system.material == true
+    rationale: Material AI systems require adversarial exposure analysis even when they are non-agentic.
+
+  EAIMS-ADV-002:
+    default: NOT_APPLICABLE
+    when:
+      any:
+        - system.agentic == true
+        - risk_profile.autonomy in [A2, A3, A4, A5]
+    rationale: Blast-radius analysis is activated for action-taking or materially autonomous systems.
+
+  EAIMS-ADV-003:
+    default: NOT_APPLICABLE
+    when:
+      all:
+        - system.material == true
+        - system.agentic == true
+        - context.privileged_or_external_action_access == true
+    rationale: Credential-boundary requirements apply only where agent authority can affect privileged resources or external parties.
+
+  EAIMS-ADV-004:
+    default: NOT_APPLICABLE
+    when:
+      all:
+        - system.material == true
+        - system.agentic == true
+        - context.privileged_actions == true
+    rationale: Privilege attribution is activated where material privileged agent actions occur.
+
+  EAIMS-ADV-005:
+    default: APPLICABLE
+    when:
+      all:
+        - system.material == true
+        - context.credible_adversarial_exposure == true
+    fallback: CONDITIONALLY_APPLICABLE
+    rationale: Adversarial evaluation is required when credible misuse/manipulation exposure exists; otherwise an assessor must record why exposure is immaterial.
+
+  EAIMS-ADV-006:
+    default: NOT_APPLICABLE
+    when:
+      all:
+        - system.material == true
+        - context.action_taking == true
+    rationale: Runtime abuse evidence is required for material systems that can perform actions.
+
+  EAIMS-ADV-007:
+    default: NOT_APPLICABLE
+    when:
+      any:
+        - system.agentic == true
+        - risk_profile.autonomy in [A3, A4, A5]
+    rationale: Adversarial containment is activated for autonomous or agentic systems.
+
+  EAIMS-ADV-008:
+    default: APPLICABLE
+    when:
+      all:
+        - organization.operates_material_ai == true
+    rationale: AI-specific threat-intelligence disposition is an organizational control and is not limited to agentic systems.
+
+  EAIMS-ADV-009:
+    default: NOT_APPLICABLE
+    when:
+      any:
+        - context.external_ai_dependency == true
+        - context.composite_ai_dependency == true
+    rationale: Dependency concentration is activated for externally dependent or composite AI systems.
+
+  EAIMS-ADV-010:
+    default: NOT_APPLICABLE
+    when:
+      any:
+        - context.synthetic_persona == true
+        - context.impersonation_or_representation == true
+        - context.public_persuasive_automation == true
+    rationale: Synthetic identity and representation governance is activated only where that exposure is material.
+
+decision_rules:
+  - Missing activation evidence must not be silently treated as NOT_APPLICABLE.
+  - NOT_APPLICABLE requires a retained rationale tied to the activation rule.
+  - Organizational requirements may be evaluated once and inherited by in-scope systems only when scope, time, and ownership remain valid.
+  - Applicability is independent from satisfaction; an activated requirement can still be SATISFIED, PARTIALLY_SATISFIED, NOT_SATISFIED, or INSUFFICIENT_EVIDENCE.
