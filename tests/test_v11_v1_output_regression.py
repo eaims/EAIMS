@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import re
 from src.eaims.cli import main
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,13 +11,19 @@ REFERENCE_IMPLEMENTATIONS = (
     "ri-03-high-impact-decision-support",
 )
 
+GENERATED_AT_LINE = re.compile(
+    r"(?m)^- Generated at: `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z`\s*$"
+)
+
 
 def _json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _normalized_text(path):
-    return path.read_text(encoding="utf-8").replace("\r\n", "\n").rstrip() + "\n"
+def _normalized_report(path):
+    text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+    text = GENERATED_AT_LINE.sub("- Generated at: <normalized>", text)
+    return text.rstrip() + "\n"
 
 
 def test_v11_overlay_does_not_change_recomputed_v1_reference_outputs(tmp_path):
@@ -37,6 +44,6 @@ def test_v11_overlay_does_not_change_recomputed_v1_reference_outputs(tmp_path):
             f"{name}: deterministic result_hash changed"
         )
 
-        assert _normalized_text(out / "report.md") == _normalized_text(expected / "report.md"), (
-            f"{name}: recomputed report.md differs from frozen 1.0 expected output"
+        assert _normalized_report(out / "report.md") == _normalized_report(expected / "report.md"), (
+            f"{name}: recomputed report.md differs from frozen 1.0 expected output beyond generated timestamp"
         )
