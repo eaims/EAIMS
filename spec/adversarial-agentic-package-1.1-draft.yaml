@@ -12,6 +12,7 @@ governance:
 
 specification_overlays:
   profile: spec/adversarial-agentic-1.1-draft.yaml
+  normative_candidate: spec/adversarial-agentic-normative-candidate-1.1.yaml
   anchors: spec/adversarial-agentic-anchors-1.1-draft.yaml
   activation: spec/adversarial-agentic-activation-1.1-draft.yaml
   evidence: spec/adversarial-agentic-evidence-1.1-draft.yaml
@@ -23,6 +24,7 @@ assessor_and_reference_docs:
   external_crosswalk: docs/ADVERSARIAL-AGENTIC-CROSSWALK-1.1-DRAFT.md
   change_matrix: docs/REQUIREMENT-CHANGE-MATRIX-1.1-DRAFT.md
   consolidation_record: docs/REQUIREMENT-CONSOLIDATION-1.1-DRAFT.md
+  final_consolidation_decision: docs/FINAL-CONSOLIDATION-DECISION-1.1-DRAFT.md
   applicability_cases: docs/WORKED-APPLICABILITY-CASES-1.1-DRAFT.md
   assessor_protocol: docs/ASSESSOR-PROTOCOL-ADVERSARIAL-1.1-DRAFT.md
   threat_intelligence_protocol: docs/THREAT-INTELLIGENCE-PROTOCOL-1.1-DRAFT.md
@@ -39,6 +41,7 @@ review:
 
 tooling:
   validator: tools/validate_v11_draft.py
+  candidate_audit: tools/audit_v11_candidate.py
 
 tests:
   - tests/test_v11_adversarial_profile.py
@@ -51,6 +54,8 @@ tests:
   - tests/test_v11_gate_effects_interrater.py
   - tests/test_v11_readiness.py
   - tests/test_v11_draft_validator.py
+  - tests/test_v11_package_manifest.py
+  - tests/test_v11_candidate_overlay.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
