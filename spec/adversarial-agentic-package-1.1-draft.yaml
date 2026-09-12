@@ -39,10 +39,12 @@ validation:
 
 review:
   questions: review/REVIEW-QUESTIONS-1.1-ADVERSARIAL-DRAFT.md
+  release_readiness_audit: review/RELEASE-READINESS-AUDIT-1.1-DRAFT.md
 
 tooling:
   validator: tools/validate_v11_draft.py
   candidate_audit: tools/audit_v11_candidate.py
+  release_readiness_audit: tools/audit_v11_release_readiness.py
 
 tests:
   - tests/test_v11_adversarial_profile.py
@@ -58,6 +60,7 @@ tests:
   - tests/test_v11_package_manifest.py
   - tests/test_v11_candidate_overlay.py
   - tests/test_v11_candidate_projection.py
+  - tests/test_v11_release_readiness_audit.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
