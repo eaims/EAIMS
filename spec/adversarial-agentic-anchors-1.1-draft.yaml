@@ -1,0 +1,80 @@
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-ANCHORS-DRAFT
+status: development_draft
+normative: false
+target_version: 1.1
+note: Candidate anchor-eligibility overlay. It does not modify EAIMS 1.0.x anchor eligibility.
+
+capability_extensions:
+  GOV-02:
+    title: Risk & Impact Classification
+    requirement_minimum_levels:
+      EAIMS-ADV-001: L3
+      EAIMS-ADV-008: L4
+    rationale:
+      EAIMS-ADV-001: L3 requires a defined adversarial exposure analysis for material systems.
+      EAIMS-ADV-008: L4 requires threat-intelligence findings to be dispositioned into operational risk/control changes.
+
+  GOV-04:
+    title: Autonomy Governance
+    requirement_minimum_levels:
+      EAIMS-ADV-002: L3
+    rationale:
+      EAIMS-ADV-002: L3 makes blast-radius analysis part of the defined autonomy boundary before managed operation.
+
+  GOV-05:
+    title: Responsible AI, Recourse & Impact Assurance
+    requirement_minimum_levels:
+      EAIMS-ADV-010: L3
+    rationale:
+      EAIMS-ADV-010: L3 requires context-specific controls where synthetic identity, representation, or influence exposure is material.
+
+  TEC-02:
+    title: Model & System Sourcing
+    requirement_minimum_levels:
+      EAIMS-ADV-009: L3
+    rationale:
+      EAIMS-ADV-009: L3 requires identified concentration and single-provider exposure as part of the sourcing/dependency profile.
+
+  TEC-04:
+    title: Generative & Agentic Architecture
+    requirement_minimum_levels:
+      EAIMS-ADV-003: L3
+      EAIMS-ADV-004: L3
+    rationale:
+      EAIMS-ADV-003: L3 requires bounded agent credentials/authorization for privileged or external-action agents.
+      EAIMS-ADV-004: L3 requires privileged agent actions to be attributable to workload identity and initiating/approving authority.
+
+  OPS-02:
+    title: Evaluation & Assurance
+    requirement_minimum_levels:
+      EAIMS-ADV-005: L3
+    rationale:
+      EAIMS-ADV-005: L3 requires documented adversarial evaluation proportionate to credible exposure; repeated and adaptive coverage remains an L4/L5 behavior under existing anchors.
+
+  OPS-03:
+    title: Monitoring & Observability
+    requirement_minimum_levels:
+      EAIMS-ADV-006: L3
+    rationale:
+      EAIMS-ADV-006: L3 requires runtime evidence adequate to investigate blocked, anomalous, unauthorized, or policy-violating actions.
+
+  OPS-04:
+    title: Incident, Recovery & Retirement
+    requirement_minimum_levels:
+      EAIMS-ADV-007: L3
+    rationale:
+      EAIMS-ADV-007: L3 requires containment procedures that can bound agent authority, credentials, tools, memory, external actions, and dependencies.
+
+eligibility_policy:
+  cumulative: true
+  preserve_existing_1_0_requirements: true
+  candidate_requirements_add_to_existing_anchor_requirements: true
+  no_retroactive_regrading_of_1_0_results: true
+  l4_l5_runtime_evidence_expectation:
+    description: Where a control can produce runtime evidence, policy-only evidence is insufficient for a high-maturity claim.
+    applies_to:
+      - GOV-04
+      - TEC-04
+      - OPS-02
+      - OPS-03
+      - OPS-04

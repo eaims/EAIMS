@@ -1,0 +1,51 @@
+schema_version: 1
+profile: EAIMS-1.1-adversarial-agentic-candidate
+assessor_id: REPLACE_WITH_PSEUDONYMOUS_ID
+assessment_date: YYYY-MM-DD
+independent_completion_confirmed: false
+prior_exposure_to_rfc0004: unknown
+conflict_of_interest_or_prior_material_involvement: none_declared
+
+cases:
+  IR-01:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE
+  IR-02:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE
+  IR-03:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE
+  IR-04:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE
+  IR-05:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE
+  IR-06:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE
+  IR-07:
+    applicability: CONDITIONALLY_APPLICABLE
+    result: INSUFFICIENT_EVIDENCE
+    gate_result: NONE
+    confidence: C0
+    rationale: REPLACE

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 — 2026-09-12 — Adversarial & Agentic Governance
+
+- Add the normative EAIMS 1.1 adversarial and agentic governance overlay.
+- Add nine new ADV requirements covering adversarial exposure, blast radius, agent credentials, privilege attribution, adversarial evaluation, runtime abuse evidence, containment, threat-intelligence disposition, and synthetic identity/representation.
+- Strengthen MSP-005 and MSP-008 for dependency concentration, fallback/exit, and composite dependency trace.
+- Extend the G3 Autonomous / Agentic gate family with G3-13 through G3-17.
+- Add applicability, evidence, gate-effect, assessor, threat-intelligence, migration, crosswalk, and critical-I4 guidance.
+- Preserve EAIMS 1.0.x historical assessment semantics and verify frozen 1.0 reference outputs through executable regression.
+- Record the release as maintainer-frozen; independent third-party validation is not claimed and remains a post-release validation activity.
+
 ## 1.0.1 — 2026-09-10 — v1 input and review hardening
 
 - Reject empty evidence collection times, ambiguous input types, non-finite numbers and duplicate YAML mapping keys before assessment.

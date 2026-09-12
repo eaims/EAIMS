@@ -1,0 +1,83 @@
+profile_id: EAIMS-1.1-CANDIDATE-PROJECTION
+status: normative_candidate_draft
+normative: false
+target_version: 1.1
+source_development_profile: EAIMS-1.1-ADVERSARIAL-AGENTIC-DRAFT
+
+new_requirement_ids:
+  - EAIMS-ADV-001
+  - EAIMS-ADV-002
+  - EAIMS-ADV-003
+  - EAIMS-ADV-004
+  - EAIMS-ADV-005
+  - EAIMS-ADV-006
+  - EAIMS-ADV-007
+  - EAIMS-ADV-008
+  - EAIMS-ADV-010
+
+amended_existing_requirement_ids:
+  - EAIMS-MSP-005
+  - EAIMS-MSP-008
+
+development_only_ids:
+  - EAIMS-ADV-009
+
+activation_projection:
+  EAIMS-ADV-001: material AI system
+  EAIMS-ADV-002: action-taking system or autonomy A2+
+  EAIMS-ADV-003: material agent with privileged or external-action access
+  EAIMS-ADV-004: material privileged agent action
+  EAIMS-ADV-005: material AI with credible adversarial exposure
+  EAIMS-ADV-006: material action-taking AI system
+  EAIMS-ADV-007: autonomous or agentic material AI system
+  EAIMS-ADV-008: organization operating material AI systems
+  EAIMS-ADV-010: material synthetic-identity or representation exposure
+  EAIMS-MSP-005: material externally dependent AI system
+  EAIMS-MSP-008: composite, multi-provider, or materially multi-dependency AI system
+
+anchor_projection:
+  GOV-02:
+    EAIMS-ADV-001: L3
+    EAIMS-ADV-008: L4
+  GOV-04:
+    EAIMS-ADV-002: L3
+  GOV-05:
+    EAIMS-ADV-010: L3
+  TEC-02:
+    EAIMS-MSP-005: preserve_existing_minimum
+    EAIMS-MSP-008: preserve_existing_minimum
+  TEC-04:
+    EAIMS-ADV-003: L3
+    EAIMS-ADV-004: L3
+  OPS-02:
+    EAIMS-ADV-005: L3
+  OPS-03:
+    EAIMS-ADV-006: L3
+  OPS-04:
+    EAIMS-ADV-007: L3
+
+evidence_projection:
+  EAIMS-ADV-001: adversarial threat model and misuse/abuse exposure review
+  EAIMS-ADV-002: blast-radius analysis and bounding-control evidence
+  EAIMS-ADV-003: scoped/revocable credential or bounded-authorization evidence
+  EAIMS-ADV-004: correlated agent/workload and initiating/approving authority evidence
+  EAIMS-ADV-005: retained adversarial evaluation and remediation/retest evidence
+  EAIMS-ADV-006: blocked/anomalous/unauthorized/policy-violation runtime evidence
+  EAIMS-ADV-007: tested containment of authority, credentials, tools, memory, and dependencies as applicable
+  EAIMS-ADV-008: threat-intelligence exposure mapping, disposition, action, and verification
+  EAIMS-ADV-010: representation authorization, provenance/disclosure where appropriate, monitoring, and escalation
+  EAIMS-MSP-005: fallback/exit evidence plus concentration-risk analysis
+  EAIMS-MSP-008: dependency graph including model/tool/API/MCP/context/service dependencies and material concentration exposure
+
+gate_projection:
+  G3-13: [EAIMS-ADV-002]
+  G3-14: [EAIMS-ADV-003, EAIMS-ADV-004]
+  G3-15: [EAIMS-ADV-005]
+  G3-16: [EAIMS-ADV-006]
+  G3-17: [EAIMS-ADV-007]
+
+projection_rules:
+  - EAIMS-ADV-009 remains only in development-history artifacts and must not be assessed as a separate normative-candidate requirement.
+  - Candidate assessments use strengthened MSP-005/MSP-008 semantics instead of ADV-009.
+  - Existing 1.0 anchor minima for MSP-005/MSP-008 are preserved unless explicitly recalibrated through separate validation.
+  - Development fixtures that contain ADV-009 remain valid only as draft-design evidence, not as final candidate assessment fixtures.

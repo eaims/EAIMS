@@ -1,0 +1,60 @@
+fixture_id: V11-ADV-POSITIVE-001
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-DRAFT
+expected_outcome: PASS
+context:
+  material: true
+  agentic: true
+  autonomy: A4
+  impact: I3
+  blast_radius: B4
+  privileged_access: true
+  external_actions: true
+  synthetic_identity_exposure: false
+requirements:
+  EAIMS-ADV-001:
+    result: SATISFIED
+    evidence: [E-THREAT-MODEL]
+  EAIMS-ADV-002:
+    result: SATISFIED
+    evidence: [E-BLAST-RADIUS]
+  EAIMS-ADV-003:
+    result: SATISFIED
+    evidence: [E-CREDENTIAL-POLICY, E-IAM-CONFIG]
+  EAIMS-ADV-004:
+    result: SATISFIED
+    evidence: [E-ACTION-LOG]
+  EAIMS-ADV-005:
+    result: SATISFIED
+    evidence: [E-ADVERSARIAL-EVAL]
+  EAIMS-ADV-006:
+    result: SATISFIED
+    evidence: [E-BLOCKED-ACTIONS, E-ACTION-LOG]
+  EAIMS-ADV-007:
+    result: SATISFIED
+    evidence: [E-CONTAINMENT-TEST]
+  EAIMS-ADV-008:
+    result: SATISFIED
+    evidence: [E-TI-DISPOSITION]
+  EAIMS-ADV-009:
+    result: SATISFIED
+    evidence: [E-DEPENDENCY-GRAPH]
+  EAIMS-ADV-010:
+    result: NOT_APPLICABLE
+    rationale: No material synthetic identity, impersonation, or public persuasive automation exposure.
+evidence:
+  E-THREAT-MODEL: {class: E2, nature: SUPPORTING}
+  E-BLAST-RADIUS: {class: E2, nature: SUPPORTING}
+  E-CREDENTIAL-POLICY: {class: E2, nature: SUPPORTING}
+  E-IAM-CONFIG: {class: E3, nature: SUPPORTING}
+  E-ACTION-LOG: {class: E3, nature: SUPPORTING}
+  E-ADVERSARIAL-EVAL: {class: E3, nature: SUPPORTING}
+  E-BLOCKED-ACTIONS: {class: E3, nature: SUPPORTING}
+  E-CONTAINMENT-TEST: {class: E3, nature: SUPPORTING}
+  E-TI-DISPOSITION: {class: E3, nature: SUPPORTING}
+  E-DEPENDENCY-GRAPH: {class: E2, nature: SUPPORTING}
+expected_gate_extensions:
+  G3-13: PASS
+  G3-14: PASS
+  G3-15: PASS
+  G3-16: PASS
+  G3-17: PASS

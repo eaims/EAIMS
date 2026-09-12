@@ -1,0 +1,139 @@
+profile_id: EAIMS-1.1-NORMATIVE-CANDIDATE-OVERLAY
+status: normative_candidate_draft
+normative: false
+target_version: 1.1
+inherits:
+  - EAIMS 1.0.x stable specification
+
+design_decisions:
+  retained_new_requirements:
+    - EAIMS-ADV-001
+    - EAIMS-ADV-002
+    - EAIMS-ADV-003
+    - EAIMS-ADV-004
+    - EAIMS-ADV-005
+    - EAIMS-ADV-006
+    - EAIMS-ADV-007
+    - EAIMS-ADV-008
+    - EAIMS-ADV-010
+  consolidated_development_requirement:
+    EAIMS-ADV-009:
+      status: merged_into_existing
+      targets:
+        - EAIMS-MSP-005
+        - EAIMS-MSP-008
+      rationale: Dependency concentration is materially important but fits sourcing/dependency semantics better than a permanent standalone requirement.
+
+new_requirements:
+  - requirement_id: EAIMS-ADV-001
+    capability_id: GOV-02
+    title: Adversarial Exposure Analysis
+    normative_level: SHALL
+    statement: Material AI risk analysis shall consider credible adversarial manipulation, misuse, abuse, privilege, detectability, and dependency exposure where applicable.
+    criticality: material
+    machine_verifiability: MV3
+
+  - requirement_id: EAIMS-ADV-002
+    capability_id: GOV-04
+    title: Blast Radius Assessment
+    normative_level: SHALL
+    statement: Material action-taking or autonomous AI systems shall document the maximum credible scope of unauthorized or harmful action and the controls that bound that scope.
+    criticality: critical
+    machine_verifiability: MV3
+
+  - requirement_id: EAIMS-ADV-003
+    capability_id: TEC-04
+    title: Agent Credential Boundary
+    normative_level: SHALL
+    statement: Material agents with privileged or external-action access shall use scoped and revocable credentials or an equivalent bounded authorization mechanism, distinct from unrestricted human administrator authority where technically feasible.
+    criticality: critical
+    machine_verifiability: MV2
+
+  - requirement_id: EAIMS-ADV-004
+    capability_id: TEC-04
+    title: Agent Privilege Attribution
+    normative_level: SHALL
+    statement: Privileged actions performed by material agents shall be attributable to an observable agent or workload identity and to the applicable initiating or approving authority.
+    criticality: critical
+    machine_verifiability: MV2
+
+  - requirement_id: EAIMS-ADV-005
+    capability_id: OPS-02
+    title: Adversarial Evaluation Coverage
+    normative_level: SHALL
+    statement: Evaluation of material AI systems shall include adversarial scenarios proportionate to credible misuse, manipulation, data exfiltration, tool abuse, delegation, impersonation, or policy-evasion exposure.
+    criticality: material
+    machine_verifiability: MV3
+
+  - requirement_id: EAIMS-ADV-006
+    capability_id: OPS-03
+    title: Runtime Abuse Evidence
+    normative_level: SHALL
+    statement: Material action-taking AI systems shall retain sufficient runtime evidence to investigate blocked, anomalous, unauthorized, or policy-violating actions.
+    criticality: critical
+    machine_verifiability: MV2
+
+  - requirement_id: EAIMS-ADV-007
+    capability_id: OPS-04
+    title: Adversarial Incident Containment
+    normative_level: SHALL
+    statement: Incident procedures for material autonomous systems shall include proportionate containment of agent authority, credentials, tools, memory, external actions, and affected dependencies.
+    criticality: critical
+    machine_verifiability: MV3
+
+  - requirement_id: EAIMS-ADV-008
+    capability_id: GOV-02
+    title: AI Threat Intelligence Disposition
+    normative_level: SHALL
+    statement: The organization shall review relevant AI-specific threat intelligence and record the disposition of material findings against its AI inventory, risk register, controls, tests, or monitoring.
+    criticality: material
+    machine_verifiability: MV3
+
+  - requirement_id: EAIMS-ADV-010
+    capability_id: GOV-05
+    title: Synthetic Identity and Representation Control
+    normative_level: SHALL
+    statement: AI systems that materially represent people or organizations, create persistent synthetic personas, or automate public-facing persuasive communication shall have authorization, representation, and escalation controls proportionate to deception and influence risk.
+    criticality: material
+    machine_verifiability: MV3
+
+amended_existing_requirements:
+  EAIMS-MSP-005:
+    existing_title: Fallback or Exit Strategy
+    candidate_title: Fallback, Exit & Concentration Strategy
+    candidate_statement: Material externally dependent AI systems should maintain a proportionate fallback or exit strategy and assess material provider concentration or single-provider exposure that could create operational, security, sovereignty, or exit risk.
+    normative_level: SHOULD
+    machine_verifiability: MV3
+    compatibility: semantic_strengthening
+
+  EAIMS-MSP-008:
+    existing_title: Composite Dependency Trace
+    candidate_title: Composite Dependency & Concentration Trace
+    candidate_statement: Composite or multi-provider AI systems shall maintain a traceable dependency chain that includes material model, tool, API, MCP, context, and external-service dependencies and identifies concentration or single-point dependency exposure where material.
+    normative_level: SHALL
+    machine_verifiability: MV2
+    compatibility: semantic_strengthening
+
+candidate_gate_extensions:
+  G3:
+    - gate_id: G3-13
+      title: Blast Radius Assessed
+      requirement_ids: [EAIMS-ADV-002]
+    - gate_id: G3-14
+      title: Privileged Agent Credentials Bounded
+      requirement_ids: [EAIMS-ADV-003, EAIMS-ADV-004]
+    - gate_id: G3-15
+      title: Adversarial Evaluation
+      requirement_ids: [EAIMS-ADV-005]
+    - gate_id: G3-16
+      title: Runtime Abuse Evidence
+      requirement_ids: [EAIMS-ADV-006]
+    - gate_id: G3-17
+      title: Adversarial Incident Containment
+      requirement_ids: [EAIMS-ADV-007]
+
+freeze_rules:
+  - The candidate overlay remains non-normative until explicit freeze.
+  - Existing EAIMS 1.0.x requirement IDs are preserved.
+  - ADV-009 is a development-only identifier and shall not enter the final 1.1 normative ID set if this consolidation decision is accepted.
+  - Historical 1.0.x assessment results shall not be retroactively regraded.

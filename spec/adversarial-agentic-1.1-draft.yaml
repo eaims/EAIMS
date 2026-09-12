@@ -1,0 +1,182 @@
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-DRAFT
+status: development_draft
+target_version: 1.1
+normative: false
+inherits:
+  - EAIMS 1.0.x stable specification
+principles:
+  - additive-first
+  - preserve stable capability identifiers
+  - runtime evidence over policy-only evidence for material autonomous systems
+  - specialized security frameworks are referenced, not duplicated
+
+risk_extensions:
+  blast_radius_classes:
+    B0: Informational output only; no external action
+    B1: Read-only access to bounded internal information
+    B2: Bounded modification of low-risk internal records
+    B3: External communication or workflow actions affecting third parties
+    B4: Privileged changes, broad enterprise actions, or material transactions
+    B5: Safety-critical, systemic, irreversible, or high-consequence action
+  assurance_factors:
+    - impact
+    - autonomy
+    - privilege
+    - reach
+    - reversibility
+    - detectability
+    - dependency_concentration
+
+candidate_requirements:
+  - requirement_id: EAIMS-ADV-001
+    capability_id: GOV-02
+    title: Adversarial Exposure Analysis
+    normative_level: SHALL
+    statement: Material AI risk analysis shall consider credible adversarial manipulation, misuse, abuse, privilege, detectability, and dependency exposure where applicable.
+    criticality: material
+    machine_verifiability: MV3
+    activation: material AI system
+
+  - requirement_id: EAIMS-ADV-002
+    capability_id: GOV-04
+    title: Blast Radius Assessment
+    normative_level: SHALL
+    statement: Material action-taking or autonomous AI systems shall document the maximum credible scope of unauthorized or harmful action and the controls that bound that scope.
+    criticality: critical
+    machine_verifiability: MV3
+    activation: action-taking agent or autonomy A2+
+
+  - requirement_id: EAIMS-ADV-003
+    capability_id: TEC-04
+    title: Agent Credential Boundary
+    normative_level: SHALL
+    statement: Material agents with privileged or external-action access shall use scoped and revocable credentials or an equivalent bounded authorization mechanism, distinct from unrestricted human administrator authority where technically feasible.
+    criticality: critical
+    machine_verifiability: MV2
+    activation: agent with privileged or external-action access
+
+  - requirement_id: EAIMS-ADV-004
+    capability_id: TEC-04
+    title: Agent Privilege Attribution
+    normative_level: SHALL
+    statement: Privileged actions performed by material agents shall be attributable to an observable agent or workload identity and to the applicable initiating or approving authority.
+    criticality: critical
+    machine_verifiability: MV2
+    activation: privileged agent
+
+  - requirement_id: EAIMS-ADV-005
+    capability_id: OPS-02
+    title: Adversarial Evaluation Coverage
+    normative_level: SHALL
+    statement: Evaluation of material AI systems shall include adversarial scenarios proportionate to credible misuse, manipulation, data exfiltration, tool abuse, delegation, impersonation, or policy-evasion exposure.
+    criticality: material
+    machine_verifiability: MV3
+    activation: material AI system with credible adversarial exposure
+
+  - requirement_id: EAIMS-ADV-006
+    capability_id: OPS-03
+    title: Runtime Abuse Evidence
+    normative_level: SHALL
+    statement: Material action-taking AI systems shall retain sufficient runtime evidence to investigate blocked, anomalous, unauthorized, or policy-violating actions.
+    criticality: critical
+    machine_verifiability: MV2
+    activation: action-taking material AI system
+
+  - requirement_id: EAIMS-ADV-007
+    capability_id: OPS-04
+    title: Adversarial Incident Containment
+    normative_level: SHALL
+    statement: Incident procedures for material autonomous systems shall include proportionate containment of agent authority, credentials, tools, memory, external actions, and affected dependencies.
+    criticality: critical
+    machine_verifiability: MV3
+    activation: autonomous or agentic material AI system
+
+  - requirement_id: EAIMS-ADV-008
+    capability_id: GOV-02
+    title: AI Threat Intelligence Disposition
+    normative_level: SHALL
+    statement: The organization shall review relevant AI-specific threat intelligence and record the disposition of material findings against its AI inventory, risk register, controls, tests, or monitoring.
+    criticality: material
+    machine_verifiability: MV3
+    activation: organization operating material AI systems
+
+  - requirement_id: EAIMS-ADV-009
+    capability_id: TEC-02
+    title: AI Dependency Concentration
+    normative_level: SHALL
+    statement: Material AI systems shall identify dependency concentration or single-provider exposure that could create material operational, security, sovereignty, or exit risk.
+    criticality: material
+    machine_verifiability: MV3
+    activation: external or composite AI dependency
+
+  - requirement_id: EAIMS-ADV-010
+    capability_id: GOV-05
+    title: Synthetic Identity and Representation Control
+    normative_level: SHALL
+    statement: AI systems that materially represent people or organizations, create persistent synthetic personas, or automate public-facing persuasive communication shall have authorization, representation, and escalation controls proportionate to deception and influence risk.
+    criticality: material
+    machine_verifiability: MV3
+    activation: material synthetic-identity or influence exposure
+
+candidate_gate_extensions:
+  G3:
+    name: Autonomous / Agentic
+    add_checks:
+      - gate_id: G3-13
+        title: Blast Radius Assessed
+        requirement_ids:
+          - EAIMS-ADV-002
+      - gate_id: G3-14
+        title: Privileged Agent Credentials Bounded
+        requirement_ids:
+          - EAIMS-ADV-003
+          - EAIMS-ADV-004
+      - gate_id: G3-15
+        title: Adversarial Evaluation
+        requirement_ids:
+          - EAIMS-ADV-005
+      - gate_id: G3-16
+        title: Runtime Abuse Evidence
+        requirement_ids:
+          - EAIMS-ADV-006
+      - gate_id: G3-17
+        title: Adversarial Incident Containment
+        requirement_ids:
+          - EAIMS-ADV-007
+
+evidence_expectations:
+  declared:
+    - policy
+    - architecture_record
+    - risk_assessment
+  implemented:
+    - permission_configuration
+    - credential_scope
+    - dependency_graph
+    - adversarial_test_results
+    - suspension_configuration
+  observed:
+    - agent_action_logs
+    - blocked_action_records
+    - alert_and_escalation_records
+    - approval_records
+    - suspension_test_results
+    - incident_reconstruction_artifacts
+    - threat_intelligence_disposition_records
+
+references:
+  - organization: Anthropic
+    title: Detecting and countering misuse of AI — September 2026
+    url: https://www.anthropic.com/threat-intelligence-report-september-2026
+  - organization: Google Threat Intelligence Group
+    title: From Prompting to Autonomy — The Evolution of Adversarial AI
+    url: https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
+  - organization: NIST
+    title: AI Risk Management Framework — Generative Artificial Intelligence Profile
+    url: https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
+  - organization: OWASP GenAI Security Project
+    title: Top 10 for Agentic Applications 2026
+    url: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+  - organization: MITRE
+    title: ATLAS
+    url: https://atlas.mitre.org/

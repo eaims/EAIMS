@@ -1,0 +1,47 @@
+schema_version: 1
+profile: EAIMS-1.1-adversarial-agentic-candidate
+status: development_draft
+
+allowed_applicability:
+  - APPLICABLE
+  - NOT_APPLICABLE
+  - CONDITIONALLY_APPLICABLE
+  - NOT_ASSESSED
+
+allowed_results:
+  - SATISFIED
+  - PARTIALLY_SATISFIED
+  - NOT_SATISFIED
+  - INSUFFICIENT_EVIDENCE
+  - NOT_APPLICABLE
+
+allowed_gate_results:
+  - PASS
+  - BREACH
+  - INCOMPLETE
+  - NOT_APPLICABLE
+  - NONE
+
+cases:
+  - IR-01
+  - IR-02
+  - IR-03
+  - IR-04
+  - IR-05
+  - IR-06
+  - IR-07
+
+required_fields_per_case:
+  - applicability
+  - result
+  - gate_result
+  - confidence
+  - rationale
+
+comparison_policy:
+  exact_agreement_fields:
+    - applicability
+    - result
+    - gate_result
+  confidence_difference_is_not_by_itself_a_freeze_blocker: true
+  unresolved_critical_semantic_disagreement_blocks_freeze: true

@@ -1,0 +1,27 @@
+schema_version: 1
+profile: EAIMS-1.1-adversarial-agentic-candidate
+status: development_draft
+purpose: Retain review findings and resolution history before normative freeze.
+
+severity_levels:
+  - critical
+  - major
+  - minor
+  - editorial
+
+resolution_states:
+  - OPEN
+  - ACCEPTED
+  - ACCEPTED_WITH_MODIFICATION
+  - REJECTED_WITH_RATIONALE
+  - DEFERRED
+  - CLOSED
+
+findings: []
+
+rules:
+  - Every material review finding must receive a stable finding_id.
+  - Findings must not be deleted after resolution; resolution history is retained.
+  - Critical or major findings that affect normative semantics must identify the changed artifact or explicit rationale for no change.
+  - Normative freeze is blocked while any critical finding remains OPEN.
+  - Rejected findings require retained rationale.
