@@ -1,0 +1,86 @@
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-GATE-EFFECTS-DRAFT
+status: development_draft
+normative: false
+target_version: 1.1
+
+principles:
+  - Gate effects must be risk-proportionate.
+  - A gate breach must not be silently averaged away by stronger scores elsewhere.
+  - Deployment blocks are reserved for failures that make operation outside approved authority or containment boundaries materially unsafe.
+  - Scale blocks prevent expansion when the system may continue only within an already-approved bounded context.
+  - Maturity caps constrain the reported maturity ceiling without automatically requiring shutdown.
+  - Mandatory remediation requires an owned corrective action and reassessment.
+
+gate_effects:
+  G3-13:
+    title: Blast Radius Assessed
+    on_breach:
+      - scale_block
+      - maturity_cap
+      - mandatory_remediation
+      - reassessment_required
+    maturity_cap: L3
+    deployment_block_when:
+      - impact in [I4]
+      - reversibility in [R4]
+      - scale in [S4]
+    rationale: Unknown maximum credible harm prevents responsible scaling; critical/systemic contexts may require deployment blocking.
+
+  G3-14:
+    title: Privileged Agent Credentials Bounded
+    on_breach:
+      - deployment_block
+      - maturity_cap
+      - mandatory_remediation
+      - reassessment_required
+    maturity_cap: L2
+    rationale: An agent with material privileged or external-action authority must not operate with unbounded or non-revocable authorization.
+
+  G3-15:
+    title: Adversarial Evaluation
+    on_breach:
+      - scale_block
+      - maturity_cap
+      - mandatory_remediation
+      - reassessment_required
+    maturity_cap: L3
+    deployment_block_when:
+      - impact in [I4]
+      - autonomy in [A4, A5]
+    rationale: Missing adversarial evaluation blocks confidence in high-risk scaling and may block deployment for critical/high-autonomy systems.
+
+  G3-16:
+    title: Runtime Abuse Evidence
+    on_breach:
+      - scale_block
+      - maturity_cap
+      - mandatory_remediation
+    maturity_cap: L3
+    deployment_block_when:
+      - privileged_actions == true
+      - detectability in [D4]
+    rationale: Inability to investigate material agent actions is incompatible with managed/adaptive maturity and may be unacceptable for opaque privileged operation.
+
+  G3-17:
+    title: Adversarial Incident Containment
+    on_breach:
+      - deployment_block
+      - maturity_cap
+      - mandatory_remediation
+      - reassessment_required
+    maturity_cap: L2
+    rationale: High-autonomy or agentic systems without effective authority/tool/credential containment should not remain deployed as if the control boundary were operational.
+
+incomplete_semantics:
+  default_effect:
+    - reassessment_required
+  rules:
+    - INCOMPLETE is not PASS.
+    - An incomplete critical gate may trigger scale/deployment restriction when the missing evidence itself prevents establishing a safe control boundary.
+    - Approved exception cannot convert BREACH to PASS.
+
+aggregation:
+  - Gate effects apply after indicative maturity calculation.
+  - The strictest applicable maturity cap prevails.
+  - Deployment_block and scale_block are reported separately from maturity.
+  - Multiple breaches do not create a numeric penalty score; they create explicit consequences.
