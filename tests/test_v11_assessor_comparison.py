@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 TOOL=ROOT/"tools"/"compare_v11_assessors.py"
 TEMPLATE=ROOT/"review"/"assessor-response-template-1.1-draft.yaml"
 CASES=ROOT/"validation"/"INTER-RATER-CASES-1.1-DRAFT.md"
+PROTOCOL=ROOT/"docs"/"ASSESSOR-PROTOCOL-ADVERSARIAL-1.1-DRAFT.md"
 
 def _module():
     spec=importlib.util.spec_from_file_location("compare_v11_assessors",TOOL)
@@ -41,3 +42,10 @@ def test_comparator_flags_critical_disagreement():
     result=mod.compare(a,b)
     assert "IR-02" in result["critical_freeze_blockers"]
     assert result["candidate_freeze_review_result"]=="BLOCKED"
+
+
+def test_assessor_protocol_does_not_score_adv009_as_standalone_candidate():
+    text=PROTOCOL.read_text(encoding="utf-8")
+    assert "Candidate MSP-005 / MSP-008" in text
+    assert "ADV-009 is development-history only and must not be scored separately" in text
+    assert "### ADV-009 —" not in text
