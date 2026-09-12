@@ -12,7 +12,7 @@ REFERENCE_IMPLEMENTATIONS = (
 )
 
 GENERATED_AT_LINE = re.compile(
-    r"(?m)^- Generated at: `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z`\s*$"
+    r"(?m)^- Report generated at: `\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z`\s*$"
 )
 
 
