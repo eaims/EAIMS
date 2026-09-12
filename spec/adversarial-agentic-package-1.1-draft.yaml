@@ -43,6 +43,7 @@ review:
   independent_assessor_calibration: review/INDEPENDENT-ASSESSOR-CALIBRATION-1.1-DRAFT.md
   inter_rater_comparison_policy: review/inter-rater-comparison-1.1-draft.yaml
   findings_log: review/review-findings-log-1.1-draft.yaml
+  candidate_freeze_decision: review/CANDIDATE-FREEZE-DECISION-1.1-DRAFT.md
 
 tooling:
   validator: tools/validate_v11_draft.py
@@ -69,6 +70,7 @@ tests:
   - tests/test_v11_reference_ip_audit.py
   - tests/test_v11_inter_rater_calibration.py
   - tests/test_v11_review_findings_log.py
+  - tests/test_v11_candidate_freeze_record.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
