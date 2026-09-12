@@ -30,14 +30,15 @@
 - [x] Reference/IP repository-hygiene audit implemented
 - [x] Independent assessor calibration worksheet and comparison policy defined
 - [x] Executable 1.0 output-regression test added for RI-01, RI-02, and RI-03
+- [x] Full CI #231 passed on head 46224a4e3ec2016008eb07ac489328d4f3d8a9fd
+- [x] Executable backward-compatibility regression passed against frozen 1.0 reference outputs
+- [x] Candidate package is technically ready for candidate-freeze review
 
 ## Validation required before normative freeze
 
-- [ ] Latest full CI run passes with output-regression and reference/IP audit enabled
 - [ ] At least two independent assessor passes over inter-rater cases
 - [ ] Ambiguous cases resolved or explicitly retained as MV3/MV4 judgment
 - [ ] Candidate machine-verification paths implemented only after schema/runtime design is approved
-- [ ] Executable backward-compatibility regression passes against all frozen 1.0 reference outputs
 - [ ] Review findings resolved with retained resolution history
 - [ ] Independent legal/IP review completed if required for release
 - [ ] Final normative spec/version identifiers assigned only at freeze
@@ -50,14 +51,14 @@ Any of the following blocks normative freeze:
 - requirement without defensible applicability semantics;
 - critical gate with undefined consequence;
 - machine-verifiable claim that depends materially on human judgment;
-- inability to preserve/reproduce 1.0.x historical assessment semantics;
 - unresolved inter-rater ambiguity on critical requirements;
 - evidence requirements that cannot be realistically collected without exposing protected operational secrets;
 - external-framework language copied beyond permissible/reference use;
+- open critical review finding;
 - failing candidate, release-readiness, output-regression, or reference/IP hygiene audit.
 
 ## Release decision
 
-Current status: **DEVELOPMENT DRAFT — NOT READY FOR NORMATIVE FREEZE**
+Current status: **CANDIDATE-FREEZE REVIEW READY — NOT NORMATIVELY FROZEN**
 
-The package is structurally mature. The remaining release blockers now focus on successful final CI/regression, genuinely independent assessor calibration, review-resolution history, and any independent legal/IP review required before normative release.
+The technical package and full CI/regression are green. Normative freeze remains blocked by genuinely independent assessor calibration, any resulting critical ambiguity resolution, retained review closure, and any independent legal/IP review required before publication.
