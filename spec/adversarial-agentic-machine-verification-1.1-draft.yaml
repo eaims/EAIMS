@@ -1,0 +1,32 @@
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-MACHINE-VERIFICATION-DRAFT
+status: development_draft
+normative: false
+target_version: 1.1
+scope: Candidate MV2 rules only; MV3/MV4 requirements remain assessor/hybrid until validated.
+
+rules:
+  - requirement_id: EAIMS-ADV-003
+    machine_verifiability: MV2
+    operator: truthy
+    path: adversarial.agent_credentials_bounded
+    description: Material agents with privileged or external-action access shall demonstrate a bounded and revocable authorization mechanism.
+
+  - requirement_id: EAIMS-ADV-004
+    machine_verifiability: MV2
+    operator: all_nonempty
+    path: adversarial.privileged_action_attribution
+    description: Privileged agent action shall be attributable to the agent/workload identity and applicable initiating or approving authority.
+    required_keys:
+      - agent_identity
+      - authority_identity
+
+  - requirement_id: EAIMS-ADV-006
+    machine_verifiability: MV2
+    operator: truthy
+    path: adversarial.runtime_abuse_evidence
+    description: Material action-taking AI systems shall retain investigation-grade evidence for blocked, anomalous, unauthorized, or policy-violating actions.
+
+validation_notes:
+  - These rules intentionally avoid declaring EAIMS-ADV-001, 002, 005, 007, 008, 009, or 010 machine-passable because their semantics require contextual judgment.
+  - Presence of a field alone must not be treated as proof of control effectiveness unless the canonical verifier defines substantive validation.
+  - Candidate paths are isolated from EAIMS 1.0 machine-verification paths until 1.1 adoption.
