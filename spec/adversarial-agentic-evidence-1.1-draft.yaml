@@ -1,0 +1,126 @@
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-EVIDENCE-DRAFT
+status: development_draft
+normative: false
+target_version: 1.1
+
+requirements:
+  EAIMS-ADV-001:
+    supporting:
+      - adversarial threat model
+      - misuse/abuse scenario register
+      - exposure review tied to system inventory
+    counter:
+      - generic risk register with no adversarial scenarios
+      - risk assessment excludes agent/tool/context manipulation
+    preferred_class: E2
+
+  EAIMS-ADV-002:
+    supporting:
+      - documented blast-radius analysis
+      - action/transaction/reach limits
+      - segmentation or containment architecture
+    counter:
+      - unrestricted cross-system authority
+      - no maximum credible impact analysis
+    preferred_class: E2
+
+  EAIMS-ADV-003:
+    supporting:
+      - workload or agent identity configuration
+      - scoped credential policy
+      - revocation evidence
+      - short-lived credential configuration where supported
+    counter:
+      - shared unrestricted administrator credential
+      - human personal credential reused by autonomous agent
+      - credentials cannot be independently revoked
+    preferred_class: E3
+
+  EAIMS-ADV-004:
+    supporting:
+      - privileged action log containing agent/workload identity
+      - initiating or approving authority record
+      - delegation trace
+    counter:
+      - privileged actions attributable only to a generic service account
+      - approval cannot be correlated to executed action
+    preferred_class: E3
+
+  EAIMS-ADV-005:
+    supporting:
+      - adversarial evaluation plan
+      - retained evaluation run
+      - scenario coverage matrix
+      - remediation/retest record
+    counter:
+      - functional testing only
+      - no credible misuse or manipulation scenarios
+    preferred_class: E3
+
+  EAIMS-ADV-006:
+    supporting:
+      - blocked-action telemetry
+      - anomaly/security event records
+      - investigation-grade action context
+      - alert and escalation correlation
+    counter:
+      - action logs omit authorization context
+      - rejected or blocked actions are not retained
+      - logs cannot reconstruct sequence of agent actions
+    preferred_class: E3
+
+  EAIMS-ADV-007:
+    supporting:
+      - adversarial incident runbook
+      - credential revocation test
+      - tool/session isolation test
+      - memory containment procedure where applicable
+      - post-incident reconstruction
+    counter:
+      - incident plan can stop application process but cannot revoke agent authority
+      - external tools remain callable after suspension
+    preferred_class: E3
+
+  EAIMS-ADV-008:
+    supporting:
+      - threat-intelligence source register
+      - periodic or event-driven review record
+      - exposure mapping to AI inventory
+      - disposition decision
+      - resulting control/test/monitoring change
+    counter:
+      - reports are collected but not reviewed
+      - material findings have no owner or disposition
+    preferred_class: E3
+
+  EAIMS-ADV-009:
+    supporting:
+      - AI dependency graph
+      - provider concentration analysis
+      - exit/fallback evidence
+      - dependency criticality classification
+    counter:
+      - only direct model provider is recorded
+      - hidden tool/API/MCP dependencies are omitted
+      - no analysis of single-provider systemic exposure
+    preferred_class: E2
+
+  EAIMS-ADV-010:
+    supporting:
+      - representation authorization
+      - synthetic persona inventory
+      - disclosure/provenance policy where applicable
+      - publication/amplification logs
+      - monitoring and escalation records
+    counter:
+      - persistent personas operate without accountable owner
+      - automated public representation lacks authorization
+      - impersonation risk is not assessed
+    preferred_class: E2
+
+high_maturity_rules:
+  - L4/L5 claims should include observed evidence where the control produces runtime behavior.
+  - Policy-only evidence is insufficient for high maturity when implemented or observed evidence is feasible.
+  - Counter-evidence must be preserved and cannot be neutralized by stronger documentation alone.
+  - Threat-intelligence evidence should demonstrate disposition, not mere subscription or collection.
+  - For agentic systems, suspension evidence should demonstrate actual loss of authority, not only process termination.
