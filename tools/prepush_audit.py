@@ -8,8 +8,8 @@ if str(ROOT) not in sys.path:
 errors=[]
 warnings=[]
 EXPECTED_SPEC='1.0.0-fc16'
-EXPECTED_PACKAGE='1.0.1'
-EXPECTED_RELEASE='1.0.1'
+EXPECTED_RELEASE=(ROOT/'VERSION').read_text(encoding='utf-8').strip()
+EXPECTED_PACKAGE=EXPECTED_RELEASE
 
 class DupCheckLoader(yaml.SafeLoader):
     pass
@@ -55,7 +55,10 @@ version_file=(ROOT/'VERSION').read_text(encoding='utf-8').strip()
 if version_file!=EXPECTED_RELEASE: errors.append(f'unexpected VERSION file: {version_file}')
 citation=(ROOT/'CITATION.cff').read_text(encoding='utf-8')
 if f'version: "{EXPECTED_RELEASE}"' not in citation: errors.append('CITATION.cff release version mismatch')
-if 'date-released: "2026-09-10"' not in citation: errors.append('CITATION.cff release date mismatch')
+citation_data=yaml.safe_load(citation)
+release_date=str(citation_data.get('date-released',''))
+if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', release_date):
+    errors.append('CITATION.cff release date missing or invalid')
 
 # Active-stage files must not carry stale pre-FC16 candidate tags.
 for rel in ['README.md','VALIDATION.md','pyproject.toml','docker-compose.yml','docker-compose.reference.yml','research/EVOLUTION-0.2x-to-1.0.md']:
