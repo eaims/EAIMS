@@ -53,8 +53,10 @@ A business-critical AI service depends on one external model provider, but promp
 
 ### Expected interpretation
 
-- ADV-009: **SATISFIED**.
+- Candidate MSP-005: **SATISFIED** if fallback/exit and concentration exposure are demonstrably managed.
+- Candidate MSP-008: **SATISFIED** if the material dependency chain and single-point exposure are traceable.
 - Single-provider dependency does not itself imply failure; concentration risk must be analyzed and managed.
+- ADV-009 is development-history only and must not be scored separately in candidate-freeze review.
 
 ## Case IR-06 — Synthetic spokesperson disclosed as AI
 
