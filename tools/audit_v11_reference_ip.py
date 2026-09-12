@@ -44,64 +44,7 @@ BOUNDARY_TERMS = (
 )
 
 ORG_NAMES = ("NIST", "OWASP", "MITRE", "Anthropic", "Google Threat Intelligence Group")
-LONG_QUOTE_LINE_RE = re.compile(r'^[^\n]*["“]([^"”\n]{180,})[”"][^\n]*
-
-class HygieneError(Exception):
-    pass
-
-
-def require(condition: bool, message: str) -> None:
-    if not condition:
-        raise HygieneError(message)
-
-
-def audit() -> list[str]:
-    messages = []
-    combined = "\n".join(path.read_text(encoding="utf-8") for path in FILES)
-    lower = combined.lower()
-
-    for claim in PROHIBITED_CLAIMS:
-        require(claim not in lower, f"prohibited endorsement/equivalence claim found: {claim}")
-
-    for org in ORG_NAMES:
-        require(org.lower() in lower, f"expected public reference missing: {org}")
-
-    boundary_hits = sum(1 for term in BOUNDARY_TERMS if term.lower() in lower)
-    require(boundary_hits >= 3, "insufficient reference-boundary language across candidate package")
-
-    # Guard against accidental large quoted reproduction in the reviewed crosswalk/RFC files.
-    for path in FILES[:2]:
-        text = path.read_text(encoding="utf-8")
-        require(not LONG_QUOTE_LINE_RE.findall(text), f"{path.name}: possible long quoted reproduction detected")
-
-    # Prevent accidental claims of external certification/equivalence in candidate artifacts.
-    require("clause-by-clause equivalent" not in lower, "unsupported clause-level equivalence claim detected")
-    require("formal equivalence" not in lower, "unsupported formal-equivalence claim detected")
-
-    messages.append("endorsement/equivalence claims: PASS")
-    messages.append("public-source attribution presence: PASS")
-    messages.append("reference-boundary language: PASS")
-    messages.append("long-quote heuristic: PASS")
-    return messages
-
-
-def main() -> int:
-    try:
-        messages = audit()
-    except HygieneError as exc:
-        print(f"EAIMS 1.1 reference/IP hygiene audit FAILED: {exc}", file=sys.stderr)
-        return 1
-
-    print("EAIMS 1.1 reference/IP hygiene audit PASS")
-    for message in messages:
-        print(f"- {message}")
-    print("- note: this is a repository hygiene check, not a legal opinion")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
-, re.MULTILINE)
+LONG_QUOTE_LINE_RE = re.compile(r'^[^\n]*["“]([^"”\n]{180,})[”"][^\n]*$', re.MULTILINE)
 
 
 class HygieneError(Exception):
@@ -127,12 +70,13 @@ def audit() -> list[str]:
     boundary_hits = sum(1 for term in BOUNDARY_TERMS if term.lower() in lower)
     require(boundary_hits >= 3, "insufficient reference-boundary language across candidate package")
 
-    # Guard against accidental large quoted reproduction in the reviewed crosswalk/RFC files.
     for path in FILES[:2]:
         text = path.read_text(encoding="utf-8")
-        require(not LONG_QUOTE_RE.findall(text), f"{path.name}: possible long quoted reproduction detected")
+        require(
+            not LONG_QUOTE_LINE_RE.findall(text),
+            f"{path.name}: possible long quoted reproduction detected",
+        )
 
-    # Prevent accidental claims of external certification/equivalence in candidate artifacts.
     require("clause-by-clause equivalent" not in lower, "unsupported clause-level equivalence claim detected")
     require("formal equivalence" not in lower, "unsupported formal-equivalence claim detected")
 
