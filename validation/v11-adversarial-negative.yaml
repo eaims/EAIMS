@@ -1,0 +1,55 @@
+fixture_id: V11-ADV-NEGATIVE-001
+profile_id: EAIMS-1.1-ADVERSARIAL-AGENTIC-DRAFT
+expected_outcome: BREACH
+context:
+  material: true
+  agentic: true
+  autonomy: A4
+  impact: I3
+  blast_radius: B4
+  privileged_access: true
+  external_actions: true
+  synthetic_identity_exposure: false
+requirements:
+  EAIMS-ADV-001:
+    result: PARTIALLY_SATISFIED
+    evidence: [E-GENERIC-RISK]
+  EAIMS-ADV-002:
+    result: NOT_SATISFIED
+    evidence: []
+  EAIMS-ADV-003:
+    result: NOT_SATISFIED
+    evidence: [E-SHARED-ADMIN]
+  EAIMS-ADV-004:
+    result: INSUFFICIENT_EVIDENCE
+    evidence: [E-GENERIC-LOG]
+  EAIMS-ADV-005:
+    result: NOT_SATISFIED
+    evidence: []
+  EAIMS-ADV-006:
+    result: NOT_SATISFIED
+    evidence: [E-GENERIC-LOG]
+  EAIMS-ADV-007:
+    result: PARTIALLY_SATISFIED
+    evidence: [E-IR-PLAN]
+  EAIMS-ADV-008:
+    result: INSUFFICIENT_EVIDENCE
+    evidence: []
+  EAIMS-ADV-009:
+    result: PARTIALLY_SATISFIED
+    evidence: [E-PROVIDER-LIST]
+  EAIMS-ADV-010:
+    result: NOT_APPLICABLE
+    rationale: No material synthetic identity, impersonation, or public persuasive automation exposure.
+counter_evidence:
+  - shared unrestricted administrator credential is used by the agent
+  - no documented blast-radius analysis
+  - no adversarial evaluation retained
+  - action logs cannot attribute privileged actions to the agent and approving authority
+  - incident plan does not revoke agent credentials or isolate external tools
+expected_gate_extensions:
+  G3-13: BREACH
+  G3-14: BREACH
+  G3-15: BREACH
+  G3-16: BREACH
+  G3-17: INCOMPLETE
