@@ -40,11 +40,14 @@ validation:
 review:
   questions: review/REVIEW-QUESTIONS-1.1-ADVERSARIAL-DRAFT.md
   release_readiness_audit: review/RELEASE-READINESS-AUDIT-1.1-DRAFT.md
+  independent_assessor_calibration: review/INDEPENDENT-ASSESSOR-CALIBRATION-1.1-DRAFT.md
+  inter_rater_comparison_policy: review/inter-rater-comparison-1.1-draft.yaml
 
 tooling:
   validator: tools/validate_v11_draft.py
   candidate_audit: tools/audit_v11_candidate.py
   release_readiness_audit: tools/audit_v11_release_readiness.py
+  reference_ip_hygiene_audit: tools/audit_v11_reference_ip.py
 
 tests:
   - tests/test_v11_adversarial_profile.py
@@ -61,6 +64,9 @@ tests:
   - tests/test_v11_candidate_overlay.py
   - tests/test_v11_candidate_projection.py
   - tests/test_v11_release_readiness_audit.py
+  - tests/test_v11_v1_output_regression.py
+  - tests/test_v11_reference_ip_audit.py
+  - tests/test_v11_inter_rater_calibration.py
 
 package_rules:
   - Every path listed in this manifest must exist before review sign-off.
