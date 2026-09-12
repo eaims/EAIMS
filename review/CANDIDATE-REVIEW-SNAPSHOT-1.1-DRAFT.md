@@ -1,4 +1,4 @@
-# EAIMS 1.1 Candidate-Freezer Review Snapshot
+# EAIMS 1.1 Candidate-Freeze Review Snapshot
 
 This file pins the exact technical review baseline for independent assessor calibration.
 
@@ -6,11 +6,19 @@ This file pins the exact technical review baseline for independent assessor cali
 
 - Pull request: #9
 - Branch: `eaims-1.1-adversarial-agentic-governance`
-- Review head: `fb21bc6f65647bd7f15caca61229fd5da48f5246`
-- Full validation run: EAIMS Validation #248
+- Review head: `9f7e4bc9f2658d72ba73ee3b7d05957c89af8609`
+- Full validation run: EAIMS Validation #265
 - CI status: PASS
 - Candidate status: non-normative
 - Review state: candidate-freeze review ready
+
+## Superseded baseline
+
+The earlier review baseline `fb21bc6f65647bd7f15caca61229fd5da48f5246` / CI #248 is superseded.
+
+Reason: pre-review consistency hardening aligned the assessor protocol, migration guide, crosswalk, consolidation record, reviewer questions, and IR-05 with the final candidate decision that ADV-009 is development-history only and dependency concentration is assessed through strengthened MSP-005/MSP-008 semantics.
+
+No assessor response tied to the superseded baseline should be mixed with responses tied to the current baseline.
 
 ## Assessor rule
 
