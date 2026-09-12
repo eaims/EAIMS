@@ -2,12 +2,18 @@
 
 > An open, vendor-neutral, evidence-grounded and executable framework for assessing and improving enterprise AI maturity while governing value, autonomy, accountability and operational risk.
 
-**Version:** 1.0.1
+**Version:** 1.1.0
 **Status:** Final release
 **Documentation and specification content:** CC BY 4.0
 **Code, tests, workflows and JSON Schemas:** Apache-2.0
 
-EAIMS 1.0 moves the project from a research-baseline maturity model toward an executable enterprise AI operating and assurance framework. It does not itself confer certification, regulatory conformity, legal compliance or safety assurance.
+EAIMS 1.1 extends the stable 1.0.x framework with an additive adversarial and agentic governance overlay. It does not itself confer certification, regulatory conformity, legal compliance or safety assurance.
+
+## EAIMS 1.1 — Adversarial & Agentic Governance
+
+The 1.1.0 release adds nine normative `ADV` requirements, strengthens two material-sourcing requirements, and extends the G3 gate family with controls for adversarial exposure, blast radius, privileged agent credentials, runtime-abuse evidence, containment, threat-intelligence disposition, and synthetic identity. Historical 1.0.x assessments keep their original semantics and are not retroactively regraded.
+
+Start with the [1.1 release notes](RELEASE-NOTES-v1.1.0.md), the [adversarial and agentic governance guide](docs/ADVERSARIAL-AGENTIC-GOVERNANCE.md), and the [1.0-to-1.1 migration guide](MIGRATION-v1.0-to-v1.1-DRAFT.md). The release is maintainer-frozen and does not claim independent third-party assessor validation.
 
 ## Canonical EAIMS 1.0
 
@@ -24,7 +30,7 @@ EAIMS 1.0 moves the project from a research-baseline maturity model toward an ex
 
 A central design principle is that AI maturity is not maximum automation. Mature organizations determine where automation creates value, where human oversight is necessary, and where accountability must remain human.
 
-## Start with EAIMS 1.0
+## Start with EAIMS
 
 Follow the [v1 assessment guide](docs/ASSESSMENT-V1.md) for installation, a runnable example, output interpretation and review automation. The reference example detects a synthetic agent exceeding its financial authority; the report identifies the breached gates so the assessor can define a corrective action.
 
@@ -58,19 +64,19 @@ These cases are synthetic and are not presented as customer deployments or empir
 The v1 validator uses `Dockerfile.validator` and runs with a least-privilege container profile:
 
 ```bash
-docker build -f Dockerfile.validator -t eaims/validator:1.0.1 .
+docker build -f Dockerfile.validator -t eaims/validator:1.1.0 .
 docker compose run --rm validator
 ```
 
 Hosted CI validates the Docker image and both Compose configurations at runtime. See `docs/PACKAGING-AND-RUNTIME-VALIDATION.md` and `VALIDATION.md` for the validation boundary.
 
-## Patch release 1.0.1
+## Release history
 
-This patch hardens input validation and review integrity, fixes installed-package review execution, and adds dedicated v1 schemas and a complete assessment guide. The normative model and three synthetic reference results remain unchanged. See [release notes](RELEASE-NOTES-v1.0.1.md).
+EAIMS 1.1.0 adds the normative adversarial and agentic overlay while preserving the frozen 1.0.x baseline. The preceding 1.0.1 patch hardened input validation and review integrity, fixed installed-package review execution, and added dedicated v1 schemas and a complete assessment guide. See the [1.1.0](RELEASE-NOTES-v1.1.0.md) and [1.0.1](RELEASE-NOTES-v1.0.1.md) release notes.
 
 ## Validation status
 
-EAIMS 1.0 is **field-informed rather than field-validated**. Its design incorporates observations from feasibility assessment, realistic synthetic reference implementations and enterprise pilot-readiness discussions. Formal multi-organization empirical validation, inter-rater reliability research and independent external review remain part of the research agenda.
+EAIMS 1.1 is **field-informed rather than field-validated**. Its design incorporates observations from feasibility assessment, realistic synthetic reference implementations, public threat-intelligence sources and enterprise pilot-readiness discussions. Formal multi-organization empirical validation, inter-rater reliability research and independent external review remain part of the research agenda.
 
 The `review/` directory provides structured adversarial questions, reviewer guidance, feedback/resolution schemas and executable BLOCKER/MAJOR exit semantics. No claim is made that independent external review has already been completed.
 
@@ -78,7 +84,7 @@ The original 1.0.0 release was promoted from `v1.0.0-rc.1` only after hosted val
 
 ## Specification provenance
 
-The current public release version is **1.0.1**. The internal normative specification provenance identifier **`1.0.0-fc16`** is intentionally retained in the frozen normative source and generated reference evidence. This preserves traceability to the exact freeze-candidate content that passed RC1 validation; it does not mean the public release remains a release candidate.
+The current public release version is **1.1.0**. The internal base-specification provenance identifier **`1.0.0-fc16`** is intentionally retained in the frozen 1.0.x normative source and generated reference evidence. EAIMS 1.1.0 applies its normative overlay additively to that base; retaining the provenance identifier does not make the public release a candidate.
 
 ## Project status and stewardship
 

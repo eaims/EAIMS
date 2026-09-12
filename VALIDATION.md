@@ -1,6 +1,6 @@
-# EAIMS 1.0.1 — Validation Status
+# EAIMS 1.1.0 — Validation Status
 
-## Demonstrated for the final release line
+## Demonstrated for the stable 1.0.x base
 
 - 8 dimensions, 30 canonical capabilities and 150 capability-specific maturity anchors are machine-readable.
 - The catalog contains 206 requirements, including 177 SHALL/SHALL_NOT and 80 classified critical.
@@ -19,6 +19,12 @@
 The input/review hardening changes passed 229 tests, the repository audit and canonical validation. All three reference outputs matched the existing golden JSON objects exactly. Installed-wheel assessment and review success/unmet-gate paths passed outside the repository. Hosted validation passed on the merged hardening commit: [run 34459206026](https://github.com/eaims/EAIMS/actions/runs/34459206026).
 
 Release packaging additionally checks that VERSION, Python package metadata, runtime version, citation and container image versions agree. Publication is gated on successful CI for the exact release commit, including wheel installation, dependency audit and Docker/Compose execution.
+
+## Release 1.1.0 validation
+
+The additive adversarial and agentic governance overlay passed the full repository test suite, canonical validation, frozen 1.0 reference-output regression, candidate audit, release-readiness audit, and reference/IP hygiene audit. Its structured validation covers nine new ADV requirements, the MSP-005/MSP-008 amendments, G3-13 through G3-17, activation and applicability, evidence expectations, machine-verification rules, gate effects, and positive/negative fixtures.
+
+The release is **maintainer-frozen**. Independent assessor calibration, multi-organization field validation, and empirical inter-rater measurement remain post-release work; no independent third-party validation, accreditation, certification, regulatory approval, or endorsement is claimed.
 
 ## Original 1.0.0 hosted release validation
 
@@ -87,7 +93,7 @@ The following are **not** established by the current release evidence:
 - representative industry benchmarking;
 - external independent review completion.
 
-EAIMS 1.0 is therefore described as **field-informed rather than field-validated**. Its design incorporates feasibility observations, realistic synthetic reference implementations and enterprise pilot-readiness inputs. Formal multi-organization validation remains part of the research agenda.
+EAIMS 1.1 is therefore described as **field-informed rather than field-validated**. Its design incorporates feasibility observations, realistic synthetic reference implementations, public threat-intelligence sources and enterprise pilot-readiness inputs. Formal multi-organization validation remains part of the research agenda.
 
 ## Independent-review readiness
 
@@ -101,4 +107,4 @@ These repository checks are not a substitute for jurisdiction-specific legal adv
 
 ## Version and provenance
 
-The public release version is **1.0.1**. The frozen normative source retains the internal provenance identifier **`1.0.0-fc16`** so that generated evidence and the exact content validated during RC1 remain traceable. No substantive normative change is implied by promotion from the validated RC1 content to the final public version.
+The public release version is **1.1.0**. The frozen 1.0.x base retains the internal provenance identifier **`1.0.0-fc16`** so that generated evidence and the exact content validated during RC1 remain traceable. The normative 1.1 overlay is additive and does not rewrite historical 1.0.x assessment semantics.

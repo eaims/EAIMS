@@ -60,6 +60,19 @@ release_date=str(citation_data.get('date-released',''))
 if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', release_date):
     errors.append('CITATION.cff release date missing or invalid')
 
+readme=(ROOT/'README.md').read_text(encoding='utf-8')
+validation_doc=(ROOT/'VALIDATION.md').read_text(encoding='utf-8')
+if f'**Version:** {EXPECTED_RELEASE}' not in readme:
+    errors.append('README public version mismatch')
+if f'The current public release version is **{EXPECTED_RELEASE}**' not in readme:
+    errors.append('README provenance version mismatch')
+if f'eaims/validator:{EXPECTED_RELEASE}' not in readme:
+    errors.append('README Docker image version mismatch')
+if not validation_doc.startswith(f'# EAIMS {EXPECTED_RELEASE} — Validation Status'):
+    errors.append('VALIDATION.md heading version mismatch')
+if f'The public release version is **{EXPECTED_RELEASE}**' not in validation_doc:
+    errors.append('VALIDATION.md provenance version mismatch')
+
 # Active-stage files must not carry stale pre-FC16 candidate tags.
 for rel in ['README.md','VALIDATION.md','pyproject.toml','docker-compose.yml','docker-compose.reference.yml','research/EVOLUTION-0.2x-to-1.0.md']:
     text=(ROOT/rel).read_text()
