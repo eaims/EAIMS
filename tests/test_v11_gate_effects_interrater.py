@@ -22,7 +22,10 @@ def test_v11_consolidation_record_covers_all_candidates():
     text = CONSOLIDATION.read_text(encoding="utf-8")
     for i in range(1, 11):
         assert f"ADV-{i:03d}" in text
-    assert "MERGE CANDIDATE" in text
+    assert "Superseded for candidate-freeze decisions" in text
+    assert "ADV-004 | KEEP" in text
+    assert "ADV-006 | KEEP" in text
+    assert "ADV-009 | MERGED INTO MSP-005 / MSP-008" in text
 
 def test_v11_interrater_cases_include_core_ambiguities():
     text = INTERRATER.read_text(encoding="utf-8")
