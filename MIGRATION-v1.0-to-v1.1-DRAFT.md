@@ -28,7 +28,8 @@ EAIMS 1.1 is designed as an additive evolution rather than a replacement of 1.0.
 | EAIMS-ADV-006 Runtime Abuse Evidence | OPS-03 | Investigation-grade evidence for blocked/anomalous/unauthorized actions |
 | EAIMS-ADV-007 Adversarial Incident Containment | OPS-04 | Containment of agent authority, credentials, tools, memory and dependencies |
 | EAIMS-ADV-008 AI Threat Intelligence Disposition | GOV-02 | Closed-loop review of relevant AI threat intelligence |
-| EAIMS-ADV-009 AI Dependency Concentration | TEC-02 | Concentration/single-provider systemic exposure |
+| MSP-005 strengthened | TEC-02 | Fallback/exit plus material provider concentration or single-provider exposure |
+| MSP-008 strengthened | TEC-02 | Composite dependency trace plus concentration/single-point exposure |
 | EAIMS-ADV-010 Synthetic Identity & Representation Control | GOV-05 | Authorization and escalation for synthetic identity/influence exposure |
 
 ## Existing controls intentionally not duplicated
@@ -64,7 +65,7 @@ A completed 1.0.x assessment remains a valid 1.0.x result.
 When reassessing under 1.1:
 
 1. reuse valid evidence that remains within scope and validity;
-2. assess only the new candidate requirements plus any 1.0 requirements invalidated by material change;
+2. assess the 9 new ADV candidate requirements plus strengthened MSP-005/MSP-008 semantics, and any 1.0 requirements invalidated by material change;
 3. activate agent-specific additions only where the system is action-taking/agentic as defined by the profile;
 4. activate synthetic-identity controls only where that exposure is material;
 5. document threat-intelligence review at organizational scope where relevant;
