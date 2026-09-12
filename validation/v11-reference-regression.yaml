@@ -1,0 +1,53 @@
+reference_baseline: EAIMS-1.0.x
+target_profile: EAIMS-1.1-ADVERSARIAL-AGENTIC-DRAFT
+status: development_draft
+purpose: Demonstrate that 1.1 applicability can be evaluated without mutating historical 1.0 reference fixtures.
+
+reference_implementations:
+  RI-01:
+    name: API-Consumed Analytics Assistant
+    source_fixture: reference-implementations/ri-01-api-consumed-analytics/input/fixture.yaml
+    expected_1_0_mutation: false
+    activation:
+      EAIMS-ADV-001: APPLICABLE
+      EAIMS-ADV-002: NOT_APPLICABLE
+      EAIMS-ADV-003: NOT_APPLICABLE
+      EAIMS-ADV-004: NOT_APPLICABLE
+      EAIMS-ADV-005: CONDITIONALLY_APPLICABLE
+      EAIMS-ADV-006: NOT_APPLICABLE
+      EAIMS-ADV-007: NOT_APPLICABLE
+      EAIMS-ADV-008: APPLICABLE
+      EAIMS-ADV-009: APPLICABLE
+      EAIMS-ADV-010: NOT_APPLICABLE
+
+  RI-02:
+    name: Enterprise Autonomous Service Agent
+    source_fixture: reference-implementations/ri-02-enterprise-service-agent/input/fixture.yaml
+    expected_1_0_mutation: false
+    activation:
+      EAIMS-ADV-001: APPLICABLE
+      EAIMS-ADV-002: APPLICABLE
+      EAIMS-ADV-003: APPLICABLE
+      EAIMS-ADV-004: APPLICABLE
+      EAIMS-ADV-005: APPLICABLE
+      EAIMS-ADV-006: APPLICABLE
+      EAIMS-ADV-007: APPLICABLE
+      EAIMS-ADV-008: APPLICABLE
+      EAIMS-ADV-009: APPLICABLE
+      EAIMS-ADV-010: NOT_APPLICABLE
+
+  RI-03:
+    name: High-Impact Employment Decision Support
+    source_fixture: reference-implementations/ri-03-high-impact-decision-support/input/fixture.yaml
+    expected_1_0_mutation: false
+    activation:
+      EAIMS-ADV-001: APPLICABLE
+      EAIMS-ADV-002: APPLICABLE
+      EAIMS-ADV-003: NOT_APPLICABLE
+      EAIMS-ADV-004: NOT_APPLICABLE
+      EAIMS-ADV-005: APPLICABLE
+      EAIMS-ADV-006: CONDITIONALLY_APPLICABLE
+      EAIMS-ADV-007: NOT_APPLICABLE
+      EAIMS-ADV-008: APPLICABLE
+      EAIMS-ADV-009: CONDITIONALLY_APPLICABLE
+      EAIMS-ADV-010: NOT_APPLICABLE
